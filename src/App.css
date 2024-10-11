@@ -4,8 +4,12 @@
   padding: 0;
 }
 
-body {
-  font-family: 'Adamina, Courier New', Courier, monospace;
+body, h1, h2, h3 {
+  font-family: 'Adamina', 'Courier New', Courier, monospace;
+}
+
+body p {
+  font-family: 'Source Serif Pro', 'Courier New', Courier, monospace;
 }
 
 #root {
