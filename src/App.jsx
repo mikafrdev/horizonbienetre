@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import Header from './components/Header/index.jsx'
+import Home from './pages/Home/index.jsx'
+import Footer from './components/Footer/index.jsx'
 import './App.css'
 
 function App() {
@@ -8,7 +11,16 @@ function App() {
 
   return (
     <>
+    
+    <Header />
+    <Home />
+    <Footer />
+
+    
+    {/*
       <div>
+        
+
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -28,6 +40,9 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+
+      */}
+
     </>
   )
 }
