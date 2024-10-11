@@ -1,0 +1,48 @@
+main {
+    width: 100%;
+    color: #fff;
+}
+
+main .illustration {
+    /*
+    height: 283px;
+    filter: brightness(50%);
+    background-image: url('./../../assets/Illustration_hp_big.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    */
+    height: 283px;
+    background: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url(./../../assets/Illustration_hp_big.png);
+    background-size: cover;
+    background-position: center;
+}
+
+main .illustration div {
+    width: 100%;
+    position: absolute;
+    top: 31%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+main .illustration div h1 {
+   
+}
+
+main .description {
+    padding: 0 1em;
+    background-color: #CAC0AF;
+}
+
+main .description h2 {
+    color: #666;
+    padding: 20px 0;
+}
