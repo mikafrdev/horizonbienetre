@@ -1,6 +1,7 @@
 import "./style.css";
 /*import img_illustration from './../../assets/Illustration_hp_big.jpg'
 import img_illustration from './../../assets/Illustration_hp_big.png'*/
+import Card from "../../components/Card";
 
 export default function Home() {
 
@@ -21,12 +22,7 @@ export default function Home() {
 
             <div className="prestation">
                 <h2>Les prestations</h2>
-                <div className="card">
-                    <h3>Massages Bien-Être Harmonisant</h3>
-                    <div className="img_card1">
-                        <button>En savoir plus</button>
-                    </div>
-                </div>
+                <Card />
             </div>
 
 
