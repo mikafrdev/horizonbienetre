@@ -20,7 +20,22 @@ header div, nav {
     justify-content: center;
 }
 
+.phone img {
+    width: 60px;
+    height : auto;
+}
+
 nav {
     justify-content: right;
 }
-    
+
+nav img {
+    width: 60px;
+    height : auto;
+}
+
+@media screen and (min-width: 800px) {
+    .phone img, nav img {
+        width: 80px;
+    }
+  }

@@ -1,3 +1,16 @@
-.button {
+.card {
     
+}
+
+.card img {
+    width: 100%;
+    margin: 1em 0 0.5em 0;
+    background-size: cover;
+    background-position: center;
+}
+
+h3 {
+    color: #1373A3;
+    font-size: 23px;
+    margin-top: 1em;
 }

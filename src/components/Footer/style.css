@@ -1,0 +1,27 @@
+footer {
+    background-color: #E5CFB6;
+    display: flex;
+    flex-direction: column;
+}
+
+footer h2 {
+    display: flex;
+}
+
+footer .contacts {
+    list-style-type: none;
+    text-align: left;
+}
+
+.footer_adress {
+
+}
+.footer_mail {
+
+}
+.footer_fb {
+
+}
+.footer_insta {
+
+}

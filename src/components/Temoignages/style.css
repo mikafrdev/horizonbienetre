@@ -1,0 +1,46 @@
+.temoignages {
+    
+}
+
+.stars_date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1em 0;
+}
+
+.stars {
+    display: flex;
+    list-style-type: none;
+}
+
+.stars li {
+    margin-right: 16px;
+}
+
+.stars li svg {
+    width: 16px;
+}
+
+.date {
+    font-style: italic;
+    color: #666;
+}
+
+.temoignages h2 {
+    margin-top: 1em;
+    font-size: 32px;
+}
+
+.temoignages h2, .temoignages p {
+    color: #666;
+}
+
+.temoignages .name {
+    display: flex;
+    margin-bottom: 1em;
+}
+
+.temoignages .avis {
+    display: flex;
+}

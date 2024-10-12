@@ -1,14 +1,25 @@
 import "./style.css";
-/*import img_illustration from './../../assets/Illustration_hp_big.jpg'
-import img_illustration from './../../assets/Illustration_hp_big.png'*/
+import Button from "../../components/Button";
 
-export default function Card() {
+export default function Card({ title, img, link }) {
 
     return (
         <div className="card">
-            <h3>Massages Bien-Être Harmonisant</h3>
-            <div className="img_card1"></div>
-            <button>En savoir plus</button>
+            <h3>{title}</h3>
+            <img className='ombre' src={img} alt={title} />
+            
+            <Button
+                title={'En savoir plus'}
+                link={'#'}
+            />
         </div>
     );
 }
+
+/*
+Card.propTypes = {
+    title: PropTypes.string.isRequired,
+    img:  PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired
+};
+*/

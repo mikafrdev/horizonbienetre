@@ -1,8 +1,12 @@
 import "./style.css";
 
-export default function Button() {
+export default function Button({ title, link }) {
 
     return (
-        <button className="button">En savoir plus</button>
+        <div className="button">
+            <a href={link}>
+                <button>{title}</button>
+            </a>
+        </div>
     );
 }

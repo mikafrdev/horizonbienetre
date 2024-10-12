@@ -38,8 +38,11 @@ main .illustration div h1 {
 }
 
 main .description {
-    padding: 0 1em;
     background-color: #CAC0AF;
+}
+
+main .description, main .prestation, main .temoignages, footer {
+    padding: 0 1em;
 }
 
 main .description h2 {
@@ -54,15 +57,15 @@ main .description h2 {
     background-size: cover;
     background-position: center;
     border-radius: 30px;
-    -webkit-box-shadow: 2px 2px 19px 3px rgba(0,0,0,0.62); 
-    box-shadow: 2px 2px 19px 3px rgba(0,0,0,0.62);
     margin-bottom: 2em;
 }
 
 main .description p {
-    font-size: 16px;;
+    text-align: left;
+    font-size: 16px;
     color: #000;
     padding-bottom: 2em;
+    line-height: 25px;
 }
 
 main .prestation {

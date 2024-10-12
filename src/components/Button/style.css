@@ -1,8 +1,14 @@
-.card {
-    
+.button {
+    display: flex;
+    justify-content: flex-end;
 }
 
-h3 {
-    color: #1373A3;
-    font-size: 23px;
+.button button {
+    width: 130px;
+    height: 40px;
+    opacity: .6;
+    background-color: #172D44;
+    color: #fff;
+    border-radius: 8px;
+    border: 0;
 }
