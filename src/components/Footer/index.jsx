@@ -1,24 +1,34 @@
-import styled from 'styled-components'
+import PictoPhone from "../PictoPhone";
+import PictoFB from "../PictoFB";
 import "./style.css";
-
-const FooterContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-`
+import PictoInsta from "../PictoInsta";
 
 export default function Header() {
 
     return (
         <footer>
-            <h2>Contacts</h2>
-            <ul className='contacts'>
-                <li className='footer_phone'>Afficher le téléphone</li>
-                <li className='footer_adress'>45 rue Claude Bernard<br /> 59200 Tourcoing</li>
-                <li className='footer_mail'>horizonbienetre5@gmail.com</li>
-                <li className='footer_fb'></li>
-                <li className='footer_insta'></li>
-            </ul>
+            
+            <div className='contacts'>
+                <h2>Contacts</h2>
+
+                <div className="contacts_infos">
+                    <div className='footer_phone'><PictoPhone fillColor='#8FC3D3' strokeColor='#8FC3D3' /></div>
+                    <div>Afficher le téléphone</div>
+
+                    <div className='footer_adress'><PictoPhone fillColor='#8FC3D3' strokeColor='#8FC3D3' /></div>
+                    <div>45 rue Claude Bernard<br /> 59200 Tourcoing</div>
+
+                    <div className='footer_mail'><PictoPhone fillColor='#8FC3D3' strokeColor='#8FC3D3' /></div>
+                    <div>horizonbienetre5@gmail.com</div>
+                </div>
+
+            </div>
+
+            <div className="contacts_infos_next">
+                <div className='footer_fb'><PictoFB fillColor='#1E1E1E' strokeColor='#1E1E1E' /></div>
+                <div className='footer_insta'><PictoInsta fillColor='transparent' strokeColor='#1E1E1E' /></div>
+            </div>
+
             <div className="horaires">
                 <p>Horaires :</p>
                 <p>Du lundi au samedi de 10h00 à 19h00</p>

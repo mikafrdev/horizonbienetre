@@ -1,4 +1,4 @@
-export default function Star({ fillColor, strokeColor }) {
+export default function PictoStar({ fillColor, strokeColor }) {
 
     return (
         <svg xmlns="http://www.w3.org/2000/svg" 

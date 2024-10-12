@@ -6,22 +6,45 @@ footer {
 
 footer h2 {
     display: flex;
+    margin: 1em 0;
+    line-height: 30px;
+    border-bottom: 1px solid #666;
 }
 
 footer .contacts {
+    padding: 0 1em;
+}
+
+footer .contacts_infos {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 3fr;
     list-style-type: none;
     text-align: left;
+    padding: 0 2em;
+}
+
+.contacts_infos_next {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 2fr;
+}
+
+.footer_phone {
+    width: 40px;
+    
+    justify-content: flex-end;
 }
 
 .footer_adress {
-
+    width: 40px;
 }
 .footer_mail {
-
+    width: 40px;
 }
-.footer_fb {
-
+.footer_fb svg {
+    height: 34px;
 }
-.footer_insta {
-
+.footer_insta svg {
+    height: 34px;
 }

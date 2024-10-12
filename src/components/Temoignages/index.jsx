@@ -1,6 +1,6 @@
 import "./style.css";
 /*import star from './../../assets/star_filled.svg'*/
-import Star from "../Star";
+import PictoStar from "../PictoStar";
 
 export default function Temoignages() {
 
@@ -11,11 +11,11 @@ export default function Temoignages() {
 
             <div className="stars_date">
                 <ul className="stars">
-                    <li><Star fillColor='#8FC3D3' strokeColor='#8FC3D3' /></li>
-                    <li><Star fillColor='#8FC3D3' strokeColor='#8FC3D3' /></li>
-                    <li><Star fillColor='#8FC3D3' strokeColor='#8FC3D3' /></li>
-                    <li><Star fillColor='#8FC3D3' strokeColor='#8FC3D3' /></li>
-                    <li><Star fillColor='#ffffff' strokeColor='#8FC3D3' /></li>
+                    <li><PictoStar fillColor='#8FC3D3' strokeColor='#8FC3D3' /></li>
+                    <li><PictoStar fillColor='#8FC3D3' strokeColor='#8FC3D3' /></li>
+                    <li><PictoStar fillColor='#8FC3D3' strokeColor='#8FC3D3' /></li>
+                    <li><PictoStar fillColor='#8FC3D3' strokeColor='#8FC3D3' /></li>
+                    <li><PictoStar fillColor='#ffffff' strokeColor='#8FC3D3' /></li>
                 </ul>
                 <div className="date">Juillet 2024</div>
             </div>
