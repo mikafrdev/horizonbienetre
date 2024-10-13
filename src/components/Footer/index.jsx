@@ -1,7 +1,9 @@
 import PictoPhone from "../PictoPhone";
+import PictoPinpoint from "../PictoPinpoint";
+import PictoMail from "../PictoMail";
 import PictoFB from "../PictoFB";
-import "./style.css";
 import PictoInsta from "../PictoInsta";
+import "./style.css";
 
 export default function Header() {
 
@@ -12,20 +14,20 @@ export default function Header() {
                 <h2>Contacts</h2>
 
                 <div className="contacts_infos">
-                    <div className='footer_phone'><PictoPhone fillColor='#8FC3D3' strokeColor='#8FC3D3' /></div>
+                    <div className='footer_phone'><PictoPhone fillPhoneColor='#1E1E1E' fillCallColor='1E1E1E' /></div>
                     <div>Afficher le téléphone</div>
 
-                    <div className='footer_adress'><PictoPhone fillColor='#8FC3D3' strokeColor='#8FC3D3' /></div>
+                    <div className='footer_adress'><PictoPinpoint strokeColor='#1E1E1E' /></div>
                     <div>45 rue Claude Bernard<br /> 59200 Tourcoing</div>
 
-                    <div className='footer_mail'><PictoPhone fillColor='#8FC3D3' strokeColor='#8FC3D3' /></div>
+                    <div className='footer_mail'><PictoMail strokeColor='#1E1E1E' /></div>
                     <div>horizonbienetre5@gmail.com</div>
                 </div>
 
             </div>
 
             <div className="contacts_infos_next">
-                <div className='footer_fb'><PictoFB fillColor='#1E1E1E' strokeColor='#1E1E1E' /></div>
+                <div className='footer_fb'><PictoFB strokeColor='#1E1E1E' strokeWidth='5' /></div>
                 <div className='footer_insta'><PictoInsta fillColor='transparent' strokeColor='#1E1E1E' /></div>
             </div>
 
@@ -34,8 +36,8 @@ export default function Header() {
                 <p>Du lundi au samedi de 10h00 à 19h00</p>
             </div>
             <div className="detail_prestations">
-                <p>Horaires :</p>
-                <p>Du lundi au samedi de 10h00 à 19h00</p>
+                <p>Prestation sur RDV</p>
+                <p>En cabine/ A domicile / En entreprise </p>
             </div>
         </footer>
     );
