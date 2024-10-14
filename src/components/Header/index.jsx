@@ -1,14 +1,9 @@
-import styled from 'styled-components'
-import "./style.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import Logo from './../../assets/Logo.jpg'
 import IconPhone from './../../assets/Phone.png'
 import IconMenu from './../../assets/menu.png'
-
-const HeaderContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-`
+import "./style.css";
 
 export default function Header() {
 
@@ -16,9 +11,9 @@ export default function Header() {
 
         <header>
             <div>
-                <a href="#">
+                <Link to="/">
                     <img src={Logo} alt="Logo Horizon Bien Etre" />
-                </a>
+                </Link>
             </div>
             <div className='phone'>
                 <a href="#">

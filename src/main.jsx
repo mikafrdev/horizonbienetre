@@ -1,10 +1,69 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
+import {  } from 'react-router-dom'
+
+import PageError from './pages/PageError'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Home from './pages/Home'
+import Massages from './pages/Massages'
+import Soins from './pages/Soins'
+import Formule from './pages/Formule'
+import Cadeau from './pages/Cadeau'
+import Salon from './pages/Salon'
+import Contacts from './pages/Contacts'
+
 import './index.css'
+
+const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Root/>,
+      errorElement: <PageError/>,
+      children: [
+        {
+          path: '/',
+          element: <Home/>
+        },
+        {
+          path: '/massages',
+          element: <Massages/>
+        },
+        {
+          path: '/soins',
+          element: <Soins/>
+        },
+        {
+          path: '/formule',
+          element: <Formule/>
+        },
+        {
+          path: '/cadeau',
+          element: <Cadeau/>
+        },
+        {
+          path: '/contacts',
+          element: <Contacts/>
+        },
+        {
+          path: '/salon',
+          element: <Salon/>
+        }
+      ]
+    }
+  ])
+
+  function Root () {
+    return <>
+      <Header/>
+      <Outlet/>
+      <Footer/>
+    </>
+  }
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </StrictMode>,
 )

@@ -1,11 +1,14 @@
-import "./style.css";
+import { Link } from "react-router-dom";
 import Button from "../../components/Button";
+import "./style.css";
 
 export default function Card({ title, img, link }) {
 
     return (
         <div className="card">
-            <h3>{title}</h3>
+            <Link to={link}>
+                <h3>{title}</h3>
+            </Link>
             <img className='ombre' src={img} alt={title} />
             
             <Button

@@ -1,0 +1,81 @@
+main {
+    width: 100%;
+    color: #fff;
+}
+
+main .illustration {
+    /*
+    height: 283px;
+    filter: brightness(50%);
+    background-image: url('./../../assets/Illustration_hp_big.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    */
+    height: 283px;
+    background: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url(./../../assets/Illustration_hp_big.png);
+    background-size: cover;
+    background-position: center;
+}
+
+main .illustration div {
+    width: 100%;
+    position: absolute;
+    top: 31%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+main .illustration div h1 {
+   font-size: 30px;
+}
+
+main .description {
+    background-color: #CAC0AF;
+}
+
+main .description, main .prestation, main .temoignages, footer {
+    padding: 0 1em;
+}
+
+main .description h2 {
+    color: #666;
+    padding: 20px 0;
+    font-size: 24px;
+}
+
+.img_salon {
+    height: 347px;
+    background-image: url('./../../assets/salon17.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    margin-bottom: 2em;
+}
+
+main .description p {
+    text-align: left;
+    font-size: 16px;
+    color: #000;
+    padding-bottom: 2em;
+    line-height: 25px;
+}
+
+main .prestation {
+    background-color: #fff;
+
+}
+
+main .prestation h2 {
+    color: #666;
+    font-size: 32px;
+    line-height: 28px;
+    margin: 1em 0;
+}

@@ -1,10 +1,9 @@
-import "./style.css";
-/*import img_illustration from './../../assets/Illustration_hp_big.jpg'*/
 import img1 from './../../assets/massage-bien-etre.jpeg'
 import img2 from './../../assets/Soin-energetique.jpg'
 import img3 from './../../assets/Formule-detente-profonde.jpeg'
 import Card from "../../components/Card";
 import Temoignages from "../../components/Temoignages";
+import "./style.css";
 
 export default function Home() {
 
@@ -33,19 +32,19 @@ export default function Home() {
                 <Card
                     title={prestation1}
                     img={img1}
-                    link={'#'}
+                    link={'/massages'}
                 />
 
                 <Card
                     title={prestation2}
                     img={img2}
-                    link={'#'}
+                    link={'/soins'}
                 />
 
                 <Card
                     title={prestation3}
                     img={img3}
-                    link={'#'}
+                    link={'/formule'}
                 />
 
             </div>
