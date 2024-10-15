@@ -1,3 +1,4 @@
+import Illustration from '../../components/Illustration';
 import "./style.css";
 import img1 from './../../assets/massage-bien-etre.jpeg'
 import img2 from './../../assets/Soin-energetique.jpg'
@@ -12,11 +13,7 @@ export default function Massages() {
     return (
         <main>
             
-            <div className="illustration">
-                <div>
-                    <h1>Prestations Massages relaxants</h1>
-                </div>
-            </div>
+            <Illustration title='PrestationsMassages relaxants' className='illustration_massages' />
            
             <div className="Container_prestations">
                 <div className="presta">

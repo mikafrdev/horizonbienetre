@@ -1,0 +1,62 @@
+
+main .illustration_hp {
+    height: 283px;
+    background: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url(/src/assets/Illustration_hp_big.png);
+    background-size: cover;
+    background-position: center;
+}
+
+main .illustration_massages {
+    height: 283px;
+    background: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url(/src/assets/massage-bien-etre.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+main .illustration_soins {
+    height: 283px;
+    background: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url(/src/assets/Soin-energetique.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+main .illustration_formule {
+    height: 283px;
+    background: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url(/src/assets/Illustration_hp_big.png);
+    background-size: cover;
+    background-position: center;
+}
+
+main .illustration div {
+    width: 100%;
+    position: absolute;
+    top: 31%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+main .illustration div h1 {
+   font-size: 30px;
+}

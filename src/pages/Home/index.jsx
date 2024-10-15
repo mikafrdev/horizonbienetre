@@ -1,3 +1,4 @@
+import Illustration from '../../components/Illustration';
 import img1 from './../../assets/massage-bien-etre.jpeg'
 import img2 from './../../assets/Soin-energetique.jpg'
 import img3 from './../../assets/Formule-detente-profonde.jpeg'
@@ -14,11 +15,7 @@ export default function Home() {
     return (
         <main>
             
-            <div className="illustration">
-                <div>
-                    <h1>Salon Bien-Ètre</h1>
-                </div>
-            </div>
+            <Illustration title='Salon Bien-Ètre' className='illustration_hp' />
            
             <div className="description">
                 <h2>Horizon bien-être, un lieu de détente et de bienveillance</h2>
