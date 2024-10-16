@@ -14,7 +14,7 @@ export default function Header() {
                 <h2>Contacts</h2>
 
                 <div className="contacts_infos">
-                    <div className='footer_phone'><PictoPhone fillPhoneColor='#1E1E1E' fillCallColor='1E1E1E' /></div>
+                    <PictoPhone className='picto_phone_footer' fillPhoneColor='#1E1E1E' fillCallColor='1E1E1E' />
                     <div>Afficher le téléphone</div>
 
                     <div className='footer_adress'><PictoPinpoint strokeColor='#1E1E1E' /></div>

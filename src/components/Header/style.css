@@ -16,13 +16,12 @@ header div, nav {
     align-items: center;
 }
 
-.phone {
+.picto_phone_header {
     justify-content: center;
 }
 
-.phone img {
+.picto_phone_header svg {
     width: 60px;
-    height : auto;
 }
 
 nav {

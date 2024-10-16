@@ -32,11 +32,6 @@ footer .contacts_infos {
     margin: 1em 0;
 }
 
-.footer_phone {
-    width: 40px;
-    justify-content: flex-end;
-}
-
 .footer_adress {
     width: 40px;
 }
