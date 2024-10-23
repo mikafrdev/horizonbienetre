@@ -6,9 +6,7 @@ import IconMenu from './../../assets/menu.png'
 import "./style.css";
 
 export default function Header() {
-
     return (
-
         <header>
             <div>
                 <Link to="/">

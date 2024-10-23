@@ -1,20 +1,22 @@
 import { Link } from "react-router-dom";
-import Button from "../../components/Button";
+import Button from "../Button";
 import "./style.css";
 
-export default function Card({ title, img, link }) {
+export default function CardHP({ title, img, link }) {
 
     return (
-        <div className="card">
+        <div className="card_hp">
             <Link to={link}>
                 <h3>{title}</h3>
+                <img className='ombre' src={img} alt={title} />
             </Link>
-            <img className='ombre' src={img} alt={title} />
             
+            {/*
             <Button
                 title={'En savoir plus'}
                 link={'#'}
             />
+            */}
         </div>
     );
 }

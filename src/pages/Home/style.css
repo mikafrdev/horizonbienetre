@@ -19,10 +19,6 @@ main .description {
     background-color: #CAC0AF;
 }
 
-main .description, main .prestation, main .temoignages, footer {
-    padding: 0 1em;
-}
-
 main .description h2 {
     color: #666;
     padding: 20px 0;

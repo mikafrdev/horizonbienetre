@@ -13,6 +13,7 @@ import Formule from './pages/Formule'
 import Cadeau from './pages/Cadeau'
 import Salon from './pages/Salon'
 import Contacts from './pages/Contacts'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 
 import './index.css'
 
@@ -56,6 +57,7 @@ const router = createBrowserRouter([
 
   function Root () {
     return <>
+    <ScrollToTop />
       <Header/>
       <Outlet/>
       <Footer/>

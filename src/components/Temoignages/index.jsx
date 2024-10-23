@@ -6,7 +6,7 @@ export default function Temoignages() {
 
     return (
         
-        <div className="temoignages">
+        <div className="container_light temoignages">
             <h2>Témoignages</h2>
 
             <div className="stars_date">

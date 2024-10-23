@@ -33,6 +33,10 @@ body h3, body p {
   text-align: center;
 }
 
+.container_light, footer {
+  padding: 0 1em;
+}
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }

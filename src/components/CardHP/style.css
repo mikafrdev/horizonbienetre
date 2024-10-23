@@ -1,11 +1,11 @@
-.card img {
+.card_hp img {
     width: 100%;
     margin: 1em 0 0.5em 0;
     background-size: cover;
     background-position: center;
 }
 
-.card a {
+.card_hp a {
     text-decoration: none;
 }
 
