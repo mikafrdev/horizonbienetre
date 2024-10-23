@@ -5,7 +5,6 @@ import img1 from './../../assets/visage-femme-mains1.jpg'
 import img2 from './../../assets/Soin-energetique.jpg'
 import img3 from './../../assets/Formule-detente-profonde.jpeg'
 
-
 export default function Massages() {
 
     const dataPresta = [
@@ -43,16 +42,15 @@ export default function Massages() {
             <Illustration title={IllustrationTxt} className='illustration_massages' />
 
             <div className="Container_prestations container_light">
-
-            {dataPresta.map((product, index)=> 
-                <CardPresta
-                    key={index}
-                    title={product.title} 
-                    img={product.img}
-                    text={product.text}
-                    prix={product.prix}
-                />
-            )}
+                {dataPresta.map((product, index)=> 
+                    <CardPresta
+                        key={index}
+                        title={product.title} 
+                        img={product.img}
+                        text={product.text}
+                        prix={product.prix}
+                    />
+                )}
             </div>
             
         </main>

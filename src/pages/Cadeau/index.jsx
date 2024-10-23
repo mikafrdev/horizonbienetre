@@ -1,33 +1,24 @@
+import Illustration from '../../components/Illustration';
 import "./style.css";
-import img1 from './../../assets/massage-bien-etre.jpeg'
-import img2 from './../../assets/Soin-energetique.jpg'
-import img3 from './../../assets/Formule-detente-profonde.jpeg'
 
 export default function Cadeau() {
 
-    const prestation1 = 'Massages Bien-Être Harmonisant';
-    const prestation2 = 'Les soins énergétiques';
-    const prestation3 = 'La formule détente profonde';
+    const IllustrationTxt = 'Carte Cadeau';
 
     return (
         <main>
             
-            <div className="illustration">
-                <div>
-                    <h1>Carte cadeau</h1>
-                </div>
-            </div>
-           
-            <div className="Container_prestations">
-                <div className="presta">
-                    <h2>Massage IVAO</h2>
-                    <div className="img_presta1"></div>
-                    <p>Massage relaxant du corps, avec pose et utilisation de pierres chaudes pour profiter d’un moment de détente et de récupération.</p>
-                </div>
-            </div>
+            <Illustration className='illustration_cadeau' />
 
+            <div className="container_cadeau container_light">
+                <p>
+                Envie de faire plaisir ou pour diverses occasions offrez la carte cadeau Horizon Bien-Être.
+La carte cadeau est valable pour tous les soins et la formule.
+Il vous sufit de choisir le(s) soin(s) ou alors le montant que vous souhaitez offrir.
+                </p>
+                
+            </div>
             
-
         </main>
     );
 }
