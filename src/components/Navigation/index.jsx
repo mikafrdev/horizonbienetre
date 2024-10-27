@@ -37,7 +37,7 @@ export default function Navigation() {
         <div className="navigation">
             <ul>
                 {dataNavigation.map((item, index) => (
-                    <li>
+                    <li key={index}>
                         <NavLink
                             to={item.UrlPage}
                             className={({ isActive, isPending }) => {
