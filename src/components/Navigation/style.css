@@ -1,4 +1,4 @@
-.navbar {
+.navigation {
     isplay: none;
     position: absolute;
     left: 0;
@@ -9,28 +9,28 @@
     z-index: 2;
 }
 
-.navbar ul {
+.navigation ul {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.navbar li {
+.navigation li {
     width: 100%;
     color: #fff;
     padding: 1em;
 }
 
-.navbar li:hover {
+.navigation li:hover {
     background-color: #8FC3D3;
     background-image: linear-gradient(90deg,transparent,rgba(0,0,0,0.04),transparent);
 }
 
-.navbar li:active, .navbar li.active {
+.navigation li:active, .navigation li.active {
     background-color: #8FC3D3;
 }
 
-.navbar li a {
+.navigation li a {
     color: #fff;
     font-size: 22px;
 }
