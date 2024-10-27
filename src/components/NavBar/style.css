@@ -1,0 +1,36 @@
+.navbar {
+    isplay: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #1e1e1e;
+    width: 100%;
+    height: 400px;
+    z-index: 2;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.navbar li {
+    width: 100%;
+    color: #fff;
+    padding: 1em;
+}
+
+.navbar li:hover {
+    background-color: #8FC3D3;
+    background-image: linear-gradient(90deg,transparent,rgba(0,0,0,0.04),transparent);
+}
+
+.navbar li:active, .navbar li.active {
+    background-color: #8FC3D3;
+}
+
+.navbar li a {
+    color: #fff;
+    font-size: 22px;
+}
