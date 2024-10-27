@@ -22,7 +22,7 @@ body, h1, h2 {
   font-family: 'Adamina', serif, Courier, monospace;
 }
 
-body h3, body p {
+body h3, body p, input, textarea {
   font-family: 'Source serif pro', serif, monospace;
 }
 
