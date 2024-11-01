@@ -4,7 +4,6 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import {} from "react-router-dom";
 
 import PageError from "./pages/PageError";
-import Navigation from "./components/Navigation";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -59,7 +58,6 @@ function Root() {
     return (
         <>
             <ScrollToTop />
-            <Navigation />
             <Header />
             <Outlet />
             <Footer />

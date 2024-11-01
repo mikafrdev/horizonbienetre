@@ -1,0 +1,30 @@
+[
+    {
+        "PageName": "Accueil",
+        "UrlPage": "/"
+    },
+    {
+        "PageName": "Massages",
+        "UrlPage": "/massages"
+    },
+    {
+        "PageName": "Soins énergétiques",
+        "UrlPage": "/soins"
+    },
+    {
+        "PageName": "Formule détante profonde",
+        "UrlPage": "/formule"
+    },
+    {
+        "PageName": "Carte Cadeau",
+        "UrlPage": "/cadeau"
+    },
+    {
+        "PageName": "Contacts",
+        "UrlPage": "/contacts"
+    },
+    {
+        "PageName": "Salon",
+        "UrlPage": "/salon"
+    }
+]

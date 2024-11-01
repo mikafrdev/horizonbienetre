@@ -1,55 +1,24 @@
 import { NavLink } from "react-router-dom";
+import dataNavigation from "../../data/navigation.json"
 import "./style.css";
 
-export default function Navigation() {
-    const dataNavigation = [
-        {
-            PageName: "Accueil",
-            UrlPage: "/",
-        },
-        {
-            PageName: "Prestations - Massages",
-            UrlPage: "/massages",
-        },
-        {
-            PageName: "Prestations - Soins énergétiques",
-            UrlPage: "/soins",
-        },
-        {
-            PageName: "Prestation - Formule détante profonde",
-            UrlPage: "/formule",
-        },
-        {
-            PageName: "Carte Cadeau",
-            UrlPage: "/cadeau",
-        },
-        {
-            PageName: "Contacts",
-            UrlPage: "/contacts",
-        },
-        {
-            PageName: "Salon",
-            UrlPage: "/salon",
-        },
-    ];
+export default function Navigation(showNavigation) {
 
     return (
         <div className="navigation">
             <ul>
                 {dataNavigation.map((item, index) => (
-                    <li key={index}>
-                        <NavLink
-                            to={item.UrlPage}
-                            className={({ isActive, isPending }) => {
-                                return isActive
-                                    ? "active"
-                                    : isPending
-                                    ? "pending"
-                                    : "";
-                            }}
-                        >
-                            {item.PageName}
-                        </NavLink>
+                    <li
+                        key={index}
+                        className={({ isActive, isPending }) => {
+                            return isActive
+                                ? "active"
+                                : isPending
+                                ? "pending"
+                                : "";
+                        }}
+                    >
+                        <NavLink to={item.UrlPage}>{item.PageName}</NavLink>
                     </li>
                 ))}
             </ul>

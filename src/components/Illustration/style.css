@@ -1,6 +1,10 @@
+main .illustration {
+    /*margin-bottom: 3em;*/
+}
+
 
 main .illustration_hp {
-    height: 283px;
+    height: 208px;
     background: 
         linear-gradient(
             rgba(0, 0, 0, 0.5),
@@ -12,7 +16,7 @@ main .illustration_hp {
 }
 
 main .illustration_massages {
-    height: 283px;
+    height: 210px;
     background: 
         linear-gradient(
             rgba(0, 0, 0, 0.5),
@@ -24,7 +28,7 @@ main .illustration_massages {
 }
 
 main .illustration_soins {
-    height: 283px;
+    height: 210px;
     background: 
         linear-gradient(
             rgba(0, 0, 0, 0.5),

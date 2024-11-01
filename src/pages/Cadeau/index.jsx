@@ -2,29 +2,12 @@ import React, { useState } from 'react'
 import Illustration from '../../components/Illustration';
 import Accordion from '../../components/Accordion';
 import FormContact from '../../components/FormContact';
+import dataCarteCadeau from "../../data/cartecadeau.json"
 import "./style.css";
 
 export default function Cadeau() {
 
     const IllustrationTxt = 'Carte Cadeau';
-
-    const dataCarteCadeau = [
-        {
-            num : '1',
-            title : 'Réserver votre carte cadeau',
-            text : 'Après avoir choisi le soin que vous voulez offrir ou le montant de la carte cadeau, envoyez le formulaire ci-dessous en précisant dans la partie message le choix que vous avez effectué et le nom / prénom de la personne à qui vous offrez la carte ou contactez moi au 06 21 03 77 44. Si vous voulez personnaliser la carte par un message, ajoutez le à votre mail.'
-        },
-        {
-            num : '2',
-            title : 'Procéder au paiement',
-            text : 'Après avoir choisi le soin que vous voulez offrir ou le montant de la carte cadeau, envoyez le formulaire ci-dessous en précisant dans la partie message le choix que vous avez effectué et le nom / prénom de la personne à qui vous offrez la carte ou contactez moi au 06 21 03 77 44. Si vous voulez personnaliser la carte par un message, ajoutez le à votre mail.'
-        },
-        {
-            num : '3',
-            title : 'Le bénéficiaire prend rendez-vous',
-            text : 'Après avoir choisi le soin que vous voulez offrir ou le montant de la carte cadeau, envoyez le formulaire ci-dessous en précisant dans la partie message le choix que vous avez effectué et le nom / prénom de la personne à qui vous offrez la carte ou contactez moi au 06 21 03 77 44. Si vous voulez personnaliser la carte par un message, ajoutez le à votre mail.'
-        }
-    ]
 
     const [activeIndex, setActiveIndex] = useState(null);
 
