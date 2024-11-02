@@ -6,12 +6,17 @@
     background-color: #1e1e1e;
     z-index: 2;
 
-    -webkit-animation: slide-top 0.5s linear forwards;
-            animation: slide-top 0.5s linear forwards;
+    /* -webkit-animation: scroll-horizontal 0.5s linear forwards;
+            animation: scroll-horizontal 0.5s linear forwards; */
 }
 
-.navigation ul li.active {
-    animation:  0.5s linear;    
+.fade {
+    /* animation:  .3s linear; */
+    transform: translateX(50px)
+}
+
+.fade.out {
+    /* animation:  .3s linear; */
 }
 
 .navigation ul {

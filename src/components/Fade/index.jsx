@@ -1,20 +1,15 @@
-import { NavLink } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-import dataNavigation from "../../data/navigation.json"
-import "./style.css";
 
 const VISIBLE = 1;
 const HIDDEN = 2;
 const ENTERING = 3; //L'élement est en train de s'afficher dans le DOM selon l'animation
 const LEAVING = 4;  //L'élement est en train de quitter le DOM selon l'animation
 
-export default function Navigation({ visible, children, duration = 1000, animateEnter = false }) {
-
+export default function Fade({ visible, children, duration = 0.3 }) {
+    
     const childRef = useRef(children);
     const [state, setState] = useState(visible ? VISIBLE : HIDDEN);
     const className = state === VISIBLE ? "fade" : "fade out";
-
-    console.log("className : ", state)
 
     if (visible) {
         childRef.current = children;
@@ -27,7 +22,7 @@ export default function Navigation({ visible, children, duration = 1000, animate
             setState((s) => (s === HIDDEN ? ENTERING : VISIBLE));
         }
     }, [visible]);
-    
+
     useEffect(() => {
         if (state === LEAVING) {
             const timer = setTimeout(() => {
@@ -38,32 +33,18 @@ export default function Navigation({ visible, children, duration = 1000, animate
             };
         } else if (state === ENTERING) {
             document.body.offsetHeight;
-            console.log("ENTERING", document.body.offsetHeight)
             setState(VISIBLE);
         }
-        console.log("state", state)
     }, [state]);
 
     if (state === HIDDEN) {
-        console.log("HIDDEN")
         return null;
     }
 
-    /* let style = {
+    let style = {
         transitionDuration: `${duration}ms`,
-        transform: "translateX(1px)",
-        transitionProperty: "opacity transform"
-    }; */
+        transitionProperty: "opacity transform",
+    };
 
-    return (
-        <div className={`navigation ${className}`} /* style={style} */>
-            <ul>
-                {dataNavigation.map((item, index) => (
-                    <li key={index}>
-                        <NavLink to={item.UrlPage}>{item.PageName}</NavLink>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    );
+    return <div className={className}>{childRef.current}</div>;
 }
