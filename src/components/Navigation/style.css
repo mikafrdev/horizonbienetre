@@ -1,4 +1,4 @@
-.navigation {  
+.navigation {
     width: 80%;
     position: absolute;
     left: 0;
@@ -10,12 +10,23 @@
             animation: scroll-horizontal 0.5s linear forwards; */
 }
 
-.fade {
-    /* animation:  .3s linear; */
-    transform: translateX(50px)
+.fade,
+.fade.out {
+    transition-duration: 1s;
 }
 
 .fade.out {
+    transform: translateX(-306px);
+    /* animation:  .3s linear; */
+}
+
+.fade {
+    /* animation:  .3s linear; */
+    transform: translateX(0);
+}
+
+.fade.out {
+    transform: translateX(-306px);
     /* animation:  .3s linear; */
 }
 
@@ -34,12 +45,18 @@
 }
 
 .navigation li:hover {
-    background-color: #8FC3D3;
-    background-image: linear-gradient(90deg,transparent,rgba(0,0,0,0.04),transparent);
+    background-color: #8fc3d3;
+    background-image: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 0, 0, 0.04),
+        transparent
+    );
 }
 
-.navigation li:active, .navigation li.active {
-    background-color: #8FC3D3;
+.navigation li:active,
+.navigation li.active {
+    background-color: #8fc3d3;
 }
 
 .navigation li a {

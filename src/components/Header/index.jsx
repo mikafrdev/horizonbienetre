@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 /* import Fade from "../Fade"; */
 import Logo from "./../../assets/Logo.jpg";
@@ -8,13 +8,15 @@ import Navigation from "../Navigation";
 import "./style.css";
 
 export default function Header() {
-
-    const [open, setOpen] = useState(false);
-    const toggle = () => setOpen(o => !o );
+    const [displayNav, setdisplayNav] = useState(false);
+    const toggle = () => {
+        console.log("CLIC !!!!!");
+        setdisplayNav((o) => !o)
+    };
 
     return (
         <header>
-            <Navigation visible={!!open} />
+            <Navigation displayNav={displayNav} />
             <div>
                 <Link to="/">
                     <img src={Logo} alt="Logo Horizon Bien Etre" />
