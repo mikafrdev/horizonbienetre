@@ -5,9 +5,12 @@
     top: 0;
     background-color: #1e1e1e;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
 
-    /* -webkit-animation: scroll-horizontal 0.5s linear forwards;
-            animation: scroll-horizontal 0.5s linear forwards; */
+.navigation, .fade.out {
+    transform: translateX(-306px);
 }
 
 .fade,
@@ -15,19 +18,8 @@
     transition-duration: 1s;
 }
 
-.fade.out {
-    transform: translateX(-306px);
-    /* animation:  .3s linear; */
-}
-
 .fade {
-    /* animation:  .3s linear; */
     transform: translateX(0);
-}
-
-.fade.out {
-    transform: translateX(-306px);
-    /* animation:  .3s linear; */
 }
 
 .navigation ul {
