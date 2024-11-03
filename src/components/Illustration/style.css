@@ -59,6 +59,14 @@ main .illustration_cadeau {
     background-position: center;
 }
 
+main .illustration_contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color: #1373A3;
+}
+
 main .illustration div {
     width: 100%;
     position: absolute;
@@ -71,4 +79,8 @@ main .illustration div {
 
 main .illustration div h1 {
    font-size: 30px;
+}
+
+main .illustration_contact h1 {
+    background-color: #1373A3;
 }

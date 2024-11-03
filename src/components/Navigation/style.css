@@ -1,5 +1,5 @@
 .navigation {
-    width: 80%;
+    /* width: 80%; */
     position: absolute;
     left: 0;
     top: 0;
@@ -15,7 +15,7 @@
 
 .fade,
 .fade.out {
-    transition-duration: 1s;
+    transition-duration: .3s;
 }
 
 .fade {
