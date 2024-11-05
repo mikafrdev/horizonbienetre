@@ -4,7 +4,7 @@ import dataNavigation from "../../data/navigation.json";
 import "./style.css";
 
 
-export default function Navigation({ displayNav }) {
+export default function Navigation({ displayNav, toggle }) {
     const VISIBLE = 1;
     const HIDDEN = 2;
     const ENTERING = 3; //L'élement est en train de s'afficher dans le DOM selon l'animation
@@ -43,6 +43,10 @@ export default function Navigation({ displayNav }) {
         console.log("useEffect2 : ", state);
     }, [state]);
 
+    if (state === HIDDEN) {
+        return null;
+    }
+
     /* if(displayNav) {
         className = "fade";
         console.log("className FADE");
@@ -56,7 +60,7 @@ export default function Navigation({ displayNav }) {
         <div className={`navigation ${className}`} style={{minHeight: screen.availHeight}}>
             <ul>
                 {dataNavigation.map((item, index) => (
-                    <li key={index}>
+                    <li key={index} onClick={toggle}>
                         <NavLink to={item.UrlPage}>{item.PageName}</NavLink>
                     </li>
                 ))}

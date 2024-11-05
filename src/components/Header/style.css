@@ -31,7 +31,73 @@ nav {
 nav img {
     width: 60px;
     height : auto;
+    cursor: pointer;
 }
+
+/*NAVIGATION*/
+
+.navigation {
+    /* width: 80%; */
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #1e1e1e;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation, .fade.out {
+    transform: translateX(-306px);
+}
+
+.fade,
+.fade.out {
+    transition-duration: .3s;
+}
+
+.fade {
+    transform: translateX(0);
+}
+
+.navigation ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.navigation li {
+    display: flex;
+    width: 100%;
+    color: #fff;
+    text-align: left;
+    cursor: pointer;
+}
+
+.navigation li:hover {
+    background-color: #8fc3d3;
+    background-image: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 0, 0, 0.04),
+        transparent
+    );
+}
+
+.navigation li:active,
+.navigation li.active {
+    background-color: #8fc3d3;
+}
+
+.navigation li a {
+    width: 100%;
+    padding: 0 1em;
+    color: #fff;
+    font-size: 22px;
+    line-height: 3em;
+}
+
 
 @media screen and (min-width: 800px) {
     .phone img, nav img {
