@@ -1,33 +1,29 @@
+import Illustration from '../../components/Illustration';
+import CardPresta from '../../components/CardPresta';
+import dataMassages from "../../data/massages.json"
 import "./style.css";
-import img1 from './../../assets/massage-bien-etre.jpeg'
-import img2 from './../../assets/Soin-energetique.jpg'
-import img3 from './../../assets/Formule-detente-profonde.jpeg'
 
 export default function Formule() {
 
-    const prestation1 = 'Massages Bien-Être Harmonisant';
-    const prestation2 = 'Les soins énergétiques';
-    const prestation3 = 'La formule détente profonde';
+    const IllustrationTxt = 'Formule détente profonde';
 
     return (
         <main>
             
-            <div className="illustration">
-                <div>
-                    <h1>Formule détente profonde</h1>
-                </div>
-            </div>
-           
-            <div className="Container_prestations">
-                <div className="presta">
-                    <h2>Massage IVAO</h2>
-                    <div className="img_presta1"></div>
-                    <p>Massage relaxant du corps, avec pose et utilisation de pierres chaudes pour profiter d’un moment de détente et de récupération.</p>
-                </div>
-            </div>
+            <Illustration title={IllustrationTxt} className='illustration_massages' />
 
+            <div className="Container_prestations container_light">
+                {dataMassages.map((product, index)=> 
+                    <CardPresta
+                        key={index}
+                        title={product.title} 
+                        img={product.img}
+                        text={product.text}
+                        prix={product.prix}
+                    />
+                )}
+            </div>
             
-
         </main>
     );
 }
