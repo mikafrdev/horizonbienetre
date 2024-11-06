@@ -1,32 +1,42 @@
-.formcontact form, .formcontact input, .formcontact textarea {
-  border: 1px solid #D9D9D9;
+.formcontact form,
+.formcontact input,
+.formcontact textarea {
+    border: 1px solid #d9d9d9;
 }
 
-.formcontact, .formcontact input, .formcontact textarea, .formcontact button {
-  border-radius: 8px;
+.formcontact,
+.formcontact input,
+.formcontact textarea,
+.formcontact button {
+    border-radius: 8px;
 }
 
 .formcontact form {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
     padding: 8px 15px;
     margin: 1em 0;
 }
 
-
-.formcontact label {
-  color: #1e1e1e;
-  line-height: 2em;
+.formcontact label,
+.formcontact button {
+    font-size: 20px;
 }
 
-.formcontact input, .formcontact textarea {
-  text-indent: 1em;
-  line-height: 2.5em;
+.formcontact label {
+    color: #1e1e1e;
+    line-height: 2em;
+}
+
+.formcontact input,
+.formcontact textarea {
+    text-indent: 1em;
+    line-height: 2.5em;
 }
 
 .formcontact button {
-  margin-top: 1em;
-  line-height: 3em;
-  color: #f5f5f5;
-  background-color: #2c2c2c;
+    margin-top: 1em;
+    line-height: 3em;
+    color: #f5f5f5;
+    background-color: #2c2c2c;
 }
