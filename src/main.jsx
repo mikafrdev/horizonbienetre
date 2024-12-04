@@ -1,7 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import {} from "react-router-dom";
 
 import PageError from "./pages/PageError";
 import Header from "./components/Header";

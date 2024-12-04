@@ -3,56 +3,26 @@ import { Link, NavLink } from "react-router-dom";
 import Logo from "./../../assets/Logo.jpg";
 import PictoPhone from "./../PictoPhone";
 import IconMenu from "./../../assets/menu.png";
-import dataNavigation from "../../data/navigation.json";
-
-/* import Fade from "../Fade"; */
-/* import Navigation from "../Navigation"; */
+import PictoNav from "../PictoNav";
+import NavBar from "../NavBar";
 import "./style.css";
 
 export default function Header() {
-    const [displayNav, setdisplayNav] = useState(false);
-    const [state, setState] = useState(false);
-    /* const className = state === VISIBLE ? "fade" : "fade out"; */
+    const [open, setOpen] = useState(false);
 
-    let refNavigation = useRef();
-
-    useEffect(() => {
-        document.addEventListener("click", handleClickOutside, true)
-    })
-
-    const handleClickOutside = (e) => {
-        if (refNavigation.current && !refNavigation.current.contains(e.target)) setdisplayNav(false)
-        
-    };
-    const toggle = () => {
-        /* console.log("CLIC !!!!!"); */
-        setdisplayNav((o) => !o);
+    const toggleNavBar = () => {
+        setOpen(!open);
     };
 
-    console.log("Navigation - displayNav : ", displayNav);
+    if (open) {
+        document.body.classList.add("active-navbar");
+    } else {
+        document.body.classList.remove("active-navbar");
+    }
 
     return (
         <header>
-            {displayNav ? (
-                <div
-                    /* className={`navigation ${className}`} */
-                    className="navigation fade"
-                    style={{ minHeight: screen.availHeight }}
-                    ref={refNavigation}
-                >
-                    <ul>
-                        {dataNavigation.map((item, index) => (
-                            <li key={index} onClick={toggle} className="test">
-                                <NavLink to={item.UrlPage}>
-                                    {item.PageName}
-                                </NavLink>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            ) : (
-                ""
-            )}
+            <NavBar open={open} setOpen={setOpen} toggleNavBar={toggleNavBar} />
             <div>
                 <Link to="/">
                     <img src={Logo} alt="Logo Horizon Bien Etre" />
@@ -63,8 +33,15 @@ export default function Header() {
                 fillPhoneColor="#1E1E1E"
                 fillCallColor="1E1E1E"
             />
-            <nav>
-                <img src={IconMenu} alt="Menu icon" onClick={toggle} />
+            <nav onClick={toggleNavBar}>
+                <PictoNav fillColor="#666" stroleColor="#666" />
+                {/* <img src={IconMenu} alt="Menu icon" onClick={handlerClick} /> */}
+                {/* <img src={`${open ? IconClose : IconMenu}`} alt="Menu icon" onClick={toggleNavBar} /> */}
+                {/* {open
+                    ? [<PictoClose fillColor="#666" stroleColor="#666" />]
+                    : [<PictoNav fillColor="#666" stroleColor="#666" />]} */}
+                {/* {open && <PictoClose fillColor="#666" stroleColor="#666" />}
+                {!open && <PictoNav fillColor="#666" stroleColor="#666" />} */}
             </nav>
         </header>
     );

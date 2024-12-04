@@ -8,9 +8,9 @@ import "./style.css";
 
 export default function Home() {
 
-    const prestation1 = 'Massages Bien-Être Harmonisant';
+    const prestation1 = 'Massage du monde intuitif';
     const prestation2 = 'Les soins énergétiques';
-    const prestation3 = 'La formule détente profonde';
+    const prestation3 = 'Les formules bien-être';
 
     return (
         <main>
@@ -20,7 +20,7 @@ export default function Home() {
             <div className="container_light description">
                 <h2>Horizon bien-être, un lieu de détente et de bienveillance</h2>
                 <div className="img_salon ombre"></div>
-                <p>Mon objectif est de vous offrir une expérience unique et revitalisante. Que vous soyez à la recherche d'un moment de détente profonde, d'un soulagement du stress, de l'élimination des blocages énergétiques ou d'une reconnexion avec votre essence intérieure, j'ai les compétences et les techniques pour répondre à vos besoins spécifiques. j'utilise des produits bio et naturels.</p>
+                <p>Praticienne indépendante, mon objectif est de vous offrir une expérience unique et revitalisante. Que vous soyez à la recherche d’un moment de détente profonde, apaiser le stress, libérer  des blocages énergétiques ou vous reconnecter à votre essence intérieure, mes compétences me permettent de répondre à ces besoins.</p>
             </div>
 
             <div className="container_light prestation">

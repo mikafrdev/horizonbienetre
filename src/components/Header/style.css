@@ -3,14 +3,18 @@
 }
 
 header {
+    position: fixed;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
     height: 138px;
     padding: 0 1em;
+    background-color: #fff;
+    z-index: 1;
 }
 
-header div, nav {
+header div,
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,6 +22,11 @@ header div, nav {
 
 .picto_phone_header {
     justify-content: center;
+}
+
+header nav svg {
+    width: 60px;
+    cursor: pointer;
 }
 
 .picto_phone_header svg {
@@ -30,7 +39,7 @@ nav {
 
 nav img {
     width: 60px;
-    height : auto;
+    height: auto;
     cursor: pointer;
 }
 
@@ -47,13 +56,14 @@ nav img {
     flex-direction: column;
 }
 
-.navigation, .fade.out {
+.navigation,
+.fade.out {
     transform: translateX(-306px);
 }
 
 .fade,
 .fade.out {
-    transition-duration: .3s;
+    transition-duration: 0.3s;
 }
 
 .fade {
@@ -98,9 +108,9 @@ nav img {
     line-height: 3em;
 }
 
-
 @media screen and (min-width: 800px) {
-    .phone img, nav img {
+    .phone img,
+    nav img {
         width: 80px;
     }
-  }
+}
