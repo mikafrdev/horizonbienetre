@@ -1,0 +1,20 @@
+[
+    {
+        "title" : "Formule douceur",
+        "img" : "src/assets/visage-femme-mains1.jpg",
+        "text" : "45 min de massage du monde intuitif + 15 min de soin énergétique",
+        "prix" : "55 €"
+    },
+    {
+        "title" : "Formule détente",
+        "img" : "src/assets/Soin-energetique.jpg",
+        "text" : "1h de massage du monde intuitif + 30 min de soin énergétique",
+        "prix" : "70 €"
+    },
+    {
+        "title" : "Formule détente profonde",
+        "img" : "src//assets/Formule-detente-profonde.jpeg",
+        "text" : "1H30 de massage du monde intuitif + 30 minutes de soin énergétique",
+        "prix" : "90 €"
+    }
+]

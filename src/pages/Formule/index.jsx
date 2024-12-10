@@ -1,6 +1,6 @@
 import Illustration from '../../components/Illustration';
 import CardPresta from '../../components/CardPresta';
-import dataMassages from "../../data/massages.json"
+import dataFormules from "../../data/formules.json"
 import "./style.css";
 
 export default function Formule() {
@@ -13,7 +13,7 @@ export default function Formule() {
             <Illustration title={IllustrationTxt} className='illustration_massages' />
 
             <div className="Container_prestations container_light">
-                {dataMassages.map((product, index)=> 
+                {dataFormules.map((product, index)=> 
                     <CardPresta
                         key={index}
                         title={product.title} 
