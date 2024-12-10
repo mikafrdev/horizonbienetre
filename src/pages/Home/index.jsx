@@ -8,7 +8,7 @@ import "./style.css";
 
 export default function Home() {
 
-    const prestation1 = 'Massage du monde intuitif';
+    const prestation1 = 'Les massages du monde intuitifs';
     const prestation2 = 'Les soins énergétiques';
     const prestation3 = 'Les formules bien-être';
 

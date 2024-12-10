@@ -57,6 +57,12 @@ footer {
     padding: 0 1em;
 }
 
+.container_light {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .logo:hover {
     filter: drop-shadow(0 0 2em #646cffaa);
 }

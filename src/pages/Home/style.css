@@ -27,11 +27,12 @@ main .description h2 {
 }
 
 .img_salon {
-    height: 347px;
+    width: 70%;
+    height: 220px;
     background-image: url('./../../assets/salon17.jpg');
     background-size: cover;
     background-position: center;
-    border-radius: 30px;
+    border-radius: 5px;
     margin-bottom: 2em;
 }
 

@@ -12,11 +12,11 @@
         "UrlPage": "/soins"
     },
     {
-        "PageName": "Formule (détente profonde)",
+        "PageName": "Formules",
         "UrlPage": "/formule"
     },
     {
-        "PageName": "Carte Cadeau",
+        "PageName": "Cartes Cadeaux",
         "UrlPage": "/cadeau"
     },
     {

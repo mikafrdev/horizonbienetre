@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import Illustration from '../../components/Illustration';
 import Accordion from '../../components/Accordion';
 import FormContact from '../../components/FormContact';
@@ -8,12 +7,6 @@ import "./style.css";
 export default function Cadeau() {
 
     const IllustrationTxt = 'Carte Cadeau';
-
-    const [activeIndex, setActiveIndex] = useState(null);
-
-    const handleItemClick = (index) => {
-        setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
-    };
 
     return (
         <main>
@@ -30,8 +23,6 @@ export default function Cadeau() {
                         num={item.num}
                         title={item.title}
                         text={item.text}
-                        isOpen={activeIndex === index}
-                        onClick={() => handleItemClick(index)}
                     />
                 ))}
 
