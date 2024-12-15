@@ -1,5 +1,4 @@
 import "./style.css";
-/*import star from './../../assets/star_filled.svg'*/
 import PictoStar from "../PictoStar";
 
 export default function Temoignages() {

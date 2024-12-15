@@ -16,11 +16,6 @@
     color: #666;
 }
 
-.contacts_infos, .contacts_infos a {
-    font-family: 'Source serif pro';
-    src: url('./assets/fonts/source-serif-pro/SourceSerifPro-Regular.otf');
-}
-
 .display_phone {
     text-decoration: underline;
 }

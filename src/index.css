@@ -1,3 +1,11 @@
+:root {
+    --primary-color: #8fc3d3;
+    --secondary-color: #8fc3d3;
+    --tertiary-color: #8fc3d3;
+    --primary-font: #8fc3d3;
+    --secondary-font: #8fc3d3;
+}
+
 #root {
     display: flex;
     flex-direction: column;
@@ -32,7 +40,8 @@ a {
 
 body,
 h1,
-h2 {
+h2,
+.contacts_infos, .contacts_infos a {
     font-family: "Adamina", serif, Courier, monospace;
 }
 
