@@ -5,7 +5,7 @@ import "./style.css";
 
 export default function Formule() {
 
-    const IllustrationTxt = 'Formule détente profonde';
+    const IllustrationTxt = 'Les formules bien-être';
 
     return (
         <main>

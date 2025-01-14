@@ -56,11 +56,11 @@ nav img {
 
 /*primary-header*/
 .primary-header.sticking {
-    height: 6rem;
+    height: 4rem;
 }
 
 .primary-header.sticking .logo {
-    height: 5rem;
+    height: 3rem;
 }
 
 header,

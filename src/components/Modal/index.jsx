@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import PictoClose from "../PictoClose";
-import dataNavigation from "../../data/navigation.json";
+import PictoPhone from "./../PictoPhone";
 import "./style.css";
 
 export default function Modal({ children }) {
@@ -8,30 +8,39 @@ export default function Modal({ children }) {
 
     const toggleModal = () => {
         setModal(!modal);
+        document.body.classList.toggle("active-modal");
     };
-
-    if (modal) {
-        document.body.classList.add("active-modal");
-    } else {
-        document.body.classList.remove("active-modal");
-    }
 
     return (
         <>
             <button onClick={toggleModal} className="btn-modal">
-                Découvrir le soin
+                {children}
             </button>
-
-            <div className="modal-close">
-                <button onClick={toggleModal}>
-                    <PictoClose fillColor="#666" stroleColor="#666" />
-                </button>
-            </div>
 
             {modal && (
                 <div className="modal">
+                    <div className="modal-close">
+                        <button onClick={toggleModal}>
+                            <PictoClose fillColor="#666" stroleColor="#666" />
+                        </button>
+                    </div>
                     <div onClick={toggleModal} className="overlay"></div>
-                    {children}
+                    <div className="modal-content">
+                        <a className="CTA_call glow-on-hover" href="tel:">
+                            <PictoPhone
+                                className="picto_phone_header"
+                                fillPhoneColor="#f5f5f5"
+                                fillCallColor="#f5f5f5"
+                            />
+                            <span>Appeler le 01 02 03 04 05</span>
+                        </a>
+                        <p>Appelez nous pour :</p>
+                        <ul>
+                            <li>Prendre rendez-vous</li>
+                            <li>Commander une carte cadeau</li>
+                            <li>En savoir plus sur nos prestations</li>
+                        </ul>
+                    </div>
                 </div>
             )}
         </>

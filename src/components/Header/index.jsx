@@ -1,8 +1,8 @@
-import { useState, useEffect, useRef } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Logo from "./../../assets/Logo.jpg";
 import PictoPhone from "./../PictoPhone";
-import IconMenu from "./../../assets/menu.png";
+// import IconMenu from "./../../assets/menu.png";
 import PictoNav from "../PictoNav";
 import NavBar from "../NavBar";
 import "./style.css";
@@ -29,7 +29,6 @@ export default function Header() {
         
         const navObserver = new IntersectionObserver(
             (entries) => {
-                console.log(entries)
                 primaryHeader.classList.toggle(
                     "sticking",
                     !entries[0].isIntersecting
@@ -41,7 +40,6 @@ export default function Header() {
         navObserver.observe(scrollWatcher);
         
     }, []);
-
 
     return (
         <>
