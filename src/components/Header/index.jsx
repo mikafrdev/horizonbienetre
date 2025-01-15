@@ -63,13 +63,6 @@ export default function Header() {
                 />
                 <nav onClick={toggleNavBar}>
                     <PictoNav fillColor="#666" stroleColor="#666" />
-                    {/* <img src={IconMenu} alt="Menu icon" onClick={handlerClick} /> */}
-                    {/* <img src={`${open ? IconClose : IconMenu}`} alt="Menu icon" onClick={toggleNavBar} /> */}
-                    {/* {open
-                    ? [<PictoClose fillColor="#666" stroleColor="#666" />]
-                    : [<PictoNav fillColor="#666" stroleColor="#666" />]} */}
-                    {/* {open && <PictoClose fillColor="#666" stroleColor="#666" />}
-                {!open && <PictoNav fillColor="#666" stroleColor="#666" />} */}
                 </nav>
             </header>
         </>

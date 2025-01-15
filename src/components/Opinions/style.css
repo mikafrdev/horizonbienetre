@@ -1,46 +1,44 @@
-.temoignages {
-    
+.opinion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.stars_date {
+.opinion_stars_date {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 1em 0;
 }
 
-.stars {
+.opinion_stars {
     display: flex;
     list-style-type: none;
 }
 
-.stars li {
+.opinion_stars li {
     margin-right: 16px;
 }
 
-.stars li svg {
+.opinion_stars li svg {
     width: 16px;
 }
 
-.date {
+.opinion_date {
     font-style: italic;
     color: #666;
 }
 
-.temoignages h2 {
+.opinions h2 {
     margin-top: 1em;
     font-size: 32px;
 }
 
-.temoignages h2, .temoignages p {
+.opinions h2, .opinions p {
     color: #666;
 }
 
-.temoignages .name {
+.opinion_name {
     display: flex;
     margin-bottom: 1em;
-}
-
-.temoignages .avis {
-    display: flex;
 }

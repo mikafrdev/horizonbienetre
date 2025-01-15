@@ -3,7 +3,7 @@ import img1 from './../../assets/massage-bien-etre.jpeg'
 import img2 from './../../assets/Soin-energetique.jpg'
 import img3 from './../../assets/Formule-detente-profonde.jpeg'
 import CardHP from "../../components/CardHP";
-import Temoignages from "../../components/Temoignages";
+import Opinions from '../../components/Opinions';
 import "./style.css";
 
 export default function Home() {
@@ -46,7 +46,7 @@ export default function Home() {
 
             </div>
 
-            <Temoignages />
+            <Opinions />
 
         </main>
     );
