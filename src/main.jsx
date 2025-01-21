@@ -12,6 +12,7 @@ import Formule from "./pages/Formule";
 import Cadeau from "./pages/Cadeau";
 import Salon from "./pages/Salon";
 import Contacts from "./pages/Contacts";
+import Tests from "./pages/Tests";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import "./index.css";
 
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
                 path: "/salon",
                 element: <Salon />,
             },
+            {
+                path: "/tests",
+                element: <Tests />,
+            }
         ],
     },
 ]);

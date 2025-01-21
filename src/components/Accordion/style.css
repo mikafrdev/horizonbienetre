@@ -68,12 +68,12 @@
     );
 }
 
-.wrapper .arrow {
+.accordion .arrow {
     font-size: 2rem;
     transition: 0.5s ease-in-out;
 }
 
-.arrow.active {
+.accordion .arrow.active {
     rotate: 180deg;
     color: #1db954;
 }
