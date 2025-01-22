@@ -10,14 +10,14 @@ export default function Opinions() {
 
     function nextOpinion() {
         SetOpinionIndex((index) => {
-            if (index === images.length - 1) return 0;
+            if (index === dataOpinions.length - 1) return 0;
             return index + 1;
         });
     }
 
     function prevOpinion() {
         SetOpinionIndex((index) => {
-            if (index === 0) return images.length - 1;
+            if (index === 0) return dataOpinions.length - 1;
             return index - 1;
         });
     }
@@ -37,51 +37,18 @@ export default function Opinions() {
         return stars;
     };
 
-    /* {
-    "note" : 5,
-    "date" : "Janvier 2025",
-    "name" : "Marc",
-    "opinion" : "opinion Marc opinion Marc opinion Marc opinion Marc opinion Marc opinion Marc opinion Marc opinion Marc "
-},
-{
-    "note" : 3,
-    "date" : "Avril 2023",
-    "name" : "Didier",
-    "opinion" : "opinion didier opinion didier opinion didier opinion didier opinion didier opinion didier opinion didier opinion didier "
-},
-{
-    "note" : 1,
-    "date" : "Septembre 2024",
-    "name" : "Paul",
-    "opinion" : "opinion Paul opinion Paul opinion Paul opinion Paul opinion Paul opinion Paul opinion Paul opinion Paul opinion Paul "
-} */
-
     return (
         <div className="opinions">
             <h2>Témoignages</h2>
-
-            {/* TEST */} 
             <section>
                 <button className="btn-left">
-                    <RiArrowDropDownLine
-                        onClick={prevOpinion}
-                    />
+                    <RiArrowDropDownLine onClick={prevOpinion} />
                 </button>
                 <button className="btn-right">
-                    <RiArrowDropDownLine
-                        onClick={nextOpinion}
-                    />
+                    <RiArrowDropDownLine onClick={nextOpinion} />
                 </button>
 
-                <div className="opinion">
-
-                </div>
-
-                <div className="opinion">
-                    
-                </div>
-
-                {/* {dataOpinions.map((item, index) => (
+                {dataOpinions.map((item, index) => (
                     <div
                         className="opinion"
                         key={index}
@@ -96,7 +63,34 @@ export default function Opinions() {
                         <p className="opinion_name">{item.name}</p>
                         <p className="opinion_text">{item.opinion}</p>
                     </div>
-                ))} */}
+                ))}
+
+                {/* <div
+                    style={{
+                        position: "absolute",
+                        bottom: ".5rem",
+                        left: "50%",
+                        translate: "-50%",
+                        display: "flex",
+                        gap: ".25rem",
+                    }}
+                >
+                    {dataOpinions.map((_, index) => (
+                        <button
+                            key={index}
+                            className="img-slider-dot-btn"
+                            aria-label={`View Image ${index + 1}`}
+                            onClick={() => setOpinionIndex(index)}
+                        >
+                            {index === opinionIndex ? (
+                                <CircleDot aria-hidden />
+                            ) : (
+                                <Circle aria-hidden />
+                            )}
+                        </button>
+                    ))}
+                </div>
+                <div id="after-image-slider-controls" /> */}
             </section>
         </div>
     );

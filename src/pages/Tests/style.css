@@ -101,6 +101,10 @@
     width: 100%;
 }
 
+.opinions svg {
+    width: 200px;
+}
+
 @media not (prefers-reduced-motion) {
     .img-slider-img {
         transition: translate 300ms ease-in-out;
