@@ -1,8 +1,8 @@
 import dataOpinions from "../../data/opinions.json";
-import OpinionsSlider from "../OpinionsSlider";
 import { useState } from "react";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import PictoStar from "../PictoStar";
+import PictoArrow from "../PictoArrow";
 import "./style.css";
 
 export default function Opinions() {
@@ -10,6 +10,7 @@ export default function Opinions() {
 
     function nextOpinion() {
         SetOpinionIndex((index) => {
+            console.log("test")
             if (index === dataOpinions.length - 1) return 0;
             return index + 1;
         });
@@ -17,6 +18,7 @@ export default function Opinions() {
 
     function prevOpinion() {
         SetOpinionIndex((index) => {
+            console.log("test2")
             if (index === 0) return dataOpinions.length - 1;
             return index - 1;
         });
@@ -41,11 +43,11 @@ export default function Opinions() {
         <div className="opinions">
             <h2>Témoignages</h2>
             <section>
-                <button className="btn-left">
-                    <RiArrowDropDownLine onClick={prevOpinion} />
+                <button className="btn-left" onClick={prevOpinion}>
+                    <PictoArrow fillColor="#555" />
                 </button>
-                <button className="btn-right">
-                    <RiArrowDropDownLine onClick={nextOpinion} />
+                <button className="btn-right" onClick={nextOpinion}>
+                    <PictoArrow fillColor="#555" />
                 </button>
 
                 {dataOpinions.map((item, index) => (

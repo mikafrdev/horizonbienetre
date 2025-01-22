@@ -6,7 +6,7 @@ export default function PictoCircle({ strokeColor, fillColor }) {
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
-            fill="red"
+            fill="#777"
         >
             <g
                 id="SVGRepo_bgCarrier"

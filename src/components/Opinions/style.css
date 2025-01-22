@@ -23,47 +23,48 @@
     top: 0;
     bottom: 0;
     padding: 0;
-    color: #555;
+    width: 3rem;
     transition: background-color 100ms ease-in-out;
     cursor: pointer;
-    z-index: 1;
 }
 
-.opinions button.btn-left svg,
+.opinions button.btn-left:hover,
+.opinions button.btn-right:hover {
+    background-color: rgb(0, 0, 0, 0.2);
+}
+
+.opinions section button.btn-left,
+.opinions button.btn-right {
+    z-index: 2;
+}
+
+.opinions section button.btn-left {
+    left: 0;
+}
+
+.opinions button.btn-left svg {
+    rotate: 180deg;
+}
+.opinions button.btn-right {
+    right: 0;
+}
+
 .opinions button.btn-right svg {
-    font-size: 5rem;
-    rotate: 90deg;
+    rotate: 0deg;
 }
 
 .opinions section .arrow-left > *,
 .opinions section .arrow-right > * {
 }
 
-.opinions button.btn-left:hover,
-.opinions button.btn-left svg:hover {
-    background-color: rgb(0, 0, 0, 0.2);
-}
-
-.opinions button.btn-right {
-    right: 0;
-}
-
-.opinions button.btn-right svg {
-    rotate: 270deg;
-}
-
 .opinion {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-shrink: 0;
+    width: 100%;
     padding: 0 3rem;
     transition: translate 300ms ease-in-out;
-}
-
-/*TEST*/
-.opinion {
-    width: 100px;
-    height: 200px;
 }
 
 .opinion_stars_date {
