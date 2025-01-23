@@ -72,12 +72,12 @@ footer {
     align-items: center;
 }
 
-.logo:hover {
+/* .logo:hover {
     filter: drop-shadow(0 0 2em #646cffaa);
 }
 .logo.react:hover {
     filter: drop-shadow(0 0 2em #61dafbaa);
-}
+} */
 
 .ombre {
     -webkit-box-shadow: 2px 2px 19px 3px rgba(0, 0, 0, 0.62);

@@ -1,3 +1,4 @@
+import Infos from "../../utils/Infos";
 import PictoPhone from "../PictoPhone";
 import PictoPinpoint from "../PictoPinpoint";
 import PictoMail from "../PictoMail";
@@ -27,23 +28,38 @@ export default function ContactInfos() {
                         <PictoPinpoint strokeColor="#1E1E1E" />
                     </div>
                     <div>
-                        45 rue Claude Bernard
-                        <br /> 59200 Tourcoing
+                        {Infos.adress.street} <br /> {Infos.adress.cp}
+                        {Infos.adress.town}
                     </div>
 
                     <div className="footer_mail">
                         <PictoMail strokeColor="#1E1E1E" />
                     </div>
-                    <div>horizonbienetre5@gmail.com</div>
+                    <div>{Infos.email}</div>
                 </div>
             </div>
 
             <div className="contacts_infos_next">
                 <div className="footer_fb">
-                    <PictoFB strokeColor="#1E1E1E" strokeWidth="5" />
+                    <a
+                        href={`${Infos.facebook}`}
+                        target="blank"
+                        title="Facebook Horizon-bien être"
+                    >
+                        <PictoFB strokeColor="#1E1E1E" strokeWidth="5" />
+                    </a>
                 </div>
                 <div className="footer_insta">
-                    <PictoInsta fillColor="transparent" strokeColor="#1E1E1E" />
+                    <a
+                        href={`${Infos.instagram}`}
+                        target="blank"
+                        title="Instagram Horizon-bien être"
+                    >
+                        <PictoInsta
+                            fillColor="transparent"
+                            strokeColor="#1E1E1E"
+                        />
+                    </a>
                 </div>
             </div>
 

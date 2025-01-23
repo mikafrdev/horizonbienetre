@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import Infos from "../../utils/Infos";
 import PictoClose from "../PictoClose";
 import PictoPhone from "./../PictoPhone";
 import "./style.css";
@@ -32,7 +33,7 @@ export default function Modal({ children }) {
                                 fillPhoneColor="#f5f5f5"
                                 fillCallColor="#f5f5f5"
                             />
-                            <span>Appeler le 01 02 03 04 05</span>
+                            <span>Appeler le {Infos.tel}</span>
                         </a>
                         <p>Appelez nous pour :</p>
                         <ul>
