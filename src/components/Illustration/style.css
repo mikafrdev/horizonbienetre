@@ -52,7 +52,7 @@ main .illustration_contact {
     justify-content: center;
     align-items: center;
     height: 100px;
-    background-color: #1373a3;
+    background-color: var(--color-tertiary);
 }
 
 main .illustration div {
@@ -70,7 +70,7 @@ main .illustration div h1 {
 }
 
 main .illustration_contact h1 {
-    background-color: #1373a3;
+    background-color: var(--color-tertiary);
 }
 
 @media screen and (min-width: 768px) {

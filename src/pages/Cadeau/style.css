@@ -6,7 +6,7 @@
 
 .container_cadeau p {
     font-size: 16px;
-    color: #666;
+    color: var(--color-secondary);
     margin: 3rem 0;
     text-align: justify;
 }

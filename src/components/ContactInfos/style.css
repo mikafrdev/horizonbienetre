@@ -14,7 +14,7 @@
 }
 
 .container_contact .horaires, .container_contact .detail_prestations, .contacts_infos, .contacts_infos a {
-    color: #666;
+    color: var(--color-secondary);
 }
 
 .display_phone {

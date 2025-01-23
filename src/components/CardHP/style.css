@@ -10,7 +10,7 @@
 }
 
 h3 {
-    color: #1373A3;
+    color: var(--color-tertiary);
     font-size: 23px;
     margin-top: 1em;
 }

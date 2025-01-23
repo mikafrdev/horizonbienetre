@@ -48,7 +48,7 @@ body.active-modal {
     max-width: 600px;
     min-width: 80%;
     background-color: aliceblue;
-    color: #666;
+    color: var(--color-secondary);
     z-index: 2;
 }
 

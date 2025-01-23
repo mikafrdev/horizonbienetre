@@ -1,5 +1,5 @@
 footer {
-    background-color: #CAC0AF;
+    background-color: var(--bg-primary);
     display: flex;
     flex-direction: column;
 }
@@ -8,5 +8,5 @@ footer h2 {
     display: flex;
     margin: 1em 0;
     line-height: 30px;
-    border-bottom: 1px solid #666;
+    border-bottom: 1px solid var(--color-secondary);
 }

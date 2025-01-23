@@ -19,7 +19,7 @@
 }
 
 .card_presta h3, .card_presta p, .card_presta span {
-    color: #666;
+    color: var(--color-secondary);
     padding: 0 1em;
 }
 

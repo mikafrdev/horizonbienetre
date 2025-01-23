@@ -89,7 +89,7 @@
 
 .opinion_date {
     font-style: italic;
-    color: #666;
+    color: var(--color-secondary);
 }
 
 .opinions h2 {
@@ -99,7 +99,7 @@
 
 .opinions h2,
 .opinions p {
-    color: #666;
+    color: var(--color-secondary);
 }
 
 .opinion_name {
