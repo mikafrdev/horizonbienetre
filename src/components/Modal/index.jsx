@@ -20,13 +20,16 @@ export default function Modal({ children }) {
 
             {modal && (
                 <div className="modal">
-                    <div className="modal-close">
-                        <button onClick={toggleModal}>
-                            <PictoClose fillColor="#666" stroleColor="#666" />
-                        </button>
-                    </div>
                     <div onClick={toggleModal} className="overlay"></div>
                     <div className="modal-content">
+                        <div className="modal-close">
+                            <button onClick={toggleModal}>
+                                <PictoClose
+                                    fillColor="#666"
+                                    stroleColor="#666"
+                                />
+                            </button>
+                        </div>
                         <a className="CTA_call glow-on-hover" href="tel:">
                             <PictoPhone
                                 className="picto_phone_header"
