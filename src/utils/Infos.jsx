@@ -7,7 +7,7 @@ const Infos = {
     },
     email : "horizonbienetre5@gmail.com",
     facebook : "https://www.facebook.com/Horizonbienetre59",
-    instagram : "horizon.bien.etre"
+    instagram : "https://www.instagram.com/horizon.bien.etre/"
 };
 
 /* const infosa = [

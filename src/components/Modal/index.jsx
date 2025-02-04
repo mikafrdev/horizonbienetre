@@ -30,7 +30,7 @@ export default function Modal({ children }) {
                                 />
                             </button>
                         </div>
-                        <a className="CTA_call glow-on-hover" href="tel:">
+                        <a className="CTA_call glow-on-hover" href={`tel:${Infos.tel}`}>
                             <PictoPhone
                                 className="picto_phone_header"
                                 fillPhoneColor="#f5f5f5"

@@ -1,26 +1,32 @@
 [
     {
-        "note" : 4,
-        "date" : "Juillet 2024",
-        "name" : "Françoise",
-        "opinion" : "Un grand merci pour cet excellent moment passé hier soir, (massage spécial femme enceinte d’une heure). Accueil extrêmement sympathique, aux petits soins dès l’arrivée et tout au long de la prestation. Sans oublier Locaux très propres, calme, décoration très jolie. Hâte de revenir. Un grand merci pour cet excellent moment passé hier soir, (massage spécial femme enceinte d’une heure). Accueil extrêmement sympathique, aux petits soins dès l’arrivée et tout au long de la prestation. Sans oublier Locaux très propres, calme, décoration très jolie. Hâte de revenir"
+        "note" : 5,
+        "date" : "Mars 2024",
+        "name" : "Faustine",
+        "opinion" : "C'était mon premier massage et je n'ai pas été déçue. J'ai été gentiment accueillie dans un endroit chaleureux et calme. Je me suis sentie à l'aise tout de suite. Le massage en lui même était juste génial et la professionnelle adorable et très douée. Petit plus pour le petit échange à la fin de la prestation très agréable :) Ce ne sera certainement pas ma dernière visite ! Un grand merci ❤️👌"
     },
     {
         "note" : 5,
-        "date" : "Janvier 2025",
-        "name" : "Marc",
-        "opinion" : "j’ai offert ce massage à ma mère, elle a adoré ! Elle est revenue de la séance de très bonne humeure, ce qui nous a permis de passer un dîner particluièrement agréable 😇"
+        "date" : "Mai 2024",
+        "name" : "Joyce",
+        "opinion" : "J'avais réservé hier un massage d'1h30, et ce fut très agréable ! Moi qui ai une fibromyalgie,   j'ai besoin qu'on y aille en douceur et c'est exactement ce qu'a fait Béatrice, qui a su écouter mes besoins et s'est laissée porter par ses ressentis toujours très justes. La pièce et l'ambiance sont agréables, on est vite mis à l'aise. A la fin du massage, j'ai également pu échanger avec Béatrice sur nos ressentis et nos expériences, c'était très sympathique. Elle m'a d'ailleurs gentiment  offert une bouteille d'eau. J'en ressors apaisée et j'ai bien mieux dormi ! Je recommande et reviendrai avec grand plaisir 😊 Encore un grand merci pour ce moment ☀️"
     },
     {
-        "note" : 3,
-        "date" : "Avril 2023",
-        "name" : "Didier",
-        "opinion" : "Un massage de très grande qualité. Toutes mes tensions sont dénouées. Excellent! J’y retournerai certainement!"
+        "note" : 5,
+        "date" : "Juillet 2024",
+        "name" : "Sylvia",
+        "opinion" : "Massage très agréable et doux que je recommande vivement Détente assurée lors de ce moment privilégié pour se chouchouter et lâcher prise"
     },
     {
-        "note" : 1,
-        "date" : "Septembre 2024",
-        "name" : "Paul",
-        "opinion" : "Un massage de très grande qualité."
+        "note" : 5,
+        "date" : "Mars 2024",
+        "name" : "Christine",
+        "opinion" : "Accueil chaleureux, le massage est au top si bien dans l'énergie que dans la relaxation. La masseuse est à l'écoute, l'échange et de bons conseils. Je recommande++ ce lieu de bien-être et de ressourcement."
+    },
+    {
+        "note" : 5,
+        "date" : "Avril 2024",
+        "name" : "Anaïs",
+        "opinion" : "Massage incroyable, je recommande vraiment cet institut. Je reviendrais très bientôt, tout était parfait. Merci pour votre gentillesse et ce super moment de détente."
     }
 ]

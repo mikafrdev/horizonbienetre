@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo from "./../../assets/Logo.jpg";
 import PictoPhone from "./../PictoPhone";
-// import IconMenu from "./../../assets/menu.png";
+import Modal from "../Modal";
 import PictoNav from "../PictoNav";
 import NavBar from "../NavBar";
 import "./style.css";
@@ -56,11 +56,13 @@ export default function Header() {
                         <img className="logo" src={Logo} alt="Logo Horizon Bien Etre" />
                     </Link>
                 </div>
-                <PictoPhone
-                    className="picto_phone_header"
-                    fillPhoneColor="#1E1E1E"
-                    fillCallColor="1E1E1E"
-                />
+                <Modal>
+                                        <PictoPhone
+                                            className="picto_phone_footer"
+                                            fillPhoneColor="#1E1E1E"
+                                            fillCallColor="1E1E1E"
+                                        />
+                                        </Modal>
                 <nav onClick={toggleNavBar}>
                     <PictoNav fillColor="#666" stroleColor="#666" />
                 </nav>
