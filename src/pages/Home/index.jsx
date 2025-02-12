@@ -1,7 +1,7 @@
 import Illustration from '../../components/Illustration';
-import img1 from './../../assets/massage-bien-etre.jpeg'
-import img2 from './../../assets/Soin-energetique.jpg'
-import img3 from './../../assets/Formule-detente-profonde.jpeg'
+import imgMassages from './../../assets/Zen-stones-candles-and-flowers-on-the-background-of-woman-receiving-treatment.jpg'
+import imgSoins from './../../assets/reiki-master-working-with-patient.jpg'
+import imgFormules from './../../assets/Formule-detente-profonde.jpeg'
 import CardHP from "../../components/CardHP";
 import Opinions from '../../components/Opinions';
 import "./style.css";
@@ -28,19 +28,19 @@ export default function Home() {
 
                 <CardHP
                     title={prestation1}
-                    img={img1}
+                    img={imgMassages}
                     link={'/massages'}
                 />
 
                 <CardHP
                     title={prestation2}
-                    img={img2}
+                    img={imgSoins}
                     link={'/soins'}
                 />
 
                 <CardHP
                     title={prestation3}
-                    img={img3}
+                    img={imgFormules}
                     link={'/formule'}
                 />
 

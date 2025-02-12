@@ -1,6 +1,6 @@
 import "./style.css";
 import img1 from './../../assets/massage-bien-etre.jpeg'
-import img2 from './../../assets/Soin-energetique.jpg'
+import img2 from './../../assets/close-up-of-hands-placed-on-girls-head.jpg'
 import img3 from './../../assets/Formule-detente-profonde.jpeg'
 
 export default function Salon() {

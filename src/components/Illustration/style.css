@@ -8,7 +8,7 @@ main .illustration_hp {
     height: 208px;
     max-height: 430px;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url(/src/assets/Illustration_hp_big.png);
+        url(/src/assets/close-up-of-young-beautiful-spa-salon.jpg);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -17,7 +17,7 @@ main .illustration_hp {
 main .illustration_massages {
     height: 210px;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url(/src/assets/massage-bien-etre.jpeg);
+        url(/src/assets/Zen-stones-candles-and-flowers-on-the-background-of-woman-receiving-treatment.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -25,7 +25,7 @@ main .illustration_massages {
 main .illustration_soins {
     height: 210px;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url(/src/assets/Soin-energetique.jpg);
+        url(/src/assets/reiki-master-working-with-patient.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -75,7 +75,7 @@ main .illustration_contact h1 {
 
 @media screen and (min-width: 768px) {
     main .illustration_hp {
-        height: 
+        height: auto;
     }
 }
 

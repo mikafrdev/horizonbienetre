@@ -1,6 +1,5 @@
 import Illustration from "../../components/Illustration";
 import Accordion from "../../components/Accordion";
-import Modal from "./../../components/Modal";
 import CardPresta from "../../components/CardPresta";
 import dataMassagesInfos from "../../data/massages_infos.json";
 import dataMassages from "../../data/massages.json";
