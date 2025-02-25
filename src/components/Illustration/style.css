@@ -7,7 +7,7 @@ main .illustration_hp {
     width: 100%;
     height: 208px;
     max-height: 430px;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         url(/src/assets/close-up-of-young-beautiful-spa-salon.jpg);
     background-size: contain;
     background-position: center;
@@ -16,7 +16,7 @@ main .illustration_hp {
 
 main .illustration_massages {
     height: 210px;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         url(/src/assets/Zen-stones-candles-and-flowers-on-the-background-of-woman-receiving-treatment.jpg);
     background-size: cover;
     background-position: center;
@@ -24,16 +24,16 @@ main .illustration_massages {
 
 main .illustration_soins {
     height: 210px;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         url(/src/assets/reiki-master-working-with-patient.jpg);
     background-size: cover;
     background-position: center;
 }
 
 main .illustration_formule {
-    height: 283px;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url(/src/assets/Illustration_hp_big.png);
+    height: 250px;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(/src/assets/Formule-detente-profonde.jpeg);
     background-size: cover;
     background-position: center;
 }
@@ -44,7 +44,6 @@ main .illustration_cadeau {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    margin-top: 2rem;
 }
 
 main .illustration_contact {

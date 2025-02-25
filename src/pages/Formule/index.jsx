@@ -10,7 +10,7 @@ export default function Formule() {
     return (
         <main>
             
-            <Illustration title={IllustrationTxt} className='illustration_massages' />
+            <Illustration title={IllustrationTxt} className='illustration_formule' />
 
             <div className="Container_prestations container_light">
                 {dataFormules.map((product, index)=> 
