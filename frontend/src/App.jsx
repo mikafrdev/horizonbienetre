@@ -56,8 +56,6 @@ function App() {
     return (
         <>
             <h1>Test O2switch Frontend Backend</h1>
-            <h2>frontend : dev.horizonbienetre.fr</h2>
-            <h2>backend : dev.horizonbienetre.app</h2>
             <div>
                 <p>{hello || "En attente api/hello ..."}</p>
                 <div>
