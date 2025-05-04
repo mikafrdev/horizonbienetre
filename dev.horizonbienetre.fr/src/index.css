@@ -1,0 +1,100 @@
+:root {
+  --color-primary: #8fc3d3;
+  --color-secondary: #555;
+  --color-tertiary: #1373A3;
+  --bg-primary: #CAC0AF;
+  --bg-secondary: #CAC0AF;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: normal;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "Source serif pro";
+  src: url("./assets/fonts/source-serif-pro/SourceSerifPro-Regular.otf");
+}
+
+body,
+h1,
+h2,
+.contacts_infos, .contacts_infos a {
+  font-family: "Adamina", serif, Courier, monospace;
+}
+
+body h3,
+body p,
+input,
+textarea {
+  font-family: "Source serif pro", serif, monospace;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container_light,
+footer {
+  padding: 0 1em;
+}
+
+.container_light {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+} */
+
+.ombre {
+  -webkit-box-shadow: 2px 2px 19px 3px rgba(0, 0, 0, 0.62);
+  box-shadow: 2px 2px 19px 3px rgba(0, 0, 0, 0.62);
+}
+
+@keyframes logo-spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+      animation: logo-spin infinite 20s linear;
+  }
+}

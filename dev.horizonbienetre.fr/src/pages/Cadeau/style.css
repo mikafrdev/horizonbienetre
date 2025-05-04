@@ -1,0 +1,12 @@
+.container_cadeau {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.container_cadeau p {
+    font-size: 16px;
+    color: var(--color-secondary);
+    margin: 3rem 0;
+    text-align: justify;
+}

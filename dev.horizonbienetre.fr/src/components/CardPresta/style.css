@@ -1,0 +1,40 @@
+.card_presta, .card_presta img {
+    border-top-left-radius : 30px;
+    border-top-right-radius : 30px;
+}
+
+.card_presta {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    margin: 3rem 0;
+    padding-bottom: 2em;
+}
+
+.card_presta img {
+    width: 100%;
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.card_presta h3, .card_presta p, .card_presta span {
+    color: var(--color-secondary);
+    padding: 0 1em;
+}
+
+.card_presta h3 {
+    font-size: 23px;
+    margin: 1em 0;
+}
+
+.card_presta p {
+    text-align: left;
+    font-size: 16px;
+    margin: 1em 0 0 0;
+}
+
+.card_presta span {
+    text-align: right;
+    font-weight: bold;
+}

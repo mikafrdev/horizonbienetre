@@ -1,0 +1,30 @@
+[
+    {
+        "PageName": "Accueil",
+        "UrlPage": "/"
+    },
+    {
+        "PageName": "Massages",
+        "UrlPage": "/massages"
+    },
+    {
+        "PageName": "Soins énergétiques",
+        "UrlPage": "/soins"
+    },
+    {
+        "PageName": "Formules bien-être",
+        "UrlPage": "/formule"
+    },
+    {
+        "PageName": "Cartes Cadeaux",
+        "UrlPage": "/cadeau"
+    },
+    {
+        "PageName": "Nous contacter",
+        "UrlPage": "/contacts"
+    },
+    {
+        "PageName": "Salon",
+        "UrlPage": "/salon"
+    }
+]

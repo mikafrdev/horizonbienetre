@@ -1,0 +1,20 @@
+[
+    {
+        "title" : "Formule douceur",
+        "img" : "Formule-douceur-présentation-bougies-roses.jpg",
+        "text" : "45 min de massage du monde intuitif + 15 min de soin énergétique",
+        "prix" : "55 €"
+    },
+    {
+        "title" : "Formule détente",
+        "img" : "Formule-détente-présentation-bougies-blanches.jpg",
+        "text" : "1h de massage du monde intuitif + 30 min de soin énergétique",
+        "prix" : "70 €"
+    },
+    {
+        "title" : "Formule détente profonde",
+        "img" : "Formule-détente-profonde-présentation-bougies-rouges.jpg",
+        "text" : "1H30 de massage du monde intuitif + 30 minutes de soin énergétique",
+        "prix" : "90 €"
+    }
+]

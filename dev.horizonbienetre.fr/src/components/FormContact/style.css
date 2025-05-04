@@ -1,0 +1,47 @@
+.formcontact {
+    width: 90%;
+}
+
+.formcontact form,
+.formcontact input,
+.formcontact textarea {
+    border: 1px solid #d9d9d9;
+}
+
+.formcontact,
+.formcontact input,
+.formcontact textarea,
+.formcontact button {
+    border-radius: 8px;
+}
+
+.formcontact form {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 15px;
+    margin: 1em 0;
+}
+
+.formcontact label,
+.formcontact button {
+    font-size: 20px;
+}
+
+.formcontact label {
+    color: #1e1e1e;
+    line-height: 2em;
+}
+
+.formcontact input,
+.formcontact textarea {
+    text-indent: 1em;
+    line-height: 2.5em;
+}
+
+.formcontact button {
+    margin: 1rem 0 2rem 0;
+    line-height: 3em;
+    color: #f5f5f5;
+    background-color: #585858;
+    cursor: pointer;
+}

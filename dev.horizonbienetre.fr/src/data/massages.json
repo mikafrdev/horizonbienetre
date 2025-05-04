@@ -1,0 +1,26 @@
+[
+    {
+        "title" : "Massage IVAO",
+        "img" : "Woman-enjoying-relaxing-back-massage-in-cosmetology-spa-centre-Body-care-skin-care.jpg",
+        "text" : "Massage relaxant du corps sublimé par la douceur des pierres chaudes et des gestes enveloppants, pour un moment de détente et de régénération.",
+        "prix" : "60 min - 55 €90 min - 70 €"
+    },
+    {
+        "title" : "Massage IMAO",
+        "img" : "A-good-looking-man-getting-a-back-massage-lying-down.jpg",
+        "text" : "Massage apaisant et décontractant, ciblant le dos, la nuque, les épaules et les bras pour soulager les tensions musculaires, améliorer la circulation et offrir une profonde relaxation.",
+        "prix" : "45 min - 45 €"
+    },
+    {
+        "title" : "Massage ERIS",
+        "img" : "Face-woman-massage-relax-close-up-Beautiful-woman-has-a-facial-massage-in-a-beauty-clinic.jpg",
+        "text" : "Massage harmonisant et relaxant qui combine le soin du visage, la détente du dos et des épaules pour libérer les tensions, revitaliser la peau et offrir un bien-être complet.",
+        "prix" : "30 min - 30 €"
+    },
+    {
+        "title" : "Massage ALIO",
+        "img" : "Woman-having-spa-massage-at-salon.jpg",
+        "text" : "Massage revitalisant et relaxant des jambes et des pieds, visant à détendre les muscles, stimuler la circulation et réduire la fatigue, pour une bien-être global et un soulagement des tensions.",
+        "prix" : "30 min - 30 €"
+    }
+]

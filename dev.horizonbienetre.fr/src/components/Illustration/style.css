@@ -1,0 +1,89 @@
+main .illustration {
+    /*margin-bottom: 3em;*/
+}
+
+main .illustration_hp {
+    /* height: 208px; */
+    width: 100%;
+    height: 208px;
+    max-height: 430px;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(/src/assets/close-up-of-young-beautiful-spa-salon.jpg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+main .illustration_massages {
+    height: 210px;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(/src/assets/Zen-stones-candles-and-flowers-on-the-background-of-woman-receiving-treatment.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+main .illustration_soins {
+    height: 210px;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(/src/assets/reiki-master-working-with-patient.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+main .illustration_formule {
+    height: 250px;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(/src/assets/Formule-detente-profonde.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+main .illustration_cadeau {
+    height: 267px;
+    background-image: url(/src/assets/Carte_Cadeau_face_1.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+main .illustration_contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color: var(--color-tertiary);
+}
+
+main .illustration div {
+    width: 100%;
+    position: absolute;
+    top: 31%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+main .illustration div h1 {
+    font-size: 30px;
+}
+
+main .illustration_contact h1 {
+    background-color: var(--color-tertiary);
+}
+
+@media screen and (min-width: 768px) {
+    main .illustration_hp {
+        height: auto;
+    }
+}
+
+/* @media screen and (max-width: 900px) and (min-width: 600px),
+    (min-width: 1100px) {
+    div.example {
+        font-size: 50px;
+        padding: 50px;
+        border: 8px solid black;
+        background: yellow;
+    }
+} */
