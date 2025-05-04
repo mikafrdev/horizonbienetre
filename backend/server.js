@@ -26,6 +26,7 @@ const allowedOrigins = [
     "http://localhost:5173",
     "http://localhost:3000",
     "https://dev.horizonbienetre.fr",
+    "https://horizonbienetre.fr"
 ];
 
 const corsOptions = {
