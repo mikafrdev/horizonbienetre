@@ -4,6 +4,7 @@ function App() {
     const [hello, setHello] = useState("");
     const [user, setUser] = useState("");
     const [test, setTest] = useState("");
+    const [racine, setRacine] = useState("");
 
     const API_URL = import.meta.env.VITE_API_URL;
 
@@ -48,7 +49,19 @@ function App() {
             }
         };
 
-        fetchTest();
+        const fetchRacine = async () => {
+            try {
+                const res = await fetch(`${API_URL}/`);
+                const data = await res.json();
+                console.log("*** TEST racine /:", data);
+                setRacine(data.test);
+            } catch (error) {
+                console.error("Erreur lors de la requête Racine :", error);
+                setTest("🛑 Erreur /");
+            }
+        };
+
+        fetchRacine();
     }, []);
 
     if (!user) return <p>Chargement...</p>;

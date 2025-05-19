@@ -1,0 +1,28 @@
+# Ignorer les fichiers d'environnement
+backend/.env.development
+backend/.env.production
+frontend/.env.production
+frontend/.env.development
+*.env
+
+# Ignorer les node_modules des deux côtés
+backend/node_modules/
+frontend/node_modules/
+
+# Ignorer les fichiers de build
+backend/dist/
+
+# Ignorer les logs
+*.log
+
+# Test
+coverage/
+*.snap
+
+# Ignorer les fichiers système
+.DS_Store
+Thumbs.db
+
+# Ignorer les dossiers d'éditeur
+.vscode/
+.idea/

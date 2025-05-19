@@ -1,0 +1,8 @@
+main.tests div p {
+    text-align: left;
+    text-indent: 3em;
+}
+
+main.tests div p {
+    color:blue;
+}

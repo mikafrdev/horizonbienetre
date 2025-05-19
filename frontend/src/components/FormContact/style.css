@@ -36,6 +36,7 @@
 .formcontact textarea {
     text-indent: 1em;
     line-height: 2.5em;
+    margin-bottom: 1em;
 }
 
 .formcontact button {
