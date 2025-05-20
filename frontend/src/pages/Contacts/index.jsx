@@ -10,7 +10,6 @@ export default function Contacts() {
             </div>
 
             <div className="container_light">
-                <ContactInfos />
                 <FormContact />
             </div>
         </main>

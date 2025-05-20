@@ -18,7 +18,7 @@ export default function PictoArrow({ fillColor }) {
                 <path
                     id="primary"
                     d="M18.6,11.2l-12-9A1,1,0,0,0,5,3V21a1,1,0,0,0,.55.89,1,1,0,0,0,1-.09l12-9a1,1,0,0,0,0-1.6Z"
-                    style={{fill: fillColor}}
+                    className="picto-arrow-fill"
                 ></path>
             </g>
         </svg>

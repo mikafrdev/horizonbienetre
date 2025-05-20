@@ -28,11 +28,6 @@
     cursor: pointer;
 }
 
-.opinions button.btn-left:hover,
-.opinions button.btn-right:hover {
-    background-color: rgb(0, 0, 0, 0.2);
-}
-
 .opinions section button.btn-left,
 .opinions button.btn-right {
     z-index: 2;
@@ -53,8 +48,12 @@
     rotate: 0deg;
 }
 
-.opinions section .arrow-left > *,
-.opinions section .arrow-right > * {
+.picto-arrow-fill {
+    fill: #555
+}
+
+.picto-arrow-fill:hover {
+    fill: #949191
 }
 
 .opinion {
