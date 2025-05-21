@@ -41,10 +41,10 @@ export default function Opinions() {
             <h2>Témoignages</h2>
             <section>
                 <button className="btn-left" onClick={prevOpinion}>
-                    <PictoArrow fillColor="#555" />
+                    <PictoArrow />
                 </button>
                 <button className="btn-right" onClick={nextOpinion}>
-                    <PictoArrow fillColor="#555" />
+                    <PictoArrow />
                 </button>
 
                 {dataOpinions.map((item, index) => (

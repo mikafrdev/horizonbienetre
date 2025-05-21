@@ -1,4 +1,4 @@
-export default function PictoArrow({ fillColor }) {
+export default function PictoArrow() {
     return (
         <svg
             fill="#000000"
