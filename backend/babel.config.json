@@ -1,0 +1,6 @@
+{
+  "presets": [
+    "@babel/preset-env",   // Transpile du code moderne JS vers une version compatible avec Node.js ou les navigateurs.
+    "@babel/preset-react"  // Si tu utilises React et JSX.
+  ]
+}

@@ -1,4 +1,5 @@
 const express = require("express");
+import routeEmail from './routes/route-email';
 const dotenv = require("dotenv");
 const path = require("path");
 const fs = require("fs");
@@ -45,7 +46,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.use(express.json());
+app.use(express.json()); 
 
 const frontendDistPath = path.resolve(__dirname, "dist");
 
@@ -84,6 +85,8 @@ app.get("/api/test", (req, res) => {
       test: `✅ backend /api/hello - frontendDistPath, ${frontendDistPath}`,
    });
 });
+
+app.use('/api/email', routeEmail);
 
 /*** Début Nodemailer ****/
 app.post("/api/contact", async (req, res) => {
