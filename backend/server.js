@@ -1,5 +1,5 @@
 const express = require("express");
-import routeEmail from './routes/route-email';
+import EmailRoutes from './routes/email.routes.js';
 const dotenv = require("dotenv");
 const path = require("path");
 const fs = require("fs");
@@ -86,54 +86,7 @@ app.get("/api/test", (req, res) => {
    });
 });
 
-app.use('/api/email', routeEmail);
-
-/*** Début Nodemailer ****/
-app.post("/api/contact", async (req, res) => {
-   const { firstName, lastName, email, message } = req.body;
-
-   if (!firstName || !lastName || !email || !message) {
-      return res
-         .status(400)
-         .json({ success: false, message: "Tous les champs sont requis." });
-   }
-
-   try {
-      const transporter = nodemailer.createTransport({
-         host: "smtp.gmail.com",
-         port: 587,
-         secure: false, // upgrade later with STARTTLS
-         auth: {
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASS,
-         },
-      });
-
-      const info = await transporter.sendMail({
-         from: `"Mon Site" <${process.env.EMAIL_USER}>`,
-         to: process.env.EMAIL_USER, // list of receivers
-         subject: "Nouveau message de contact",
-         text: "Un utilisateur a envoyé un message.",
-         html: `
-            <p><strong>Nom :</strong> ${firstName} ${lastName}</p>
-            <p><strong>Email :</strong> ${email}</p>
-            <p><strong>Message :</strong><br>${message}</p>
-         `,
-      });
-
-      return res.status(200).json({
-         success: true,
-         message: "Votre message a été envoyé avec succès.",
-      });
-   } catch (err) {
-      console.error("Erreur lors de l'envoi de l'email :", err);
-      return res.status(500).json({
-         success: false,
-         message: "Une erreur est survenue lors de l'envoi de l'email.",
-      });
-   }
-});
-/*** Fin Nodemailer ****/
+app.use('/api/email', EmailRoutes);
 
 app.get("/", (req, res) => {
    res.json({

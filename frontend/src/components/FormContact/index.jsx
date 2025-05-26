@@ -16,22 +16,39 @@ export default function FormContact() {
       }
 
       try {
-         const res = await fetch(`${API_URL}/api/contact`, {
+         // Envoi du message de contact
+         const contactRes = await fetch(`${API_URL}/api/email/contact`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ firstName, lastName, email, message }),
          });
 
-         if (!res.ok) {
-            return { error: "Erreur lors de l'envoi." };
+         if (!contactRes.ok) {
+            return { error: "Erreur lors de l'envoi du message de contact." };
          }
 
-         return { success: "Message envoyé avec succès !" };
+         // Envoi de la réponse automatique si le premier appel réussit
+         const autoRes = await fetch(`${API_URL}/api/email/auto-response`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ firstName, lastName, email, message }),
+         });
+
+         if (!autoRes.ok) {
+            return {
+               error: "Message envoyé, mais échec de la réponse automatique.",
+            };
+         }
+
+         return {
+            success:
+               "Message envoyé avec succès, une réponse automatique vous a été adressée.",
+         };
       } catch (error) {
-         console.log(error);
+         console.error(error);
          return {
             error: "Erreur réseau ou serveur.",
-            details: error.message || error, // ou error.stack pour plus de détails
+            details: error.message || error,
          };
       }
    }
