@@ -48,6 +48,7 @@ h2,
 body h3,
 body p,
 input,
+label,
 textarea {
   font-family: "Source serif pro", serif, monospace;
 }

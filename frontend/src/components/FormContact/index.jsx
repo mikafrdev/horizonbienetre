@@ -11,6 +11,15 @@ export default function FormContact() {
       const email = formData.get("email");
       const message = formData.get("message");
 
+      if (!email || !email.includes("@")) {
+         return {
+            error: "Veuillez saisir une adresse e-mail valide.",
+            fieldErrors: {
+               email: "Format incorrect.",
+            },
+         };
+      }
+
       if (!firstName || !lastName || !email || !message) {
          return { error: "Tous les champs sont requis." };
       }
@@ -42,7 +51,7 @@ export default function FormContact() {
 
          return {
             success:
-               "Message envoyé avec succès, une réponse automatique vous a été adressée.",
+               "Votre demande a bien été envoyée. Vous recevrez un e-mail de confirmation.",
          };
       } catch (error) {
          console.error(error);
@@ -55,20 +64,68 @@ export default function FormContact() {
 
    return (
       <div className="formcontact">
-         <form action={formAction}>
-            <input name="firstName" placeholder="Prénom" />
-            <input name="lastName" placeholder="Nom" />
-            <input name="email" type="email" placeholder="Email" />
-            <textarea name="message" placeholder="Message" />
-            <button type="submit" disabled={isPending}>
-               {isPending ? "Envoi..." : "Envoyer"}
-            </button>
-            {state?.error && <p style={{ color: "red" }}>{state.error}</p>}
-            {state?.message && <p style={{ color: "red" }}>{error.stack}</p>}
-            {state?.success && (
-               <p style={{ color: "green" }}>{state.success}</p>
-            )}
-         </form>
+         {state.success ? (
+            <div className="success-message" aria-live="polite">
+               <h2>Merci !</h2>
+               <p>{state.success}</p>
+               <button>Envoyer un autre messsage</button>
+            </div>
+         ) : (
+            <form action={formAction}>
+               {state.error && <p className="error-message">{state.error}</p>}
+
+               <label htmlFor="firstName">Prénom</label>
+               <input
+                  type="text"
+                  autoComplete="given-name"
+                  id="firstName"
+                  name="firstName"
+                  placeholder="Ex: Michel"
+               />
+               <label htmlFor="lastName">Nom *</label>
+               <input
+                  type="text"
+                  id="lastName"
+                  autoComplete="family-name"
+                  name="lastName"
+                  placeholder="Ex: Durant"
+                  required
+               />
+               <label htmlFor="email">Email *</label>
+               <input
+                  type="email"
+                  id="email"
+                  placeholder="monemail@email.fr"
+                  autoComplete="email"
+                  name="email"
+                  aria-invalid={!!state.fieldErrors?.email}
+                  aria-describedby="email-error"
+                  required
+               />
+               {state.fieldErrors?.email && (
+                  <span id="email-error" className="text-red-500">
+                     {state.fieldErrors.email}
+                  </span>
+               )}
+               <label htmlFor="message">Message *</label>
+               <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Demandez un rendez-vous ou posez une question ?"
+                  required
+               ></textarea>
+
+               {state.error && (
+                  <p className="text-red-600" role="alert" aria-live="polite">
+                     {state.error}
+                  </p>
+               )}
+
+               <button type="submit" disabled={isPending}>
+                  {isPending ? "Envoi en cours..." : "Envoyer"}
+               </button>
+            </form>
+         )}
 
          {/* <form className="flex flex-col gap-2"> */}
          {/* <form id="formcontact" onSubmit={handleSubmit}>
