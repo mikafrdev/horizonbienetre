@@ -5,7 +5,7 @@ import path from 'path';
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: path.resolve(__dirname, '../backend/dist'), // Chemin de sortie du build
-    emptyOutDir: true, // Vide le dossier avant le build
-  },
+    outDir: path.resolve(__dirname, '../build/frontend'),
+    emptyOutDir: true
+  }
 });

@@ -1,22 +1,29 @@
-const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
 
 export const emailContact = async (req, res) => {
    const { firstName, lastName, email, message } = req.body;
 
+
+console.log("SMTP_CONTACT_HOST =", process.env.SMTP_CONTACT_HOST);
+console.log("SMTP_CONTACT_PORT =", process.env.SMTP_CONTACT_PORT);
+console.log("EMAIL_CONTACT_USER =", process.env.EMAIL_CONTACT_USER);
+console.log("EMAIL_CONTACT_PASS =", process.env.EMAIL_CONTACT_PASS ? "****" : "undefined");
+
+
    try {
       const transporter = nodemailer.createTransport({
-         host: "smtp.gmail.com",
-         port: 587,
-         secure: false, // upgrade later with STARTTLS
+         host: process.env.SMTP_CONTACT_HOST,
+         port: process.env.SMTP_CONTACT_PORT,
+         secure: false,
          auth: {
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASS,
+            user: process.env.EMAIL_CONTACT_USER,
+            pass: process.env.EMAIL_CONTACT_PASS
          },
       });
 
       await transporter.sendMail({
-         from: `"horizonbienetre.fr - Internaute" <${process.env.EMAIL_USER}>`,
-         to: process.env.EMAIL_USER,
+         from: `"horizonbienetre.fr - Internaute" <${process.env.EMAIL_CONTACT_USER}>`,
+         to: process.env.EMAIL_CONTACT_USER,
          subject: "Nouveau message de contact",
          text: "Un utilisateur a envoyé un message.",
          html: `

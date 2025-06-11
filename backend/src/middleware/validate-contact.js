@@ -1,4 +1,4 @@
-module.exports = (req, res, next) => {
+export default function validateContact(req, res, next) {
    const { firstName, lastName, email, message } = req.body;
 
    if (!firstName || !lastName || !email || !message) {
@@ -8,5 +8,5 @@ module.exports = (req, res, next) => {
       });
    }
 
-   next(); // passe au controller si validation OK
-};
+   next();
+}

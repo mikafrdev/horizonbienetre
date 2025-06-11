@@ -10,7 +10,7 @@ backend/node_modules/
 frontend/node_modules/
 
 # Ignorer les fichiers de build
-backend/dist/
+build/
 
 # Ignorer les logs
 *.log
@@ -26,3 +26,6 @@ Thumbs.db
 # Ignorer les dossiers d'éditeur
 .vscode/
 .idea/
+
+*.structure.txt
+node_modules

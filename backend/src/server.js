@@ -1,10 +1,14 @@
-const express = require("express");
+import express from 'express';
 import EmailRoutes from './routes/email.routes.js';
-const dotenv = require("dotenv");
-const path = require("path");
-const fs = require("fs");
-const nodemailer = require("nodemailer");
-const { console } = require("inspector");
+import dotenv from 'dotenv';
+import path from 'path';
+import fs from 'fs';
+import { console as inspectorConsole } from "inspector";
+import { fileURLToPath } from 'url';
+
+// Pour ESM (__dirname equivalent)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const rawEnv = process.env.NODE_ENV;
 const NODE_ENV = rawEnv ? rawEnv.trim() : "";
@@ -16,13 +20,13 @@ if (typeof PhusionPassenger !== "undefined") {
 const envFilePath =
    NODE_ENV === "dev"
       ? path.resolve(__dirname, ".env.development")
-      : path.resolve(__dirname, ".env.production");
+      : path.resolve(__dirname, ".env");
 dotenv.config({ path: envFilePath });
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const cors = require("cors");
+import cors from 'cors';
 
 const allowedOrigins = [
    "http://localhost:5173",
@@ -45,64 +49,56 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-
-app.use(express.json()); 
-
-const frontendDistPath = path.resolve(__dirname, "dist");
-
-const indexPath = path.join(frontendDistPath, "index.html");
+app.use(express.json());
+let frontendDistPath = path.resolve(__dirname, "../../frontend/");
 
 // 👉 Servir le frontend buildé si SERVE_REACT est activé
 if (NODE_ENV === "dev") {
-   console.log("🛑 React n'est pas servi par Express en mode développement.");
+   inspectorConsole.log("🛑 React n'est pas servi par Express en mode développement.");
 } else {
-   // Vérifier si le dossier de build existe
+   frontendDistPath = path.resolve(__dirname, "../../build/frontend");
    if (fs.existsSync(frontendDistPath)) {
       app.use(express.static(frontendDistPath));
-      console.log(`✅ Frontend React servi depuis : ${frontendDistPath}`);
+      inspectorConsole.log(`✅ Frontend React servi depuis : ${frontendDistPath}`);
    } else {
-      console.warn(
+      inspectorConsole.warn(
          "⚠️ Le dossier dist est introuvable. Assurez-vous d'avoir exécuté `npm run build` pour le frontend."
       );
    }
 }
 
-app.get("/api/hello", (req, res) => {
-   res.json({ hello: "✅ backend /api/hello" });
-});
-
-app.get("/api/user", (req, res) => {
-   const fakeUser = {
-      id: 1,
-      name: "Jean Dupont",
-      email: "jean.dupont@example.com",
-   };
-   res.json(fakeUser);
+const indexPath = path.join(frontendDistPath, "index.html");
+app.get("/", (req, res) => {
+   res.sendFile(indexPath, (err) => {
+      if (err) {
+         inspectorConsole.error(
+            "Erreur lors de l'envoi du fichier index.html :",
+            err
+         );
+         res.status(500).send(
+            "Erreur serveur lors du chargement de la page."
+         );
+      }
+   });
 });
 
 app.get("/api/test", (req, res) => {
    res.json({
-      test: `✅ backend /api/hello - frontendDistPath, ${frontendDistPath}`,
+      test: `✅ backend /api/test - frontendDistPath, ${indexPath}`,
    });
 });
 
 app.use('/api/email', EmailRoutes);
 
-app.get("/", (req, res) => {
-   res.json({
-      test: `✅ Route racine trouvée / `,
-   });
-});
-
 if (NODE_ENV === "dev") {
-   app.get("/{*splat}", async (req, res) => {
-      res.send("Route non trouvée : /{*splat}");
+   app.get("/*splat", (req, res) => {
+      res.send("Route non trouvée : *");
    });
 } else {
-   app.get("/{*splat}", async (req, res) => {
+   app.get("/*splat", (req, res) => {
       res.sendFile(indexPath, (err) => {
          if (err) {
-            console.error(
+            inspectorConsole.error(
                "Erreur lors de l'envoi du fichier index.html :",
                err
             );
@@ -117,10 +113,10 @@ if (NODE_ENV === "dev") {
 // Démarrage du serveur
 if (typeof PhusionPassenger !== "undefined") {
    app.listen("passenger");
-   console.log(`✅ Serveur backend démarré sur PhusionPassenger`);
+   inspectorConsole.log(`✅ Serveur backend démarré sur PhusionPassenger`);
 } else {
    const PORT = process.env.PORT || 3000;
    app.listen(PORT, () => {
-      console.log(`✅ Serveur backend démarré sur http://localhost:${PORT}`);
+      inspectorConsole.log(`✅ Serveur backend démarré sur http://localhost:${PORT}`);
    });
 }

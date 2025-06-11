@@ -1,4 +1,4 @@
-const React = require("react");
+import React from 'react';
 import {
    Body,
    Container,
@@ -17,7 +17,7 @@ import {
 /* const baseUrl = process.env.FRONTEND_URL; */
 const baseUrl = "https://horizonbienetre.fr"
 
-export const EmailAutoResponse = ({verificationCode}) => (
+export const EmailAutoResponse = ({ verificationCode = "" }) => (
    <Html>
       <Head />
       <Body style={main}>

@@ -1,24 +1,31 @@
 {
-  "devDependencies": {
-    "@babel/cli": "^7.27.2",
-    "@babel/core": "^7.27.1",
-    "@babel/node": "^7.27.1",
-    "@babel/preset-env": "^7.27.2",
-    "@babel/preset-react": "^7.27.1",
-    "@babel/register": "^7.27.1",
-    "nodemon": "^3.1.10"
+   "type": "module",
+   "devDependencies": {
+      "@babel/cli": "^7.27.2",
+      "@babel/core": "^7.27.4",
+      "@babel/node": "^7.27.1",
+      "@babel/preset-env": "^7.27.2",
+      "@babel/preset-react": "^7.27.1",
+      "@babel/register": "^7.27.1",
+      "nodemon": "^3.1.10",
+      "terser": "^5.41.0",
+      "tsx": "^4.19.4"
+   },
+   "scripts": {
+    "dev": "set NODE_ENV=dev && nodemon src/server.js --watch src --exec tsx",
+    "preview:email": "tsx emails/preview-email.js",
+    "build:emails": "tsx --transpile-only emails/src/email-auto-response.jsx --out-dir build/emails",
+    "copy-emails": "shx cp -r emails ../build/",
+    "clean": "del /s /q ..\\build\\*.* && if exist ..\\build rmdir /s /q ..\\build",
+    "build": "babel src --out-dir ../build/backend --extensions \".js,.jsx\" --minified && npm run copy-emails",
+    "start": "node ../build/backend/server.js"
   },
-  "scripts": {
-    "preprod": "set NODE_ENV=preprod && node server.js",
-    "dev": "set NODE_ENV=dev && nodemon -r @babel/register server.js",
-    "start": "node server.js"
-  },
-  "dependencies": {
-    "@react-email/components": "^0.0.41",
-    "@react-email/render": "^1.1.2",
-    "cors": "^2.8.5",
-    "dotenv": "^16.5.0",
-    "express": "^5.1.0",
-    "nodemailer": "^7.0.3"
-  }
+   "dependencies": {
+      "@react-email/components": "^0.0.41",
+      "@react-email/render": "^1.1.2",
+      "cors": "^2.8.5",
+      "dotenv": "^16.5.0",
+      "express": "^5.1.0",
+      "nodemailer": "^7.0.3"
+   }
 }
