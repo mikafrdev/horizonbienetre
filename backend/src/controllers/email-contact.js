@@ -2,14 +2,7 @@ import nodemailer from "nodemailer";
 
 export const emailContact = async (req, res) => {
    const { firstName, lastName, email, message } = req.body;
-
-
-console.log("SMTP_CONTACT_HOST =", process.env.SMTP_CONTACT_HOST);
-console.log("SMTP_CONTACT_PORT =", process.env.SMTP_CONTACT_PORT);
-console.log("EMAIL_CONTACT_USER =", process.env.EMAIL_CONTACT_USER);
-console.log("EMAIL_CONTACT_PASS =", process.env.EMAIL_CONTACT_PASS ? "****" : "undefined");
-
-
+   
    try {
       const transporter = nodemailer.createTransport({
          host: process.env.SMTP_CONTACT_HOST,
