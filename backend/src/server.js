@@ -56,7 +56,7 @@ let frontendDistPath = path.resolve(__dirname, "../../frontend/");
 if (NODE_ENV === "dev") {
    inspectorConsole.log("🛑 React n'est pas servi par Express en mode développement.");
 } else {
-   frontendDistPath = path.resolve(__dirname, "../../build/frontend");
+   frontendDistPath = path.resolve(__dirname, "../frontend");
    if (fs.existsSync(frontendDistPath)) {
       app.use(express.static(frontendDistPath));
       inspectorConsole.log(`✅ Frontend React servi depuis : ${frontendDistPath}`);
@@ -85,6 +85,12 @@ app.get("/", (req, res) => {
 app.get("/api/test", (req, res) => {
    res.json({
       test: `✅ backend /api/test - frontendDistPath, ${indexPath}`,
+      frontendDistPath,
+      indexPath,
+      filename: `${__filename}`,
+      dirname: `${__dirname}`,
+      existe: fs.existsSync(frontendDistPath),
+      
    });
 });
 

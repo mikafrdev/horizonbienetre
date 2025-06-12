@@ -1,9 +1,4 @@
-# Ignorer les fichiers d'environnement
-backend/.env.development
-backend/.env.production
-frontend/.env.production
-frontend/.env.development
-*.env
+**/.env*
 
 # Ignorer les node_modules des deux côtés
 backend/node_modules/
@@ -27,5 +22,5 @@ Thumbs.db
 .vscode/
 .idea/
 
-*.structure.txt
+**/.structure.txt
 node_modules
