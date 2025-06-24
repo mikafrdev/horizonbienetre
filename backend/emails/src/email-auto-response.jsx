@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
    Body,
    Container,
@@ -15,7 +15,7 @@ import {
 } from "@react-email/components";
 
 /* const baseUrl = process.env.FRONTEND_URL; */
-const baseUrl = "https://horizonbienetre.fr"
+const baseUrl = "https://horizonbienetre.fr";
 
 export const EmailAutoResponse = ({ verificationCode = "" }) => (
    <Html>
@@ -25,74 +25,75 @@ export const EmailAutoResponse = ({ verificationCode = "" }) => (
          <Container style={container}>
             <Section style={coverSection}>
                <Section style={imageSection}>
-                  <Img
-                     src={`${baseUrl}/assets/Logo-B1O8D7lL.jpg`}
-                     width="65"
-                     height="80"
-                     alt="Logo Horizonbienetre.fr"
-                  />
+                  <Link
+                     href="https://horizonbienetre.fr"
+                     target="_blank"
+                     style={{ display: "inline-block" }}
+                  >
+                     <Img
+                        src={`${baseUrl}/assets/Logo-B1O8D7lL.jpg`}
+                        width="72"
+                        height="87"
+                        alt="Logo Horizonbienetre.fr"
+                     />
+                  </Link>
                </Section>
 
                <Section style={upperSection}>
-                  <Heading style={h1}>Découvrez nos soins bien-être personnalisés</Heading>
+                  <Heading style={h1}>Merci pour votre message</Heading>
                   <Text style={mainText}>
-                    Votre demande de contact a bien été reçu, nous reviendrons très vite vers vous.
+                     Nous avons bien pris en compte votre demande et reviendrons
+                     vers vous dans les plus brefs délais.
+                     <br />
+                     Si votre demande est urgente, n'hésitez pas à nous
+                     contacter au 06 06 06 06 06.
+                     <br />
+                     Nous vous souhaitons une journée sereine et apaisante.
+                     <br />
+                     <br />
+                     Bien à vous,
+                     <br />
+                     <br /> L'équipe Horizon Bien-être
                   </Text>
-
-                  <Section style={verificationSection}>
-                     <Text style={verifyText}>Verification code</Text>
-                     <Text style={codeText}>{verificationCode}</Text>
-                     <Text style={validityText}>
-                        (This code is valid for 10 minutes)
-                     </Text>
-                  </Section>
                </Section>
 
                <Hr />
-
-               <Section style={lowerSection}>
-                  <Text style={cautionText}>
-                     Amazon Web Services will never email you and ask you to
-                     disclose or verify your password, credit card, or banking
-                     account number.
-                  </Text>
-               </Section>
             </Section>
 
             <Text style={footerText}>
-               This message was produced and distributed by Amazon Web Services,
-               Inc., 410 Terry Ave. North, Seattle, WA 98109. © 2022, Amazon
-               Web Services, Inc.. All rights reserved. AWS is a registered
-               trademark of{" "}
-               <Link href="https://amazon.com" target="_blank" style={link}>
-                  Amazon.com
+               Horaires :
+               <br />
+               Du lundi au samedi de 10h00 à 19h00
+               <br />
+               Prestation sur RDV
+               <br />
+               En cabine/ A domicile / En entreprise / En visio
+               <br />
+               <br />
+               <Link
+                  href="https://horizonbienetre.fr"
+                  target="_blank"
+                  style={link}
+               >
+                  Horizonbienetre.fr
                </Link>
-               , Inc. View our{" "}
-               <Link href="https://amazon.com" target="_blank" style={link}>
-                  privacy policy
-               </Link>
-               .
             </Text>
          </Container>
       </Body>
    </Html>
 );
 
-// ➕ Exemple de props pour le render local/test
-EmailAutoResponse.PreviewProps = {
-   verificationCode: "596853",
-};
+export default EmailAutoResponse;
 
-// 🎨 Styles (inchangés)
 const main = {
    backgroundColor: "#fff",
    color: "#212121",
 };
 
 const container = {
-   padding: "20px",
+   padding: "2px",
    margin: "0 auto",
-   backgroundColor: "#eee",
+   backgroundColor: "#fff",
 };
 
 const h1 = {
@@ -121,7 +122,7 @@ const text = {
 };
 
 const imageSection = {
-   backgroundColor: "#252f3d",
+   backgroundColor: "#fff",
    display: "flex",
    padding: "10px 0 10px 10px",
    alignItems: "center",
@@ -130,7 +131,7 @@ const imageSection = {
 
 const coverSection = { backgroundColor: "#fff" };
 
-const upperSection = { padding: "25px 35px" };
+const upperSection = { padding: "15px 35px" };
 
 const lowerSection = { padding: "25px 35px" };
 
