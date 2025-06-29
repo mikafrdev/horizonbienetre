@@ -1,9 +1,3 @@
-main {
-    margin-top: 8rem;
-    width: 100%;
-    color: #fff;
-}
-
 main .description {
     background-color: var(--bg-primary);
 }

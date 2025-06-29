@@ -56,10 +56,17 @@ textarea {
 #root {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
+}
+
+main {
+    margin-top: 8rem;
+    width: 100%;
+    color: #fff;
 }
 
 .container_light,
@@ -98,4 +105,28 @@ footer {
   a:nth-of-type(2) .logo {
       animation: logo-spin infinite 20s linear;
   }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+}
+
+@media screen and (min-width: 600px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    
+   } /* 
+  main .illustration_massages {
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0;
+   }
+
+   .massages_infos {
+    max-width: 400px;
+   } */
 }

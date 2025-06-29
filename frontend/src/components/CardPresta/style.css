@@ -25,16 +25,32 @@
 
 .card_presta h3 {
     font-size: 23px;
+    font-size: clamp(.7rem, 4.2vw, 1.5rem);
     margin: 1em 0;
 }
 
 .card_presta p {
     text-align: left;
     font-size: 16px;
+    font-size: clamp(.7rem, 4.2vw, 1.5rem);
     margin: 1em 0 0 0;
 }
 
 .card_presta span {
+    margin-top: 1rem;
     text-align: right;
     font-weight: bold;
+    font-size: clamp(.7rem, 4.2vw, 1.5rem);
+}
+
+@media screen and (min-width: 600px) {
+   .card_presta p {
+      
+   }
+}
+
+@media screen and (min-width: 768px) {
+   .card_presta p {
+      
+   }
 }
