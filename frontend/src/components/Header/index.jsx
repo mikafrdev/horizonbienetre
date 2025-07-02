@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect, useMemo } from "react";
+import { Link, NavLink } from "react-router-dom";
 import Logo from "./../../assets/Logo.jpg";
 import PictoPhone from "./../PictoPhone";
 import Modal from "../Modal";
 import PictoNav from "../PictoNav";
-import NavBar from "../NavBar";
+import PictoClose from "../PictoClose";
+import dataNavigation from "../../data/navigation.json";
 import "./style.css";
 
 export default function Header() {
@@ -20,52 +21,60 @@ export default function Header() {
       document.body.classList.remove("active-navbar");
    }
 
-   // console.log("primaryHeader : ", primaryHeader);
-   // console.log("scrollWatcher : ", scrollWatcher);
-
    useEffect(() => {
-      const primaryHeader = document.querySelector(".primary-header");
-      const scrollWatcher = document.querySelector(".data-scroll-watcher");
+      const handleScroll = () => {
+         const header = document.querySelector(".site-header");
+         if (window.scrollY > 50) {
+            header.classList.add("sticking");
+         } else {
+            header.classList.remove("sticking");
+         }
+      };
 
-      const navObserver = new IntersectionObserver(
-         (entries) => {
-            primaryHeader.classList.toggle(
-               "sticking",
-               !entries[0].isIntersecting
-            );
-         },
-         { rootMargin: "50px 0px 0px 0px" }
-      );
-
-      navObserver.observe(scrollWatcher);
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
    }, []);
 
-   return (
-      <>
-         <div className="data-scroll-watcher"></div>
+   const navItems = dataNavigation.map((item, index) => (
+      <li key={index} onClick={toggleNavBar}>
+         <NavLink to={item.UrlPage}>{item.PageName}</NavLink>
+      </li>
+   ));
 
-         <header className="primary-header">
-            <NavBar open={open} setOpen={setOpen} toggleNavBar={toggleNavBar} />
-            <div>
-               <Link to="/">
-                  <img
-                     className="logo"
-                     src={Logo}
-                     alt="Logo Horizon Bien Etre"
-                  />
-               </Link>
+   return (
+      <header className="site-header">
+         <div className="header-logo">
+            <Link to="/">
+               <img className="logo" src={Logo} alt="Logo Horizon Bien Etre" />
+            </Link>
+         </div>
+         <div className="header-desktop">
+            <ul>{navItems}</ul>
+         </div>
+         <Modal>
+            <PictoPhone
+               className="picto_phone_footer"
+               fillPhoneColor="#1E1E1E"
+               fillCallColor="1E1E1E"
+            />
+         </Modal>
+         <nav onClick={toggleNavBar} className="nav-toggle">
+            <PictoNav fillColor="#666" stroleColor="#666" />
+         </nav>
+
+         {open && (
+            <div className="navbar">
+               <div onClick={toggleNavBar} className="overlay"></div>
+               <div className="navbar-content">
+                  <ul style={{ minHeight: screen.availHeight }}>{navItems}</ul>
+                  <div className="navbar-close">
+                     <button onClick={toggleNavBar}>
+                        <PictoClose fillColor="#666" stroleColor="#666" />
+                     </button>
+                  </div>
+               </div>
             </div>
-            <Modal>
-               <PictoPhone
-                  className="picto_phone_footer"
-                  fillPhoneColor="#1E1E1E"
-                  fillCallColor="1E1E1E"
-               />
-            </Modal>
-            <nav onClick={toggleNavBar}>
-               <PictoNav fillColor="#666" stroleColor="#666" />
-            </nav>
-         </header>
-      </>
+         )}
+      </header>
    );
 }

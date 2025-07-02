@@ -40,7 +40,7 @@ export const EmailAutoResponse = () => (
                </Section>
 
                <Section style={upperSection}>
-                  <Heading style={h1}>Merci pour votre message</Heading>
+                  <Heading style={{...h1, textAlign: "center"}}>Merci pour votre message</Heading>
                   <Text style={mainText}>
                      Nous avons bien pris en compte votre demande et reviendrons
                      vers vous dans les plus brefs délais.
@@ -92,6 +92,7 @@ const container = {
    padding: "2px",
    margin: "0 auto",
    backgroundColor: "#fff",
+   boxShadow: "2px 2px 19px 3px rgba(0, 0, 0, 0.62)"
 };
 
 const h1 = {

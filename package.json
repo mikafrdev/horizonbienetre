@@ -22,7 +22,7 @@
     "build:backend": "cd backend && npm install && npm run build",
     "build": "npm run build:emails && npm run build:frontend && npm run build:backend && shx cp backend/src/.env.production build/backend/.env",
     "clean": "shx rm -rf build",
-    "start:prod": "node build/backend/server.js"
+    "prod": "node build/backend/server.js"
   },
   "dependencies": {
     "@react-email/components": "0.0.41",
