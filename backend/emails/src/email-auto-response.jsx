@@ -40,13 +40,15 @@ export const EmailAutoResponse = () => (
                </Section>
 
                <Section style={upperSection}>
-                  <Heading style={{...h1, textAlign: "center"}}>Merci pour votre message</Heading>
+                  <Heading style={{ ...h1, textAlign: "center" }}>
+                     Merci pour votre message
+                  </Heading>
                   <Text style={mainText}>
                      Nous avons bien pris en compte votre demande et reviendrons
                      vers vous dans les plus brefs délais.
                      <br />
                      Si votre demande est urgente, n'hésitez pas à nous
-                     contacter au 06 06 06 06 06.
+                     contacter au 01 02 03 04 05.
                      <br />
                      Nous vous souhaitons une journée sereine et apaisante.
                      <br />
@@ -89,10 +91,11 @@ const main = {
 };
 
 const container = {
-   padding: "2px",
+   width: "100%",
+   maxWidth: "600px",
    margin: "0 auto",
    backgroundColor: "#fff",
-   boxShadow: "2px 2px 19px 3px rgba(0, 0, 0, 0.62)"
+   border: "1px solid #e0e0e0",
 };
 
 const h1 = {
@@ -123,7 +126,7 @@ const text = {
 const imageSection = {
    textAlign: "center",
    backgroundColor: "#fff",
-   padding: "10px 0 10px 10px"
+   padding: "10px 0 10px 10px",
 };
 
 const coverSection = { backgroundColor: "#fff" };
