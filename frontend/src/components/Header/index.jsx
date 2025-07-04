@@ -52,8 +52,7 @@ export default function Header() {
          <div className="header-desktop">
             <ul>{navItems}</ul>
          </div>
-         {/* A FAIRE ! */}
-         <div>
+         <div className="header-phone-modal">
          <Modal>
             <PictoPhone
                className="picto_phone_footer"

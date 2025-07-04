@@ -94,6 +94,11 @@
 
 /*fin header-desktop*/
 
+.header-phone-modal {
+   display: flex;
+   justify-content: center;
+}
+
 .site-header .picto_phone {
    justify-content: center;
 }
