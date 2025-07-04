@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Logo from "./../../assets/Logo.jpg";
 import PictoPhone from "./../PictoPhone";
@@ -12,6 +12,7 @@ export default function Header() {
    const [open, setOpen] = useState(false);
 
    const toggleNavBar = () => {
+      console.log("Toggle NavBar");
       setOpen(!open);
    };
 
@@ -51,6 +52,8 @@ export default function Header() {
          <div className="header-desktop">
             <ul>{navItems}</ul>
          </div>
+         {/* A FAIRE ! */}
+         <div>
          <Modal>
             <PictoPhone
                className="picto_phone_footer"
@@ -58,20 +61,24 @@ export default function Header() {
                fillCallColor="1E1E1E"
             />
          </Modal>
-         <nav onClick={toggleNavBar} className="nav-toggle">
-            <PictoNav fillColor="#666" stroleColor="#666" />
+         </div>
+         <nav className="nav-toggle">
+            <PictoNav
+               onClick={toggleNavBar}
+               strokeColor="var(--picto-header)"
+            />
          </nav>
 
          {open && (
             <div className="navbar">
                <div onClick={toggleNavBar} className="overlay"></div>
                <div className="navbar-content">
-                  <ul style={{ minHeight: screen.availHeight }}>{navItems}</ul>
-                  <div className="navbar-close">
-                     <button onClick={toggleNavBar}>
-                        <PictoClose fillColor="#666" stroleColor="#666" />
-                     </button>
-                  </div>
+                  <ul>{navItems}</ul>
+               </div>
+               <div className="navbar-close">
+                  <button onClick={toggleNavBar}>
+                     <PictoClose fillColor="#666" stroleColor="#666" />
+                  </button>
                </div>
             </div>
          )}
