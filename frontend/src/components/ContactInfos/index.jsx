@@ -72,7 +72,7 @@ export default function ContactInfos() {
 
             <div className="horaires">
                 <p>Horaires :</p>
-                <p>Du lundi au samedi de 10h00 à 19h00</p>
+                <p>Du lundi au samedi de 9h00 à 19h00</p>
             </div>
             <div className="detail_prestations">
                 <p>Prestation sur RDV</p>

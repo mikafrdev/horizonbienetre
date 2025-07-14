@@ -36,51 +36,63 @@ export default function Header() {
       return () => window.removeEventListener("scroll", handleScroll);
    }, []);
 
+   const handleNavClick = () => {
+      if (window.innerWidth < 1024) {
+         toggleNavBar();
+      }
+   };
+
    const navItems = dataNavigation.map((item, index) => (
-      <li key={index} onClick={toggleNavBar}>
+      <li key={index} onClick={handleNavClick}>
          <NavLink to={item.UrlPage}>{item.PageName}</NavLink>
       </li>
    ));
 
    return (
       <header className="site-header">
-         <div className="header-logo">
-            <Link to="/">
-               <img className="logo" src={Logo} alt="Logo Horizon Bien Etre" />
-            </Link>
-         </div>
-         <div className="header-desktop">
-            <ul>{navItems}</ul>
-         </div>
-         <div className="header-phone-modal">
-         <Modal>
-            <PictoPhone
-               className="picto_phone_footer"
-               fillPhoneColor="#1E1E1E"
-               fillCallColor="1E1E1E"
-            />
-         </Modal>
-         </div>
-         <nav className="nav-toggle">
-            <PictoNav
-               onClick={toggleNavBar}
-               strokeColor="var(--picto-header)"
-            />
-         </nav>
-
-         {open && (
-            <div className="navbar">
-               <div onClick={toggleNavBar} className="overlay"></div>
-               <div className="navbar-content">
-                  <ul>{navItems}</ul>
-               </div>
-               <div className="navbar-close">
-                  <button onClick={toggleNavBar}>
-                     <PictoClose fillColor="#666" stroleColor="#666" />
-                  </button>
-               </div>
+         <div className="header-container">
+            <div className="header-logo">
+               <Link to="/">
+                  <img
+                     className="logo"
+                     src={Logo}
+                     alt="Logo Horizon Bien Etre"
+                  />
+               </Link>
             </div>
-         )}
+            <div className="header-desktop">
+               <ul>{navItems}</ul>
+            </div>
+            <div className="header-phone-modal">
+               <Modal>
+                  <PictoPhone
+                     className="picto_phone_footer"
+                     fillPhoneColor="#1E1E1E"
+                     fillCallColor="1E1E1E"
+                  />
+               </Modal>
+            </div>
+            <nav className="nav-toggle">
+               <PictoNav
+                  onClick={toggleNavBar}
+                  strokeColor="var(--picto-header)"
+               />
+            </nav>
+
+            {open && (
+               <div className="navbar">
+                  <div onClick={toggleNavBar} className="overlay"></div>
+                  <div className="navbar-content">
+                     <ul>{navItems}</ul>
+                  </div>
+                  <div className="navbar-close">
+                     <button onClick={toggleNavBar}>
+                        <PictoClose fillColor="#666" stroleColor="#666" />
+                     </button>
+                  </div>
+               </div>
+            )}
+         </div>
       </header>
    );
 }

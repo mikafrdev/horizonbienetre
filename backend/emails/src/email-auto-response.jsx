@@ -63,11 +63,11 @@ export const EmailAutoResponse = () => (
             </Section>
 
             <Text style={footerText}>
-               Horaires : Du lundi au samedi de 10h00 à 19h00
+               Horaires : Du lundi au samedi de 9h00 à 19h00
                <br />
                Prestation sur RDV
                <br />
-               En cabine / A domicile / En entreprise / En visio
+               En cabine / A domicile / En entreprise
                <br />
                <br />
                <Link
