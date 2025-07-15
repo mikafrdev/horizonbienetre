@@ -59,13 +59,13 @@
 }
 
 .header-desktop a {
+   position: relative;
    display: inline-block;
+   padding-bottom: 4px;
    line-height: 1.3;
+   font-weight: 500;
    text-decoration: none;
    color: #333;
-   font-weight: 500;
-   position: relative;
-   padding-bottom: 4px;
    transition: color 0.3s;
 }
 
@@ -334,5 +334,17 @@ body.active-navbar {
       display: flex;
       justify-content: flex-end;
       align-items: center;
+   }
+}
+
+@media screen and (min-width: 1024px) {
+   .header-desktop a {
+      font-weight: 1rem;
+   }
+}
+
+@media screen and (min-width: 1440px) {
+   .header-desktop a {
+      font-size: 1.4rem;
    }
 }

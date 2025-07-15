@@ -1,8 +1,25 @@
-main.tests div p {
-    text-align: left;
-    text-indent: 3em;
+/* .separator-title {
+  text-align: center;
+  position: relative;
+  margin: 3rem 0;
+  color: black;
 }
 
-main.tests div p {
-    color:blue;
+.separator-title::before,
+.separator-title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: #ccc;
 }
+
+.separator-title::before {
+  left: 0;
+}
+
+.separator-title::after {
+  right: 0;
+}
+ */

@@ -9,6 +9,11 @@ export default function Tests() {
             <source src={VideoHP}  type="video/mp4" />
             Your browser does not support the video tag.
          </video>
+
+         <div class="separator-title">OU</div>
+
+
+
       </main>
    );
 }
