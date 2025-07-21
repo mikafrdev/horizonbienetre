@@ -28,7 +28,6 @@ export default function Opinions() {
                navigation
                pagination={{ clickable: true }}
                loop={true}
-               autoHeight={true}
                breakpoints={{
                   0: { slidesPerView: 1 },
                   1440: { slidesPerView: 3 },

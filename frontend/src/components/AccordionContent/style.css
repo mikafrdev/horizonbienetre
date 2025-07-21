@@ -1,0 +1,18 @@
+.accordion {
+}
+
+.accordion ul {
+   padding-left: 1rem;
+}
+
+.accordion ul.decimal {
+   list-style-type: number;
+}
+
+.accordion ul.disc {
+   list-style-type: disc;
+}
+
+.accordion li {
+   margin: 1rem 0;
+}

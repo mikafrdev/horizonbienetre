@@ -2,5 +2,33 @@
     {
         "title" : "Les bénéfices d’un soin énergétique ?",
         "text" : "Les soins énergétiques rééquilibrent les énergies du corps, favorisant relaxation, apaisement du stress et gestion émotionnelle. Ils stimulent la régénération naturelle, améliorent la circulation énergétique et soutiennent un mieux-être global. Ces pratiques offrent un moment de recentrage, revitalisent le corps, créant un équilibre durable entre corps, esprit et émotions."
-    }
+    },
+    {
+    "title": "Comment se déroule une séance ?",
+    "content": [
+      { "type": "p", "text": "Voici les différentes étapes du soin :" },
+      {
+        "type": "ul",
+        "className": "decimal",
+        "items": [
+          "Accueil et échange Le soin débute par un moment d'échange avec la personne, visant à cerner ses besoins, ses attentes ainsi que son état émotionnel, physique ou énergétique.",
+          "Préparation à la séance La personne s'allonge confortablement sur la table de massage, habillée, avec éventuellement une couverture.",
+          {
+            "type": "li",
+            "text": "Déroulement du soin",
+            "sublist": {
+              "type": "ul",
+              "className": "disc",
+              "items": [
+                "**Apposition des mains** : Je viens placer mes mains sur ou au-dessus, quelques minutes, de différentes zones du corps en fonction des besoins ressentis.",
+                "**Circulation de l'énergie** : Lorsque l'énergie circule la personne peut ressentir des sensations de chaleur, de picotements ou simplement une profonde relaxation."
+              ]
+            }
+          },
+          "Clôture de la séance À la fin du soin, j'accompagne la personne dans un retour en douceur à un état d'éveil. Un moment d'échange permet ensuite de partager les ressentis et de répondre aux questions éventuelles.",
+          "Après la séance Les effets peuvent varier : relaxation immédiate, légèreté émotionnelle, ou encore un regain d'énergie dans les jours qui suivent. Un soin énergétique est une expérience personnelle et unique, conçue pour soutenir le bien-être global et encourager l'équilibre intérieur."
+        ]
+      }
+    ]
+  }
 ]
