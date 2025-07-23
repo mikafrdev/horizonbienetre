@@ -1,5 +1,5 @@
-import Illustration from "../../components/Illustration";
-import CardPresta from "../../components/CardPresta";
+import Presentation from "../../components/Presentation";
+import Prestations from "../../components/Prestations";
 import dataMassagesInfos from "../../data/massages_infos.json";
 import dataMassages from "../../data/massages.json";
 import Accordion from "@mui/material/Accordion";
@@ -10,20 +10,24 @@ import Typography from "@mui/material/Typography";
 import "./style.css";
 import "../../components/AccordionContent/style.css";
 
-
 export default function Massages() {
-   const IllustrationTxt = "Massages relaxants";
+   const PresentationTxt = "Massages relaxants";
 
    return (
-      <main>
-         <Illustration
-            title={IllustrationTxt}
-            className="illustration_massages"
-         />
+      <main className="main-content">
+         <section className="section-presentation">
+            <Presentation
+               title={PresentationTxt}
+               className="presentation_massages"
+            />
+         </section>
 
-         <div className="container_light massages_infos">
+         <section className="section-accordion">
             {dataMassagesInfos.map((item, index) => (
-               <Accordion key={index} slotProps={{ transition: { timeout: 800 } }}>
+               <Accordion
+                  key={index}
+                  slotProps={{ transition: { timeout: 800 } }}
+               >
                   <AccordionSummary
                      expandIcon={<ArrowDropDownIcon />}
                      aria-controls={`panel${index}-content`}
@@ -36,19 +40,9 @@ export default function Massages() {
                   </AccordionDetails>
                </Accordion>
             ))}
-         </div>
+         </section>
 
-         <div className="Container_prestations container_light">
-            {dataMassages.map((product, index) => (
-               <CardPresta
-                  key={index}
-                  title={product.title}
-                  img={product.img}
-                  text={product.text}
-                  prix={product.prix}
-               />
-            ))}
-         </div>
+         <Prestations data={dataMassages} title="Nos massages" />
       </main>
    );
 }

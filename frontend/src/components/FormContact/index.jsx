@@ -71,81 +71,80 @@ export default function FormContact() {
                <button>Envoyer un autre messsage</button>
             </div>
          ) : (
-            <form action={formAction}>
-               {state.error && <p className="error-message">{state.error}</p>}
-
-               <label htmlFor="firstName">Prénom</label>
-               <input
-                  type="text"
-                  autoComplete="given-name"
-                  id="firstName"
-                  name="firstName"
-                  placeholder="Ex: Michel"
-               />
-               <label htmlFor="lastName">Nom *</label>
-               <input
-                  type="text"
-                  id="lastName"
-                  autoComplete="family-name"
-                  name="lastName"
-                  placeholder="Ex: Durant"
-                  required
-               />
-               <label htmlFor="email">Email *</label>
-               <input
-                  type="email"
-                  id="email"
-                  placeholder="monemail@email.fr"
-                  autoComplete="email"
-                  name="email"
-                  aria-invalid={!!state.fieldErrors?.email}
-                  aria-describedby="email-error"
-                  required
-               />
-               {state.fieldErrors?.email && (
-                  <span id="email-error" className="text-red-500">
-                     {state.fieldErrors.email}
-                  </span>
-               )}
-               <label htmlFor="message">Message *</label>
-               <textarea
-                  id="message"
-                  name="message"
-                  placeholder="Demandez un rendez-vous ou posez une question ?"
-                  required
-               ></textarea>
-
+            <form action={formAction} className="contact-form">
+               {/* Message d’erreur général */}
                {state.error && (
-                  <p className="text-red-600" role="alert" aria-live="polite">
+                  <p className="error-message" role="alert" aria-live="polite">
                      {state.error}
                   </p>
                )}
 
+               {/* Prénom */}
+               <div className="input-group input-group--firstname">
+                  <label htmlFor="firstName">Prénom</label>
+                  <input
+                     type="text"
+                     id="firstName"
+                     name="firstName"
+                     placeholder="Ex: Michel"
+                     autoComplete="given-name"
+                  />
+               </div>
+
+               {/* Nom */}
+               <div className="input-group input-group--lastname">
+                  <label htmlFor="lastName">Nom *</label>
+                  <input
+                     type="text"
+                     id="lastName"
+                     name="lastName"
+                     placeholder="Ex: Durant"
+                     autoComplete="family-name"
+                     required
+                  />
+               </div>
+
+               {/* Email */}
+               <div className="input-group input-group--email">
+                  <label htmlFor="email">Email *</label>
+                  <input
+                     type="email"
+                     id="email"
+                     name="email"
+                     placeholder="monemail@email.fr"
+                     autoComplete="email"
+                     required
+                     aria-invalid={!!state.fieldErrors?.email}
+                     aria-describedby="email-error"
+                  />
+                  {state.fieldErrors?.email && (
+                     <span
+                        id="email-error"
+                        className="text-red-500"
+                        role="alert"
+                     >
+                        {state.fieldErrors.email}
+                     </span>
+                  )}
+               </div>
+
+               {/* Message */}
+               <div className="input-group input-group--message">
+                  <label htmlFor="message">Message *</label>
+                  <textarea
+                     id="message"
+                     name="message"
+                     placeholder="Demandez un rendez-vous ou posez une question ?"
+                     required
+                  ></textarea>
+               </div>
+
+               {/* Bouton d’envoi */}
                <button type="submit" disabled={isPending}>
                   {isPending ? "Envoi en cours..." : "Envoyer"}
                </button>
             </form>
          )}
-
-         {/* <form className="flex flex-col gap-2"> */}
-         {/* <form id="formcontact" onSubmit={handleSubmit}>
-            
-            <label htmlFor="lastName">Nom: </label>
-            <input name="lastName" id="firstName" placeholder="Nom" />
-            <label htmlFor="firstName">Prénom: </label>
-            <input name="firstName" id="firstName" placeholder="Prénom" />
-            <label htmlFor="email">Email: </label>
-            <input name="email" id="email" placeholder="Email" />
-            <label htmlFor="message">Message: </label>
-            <textarea
-               name="message"
-               id="message"
-               placeholder="Message"
-               rows="3"
-               cols="10"
-            />
-            <button>Envoyer</button>
-         </form> */}
       </div>
    );
 }

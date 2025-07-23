@@ -1,12 +1,29 @@
-.container_cadeau {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+.section-cadeau {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 
-.container_cadeau p {
-    font-size: 16px;
-    color: var(--color-secondary);
-    margin: 3rem 0;
-    text-align: justify;
+.section-cadeau .description {
+   display: grid;
+   gap: 1rem;
+   max-width: 800px;
+   padding: 1rem;
+}
+
+.section-cadeau .description p {
+   font-size: var(--font-size-base);
+   line-height: 1.6;
+   color: var(--color-secondary);
+   text-align: justify;
+}
+
+@media screen and (min-width: 640px) {
+   .container_cadeau {
+      width: 800px;
+   }
+}
+
+@media screen and (min-width: 1440px) {
+   
 }

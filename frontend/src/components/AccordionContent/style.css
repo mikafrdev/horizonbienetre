@@ -1,4 +1,10 @@
-.accordion {
+.section-accordion {
+   display: flex;
+   flex-wrap: wrap;
+   max-width: 800px;
+   justify-content: center;
+   gap: 1rem;
+   padding: 0 1rem;
 }
 
 .accordion ul {
@@ -15,4 +21,20 @@
 
 .accordion li {
    margin: 1rem 0;
+}
+
+.container_cadeau .accordion p {
+   margin: 0;
+}
+
+@media screen and (min-width: 640px) {
+   .section-accordion {
+      padding: 0;
+   }
+}
+
+@media screen and (min-width: 1440px) {
+   .main-content {
+      align-items: center;
+   }
 }

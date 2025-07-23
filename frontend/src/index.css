@@ -1,50 +1,53 @@
 :root {
-  --color-primary: #8fc3d3;
-  --color-secondary: #555;
-  --color-tertiary: #1373A3;
-  --bg-primary: #CAC0AF;
-  --bg-secondary: #CAC0AF;
-  --picto-header: #1E1E1E;
-
+   --color-primary: #8fc3d3;
+   --color-secondary: #555;
+   --color-tertiary: #1373a3;
+   --bg-primary: #cac0af;
+   --bg-secondary: #cac0af;
+   --picto-header: #1e1e1e;
+   --font-size-base: clamp(1rem, 2.5vw, 1.125rem); /* Paragraphe */
+  --font-size-h2: clamp(1.5rem, 4vw, 2.25rem);   /* Titres */
+  --font-size-small: 0.875rem;                   /* Petit texte */
 }
 
 #root {
-  display: flex;
-  flex-direction: column;
+   display: flex;
+   flex-direction: column;
 }
 
 h1,
 h2,
 h3 {
-  font-weight: normal;
+   font-weight: normal;
 }
 
 *,
 ::before,
 ::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
 }
 
 ul {
-  list-style-type: none;
+   list-style-type: none;
 }
 
 a {
-  text-decoration: none;
+   text-decoration: none;
 }
 
 @font-face {
-  font-family: "Source serif pro";
-  src: url("./assets/fonts/source-serif-pro/SourceSerifPro-Regular.otf");
+   font-family: "Source serif pro";
+   src: url("./assets/fonts/source-serif-pro/SourceSerifPro-Regular.otf");
 }
 
 body,
 h1,
 h2,
-.contacts_infos, .contacts_infos a {
-  font-family: "Adamina", serif, Courier, monospace;
+.contacts_infos,
+.contacts_infos a {
+   font-family: "Adamina", serif, Courier, monospace;
 }
 
 body h3,
@@ -52,34 +55,37 @@ body p,
 input,
 label,
 textarea {
-  font-family: "Source serif pro", serif, monospace;
+   font-family: "Source serif pro", serif, monospace;
 }
 
 #root {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  text-align: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+   max-width: 1280px;
+   margin: 0 auto;
+   text-align: center;
 }
 
-main {
-    margin-top: 8rem;
-    width: 100%;
-    color: #fff;
+.main-content {
+   display: flex;
+   flex-direction: column;
+   max-width: 600px;
+   margin-top: 8rem;
+   width: 100%;
+   color: #fff;
 }
 
 .container_light,
 footer {
-  padding: 0 1em;
+   padding: 0 1em;
 }
 
 .container_light {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 
 /* .logo:hover {
@@ -90,44 +96,32 @@ footer {
 } */
 
 .ombre {
-  -webkit-box-shadow: 2px 2px 19px 3px rgba(0, 0, 0, 0.62);
-  box-shadow: 2px 2px 19px 3px rgba(0, 0, 0, 0.62);
+   -webkit-box-shadow: 2px 2px 19px 3px rgba(0, 0, 0, 0.62);
+   box-shadow: 2px 2px 19px 3px rgba(0, 0, 0, 0.62);
 }
 
 @keyframes logo-spin {
-  from {
+   from {
       transform: rotate(0deg);
-  }
-  to {
+   }
+   to {
       transform: rotate(360deg);
-  }
+   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
+   a:nth-of-type(2) .logo {
       animation: logo-spin infinite 20s linear;
-  }
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  max-width: 600px;
+   }
 }
 
 @media screen and (min-width: 1440px) {
-  main {
-    max-width: 1440px;
-    
-   } /* 
-  main .illustration_massages {
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 0;
+   .main-content {
+      max-width: 1440px;
+      align-items: center;
    }
 
-   .massages_infos {
-    max-width: 400px;
-   } */
+   .section-video video {
+      height: 600px;
+   }
 }

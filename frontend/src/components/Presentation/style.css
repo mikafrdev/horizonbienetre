@@ -1,47 +1,54 @@
-main .illustration {
-   /*margin-bottom: 3em;*/
+.section-presentation {
+   display: flex;
+   justify-content: center;
+   width: 100%;
 }
 
-main .illustration_hp,
-main .illustration_massages,
-main .illustration_soins,
-main .illustration_formule,
-main .illustration_cadeau {
-   width: 100%; /* Prend toute la largeur disponible */
-   max-width: 100%;
+main .presentation_hp,
+main .presentation_massages,
+main .presentation_soins,
+main .presentation_formule,
+main .presentation_cadeau {
+   width: 100%;
    aspect-ratio: 4 / 3;
-   background-image:
-      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-      url(/src/assets/close-up-of-young-beautiful-spa-salon.jpg);
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
+}
+
+main .presentation_hp,
+main .presentation_massages,
+main .presentation_soins,
+main .presentation_formule {
+   background-image:
+      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(/src/assets/close-up-of-young-beautiful-spa-salon.jpg);
    margin-bottom: 2rem;
 }
 
-main .illustration_massages {
+main .presentation_massages {
    background-image:
       linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
       url(/src/assets/Zen-stones-candles-and-flowers-on-the-background-of-woman-receiving-treatment.jpg);
 }
 
-main .illustration_soins {
+main .presentation_soins {
    background-image:
       linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
       url(/src/assets/reiki-master-working-with-patient.jpg);
 }
 
-main .illustration_formule {
+main .presentation_formule {
    background-image:
       linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
       url(/src/assets/Formule-detente-profonde.jpeg);
 }
 
-main .illustration_cadeau {
+main .presentation_cadeau {
    background-image: url(/src/assets/Carte_Cadeau_face_1.jpg);
 }
 
-main .illustration_contact {
+main .presentation_contact {
    display: flex;
    justify-content: center;
    align-items: center;
@@ -49,7 +56,7 @@ main .illustration_contact {
    background-color: var(--color-tertiary);
 }
 
-main .illustration div {
+main .presentation-title {
    width: 100%;
    position: absolute;
    top: 31%;
@@ -59,34 +66,29 @@ main .illustration div {
    text-align: center;
 }
 
-main .illustration div h1 {
+main .presentation div h1 {
    font-size: clamp(1.6rem, 5vw, 2.5rem);
 }
 
-main .illustration_contact h1 {
+main .presentation_contact h1 {
    background-color: var(--color-tertiary);
 }
 
-
-
 @media screen and (min-width: 768px) {
-   main .illustration_hp {
-      max-width: 100%;
-      height: auto;
-   }
+}
 
-   .img_salon {
-      max-width: 100%;
-      height: auto;
+@media screen and (min-width: 1440px) {
+   main .presentation_hp,
+   main .presentation_massages,
+   main .presentation_soins,
+   main .presentation_formule,
+   main .presentation_cadeau {
+      width: 800px;
    }
 }
 
-/* @media screen and (max-width: 900px) and (min-width: 600px),
-    (min-width: 1100px) {
-    div.example {
-        font-size: 50px;
-        padding: 50px;
-        border: 8px solid black;
-        background: yellow;
-    }
-} */
+@media screen and (min-width: 1440px) {
+   main .presentation-title {
+      top: 45%;
+   }
+}

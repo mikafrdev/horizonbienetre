@@ -1,15 +1,5 @@
-.homepage-video video {
+.section-video video {
    width: 100%;
-}
-
-main .description {
-   background-color: var(--bg-primary);
-}
-
-main .description h2 {
-   color: var(--color-secondary);
-   padding: 2em 0 1em 0;
-   font-size: 24px;
 }
 
 .img_salon {
@@ -20,14 +10,6 @@ main .description h2 {
    background-position: center;
    border-radius: 5px;
    margin-bottom: 2em;
-}
-
-main .description p {
-   text-align: left;
-   font-size: 16px;
-   color: #000;
-   padding-bottom: 2em;
-   line-height: 25px;
 }
 
 .section-prestations {
@@ -50,8 +32,5 @@ main .description p {
       flex-wrap: wrap;
       gap: 2rem;
       justify-content: center;
-   }
-   .homepage-video video {
-      width: 80%;
    }
 }

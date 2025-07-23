@@ -1,4 +1,4 @@
-import Illustration from "../../components/Illustration";
+import Presentation from "../../components/Presentation";
 import imgMassages from "./../../assets/Zen-stones-candles-and-flowers-on-the-background-of-woman-receiving-treatment.jpg";
 import imgSoins from "./../../assets/reiki-master-working-with-patient.jpg";
 import imgFormules from "./../../assets/Formule-detente-profonde.jpeg";
@@ -13,23 +13,17 @@ export default function Home() {
    const prestation3 = "Les formules bien-être";
 
    return (
-      <main>
-         {/* <Illustration title="Salon Bien-Ètre" className="illustration_hp" />
+      <main className="main-content">
+      
 
-         <div className="container_light description">
-            <h2>Horizon bien-être, un lieu de détente et de bienveillance</h2>
-                <div className="img_salon ombre"></div>
-                <p>Praticienne indépendante, mon objectif est de vous offrir une expérience unique et revitalisante. Que vous soyez à la recherche d’un moment de détente profonde, apaiser le stress, libérer  des blocages énergétiques ou vous reconnecter à votre essence intérieure, mes compétences me permettent de répondre à ces besoins.</p>
-         </div> */}
-
-         <div className="homepage-video">
+         <section className="section-video">
             <video playsInline autoPlay loop muted preload="metadata">
                <source src={VideoHP} type="video/mp4" />
                Your browser does not support the video tag.
             </video>
-         </div>
+         </section>
 
-         <div className="container_light section-prestations">
+         <section className="container_light section-prestations">
             <h2>Les prestations</h2>
 
             <div className="prestation-cards">
@@ -47,7 +41,7 @@ export default function Home() {
                   link={"/formule"}
                />
             </div>
-         </div>
+         </section>
 
          <Opinions />
       </main>

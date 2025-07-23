@@ -10,9 +10,9 @@ export default function Salon() {
     const prestation3 = 'La formule détente profonde';
 
     return (
-        <main>
+        <main className="main-content">
             
-            <div className="illustration">
+            <div className="presentation">
                 <div>
                     <h1>Salon</h1>
                 </div>

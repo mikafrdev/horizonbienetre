@@ -1,3 +1,15 @@
-.massages_infos {
-    margin-top: 1rem;
+.main-content {
+   align-items: center;
+}
+
+@media screen and (min-width: 640px) {
+   .section-prestations {
+      padding: 0;
+   }
+}
+
+@media screen and (min-width: 1440px) {
+   .main-content {
+      align-items: center;
+   }
 }

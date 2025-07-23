@@ -1,4 +1,4 @@
-import Illustration from "../../components/Illustration";
+import Presentation from "../../components/Presentation";
 import FormContact from "../../components/FormContact";
 import dataCarteCadeau from "../../data/cartecadeau.json";
 import Accordion from "@mui/material/Accordion";
@@ -12,20 +12,26 @@ import RenderContent, {
 import "./style.css";
 
 export default function Cadeau() {
-   const IllustrationTxt = "Carte Cadeau";
+   const PresentationTxt = "Carte Cadeau";
 
    return (
-      <main>
-         <Illustration className="illustration_cadeau" />
+      <main className="main-content">
+         <section className="section-cadeau">
+            <Presentation className="presentation_cadeau" />
+            <div className="description">
+               <p>
+                  Envie de faire plaisir ou marquer une occasion ? Offrez la
+                  carte cadeau <strong>Horizon Bien-Être</strong>.
+               </p>
+               <p>
+                  Elle est valable pour tous les soins et toutes les formules.
+                  Il vous suffit de choisir le(s) soin(s), ou le montant que
+                  vous souhaitez offrir.
+               </p>
+            </div>
+         </section>
 
-         <div className="container_cadeau container_light">
-            <p>
-               Envie de faire plaisir ou pour diverses occasions offrez la carte
-               cadeau Horizon Bien-Être. La carte cadeau est valable pour tous
-               les soins et toutes les formules. Il vous sufit de choisir le(s)
-               soin(s) ou alors le montant que vous souhaitez offrir.
-            </p>
-
+         <section className="section-accordion">
             {dataCarteCadeau.map((item, index) => (
                <Accordion
                   key={index}
@@ -46,9 +52,9 @@ export default function Cadeau() {
                   </AccordionDetails>
                </Accordion>
             ))}
+         </section>
 
-            <FormContact />
-         </div>
+         <FormContact />
       </main>
    );
 }
