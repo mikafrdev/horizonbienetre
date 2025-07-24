@@ -1,58 +1,62 @@
 .contacts {
-    padding: 0 1em;
+   padding: 0 1em;
 }
 
 .contacts_infos {
-    display: grid;
-    align-items: center;
-    justify-items: start;
-    grid-template-columns: 1fr 3fr;
-    grid-gap: 1em;
-    list-style-type: none;
-    text-align: left;
-    padding: 0 2em;
+   display: grid;
+   align-items: center;
+   justify-items: start;
+   grid-template-columns: 1fr 3fr;
+   grid-gap: 1em;
+   list-style-type: none;
+   text-align: left;
+   padding: 0 2em;
 }
 
-.container_contact .horaires, .container_contact .detail_prestations, .contacts_infos, .contacts_infos a {
-    color: var(--color-secondary);
+.container_contact .horaires,
+.container_contact .detail_prestations,
+.contacts_infos,
+.contacts_infos a {
+   color: var(--color-secondary);
 }
 
 .display_phone {
-    text-decoration: underline;
+   text-decoration: underline;
 }
 
 .contacts_infos_next {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin: 1em 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 1rem;
+   margin: 1em 0;
 }
 
 .footer_adress {
-    width: 40px;
+   width: 40px;
 }
 .footer_mail {
-    width: 40px;
+   width: 40px;
 }
 
 .footer_fb svg {
-    height: 34px;
-    stroke-width:35px;
+   height: 34px;
+   stroke-width: 35px;
 }
 
 .footer_insta svg {
-    height: 34px;
+   height: 34px;
 }
 
-.horaires, .detail_prestations {
-    text-align: left;
+.horaires,
+.detail_prestations {
+   text-align: left;
 }
 
 .detail_prestations {
-    margin: 1em 0;
+   margin: 1em 0;
 }
 
-.container_contact .horaires, .container_contact .detail_prestations {
-    
+.container_contact .horaires,
+.container_contact .detail_prestations {
 }

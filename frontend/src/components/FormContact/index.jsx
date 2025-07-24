@@ -63,7 +63,7 @@ export default function FormContact() {
    }
 
    return (
-      <div className="formcontact">
+      <section className="section-form">
          {state.success ? (
             <div className="success-message" aria-live="polite">
                <h2>Merci !</h2>
@@ -72,39 +72,37 @@ export default function FormContact() {
             </div>
          ) : (
             <form action={formAction} className="contact-form">
-               {/* Message d’erreur général */}
                {state.error && (
                   <p className="error-message" role="alert" aria-live="polite">
                      {state.error}
                   </p>
                )}
 
-               {/* Prénom */}
-               <div className="input-group input-group--firstname">
-                  <label htmlFor="firstName">Prénom</label>
-                  <input
-                     type="text"
-                     id="firstName"
-                     name="firstName"
-                     placeholder="Ex: Michel"
-                     autoComplete="given-name"
-                  />
+               <div className="input-group input-group--firstlastname">
+                  <div className="input-group input-group--firstname">
+                     <label htmlFor="firstName">Prénom</label>
+                     <input
+                        type="text"
+                        id="firstName"
+                        name="firstName"
+                        placeholder="Ex: Michel"
+                        autoComplete="given-name"
+                     />
+                  </div>
+
+                  <div className="input-group input-group--lastname">
+                     <label htmlFor="lastName">Nom *</label>
+                     <input
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        placeholder="Ex: Durant"
+                        autoComplete="family-name"
+                        required
+                     />
+                  </div>
                </div>
 
-               {/* Nom */}
-               <div className="input-group input-group--lastname">
-                  <label htmlFor="lastName">Nom *</label>
-                  <input
-                     type="text"
-                     id="lastName"
-                     name="lastName"
-                     placeholder="Ex: Durant"
-                     autoComplete="family-name"
-                     required
-                  />
-               </div>
-
-               {/* Email */}
                <div className="input-group input-group--email">
                   <label htmlFor="email">Email *</label>
                   <input
@@ -128,7 +126,6 @@ export default function FormContact() {
                   )}
                </div>
 
-               {/* Message */}
                <div className="input-group input-group--message">
                   <label htmlFor="message">Message *</label>
                   <textarea
@@ -139,12 +136,12 @@ export default function FormContact() {
                   ></textarea>
                </div>
 
-               {/* Bouton d’envoi */}
+               <div className="input-group input-group--submit">
                <button type="submit" disabled={isPending}>
                   {isPending ? "Envoi en cours..." : "Envoyer"}
-               </button>
+               </button></div>
             </form>
          )}
-      </div>
+      </section>
    );
 }

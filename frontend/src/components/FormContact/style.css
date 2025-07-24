@@ -1,6 +1,6 @@
 :root {
-   --color-primary: #2563eb; /* bleu moderne */
-   --color-error: #dc2626; /* rouge d'erreur */
+   --color-primary: #2563eb;
+   --color-error: #dc2626;
    --color-bg: #ffffff;
    --color-text: #111827;
    --color-border: #d1d5db;
@@ -14,39 +14,35 @@
    --transition: 0.2s ease-in-out;
 }
 
-.formcontact {
+.section-form {
    display: flex;
    width: 100%;
+   margin: 2rem 0;
 }
 
 .contact-form {
-   width: 100%;
-   max-width: 800px;
-   margin: 0 auto;
-   padding: var(--spacing);
-   font-family: var(--font-base);
-   background-color: var(--color-bg);
-   color: var(--color-text);
    display: flex;
    flex-direction: column;
    gap: 1.5rem;
+   width: 100%;
+   max-width: 800px;
+   margin: 0 1rem;
+   color: var(--color-text);
 }
 
-/* Groupes de champs */
 .input-group {
    display: flex;
    flex-direction: column;
    gap: 0.5rem;
 }
 
-/* Labels */
 .input-group label {
    font-weight: 600;
    font-size: var(--font-size-base);
    color: var(--color-text);
+   text-align: left;
 }
 
-/* Champs (input & textarea) */
 .input-group input,
 .input-group textarea {
    padding: 0.75rem 1rem;
@@ -66,13 +62,11 @@
    box-shadow: 0 0 0 2px rgb(37 99 235 / 30%);
 }
 
-/* Textarea spécifique */
 .input-group textarea {
    resize: vertical;
    min-height: 120px;
 }
 
-/* Message d'erreur */
 .input-group .text-red-500,
 .input-group .text-red-600,
 .error-message {
@@ -80,8 +74,14 @@
    color: var(--color-error);
 }
 
-/* Bouton */
+.input-group--submit {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+   }
+
 .contact-form button[type="submit"] {
+   width: 100%;
    align-self: flex-start;
    background-color: var(--color-primary);
    color: white;
@@ -103,10 +103,9 @@
    cursor: not-allowed;
 }
 
-/* Responsive : petits écrans */
 @media (max-width: 480px) {
    .contact-form {
-      padding: 1rem 0.5rem;
+      
    }
 
    .contact-form button {
@@ -114,8 +113,20 @@
    }
 }
 
-@media (max-width: 1440px) {
+@media screen and (min-width: 1024px) {
+   /* form > div.input-group.input-group--firstlastname, */
+   .input-group--firstlastname {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+   }
 
+   @media screen and (min-width: 1440px) {
+      .section-form {
+         justify-content: center;
+      }
+   }
+   
 }
 
 /* .formcontact {

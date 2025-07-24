@@ -3,15 +3,13 @@ import FormContact from "../../components/FormContact";
 import "./style.css";
 
 export default function Contacts() {
-    return (
-        <main className="container_contact">
-            <div className="presentation_contact">
-                <h1>Nous contacter</h1>
-            </div>
+   return (
+      <main className="main-content">
+         <section className="presentation presentation-contact">
+            <h1>Nous contacter</h1>
+         </section>
 
-            <div className="container_light">
-                <FormContact />
-            </div>
-        </main>
-    );
+         <FormContact />
+      </main>
+   );
 }
