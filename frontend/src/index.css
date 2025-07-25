@@ -6,13 +6,8 @@
    --bg-secondary: #cac0af;
    --picto-header: #1e1e1e;
    --font-size-base: clamp(1rem, 2.5vw, 1.125rem); /* Paragraphe */
-  --font-size-h2: clamp(1.5rem, 4vw, 2.25rem);   /* Titres */
-  --font-size-small: 0.875rem;                   /* Petit texte */
-}
-
-#root {
-   display: flex;
-   flex-direction: column;
+   --font-size-h2: clamp(1.5rem, 4vw, 2.25rem); /* Titres */
+   --font-size-small: 0.875rem; /* Petit texte */
 }
 
 h1,
@@ -72,8 +67,8 @@ textarea {
    display: flex;
    flex-direction: column;
    max-width: 600px;
-   margin-top: 8rem;
    width: 100%;
+   margin-top: 8rem;
    color: #fff;
 }
 

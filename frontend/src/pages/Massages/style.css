@@ -1,6 +1,4 @@
-.main-content {
-   align-items: center;
-}
+
 
 @media screen and (min-width: 640px) {
    .section-prestations {
@@ -9,7 +7,5 @@
 }
 
 @media screen and (min-width: 1440px) {
-   .main-content {
-      align-items: center;
-   }
+
 }

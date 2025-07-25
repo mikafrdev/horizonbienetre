@@ -5,70 +5,28 @@
    margin-bottom: 2rem;
 }
 
-.opinion {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   flex-shrink: 0;
-   width: 100%;
-   padding: 0 3rem;
-   transition: translate 300ms ease-in-out;
-}
-
 .opinions-slider {
    width: 100%;
    margin-top: 1rem;
 }
 
-.opinions section {
-   position: relative;
+
+
+
+.opinions h2 {
+   margin-top: 1em;
+   font-size: 32px;
+   color: var(--color-secondary);
+}
+
+.opinion-card {
    display: flex;
-   flex-direction: row;
+   flex-direction: column;
+   align-items: center;
+   background: #fff;
+   padding: 2rem 4rem;
+   box-sizing: border-box;
    width: 100%;
-   height: 100%;
-   flex-shrink: 0;
-   flex-grow: 0;
-   overflow: hidden;
-}
-
-.opinions section button {
-   all: unset;
-   display: block;
-   position: absolute;
-   top: 0;
-   bottom: 0;
-   padding: 0;
-   width: 3rem;
-   transition: background-color 100ms ease-in-out;
-   cursor: pointer;
-}
-
-.opinions section button.btn-left,
-.opinions button.btn-right {
-   z-index: 2;
-}
-
-.opinions section button.btn-left {
-   left: 0;
-}
-
-.opinions button.btn-left svg {
-   rotate: 180deg;
-}
-.opinions button.btn-right {
-   right: 0;
-}
-
-.opinions button.btn-right svg {
-   rotate: 0deg;
-}
-
-.picto-arrow-fill {
-   fill: #555;
-}
-
-.picto-arrow-fill:hover {
-   fill: #949191;
 }
 
 .opinion_stars_date {
@@ -81,6 +39,7 @@
    display: flex;
    list-style-type: none;
    padding: 0;
+   margin: 0;
 }
 
 .opinion_stars li {
@@ -93,30 +52,16 @@
 
 .opinion_date {
    font-style: italic;
-}
-
-.opinions h2 {
-   margin-top: 1em;
-   font-size: 32px;
+   color: var(--color-secondary);
 }
 
 .opinion_name {
    display: flex;
    margin: 1em 0;
+   color: var(--color-secondary);
 }
 
-.opinion-card {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   background: #fff;
-   padding: 2rem 4rem;
-   height: 100%;
-}
-
-.opinion_date,
-.opinions h2,
-.opinions p {
+.opinion_text {
    color: var(--color-secondary);
 }
 
@@ -125,12 +70,20 @@
    color: var(--color-primary);
 }
 
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+   bottom: 0;
+}
+
 span.swiper-pagination-bullet-active {
    background-color: var(--color-primary);
 }
 
-.swiper-pagination-bullets.swiper-pagination-horizontal {
-   bottom: 0;
+.picto-arrow-fill {
+   fill: #555;
+}
+
+.picto-arrow-fill:hover {
+   fill: #949191;
 }
 
 @media screen and (min-width: 1440px) {
