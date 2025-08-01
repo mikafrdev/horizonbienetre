@@ -58,6 +58,7 @@ textarea {
    flex-direction: column;
    align-items: center;
    width: 100%;
+   min-width: 350px;
    max-width: 1280px;
    margin: 0 auto;
    text-align: center;
@@ -66,8 +67,8 @@ textarea {
 .main-content {
    display: flex;
    flex-direction: column;
-   max-width: 600px;
    width: 100%;
+   max-width: 600px;
    margin-top: 8rem;
    color: #fff;
 }
@@ -112,8 +113,8 @@ footer {
 
 @media screen and (min-width: 1440px) {
    .main-content {
-      max-width: 1440px;
       align-items: center;
+      max-width: 1280px;
    }
 
    .section-video video {

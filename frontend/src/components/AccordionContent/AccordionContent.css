@@ -7,23 +7,23 @@
    padding: 0 1rem;
 }
 
-.accordion ul {
+.section-accordion ul {
    padding-left: 1rem;
 }
 
-.accordion ul.decimal {
+.section-accordion ul.decimal {
    list-style-type: number;
 }
 
-.accordion ul.disc {
+.section-accordion ul.disc {
    list-style-type: disc;
 }
 
-.accordion li {
+.section-accordion li {
    margin: 1rem 0;
 }
 
-.container_cadeau .accordion p {
+.container_cadeau .section-accordion p {
    margin: 0;
 }
 

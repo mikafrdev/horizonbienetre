@@ -8,7 +8,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import "./style.css";
-import "../../components/AccordionContent/style.css";
+import "../../components/AccordionContent/AccordionContent.css";
 
 export default function Massages() {
    const PresentationTxt = "Massages relaxants";

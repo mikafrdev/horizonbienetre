@@ -11,6 +11,7 @@ import Typography from "@mui/material/Typography";
 import RenderContent, {
    formatText,
 } from "../../components/AccordionContent/RenderContent";
+import "../../components/AccordionContent/AccordionContent.css";
 import "./style.css";
 
 export default function Massages() {
@@ -30,6 +31,13 @@ export default function Massages() {
                <Accordion
                   key={index}
                   slotProps={{ transition: { timeout: 800 } }}
+                  sx={{
+                     boxShadow:
+                        "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px",
+                     "&::before": {
+                        display: "none",
+                     },
+                  }}
                >
                   <AccordionSummary
                      expandIcon={<ArrowDropDownIcon />}
@@ -49,7 +57,6 @@ export default function Massages() {
          </section>
 
          <Prestations data={dataSoins} title="Nos soins" />
-         
       </main>
    );
 }

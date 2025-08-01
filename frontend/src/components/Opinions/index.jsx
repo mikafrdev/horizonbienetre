@@ -19,7 +19,7 @@ export default function Opinions() {
       ));
 
    return (
-      <div className="opinions">
+      <section className="opinions">
          <h2>Témoignages</h2>
 
          <div className="opinions-slider">
@@ -49,6 +49,6 @@ export default function Opinions() {
                ))}
             </Swiper>
          </div>
-      </div>
+      </section>
    );
 }

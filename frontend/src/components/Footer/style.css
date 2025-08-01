@@ -1,6 +1,6 @@
 footer {
     width: 100%;
-    max-width: 600px;
+    max-width: 1440px;
     background-color: var(--bg-primary);
     display: flex;
     flex-direction: column;
