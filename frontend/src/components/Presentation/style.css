@@ -22,26 +22,26 @@ main .presentation_soins,
 main .presentation_formule {
    background-image:
       linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-      url(/src/assets/close-up-of-young-beautiful-spa-salon.jpg);
+      url(/assets/close-up-of-young-beautiful-spa-salon.jpg);
    margin-bottom: 2rem;
 }
 
 main .presentation_massages {
    background-image:
       linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-      url(/src/assets/Zen-stones-candles-and-flowers-on-the-background-of-woman-receiving-treatment.jpg);
+      url(/Zen-stones-candles-and-flowers-on-the-background-of-woman-receiving-treatment.jpg);
 }
 
 main .presentation_soins {
    background-image:
       linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-      url(/src/assets/reiki-master-working-with-patient.jpg);
+      url(/reiki-master-working-with-patient.jpg);
 }
 
 main .presentation_formule {
    background-image:
       linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-      url(/src/assets/Formule-detente-profonde.jpeg);
+      url(/Formule-detente-profonde.jpeg);
 }
 
 main .presentation_cadeau {

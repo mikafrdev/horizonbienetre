@@ -8,12 +8,27 @@
    --font-size-base: clamp(1rem, 2.5vw, 1.125rem); /* Paragraphe */
    --font-size-h2: clamp(1.5rem, 4vw, 2.25rem); /* Titres */
    --font-size-small: 0.875rem; /* Petit texte */
+   --font-size-h1: clamp(2rem, 4vw + 1rem, 3.5rem); /* min 32px, max 56px */
+   --font-size-h2: clamp(
+      1.5rem,
+      3vw + 0.75rem,
+      2.5rem
+   ); /* min 24px, max 40px */
+   --font-size-h3: clamp(1.25rem, 2vw + 0.5rem, 2rem); /* min 20px, max 32px */
 }
 
 h1,
 h2,
 h3 {
    font-weight: normal;
+}
+
+h2 {
+   font-size: var(--font-size-h2);
+}
+
+h3 {
+   font-size: var(--font-size-h3);
 }
 
 *,

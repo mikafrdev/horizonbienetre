@@ -1,13 +1,6 @@
 import "./style.css";
-import img1 from './../../assets/massage-bien-etre.jpeg'
-import img2 from './../../assets/close-up-of-hands-placed-on-girls-head.jpg'
-import img3 from './../../assets/Formule-detente-profonde.jpeg'
 
 export default function Salon() {
-
-    const prestation1 = 'Massages Bien-Être Harmonisant';
-    const prestation2 = 'Les soins énergétiques';
-    const prestation3 = 'La formule détente profonde';
 
     return (
         <main className="main-content">
