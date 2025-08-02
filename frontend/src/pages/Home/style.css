@@ -33,6 +33,9 @@
 }
 
 @media screen and (min-width: 1440px) {
+   .section-video video {
+      max-width: 1024px;
+   }
    .prestation-cards {
       display: flex;
       flex-wrap: wrap;

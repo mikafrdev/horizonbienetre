@@ -20,6 +20,10 @@ main .presentation_hp,
 main .presentation_massages,
 main .presentation_soins,
 main .presentation_formule {
+   display: flex;
+   align-items: center; /* centre verticalement */
+   justify-content: center; /* centre horizontalement */
+   text-align: center;
    background-image:
       linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
       url(/assets/close-up-of-young-beautiful-spa-salon.jpg);
@@ -59,11 +63,6 @@ main .presentation-contact {
 
 main .presentation-title {
    width: 100%;
-   position: absolute;
-   top: 31%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   color: white;
    text-align: center;
 }
 
@@ -89,7 +88,5 @@ main .presentation div h1 {
 }
 
 @media screen and (min-width: 1440px) {
-   main .presentation-title {
-      top: 45%;
-   }
+   
 }
