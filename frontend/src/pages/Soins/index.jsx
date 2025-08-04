@@ -1,5 +1,4 @@
 import Presentation from "../../components/Presentation";
-/* import CardPresta from "../../components/CardPresta"; */
 import Prestations from "../../components/Prestations";
 import dataSoinsInfos from "../../data/soins_infos.json";
 import dataSoins from "../../data/soins.json";

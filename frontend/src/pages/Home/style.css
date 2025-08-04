@@ -1,5 +1,6 @@
 .section-video video {
    width: 100%;
+   max-width: 1024px;
 }
 
 .img_salon {
@@ -12,34 +13,30 @@
    margin-bottom: 2em;
 }
 
-.prestations {
+.home-prestations {
    background-color: #fff;
    padding: 0 1em;
 }
 
-.prestation-cards {
+/* .prestation-cards {
    display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-   gap: 1.5rem;
-}
+   justify-items: center;
+   gap: 3rem;
+} */
 
-.prestations h2 {
+.home-prestations h2 {
    color: var(--color-secondary);
    line-height: 28px;
    margin: 1em 0;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
+   .prestation-cards {
+   }
 }
 
 @media screen and (min-width: 1440px) {
    .section-video video {
       max-width: 1024px;
-   }
-   .prestation-cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
    }
 }

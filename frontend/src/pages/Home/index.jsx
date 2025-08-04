@@ -1,4 +1,4 @@
-import PrestationsCards from "../../components/PrestationsCards";
+import HomePrestations from "../../components/HomePrestations";
 import Opinions from "../../components/Opinions";
 import VideoHP from "../../assets/hp.mp4";
 import "./style.css";
@@ -13,14 +13,7 @@ export default function Home() {
             </video>
          </section>
 
-         <section className="prestations">
-            <h2>Les prestations</h2>
-
-            <div className="prestation-cards">
-               <PrestationsCards />
-            </div>
-         </section>
-
+         <HomePrestations />
          <Opinions />
       </main>
    );

@@ -8,10 +8,12 @@ export default function Formule() {
 
    return (
       <main className="main-content">
-         <Presentation
-            title={PresentationTxt}
-            className="presentation_formule"
-         />
+         <section className="section-presentation">
+            <Presentation
+               title={PresentationTxt}
+               className="presentation_formule"
+            />
+         </section>
 
          <Prestations data={dataFormules} title="Nos formules" />
       </main>
