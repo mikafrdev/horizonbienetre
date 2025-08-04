@@ -1,7 +1,7 @@
 .section-accordion {
    display: flex;
    flex-wrap: wrap;
-   max-width: 800px;
+   max-width: 600px;
    justify-content: center;
    gap: 1rem;
    padding: 0 1rem;
