@@ -34,7 +34,13 @@ main .presentation_formule {
 main .presentation_massages {
    background-image:
       linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-      url(/Zen-stones-candles-and-flowers-on-the-background-of-woman-receiving-treatment.jpg);
+      image-set(
+         url("/massage-relaxation-femme-bougies-fleurs-spa-600.webp")
+            type("image/webp") 1x,
+
+         url("/massage-relaxation-femme-bougies-fleurs-spa-600.jpg")
+            type("image/jpeg") 1x
+      );
 }
 
 main .presentation_soins {
@@ -75,7 +81,42 @@ main .presentation div h1 {
    background-color: var(--color-tertiary);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
+   main .presentation_massages {
+      background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      image-set(
+         url("/massage-relaxation-femme-bougies-fleurs-spa-800.webp")
+            type("image/webp") 1x,
+         url("/massage-relaxation-femme-bougies-fleurs-spa-800.jpg")
+            type("image/jpeg") 1x
+      );
+   }
+}
+
+@media screen and (min-width: 800px) {
+   main .presentation_massages {
+      background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      image-set(
+         url("/massage-relaxation-femme-bougies-fleurs-spa-1024.webp")
+            type("image/webp") 1x,
+         url("/massage-relaxation-femme-bougies-fleurs-spa-1024.jpg")
+            type("image/jpeg") 1x
+      );
+   }
+}
+@media screen and (min-width: 1024px) {
+   main .presentation_massages {
+      background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      image-set(
+         url("/massage-relaxation-femme-bougies-fleurs-spa-1440.webp")
+            type("image/webp") 1x,
+         url("/massage-relaxation-femme-bougies-fleurs-spa-1440.jpg")
+            type("image/jpeg") 1x
+      );
+   }
 }
 
 @media screen and (min-width: 1440px) {
@@ -89,5 +130,4 @@ main .presentation div h1 {
 }
 
 @media screen and (min-width: 1440px) {
-   
 }
