@@ -1,3 +1,4 @@
+import React from "react";
 import "./style.css";
 
 export default function Prestations({ data, title }) {
@@ -16,13 +17,27 @@ export default function Prestations({ data, title }) {
                   images[`../../assets/${item.img}`] ||
                   images["../../assets/default.jpg"];
 
+               const isLast = index === data.length - 1;
+
                return (
-                  <div className="section-prestations__card section-prestations__card--shadow" key={index}>
-                     <img src={imageUrl} alt={item.title} />
-                     <h3>{item.title}</h3>
-                     <p>{item.text}</p>
-                     <span>{item.prix}</span>
-                  </div>
+                  <React.Fragment key={index}>
+                     <div
+                        className={`section-prestations__card section-prestations__card--shadow ${
+                           index % 2 !== 0 ? "reverse" : ""
+                        }`}
+                        key={index}
+                     >
+                        <div className="section-prestations__img">
+                           <img src={imageUrl} alt={item.title} />
+                        </div>
+                        <div className="section-prestations__content">
+                           <h3>{item.title}</h3>
+                           <p>{item.text}</p>
+                           <span>{item.prix}</span>
+                        </div>
+                     </div>
+                     {!isLast && <hr className="separator" />}
+                  </React.Fragment>
                );
             })}
          </div>

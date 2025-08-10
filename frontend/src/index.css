@@ -5,17 +5,19 @@
    --bg-primary: #cac0af;
    --bg-secondary: #cac0af;
    --picto-header: #1e1e1e;
-   --font-size-base: clamp(1rem, 2.5vw, 1.125rem); /* Paragraphe */
-   --font-size-h2: clamp(1.5rem, 4vw, 2.25rem); /* Titres */
-   --font-size-small: 0.875rem; /* Petit texte */
+   --font-size-p: clamp(1rem, 2.5vw, 1.125rem); 
+   --font-size-h2: clamp(1.5rem, 4vw, 2.25rem); 
+   --font-size-small: 0.875rem; 
    --font-size-h1: clamp(2rem, 4vw + 1rem, 3.5rem);
    --font-size-h2: clamp(1.5rem, 3vw + 0.75rem, 2.5rem);
    --font-size-h3: clamp(1.25rem, 2vw + 0.5rem, 2rem);
+   --min-width-resolution: 320px;
 }
 
 h1,
 h2,
 h3 {
+   width: 100%;
    font-weight: normal;
 }
 
@@ -69,7 +71,7 @@ textarea {
    flex-direction: column;
    align-items: center;
    width: 100%;
-   min-width: 350px;
+   min-width: var(--min-width-resolution);
    max-width: 1280px;
    margin: 0 auto;
    text-align: center;
