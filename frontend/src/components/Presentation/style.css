@@ -2,7 +2,8 @@
    display: flex;
    justify-content: center;
    width: 100%;
-   max-width: 600px;
+   max-width: 800px;
+   max-height: 400px;
 }
 
 main .presentation_hp,
@@ -74,7 +75,7 @@ main .presentation-title {
 }
 
 main .presentation div h1 {
-   font-size: clamp(1.6rem, 5vw, 2.5rem);
+   font-size: clamp(1.563rem, 1.295rem + 1.34vw, 2.5rem);
 }
 
 .presentation-contact h1 {

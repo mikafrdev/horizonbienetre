@@ -9,6 +9,7 @@ footer {
 footer h2 {
     display: flex;
     margin: 1em 0;
-    line-height: 30px;
+    line-height: 2;
+    font-size: var(--font-size-footer);
     border-bottom: 1px solid var(--color-secondary);
 }

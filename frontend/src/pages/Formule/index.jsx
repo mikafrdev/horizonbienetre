@@ -15,7 +15,7 @@ export default function Formule() {
             />
          </section>
 
-         <Prestations data={dataFormules} title="Nos formules" />
+         <Prestations data={dataFormules} />
       </main>
    );
 }

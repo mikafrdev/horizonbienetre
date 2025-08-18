@@ -75,7 +75,7 @@ export default function Header() {
             <nav className="nav-toggle">
                <PictoNav
                   onClick={toggleNavBar}
-                  strokeColor="var(--picto-header)"
+                  strokeColor="var(--navbar-picto)"
                />
             </nav>
 

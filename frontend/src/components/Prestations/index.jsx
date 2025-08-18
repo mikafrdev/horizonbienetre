@@ -31,7 +31,7 @@ export default function Prestations({ data, title }) {
                            <img src={imageUrl} alt={item.title} />
                         </div>
                         <div className="section-prestations__content">
-                           <h3>{item.title}</h3>
+                           <h2>{item.title}</h2>
                            <p>{item.text}</p>
                            <span>{item.prix}</span>
                         </div>

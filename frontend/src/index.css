@@ -1,17 +1,89 @@
+html {
+   box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+   box-sizing: inherit;
+   margin: 0;
+   padding: 0;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #222;
+}
+
+h1, h2, h3, h4, h5, h6, nav, button {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 600;
+}
+
+ul[role="list"],
+ol[role="list"],
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* 8. Enlever les animations utilisateur si préférences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 :root {
    --color-primary: #8fc3d3;
    --color-secondary: #555;
    --color-tertiary: #1373a3;
    --bg-primary: #cac0af;
-   --bg-secondary: #cac0af;
-   --picto-header: #1e1e1e;
-   --font-size-p: clamp(1rem, 2.5vw, 1.125rem); 
-   --font-size-h2: clamp(1.5rem, 4vw, 2.25rem); 
-   --font-size-small: 0.875rem; 
-   --font-size-h1: clamp(2rem, 4vw + 1rem, 3.5rem);
-   --font-size-h2: clamp(1.5rem, 3vw + 0.75rem, 2.5rem);
-   --font-size-h3: clamp(1.25rem, 2vw + 0.5rem, 2rem);
+   --navbar-picto: #1e1e1e;
+   --font-size-text: clamp(1rem, 0.946rem + 0.27vw, 1.188rem);
+   --font-size-h2-hp: clamp(1.5rem, 1.33rem + 0.85vw, 1.875rem);
+   --font-size-h3-hp: clamp(1.25rem, calc(2vw + 0.5rem), 2rem);
+   --font-size-footer: clamp(1.25rem, calc(2vw + 0.5rem), 2rem);
    --min-width-resolution: 320px;
+   --color-form-error: #dc2626;
+   --color-form-border: #d1d5db;
 }
 
 h1,
@@ -26,16 +98,10 @@ h2 {
 }
 
 h3 {
-   font-size: var(--font-size-h3);
+   font-size: var(--font-size-h3-hp);
 }
 
-*,
-::before,
-::after {
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
-}
+
 
 ul {
    list-style-type: none;
@@ -45,17 +111,17 @@ a {
    text-decoration: none;
 }
 
-@font-face {
+/* @font-face {
    font-family: "Source serif pro";
    src: url("./assets/fonts/source-serif-pro/SourceSerifPro-Regular.otf");
-}
+} */
 
 body,
 h1,
 h2,
 .contacts_infos,
 .contacts_infos a {
-   font-family: "Adamina", serif, Courier, monospace;
+   /* font-family: "Adamina", serif, Courier, monospace; */
 }
 
 body h3,
@@ -63,7 +129,7 @@ body p,
 input,
 label,
 textarea {
-   font-family: "Source serif pro", serif, monospace;
+   /* font-family: "Source serif pro", serif, monospace; */
 }
 
 #root {

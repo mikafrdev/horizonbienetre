@@ -55,7 +55,7 @@ export default function Massages() {
             ))}
          </section>
 
-         <Prestations data={dataSoins} title="Nos soins" />
+         <Prestations data={dataSoins} />
       </main>
    );
 }
