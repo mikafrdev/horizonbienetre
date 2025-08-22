@@ -75,7 +75,7 @@ select {
    --color-primary: #8fc3d3;
    --color-secondary: #555;
    --color-tertiary: #1373a3;
-   --bg-primary: #cac0af;
+   --bg-primary: #D9D9D9;  /*#cac0af*/
    --navbar-picto: #1e1e1e;
    --font-size-text: clamp(1rem, 0.946rem + 0.27vw, 1.188rem);
    --font-size-h2-hp: clamp(1.5rem, 1.33rem + 0.85vw, 1.875rem);
