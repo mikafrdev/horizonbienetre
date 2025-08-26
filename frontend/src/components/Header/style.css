@@ -46,6 +46,28 @@
    justify-content: flex-end;
 }
 
+/* Picto Calendar */
+
+.header-calendar-modal {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.btn-modal {
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+.header-calendar-modal svg {
+   width: 60px;
+}
+
+.header-calendar-modal span {
+   display: none;
+}
+
 .site-header .picto_phone {
    justify-content: center;
 }
@@ -260,19 +282,30 @@ body.active-navbar {
    .nav-toggle img {
       width: 80px;
    }
+   .btn-modal {
+      padding: 8px 16px;
+      padding: 8px 16px;
+      font-size: 16px;
+      border: 3px solid var(--color-primary);
+      border-radius: 15px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+   }
+   .btn-modal svg {
+      width: 30px;
+   }
+   .btn-modal span {
+      color: #282c34;
+      display: flex;
+      font-weight: bold;
+   }
 }
 
 @media screen and (min-width: 1024px) {
-   .nav-toggle {
+   .nav-toggle,
+   .btn-modal span {
       display: none;
    }
-   .site-header .btn-modal {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-   }
-
-   /* header-desktop */
 
    .header-desktop {
       display: flex;
@@ -283,7 +316,7 @@ body.active-navbar {
 
    .header-desktop ul {
       display: flex;
-      gap: 2rem;
+      gap: 1.5rem;
       list-style: none;
       margin: 0;
       padding: 0;
@@ -339,6 +372,12 @@ body.active-navbar {
 
 @media screen and (min-width: 1024px) {
    .header-desktop a {
-      font-size: clamp(0.6rem, 1.5vw, 1.4rem);
+      font-size: clamp(1rem, 0.25rem + 1.17vw, 1.188rem);
    }
 }
+/* 
+@media screen and (min-width: 1024px) {
+.header-desktop ul {
+      gap: 1.5rem;
+   }
+} */

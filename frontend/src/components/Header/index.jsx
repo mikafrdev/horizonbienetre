@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Logo from "./../../assets/Logo.jpg";
 import PictoPhone from "./../PictoPhone";
+import PictoCalendar from "./../PictoCalendar";
 import Modal from "../Modal";
 import PictoNav from "../PictoNav";
 import PictoClose from "../PictoClose";
@@ -63,7 +64,17 @@ export default function Header() {
             <div className="header-desktop">
                <ul>{navItems}</ul>
             </div>
-            <div className="header-phone-modal">
+            <div className="header-calendar-modal">
+               <Modal>
+                  <PictoCalendar
+                     className="picto_phone_footer"
+                     fillPhoneColor="#1E1E1E"
+                     fillCallColor="1E1E1E"
+                  />
+                  <span>Prendre rendez-vous</span>
+               </Modal>
+            </div>
+            {/* <div className="header-phone-modal">
                <Modal>
                   <PictoPhone
                      className="picto_phone_footer"
@@ -71,7 +82,7 @@ export default function Header() {
                      fillCallColor="1E1E1E"
                   />
                </Modal>
-            </div>
+            </div> */}
             <nav className="nav-toggle">
                <PictoNav
                   onClick={toggleNavBar}
