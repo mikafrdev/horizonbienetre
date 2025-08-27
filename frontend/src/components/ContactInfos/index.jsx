@@ -4,7 +4,7 @@ import PictoPinpoint from "../PictoPinpoint";
 import PictoMail from "../PictoMail";
 import PictoFB from "../PictoFB";
 import PictoInsta from "../PictoInsta";
-import Modal from "../Modal";
+import ModalWrapper from "../ModalWrapper";
 import "./style.css";
 
 export default function ContactInfos() {
@@ -15,20 +15,20 @@ export default function ContactInfos() {
 
                 <div className="contacts_infos">
                     <div>
-                        <Modal>
+                        <ModalWrapper>
                             <PictoPhone
                                 className="picto_phone_footer"
                                 fillPhoneColor="#1E1E1E"
                                 fillCallColor="1E1E1E"
                             />
-                        </Modal>
+                        </ModalWrapper>
                     </div>
                     <div>
-                        <Modal>
+                        <ModalWrapper>
                             <a href="#" className="display_phone">
                                 Afficher le téléphone
                             </a>
-                        </Modal>
+                        </ModalWrapper>
                     </div>
 
                     <div className="footer_adress">

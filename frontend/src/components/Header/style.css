@@ -293,6 +293,8 @@ body.active-navbar {
    }
    .btn-modal svg {
       width: 30px;
+      height: auto;
+      margin-right: 1rem;
    }
    .btn-modal span {
       color: #282c34;
@@ -375,9 +377,9 @@ body.active-navbar {
       font-size: clamp(1rem, 0.25rem + 1.17vw, 1.188rem);
    }
 }
-/* 
+
 @media screen and (min-width: 1024px) {
-.header-desktop ul {
-      gap: 1.5rem;
+   .btn-modal svg {
+      margin: 0;
    }
-} */
+}

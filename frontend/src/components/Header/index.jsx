@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Logo from "./../../assets/Logo.jpg";
-import PictoPhone from "./../PictoPhone";
+/* import PictoPhone from "./../PictoPhone"; */
 import PictoCalendar from "./../PictoCalendar";
-import Modal from "../Modal";
 import PictoNav from "../PictoNav";
 import PictoClose from "../PictoClose";
+import ModalWrapper from "../ModalWrapper";
 import dataNavigation from "../../data/navigation.json";
 import "./style.css";
 
@@ -65,14 +65,25 @@ export default function Header() {
                <ul>{navItems}</ul>
             </div>
             <div className="header-calendar-modal">
-               <Modal>
-                  <PictoCalendar
-                     className="picto_phone_footer"
-                     fillPhoneColor="#1E1E1E"
-                     fillCallColor="1E1E1E"
-                  />
-                  <span>Prendre rendez-vous</span>
-               </Modal>
+               <ModalWrapper
+                  trigger={
+                     <>
+                        <PictoCalendar
+                           className="picto_phone_footer"
+                           fillPhoneColor="#1E1E1E"
+                           fillCallColor="#1E1E1E"
+                        />
+                        <span>
+                           Prendre rendez-vous
+                        </span>
+                     </>
+                  }
+               >
+                  <div>
+                     <h2>Contenu du modal</h2>
+                     <p>Ici tu mets ce que tu veux.</p>
+                  </div>
+               </ModalWrapper>
             </div>
             {/* <div className="header-phone-modal">
                <Modal>

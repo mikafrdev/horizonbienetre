@@ -8,7 +8,7 @@ import Formule from "./pages/Formule";
 import Cadeau from "./pages/Cadeau";
 import Salon from "./pages/Salon";
 import Contacts from "./pages/Contacts";
-import Tests from "./pages/Tests";
+import Test from "./pages/Test";
 import "./index.css";
 import Layout from './Layout';
 
@@ -47,8 +47,8 @@ const router = createBrowserRouter([
                 element: <Salon />,
             },
             {
-                path: "/tests",
-                element: <Tests />,
+                path: "/test",
+                element: <Test />,
             }
         ],
     },
