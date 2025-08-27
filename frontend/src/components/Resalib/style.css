@@ -1,0 +1,67 @@
+.resalib {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   gap: 1rem;
+   margin: 2rem 0;
+   padding: 1rem 2rem;
+   border: 1px solid #8fc3d3;
+   border-radius: 2rem;
+   background: linear-gradient(to bottom right, #8fc3d3 40%, #ffffff 60%);
+}
+
+.resalib-container {
+   display: flex;
+   flex-wrap: nowrap;
+}
+
+.resalib-infos {
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: space-between;
+   align-items: center;
+   gap: 2rem;
+}
+
+.resalib-infos {
+}
+
+.resalib-hero {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   text-align: left;
+   gap: 1rem;
+}
+
+.resalib-photo img {
+   display: inline-block;
+   width: 100%;
+   border-radius: 50%; /* Important si l’image n’a pas déjà une forme parfaitement ronde */
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+}
+
+a.btn-cta {
+   padding: 8px 16px;
+   padding: 8px 16px;
+   font-size: 20px;
+   background-color: var(--bg-button-primary);
+   color: #ffffff;
+   /* border: 3px solid var(--color-primary); */
+   border-radius: 20px;
+   cursor: pointer;
+   text-transform: none;
+   transition: background-color 0.3s ease;
+}
+
+.btn-cta span svg {
+   width: 40px;
+   height: auto;
+}
+
+.resalib-partenaire {
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: end;
+}

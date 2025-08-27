@@ -69,13 +69,14 @@ main .presentation-contact {
    background-color: var(--color-tertiary);
 }
 
-main .presentation-title {
+.presentation-title {
    width: 100%;
    text-align: center;
 }
 
-main .presentation div h1 {
+.presentation-title h1 {
    font-size: clamp(1.563rem, 1.295rem + 1.34vw, 2.5rem);
+   color: #FFF;
 }
 
 .presentation-contact h1 {
