@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Logo from "./../../assets/Logo.jpg";
-/* import PictoPhone from "./../PictoPhone"; */
-import PictoCalendar from "./../PictoCalendar";
+import ButtonCTA from "../../components/ButtonCTA";
 import PictoNav from "../PictoNav";
 import PictoClose from "../PictoClose";
 import ModalWrapper from "../ModalWrapper";
@@ -64,18 +63,13 @@ export default function Header() {
             <div className="header-desktop">
                <ul>{navItems}</ul>
             </div>
-            <div className="header-calendar-modal">
-               <ModalWrapper
+            <div className="header-cta">
+               <ButtonCTA variant="cta-header" />
+               {/* <ModalWrapper
                   trigger={
                      <>
-                        <PictoCalendar
-                           className="picto_phone_footer"
-                           fillPhoneColor="#1E1E1E"
-                           fillCallColor="#1E1E1E"
-                        />
-                        <span>
-                           Prendre rendez-vous
-                        </span>
+                        <ButtonCTA variant="header" />
+                        <span>Prendre rendez-vous</span>
                      </>
                   }
                >
@@ -83,7 +77,7 @@ export default function Header() {
                      <h2>Contenu du modal</h2>
                      <p>Ici tu mets ce que tu veux.</p>
                   </div>
-               </ModalWrapper>
+               </ModalWrapper> */}
             </div>
             {/* <div className="header-phone-modal">
                <Modal>

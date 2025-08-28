@@ -1,3 +1,9 @@
+.section-video {
+   width: 100%;
+   max-width: 800px;
+   max-height: 400px;
+}
+
 .section-video video {
    width: 100%;
    max-width: 1024px;

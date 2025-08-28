@@ -1,4 +1,4 @@
-.resalib {
+.resalib-container {
    display: flex;
    flex-direction: column;
    justify-content: space-between;
@@ -10,7 +10,7 @@
    background: linear-gradient(to bottom right, #8fc3d3 40%, #ffffff 60%);
 }
 
-.resalib-container {
+.resalib-wrapper {
    display: flex;
    flex-wrap: nowrap;
 }
@@ -21,9 +21,6 @@
    justify-content: space-between;
    align-items: center;
    gap: 2rem;
-}
-
-.resalib-infos {
 }
 
 .resalib-hero {
@@ -37,25 +34,12 @@
 .resalib-photo img {
    display: inline-block;
    width: 100%;
-   border-radius: 50%; /* Important si l’image n’a pas déjà une forme parfaitement ronde */
+   border-radius: 50%;
    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
 }
 
-a.btn-cta {
-   padding: 8px 16px;
-   padding: 8px 16px;
-   font-size: 20px;
-   background-color: var(--bg-button-primary);
-   color: #ffffff;
-   /* border: 3px solid var(--color-primary); */
-   border-radius: 20px;
-   cursor: pointer;
-   text-transform: none;
-   transition: background-color 0.3s ease;
-}
-
-.btn-cta span svg {
+.cta-resalib a.cta-btn svg {
    width: 40px;
    height: auto;
 }
@@ -63,5 +47,18 @@ a.btn-cta {
 .resalib-partenaire {
    display: flex;
    flex-wrap: nowrap;
-   justify-content: end;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+.cta-resalib a.cta-btn {
+   background-color: var(--bg-button-primary);
+   color: #ffffff;
+}
+
+.cta-resalib .cta-text {
+   display: inline-block;
+}
+.cta-resalib .pictocalendar path {
+   fill: #ffffff;
 }

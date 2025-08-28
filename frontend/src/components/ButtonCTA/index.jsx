@@ -1,14 +1,15 @@
 import Button from "@mui/material/Button";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+/* import CalendarMonthIcon from "@mui/icons-material/CalendarMonth"; */
+import PictoCalendar from "../PictoCalendar";
 
 import "./style.css";
 
-export default function ButtonCTA() {
+export default function ButtonCTA({variant}) {
    return (
-      <>
+      <div className={variant ? variant : undefined}>
          <Button
-            className="btn-cta"
-            startIcon={<CalendarMonthIcon />}
+            className="cta-btn"
+            startIcon={<PictoCalendar />}
             href="https://www.resalib.fr/praticien/108707-horizon-bien-etre-centre-de-bien-etre-tourcoing"
             target="_blank"
             rel="noopener noreferrer"
@@ -16,8 +17,8 @@ export default function ButtonCTA() {
                "--variant-textColor": "var(--color-secondary)",
             }}
          >
-            <span className="btn-cta-txt">Prendre RDV</span>
+            <span className="cta-text">Prendre RDV</span>
          </Button>
-      </>
+      </div>
    );
 }

@@ -8,6 +8,8 @@ export default function Test() {
       <main className="main-content">
          <section className="section-test">
             <ButtonCTA />
+            <ButtonCTA variant="cta-header" />
+            <ButtonCTA variant="cta-resalib" />
             <Resalib />
             
          </section>

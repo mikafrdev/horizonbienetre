@@ -1,59 +1,48 @@
-a.btn-cta {
-   padding: 8px 16px;
-   padding: 8px 16px;
+a.cta-btn {
+   display: flex;
+   gap: 1rem;
+   padding: 1rem 2rem;
    font-size: 20px;
-   background-color: var(--bg-button-primary);
-   color: #ffffff;
-   /* border: 3px solid var(--color-primary); */
    border-radius: 20px;
-   cursor: pointer;
+   color: #333;
    text-transform: none;
    transition: background-color 0.3s ease;
 }
 
-.btn-cta span svg {
-   width: 40px;
+.cta-btn span {
+   margin: 0;
+}
+
+.cta-btn svg {
+   width: 60px;
    height: auto;
 }
 
-.btn-cta-txt {
+.cta-text {
    display: none;
+   font-weight: bold;
+}
+
+.pictocalendar path {
+   fill: var(--fill-cta-primary);
 }
 
 @media screen and (min-width: 600px) {
-   .phone img,
-   .nav-toggle img {
-      width: 80px;
-   }
-   a.btn-cta {
-      padding: 1rem;
-      font-size: 20px;
-      border: 3px solid var(--color-primary);
-      border-radius: 15px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-   }
-   .btn-cta svg {
-      width: 30px;
-      height: auto;
-      margin-right: 1rem;
-   }
-   .btn-cta span {
-      /* color: #282c34; */
-      display: flex;
-      font-weight: bold;
-   }
-   .btn-cta-txt {
-      display: inline-block;
+   .cta-btn svg {
+      width: 35px;
    }
 }
 
 @media screen and (min-width: 1024px) {
-   .nav-toggle,
-   .btn-cta span {
-      display: none;
+   .header-cta {
+      justify-content: flex-end;
    }
-   .btn-cta svg {
+
+   .cta-header a.cta-btn {
+      padding: 0;
+   }
+   .cta-btn svg {
+      width: 40px;
       margin: 0;
    }
 }
