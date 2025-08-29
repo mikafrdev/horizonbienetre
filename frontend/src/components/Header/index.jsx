@@ -2,11 +2,15 @@ import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Logo from "./../../assets/Logo.jpg";
 import ButtonCTA from "../../components/ButtonCTA";
+import Resalib from "../../components/Resalib";
+import LogoResalib from "./../../assets/logo-resalib.png";
+import PictoPhone from "../PictoPhone";
 import PictoNav from "../PictoNav";
 import PictoClose from "../PictoClose";
 import ModalWrapper from "../ModalWrapper";
 import dataNavigation from "../../data/navigation.json";
 import "./style.css";
+import ButtonPhone from "../ButtonPhone";
 
 export default function Header() {
    const [open, setOpen] = useState(false);
@@ -64,30 +68,20 @@ export default function Header() {
                <ul>{navItems}</ul>
             </div>
             <div className="header-cta">
-               <ButtonCTA variant="cta-header" />
-               {/* <ModalWrapper
-                  trigger={
-                     <>
-                        <ButtonCTA variant="header" />
-                        <span>Prendre rendez-vous</span>
-                     </>
-                  }
-               >
-                  <div>
-                     <h2>Contenu du modal</h2>
-                     <p>Ici tu mets ce que tu veux.</p>
+               {/* <ButtonCTA variant="cta-header" /> */}
+               <ModalWrapper trigger={<ButtonCTA variant="cta-header" />}>
+                  <div className="header-modal-content">
+                     <ButtonPhone />
+                     {/* <hr className="separator"></hr> */}
+                     <div class="divider"><span>ou</span></div>
+                     <div className="resalib-partenaire">
+                        <span>Avec notre partenaire</span>
+                        <img src={LogoResalib} alt="Logo Résalib" />
+                     </div>
+                     <ButtonCTA variant="cta-resalib" />
                   </div>
-               </ModalWrapper> */}
+               </ModalWrapper>
             </div>
-            {/* <div className="header-phone-modal">
-               <Modal>
-                  <PictoPhone
-                     className="picto_phone_footer"
-                     fillPhoneColor="#1E1E1E"
-                     fillCallColor="1E1E1E"
-                  />
-               </Modal>
-            </div> */}
             <nav className="nav-toggle">
                <PictoNav
                   onClick={toggleNavBar}

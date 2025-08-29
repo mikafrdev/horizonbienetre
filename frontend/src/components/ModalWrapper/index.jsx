@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import LogoResalib from "./../../assets/logo-resalib.png";
 import "./style.css";
 
 const style = {
@@ -41,8 +42,7 @@ export default function ModalWrapper({ trigger, children }) {
                      {children}
                   </Typography>
                   <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                     Duis mollis, est non commodo luctus, nisi erat porttitor
-                     ligula.
+                     
                   </Typography>
                </Box>
             </Modal>
