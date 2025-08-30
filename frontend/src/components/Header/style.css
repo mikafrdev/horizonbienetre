@@ -45,21 +45,7 @@
    align-items: center;
 }
 
-.cta-header .cta-btn {
-   padding: 0;
-}
 
-.cta-header .cta-btn svg {
-   width: 70px;
-}
-
-.cta-header .cta-text {
-   display: none;
-}
-
-.cta-header .pictocalendar path {
-   fill: var(--fill-cta-primary);
-}
 
 /* nav */
 
@@ -90,9 +76,7 @@
    height: 60px;
 }
 
-.sticking .cta-header .cta-btn svg {
-   width: 50px;
-}
+
 
 .site-header,
 .site-header .logo,
@@ -102,11 +86,7 @@
    -webkit-transition: height 1s;
 }
 
-.cta-header .cta-btn svg,
-.sticking .cta-header .cta-btn svg {
-   transition: width 1s;
-   -webkit-transition: width 1s;
-}
+
 
 .fade.out {
    transform: translateX(-306px);
@@ -330,24 +310,6 @@ body.active-navbar {
    .nav-toggle img {
       width: 80px;
    }
-
-   .cta-header a.cta-btn {
-      padding: 0.5rem 1.5rem;
-      border: 1px solid var(--color-primary);
-   }
-
-   .cta-header .cta-btn svg {
-      width: 65px;
-   }
-
-   .sticking .cta-header .cta-btn svg {
-      width: 40px;
-   }
-
-   .cta-header .cta-text {
-      display: inline-block;
-      color: #333;
-   }
 }
 
 @media screen and (min-width: 1024px) {
@@ -419,25 +381,5 @@ body.active-navbar {
    /*fin header-desktop*/
    .header-desktop a {
       font-size: clamp(1rem, 0.25rem + 1.17vw, 1.188rem);
-   }
-
-   .cta-header a.cta-btn {
-      border: none;
-      padding: 0;
-   }
-
-   .cta-header .cta-btn svg {
-      width: 70px;
-   }
-
-   .sticking .cta-header .cta-btn svg {
-      width: 50px;
-   }
-
-   .cta-header .cta-text {
-      display: none;
-   }
-
-   .cta-btn .MuiButton-startIcon {
    }
 }

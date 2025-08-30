@@ -4,15 +4,19 @@ import PictoCalendar from "../PictoCalendar";
 
 import "./style.css";
 
-export default function ButtonCTA({variant}) {
+export default function ButtonCTA({ variant, linkActive }) {
    return (
       <div className={variant ? variant : undefined}>
          <Button
-            className="cta-btn"
+            className={`cta-btn ${linkActive ? "" : "disabled-link"}`}
             startIcon={<PictoCalendar />}
-            href="https://www.resalib.fr/praticien/108707-horizon-bien-etre-centre-de-bien-etre-tourcoing"
-            target="_blank"
-            rel="noopener noreferrer"
+            {...(linkActive
+               ? {
+                    href: "https://www.resalib.fr/praticien/108707-horizon-bien-etre-centre-de-bien-etre-tourcoing",
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                 }
+               : {})}
             sx={{
                "--variant-textColor": "var(--color-secondary)",
             }}

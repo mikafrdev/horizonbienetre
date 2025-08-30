@@ -3,21 +3,18 @@ import PictoPhone from "../PictoPhone";
 
 import "./style.css";
 
-export default function ButtonPhone({variant}) {
+export default function ButtonPhone({ variant }) {
    return (
       <div className={variant ? variant : undefined}>
-         <Button
+         <a
             className="phone-btn"
-            startIcon={<PictoPhone />}
             href="tel:+0102030405"
             target="_blank"
             rel="noopener noreferrer"
-            sx={{
-               "--variant-textColor": "var(--color-secondary)",
-            }}
          >
+            <PictoPhone />
             <span className="cta-text">01 02 03 04 05</span>
-         </Button>
+         </a>
       </div>
    );
 }

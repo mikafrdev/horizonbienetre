@@ -1,7 +1,7 @@
-import Button from "@mui/material/Button";
+/* import Button from "@mui/material/Button"; */
 import PhotoResalib from "./../../assets/photo-resalib.png";
 import LogoResalib from "./../../assets/logo-resalib.png";
-import ButtonCTA from "../../components/ButtonCTA";
+import Button from "../../components/Button";
 
 import "./style.css";
 
@@ -18,7 +18,7 @@ export default function Resalib() {
                      <p>Horizon Bien-Être</p>
                      <p>Centre de bien-être</p>
                   </div>
-                  <ButtonCTA variant="cta-resalib" />
+                  <Button variant="cta-resalib" linkActive={true} />
                </div>
             </div>
          </div>

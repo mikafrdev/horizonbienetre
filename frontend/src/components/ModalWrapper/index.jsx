@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import LogoResalib from "./../../assets/logo-resalib.png";
 import "./style.css";
 
 const style = {

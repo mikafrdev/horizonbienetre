@@ -1,14 +1,193 @@
-.button {
-    display: flex;
-    justify-content: flex-end;
+a.cta-btn,
+button.cta-btn {
+   display: flex;
+   gap: 1rem;
+   padding: 1rem 2rem;
+   font-size: 20px;
+   border-radius: 20px;
+   color: #333;
+   text-transform: none;
+   transition: background-color 0.3s ease;
 }
 
-.button button {
-    width: 130px;
-    height: 40px;
-    opacity: .6;
-    background-color: #172D44;
-    color: #fff;
-    border-radius: 8px;
-    border: 0;
+a.cta-btn span {
+   margin: 0;
+}
+
+a.cta-btn svg {
+   width: 60px;
+   height: auto;
+}
+
+.cta-text {
+   display: none;
+   font-weight: bold;
+}
+
+.pictocalendar path {
+   fill: var(--fill-cta-primary);
+}
+
+@media screen and (min-width: 600px) {
+   a.cta-btn svg {
+      width: 35px;
+   }
+}
+
+@media screen and (min-width: 1024px) {
+   .header-cta {
+      justify-content: flex-end;
+   }
+
+   a.cta-header a.cta-btn,
+   .cta-header button.cta-btn {
+      padding: 0;
+   }
+   a.cta-btn svg {
+      width: 40px;
+      margin: 0;
+   }
+}
+
+/*HEADER*/
+.header-cta button {
+   margin: 0;
+   padding: 0;
+}
+
+a.cta-header {
+   padding: 0;
+}
+
+a.cta-header span {
+   margin: 0;
+}
+
+a.cta-header svg {
+   width: 70px;
+   height: auto;
+}
+
+a.cta-header path {
+   fill: var(--fill-cta-primary);
+}
+
+a.cta-header .cta-text {
+   display: none;
+}
+
+.sticking a.cta-header svg {
+   width: 50px;
+}
+
+a.cta-header svg,
+.sticking a.cta-header svg {
+   transition: width 1s;
+   -webkit-transition: width 1s;
+}
+
+/*Résalib*/
+a.cta-resalib {
+   display: flex;
+   gap: 1rem;
+   padding: 1rem 2rem;
+   background-color: var(--bg-button-primary);
+   color: #ffffff;
+   font-size: 20px;
+   border-radius: 20px;
+   text-transform: none;
+   transition: background-color 0.3s ease;
+}
+
+a.cta-resalib svg {
+   width: 40px;
+   height: auto;
+}
+
+.resalib-partenaire {
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+a.cta-resalib .cta-text {
+   display: inline-block;
+}
+a.cta-resalib .pictocalendar path {
+   fill: #ffffff;
+}
+
+/* PHONE */
+a.cta-phone {
+   display: flex;
+   gap: 1rem;
+   padding: 1rem 2rem;
+   background-color: var(--bg-button-primary);
+   color: #ffffff;
+   font-size: 20px;
+   border-radius: 20px;
+   text-transform: none;
+   transition: background-color 0.3s ease;
+}
+a.cta-phone svg {
+   width: 40px;
+   height: auto;
+   fill: #ffffff;
+}
+
+a.cta-phone .cta-text {
+   display: inline-block;
+}
+
+.call-button:hover {
+   background-color: #218838;
+}
+
+@media screen and (min-width: 600px) {
+   a.cta-header {
+      padding: 0.5rem 1.5rem;
+      border: 1px solid var(--color-primary);
+      border-radius: 20px;
+   }
+   a.cta-header span {
+      margin-right: 10px;
+   }
+
+   a.cta-header svg {
+      width: 65px;
+   }
+
+   .sticking a.cta-header svg {
+      width: 40px;
+   }
+
+   a.cta-header .cta-text {
+      display: inline-block;
+      color: #333;
+      font-weight: bold;
+      font-size: var(--font-size-text);
+   }
+}
+
+@media screen and (min-width: 1024px) {
+   a.cta-header {
+      border: none;
+      padding: 0;
+   }
+
+   a.cta-header svg {
+      width: 70px;
+   }
+
+   .sticking a.cta-header svg {
+      width: 50px;
+   }
+
+   a.cta-header .cta-text {
+      display: none;
+   }
+
+   a.cta-btn .MuiButton-startIcon {
+   }
 }

@@ -1,5 +1,5 @@
 import Resalib from "../../components/Resalib";
-import ButtonCTA from "../../components/ButtonCTA";
+import Button from "../../components/Button";
 import ButtonPhone from "../../components/ButtonPhone";
 
 import "./style.css";
@@ -9,9 +9,9 @@ export default function Test() {
       <main className="main-content">
          <section className="section-test">
             <ButtonPhone />
-            <ButtonCTA />
-            <ButtonCTA variant="cta-header" />
-            <ButtonCTA variant="cta-resalib" />
+            <Button linkActive={true} />
+            <Button variant="cta-header" />
+            <Button variant="cta-resalib" linkActive={true} />
             <Resalib />
             
          </section>

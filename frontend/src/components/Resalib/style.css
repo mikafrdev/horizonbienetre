@@ -38,27 +38,3 @@
    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
 }
-
-.cta-resalib a.cta-btn svg {
-   width: 40px;
-   height: auto;
-}
-
-.resalib-partenaire {
-   display: flex;
-   flex-wrap: nowrap;
-   justify-content: flex-end;
-   align-items: center;
-}
-
-.cta-resalib a.cta-btn {
-   background-color: var(--bg-button-primary);
-   color: #ffffff;
-}
-
-.cta-resalib .cta-text {
-   display: inline-block;
-}
-.cta-resalib .pictocalendar path {
-   fill: #ffffff;
-}
