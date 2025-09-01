@@ -71,12 +71,10 @@
 }
 
 .contact-form button[type="submit"] {
-   width: 100%;
-   align-self: flex-start;
-   background-color: var(--color-primary);
+   background-color: var(--bg-button-primary);
    color: white;
    font-weight: 600;
-   padding: 0.75rem 1.5rem;
+   padding: 0.75rem 6.5rem;
    border: none;
    border-radius: var(--radius);
    font-size: var(--font-size-text);

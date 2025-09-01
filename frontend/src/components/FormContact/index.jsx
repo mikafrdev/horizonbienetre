@@ -1,4 +1,5 @@
 import { useActionState } from "react";
+import Button from "@mui/material/Button";
 import "./style.css";
 
 export default function FormContact() {
@@ -137,9 +138,13 @@ export default function FormContact() {
                </div>
 
                <div className="input-group input-group--submit">
-               <button type="submit" disabled={isPending}>
-                  {isPending ? "Envoi en cours..." : "Envoyer"}
-               </button></div>
+                  <button type="submit" className="cta-form-contact">
+                     <span className="cta-text">
+                        {isPending ? "Envoi en cours..." : "Prendre RDV"}
+                     </span>
+                     <span>Envoyer</span>
+                  </button>
+               </div>
             </form>
          )}
       </section>
