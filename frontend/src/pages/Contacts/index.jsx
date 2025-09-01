@@ -1,4 +1,3 @@
-import ContactInfos from "../../components/ContactInfos";
 import FormContact from "../../components/FormContact";
 import "./style.css";
 

@@ -1,15 +1,95 @@
 footer {
-    width: 100%;
-    max-width: 1440px;
-    background-color: var(--bg-secondary);
-    display: flex;
-    flex-direction: column;
+   width: 100%;
+   max-width: 1440px;
+   background-color: var(--bg-secondary);
+   display: flex;
+   flex-direction: column;
 }
 
 footer h2 {
-    display: flex;
-    margin: 1em 0;
-    line-height: 2;
-    font-size: var(--font-size-footer);
-    border-bottom: 1px solid var(--color-secondary);
+   display: flex;
+   margin: 1em 0;
+   line-height: 2;
+   font-size: var(--font-size-footer);
+   border-bottom: 1px solid var(--color-secondary);
+}
+
+.footer-contacts {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 1rem 2rem;
+   color: #fff;
+   gap: 2rem;
+}
+
+a.btn-phone,
+.footer-adress,
+.footer-email {
+   padding: 1rem 2rem;
+   gap: 1rem;
+}
+
+a.btn-phone {
+   display: flex;
+   background-color: var(--bg-button-primary);
+   color: #ffffff;
+   border-radius: 15px;
+   text-transform: none;
+   transition: background-color 0.3s ease;
+   font-size: 15px;
+}
+
+.btn-phone svg {
+   width: 40px;
+   fill: #ffffff;
+}
+
+.phone-text {
+   font-size: 14px;
+   font-weight: 600;
+   color: #ffffff;
+}
+
+.footer-adress,
+.footer-email {
+   display: flex;
+   align-items: center;
+   font-size: 14px;
+   color: #333;
+}
+
+svg.icon-location,
+svg.icon-email {
+   font-size: 2.5rem;
+   color: #fff;
+}
+
+.adress-text span,
+.email-text span {
+   display: block;
+   line-height: 1.4;
+   color: #fff;
+}
+
+.footer-social-links {
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   margin-bottom: 1rem;
+}
+
+.footer_fb,
+.footer_insta {
+   width: 30px;
+   height: 30px;
+   fill: #ffffff;
+   transition: fill 0.3s ease;
+}
+
+.link-facebook svg.icon-facebook,
+.link-instagram svg.icon-instagram {
+   font-size: 3rem;
+   fill: #ffffff;
+   transition: fill 0.3s ease;
 }
