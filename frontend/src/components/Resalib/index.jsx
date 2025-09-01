@@ -1,7 +1,9 @@
 /* import Button from "@mui/material/Button"; */
 import PhotoResalib from "./../../assets/photo-resalib.png";
 import LogoResalib from "./../../assets/logo-resalib.png";
-import Button from "../../components/Button";
+import Button from "@mui/material/Button";
+import PictoCalendar from "../../components/PictoCalendar";
+
 
 import "./style.css";
 
@@ -18,7 +20,16 @@ export default function Resalib() {
                      <p>Horizon Bien-Être</p>
                      <p>Centre de bien-être</p>
                   </div>
-                  <Button variant="cta-resalib" linkActive={true} />
+                  <Button
+                     component="a"
+                     className="cta-resalib"
+                     startIcon={<PictoCalendar />}
+                     href="https://www.resalib.fr/praticien/108707-horizon-bien-etre-centre-de-bien-etre-tourcoing#top"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                  >
+                     <span className="cta-text">Prendre RDV</span>
+                  </Button>
                </div>
             </div>
          </div>

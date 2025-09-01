@@ -86,8 +86,8 @@ a.cta-header svg,
    -webkit-transition: width 1s;
 }
 
-/*Résalib*/
-a.cta-resalib {
+/*Variant A*/
+a.cta-varianta {
    display: flex;
    gap: 1rem;
    padding: 1rem 2rem;
@@ -95,6 +95,39 @@ a.cta-resalib {
    color: #ffffff;
    font-size: 20px;
    border-radius: 20px;
+   text-transform: none;
+   transition: background-color 0.3s ease;
+}
+
+a.cta-varianta svg {
+   width: 40px;
+   height: auto;
+}
+
+.varianta-partenaire {
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+a.cta-varianta .cta-text {
+   display: inline-block;
+}
+a.cta-varianta .pictocalendar path {
+   fill: #ffffff;
+}
+
+/*Résalib*/
+a.cta-resalib {
+   display: flex;
+   gap: 1rem;
+   width: 100%;
+   padding: .5rem 2rem;
+   background-color: #30a444;
+   color: #ffffff;
+   font-size: 20px;
+   border-radius: 10px;
    text-transform: none;
    transition: background-color 0.3s ease;
 }
@@ -113,8 +146,44 @@ a.cta-resalib svg {
 
 a.cta-resalib .cta-text {
    display: inline-block;
+   font-weight: normal;
 }
 a.cta-resalib .pictocalendar path {
+   fill: #ffffff;
+}
+
+/*Résalib-b */
+a.cta-resalib-b {
+   display: flex;
+   gap: 1rem;
+   width: 100%;
+   margin-top: 2rem;
+   padding: .5rem 2rem;
+   background-color: #30a444;
+   color: #ffffff;
+   font-size: 20px;
+   border-radius: 10px;
+   text-transform: none;
+   transition: background-color 0.3s ease;
+}
+
+a.cta-resalib-b svg {
+   width: 40px;
+   height: auto;
+}
+
+.resalib-partenaire {
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+a.cta-resalib-b .cta-text {
+   display: inline-block;
+   font-weight: normal;
+}
+a.cta-resalib-b .pictocalendar path {
    fill: #ffffff;
 }
 

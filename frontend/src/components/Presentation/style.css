@@ -81,6 +81,7 @@ main .presentation-contact {
 
 .presentation-contact h1 {
    background-color: var(--color-tertiary);
+   color: #FFF;
 }
 
 @media screen and (min-width: 600px) {

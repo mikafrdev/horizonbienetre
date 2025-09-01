@@ -1,8 +1,8 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+import React from "react";
 import Modal from "@mui/material/Modal";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Fade from "@mui/material/Fade";
 import "./style.css";
 
 const style = {
@@ -23,29 +23,30 @@ export default function ModalWrapper({ trigger, children }) {
    const handleClose = () => setOpen(false);
 
    return (
-      <>
-         <div>
-            <Button onClick={handleOpen}>{trigger}</Button>
-            <Modal
-               open={open}
-               onClose={handleClose}
-               aria-labelledby="modal-modal-title"
-               aria-describedby="modal-modal-description"
-            >
-               <Box sx={style}>
-                  <Typography
-                     id="modal-modal-title"
-                     variant="h6"
-                     component="h2"
-                  >
-                     {children}
-                  </Typography>
-                  <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                     
-                  </Typography>
-               </Box>
-            </Modal>
-         </div>
-      </>
-   );
+    <>
+      <div>
+        <span onClick={handleOpen}>{trigger}</span>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          closeAfterTransition
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Fade in={open} timeout={500}>
+            <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                {children}
+              </Typography>
+            </Box>
+          </Fade>
+        </Modal>
+      </div>
+    </>
+  );
 }
