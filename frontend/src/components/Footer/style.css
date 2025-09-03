@@ -1,7 +1,7 @@
 footer {
    width: 100%;
    max-width: 1440px;
-   background-color: var(--bg-secondary);
+   background-color: var(--bg-tertiary);
    display: flex;
    flex-direction: column;
 }
@@ -14,13 +14,24 @@ footer h2 {
    border-bottom: 1px solid var(--color-secondary);
 }
 
+.footer-contacts,
+a.btn-phone,
+.adress-text span,
+.email-text span {
+   color: #000;
+}
+
 .footer-contacts {
    display: flex;
    flex-direction: column;
    align-items: center;
    padding: 1rem 2rem;
-   color: #fff;
-   gap: 2rem;
+}
+
+.footer-contacts-infos {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 
 a.btn-phone,
@@ -30,14 +41,14 @@ a.btn-phone,
    gap: 1rem;
 }
 
-a.btn-phone {
+footer a.btn-phone {
    display: flex;
    background-color: var(--bg-button-primary);
-   color: #ffffff;
    border-radius: 15px;
    text-transform: none;
    transition: background-color 0.3s ease;
    font-size: 15px;
+   padding: 1rem 0rem;
 }
 
 .btn-phone svg {
@@ -48,7 +59,7 @@ a.btn-phone {
 .phone-text {
    font-size: 14px;
    font-weight: 600;
-   color: #ffffff;
+   color: #fff;
 }
 
 .footer-adress,
@@ -62,14 +73,13 @@ a.btn-phone {
 svg.icon-location,
 svg.icon-email {
    font-size: 2.5rem;
-   color: #fff;
+   color: #000;
 }
 
 .adress-text span,
 .email-text span {
    display: block;
    line-height: 1.4;
-   color: #fff;
 }
 
 .footer-social-links {
@@ -80,16 +90,21 @@ svg.icon-email {
 }
 
 .footer_fb,
+.footer_insta,
+.link-facebook svg.icon-facebook,
+.link-instagram svg.icon-instagram {
+   fill: #000;
+}
+
+.footer_fb,
 .footer_insta {
    width: 30px;
    height: 30px;
-   fill: #ffffff;
    transition: fill 0.3s ease;
 }
 
 .link-facebook svg.icon-facebook,
 .link-instagram svg.icon-instagram {
    font-size: 3rem;
-   fill: #ffffff;
    transition: fill 0.3s ease;
 }

@@ -1,6 +1,6 @@
-export default function PictoClose({ fillColor, strokeColor }) {
+export default function PictoClose() {
     return (
-        <svg viewBox="0 0 16 16" fill={fillColor} stroke={strokeColor}>
+        <svg viewBox="0 0 16 16">
             <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
             <g
                 id="SVGRepo_tracerCarrier"

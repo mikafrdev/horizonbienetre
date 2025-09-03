@@ -1,5 +1,5 @@
 const Infos = {
-    tel : "01 02 03 04 05",
+    tel : "+33621037744",
     adress : {
         street: "45 rue Claude Bernard",
         cp: "59200",

@@ -26,11 +26,11 @@ export default function Header() {
                <div className="footer-contacts-infos">
                   <Button
                      component="a"
-                     href="tel:0102030405"
+                     href={`tel:${Infos.tel}`}
                      className="btn-phone"
                      startIcon={<PictoPhone />}
                   >
-                     <span className="phone-text">Contacter par téléphone</span>
+                     <span className="phone-text">{`${Infos.tel}`}</span>
                   </Button>
 
                   <div className="footer-adress">
