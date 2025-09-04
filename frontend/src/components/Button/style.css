@@ -61,6 +61,7 @@ a.cta-btn svg {
 }
 
 a.cta-header {
+   min-width: auto;
    padding: 0;
 }
 
@@ -79,16 +80,6 @@ a.cta-header path {
 
 a.cta-header .cta-text {
    display: none;
-}
-
-.sticking a.cta-header svg {
-   width: 40px;
-}
-
-a.cta-header svg,
-.sticking a.cta-header svg {
-   transition: width 1s;
-   -webkit-transition: width 1s;
 }
 
 /*Variant A*/
@@ -232,10 +223,6 @@ a.cta-phone .cta-text {
       width: 30px;
    }
 
-   .sticking a.cta-header svg {
-      width: 30px;
-   }
-
    a.cta-header .cta-text {
       display: inline-block;
       color: #333;
@@ -254,8 +241,8 @@ a.cta-phone .cta-text {
       width: 40px;
    }
 
-   .sticking a.cta-header svg {
-      width: 40px;
+   a.cta-header span {
+      margin-right: 0;
    }
 
    a.cta-header .cta-text {

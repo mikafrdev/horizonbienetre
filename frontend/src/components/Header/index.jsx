@@ -15,7 +15,6 @@ import {
    Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useTheme } from "@mui/material/styles";
 import { useMediaQuery } from "@mui/material";
 
 import Logo from "./../../assets/Logo.jpg";
@@ -27,8 +26,7 @@ import "../Button/style.css";
 const drawerWidth = 240;
 
 export default function Header() {
-   const theme = useTheme();
-   const isMobile = useMediaQuery("(max-width:1280px)");
+   const isMobile = useMediaQuery("(max-width:1024px)");
    const [mobileOpen, setMobileOpen] = React.useState(false);
 
    const handleDrawerToggle = () => {
@@ -44,13 +42,6 @@ export default function Header() {
          <ListItemButton
             component={NavLink}
             to={item.UrlPage}
-            
-            /* sx={{
-               "&.active": {
-                  backgroundColor: "var(--color-primary)",
-                  color: "white",
-               },
-            }} */
          >
             <ListItemText primary={item.PageName} />
          </ListItemButton>
@@ -80,12 +71,7 @@ export default function Header() {
                </Link>
             </Typography>
          </Toolbar>
-         <Box
-         className="header-mobile"
-            sx={{
-               
-            }}
-         >
+         <Box className="header-mobile" sx={{}}>
             <List>{navItems}</List>
          </Box>
       </>
@@ -96,16 +82,7 @@ export default function Header() {
          <Box sx={{ display: "flex" }}>
             <CssBaseline />
             <AppBar position="fixed" className="site-header">
-               <Toolbar
-                  sx={{
-                     display: "flex",
-                     justifyContent: "space-between",
-                     alignItems: "center",
-                     width: "100%",
-                     height: "5rem",
-                     minHeight: "5rem !important",
-                  }}
-               >
+               <Toolbar className="header-container">
                   {/* ⬅️ Logo */}
                   <Box sx={{ display: "flex", alignItems: "center" }}>
                      <Link to="/">
@@ -123,7 +100,7 @@ export default function Header() {
                      </Box>
                   )}
 
-                  {/* CTA + ☰ MenuIcon (mobile only) */}
+                  {/* CTA HeaderModalCTA */}
                   <Box
                      sx={{
                         display: "flex",
@@ -133,13 +110,15 @@ export default function Header() {
                   >
                      <HeaderModalCTA />
                   </Box>
-                  <Box>
-                     {isMobile && (
+
+                  {/* Icon Menu */}
+                  {isMobile && (
+                     <Box>
                         <IconButton edge="end" onClick={handleDrawerToggle}>
                            <MenuIcon className="icon-menu" />
                         </IconButton>
-                     )}
-                  </Box>
+                     </Box>
+                  )}
                </Toolbar>
             </AppBar>
 
