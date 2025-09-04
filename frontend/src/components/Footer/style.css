@@ -48,7 +48,7 @@ footer a.btn-phone {
    text-transform: none;
    transition: background-color 0.3s ease;
    font-size: 15px;
-   padding: 1rem 0rem;
+   padding: .5rem 2rem;
 }
 
 .btn-phone svg {

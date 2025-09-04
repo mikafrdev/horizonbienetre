@@ -9,6 +9,7 @@ import Box from "@mui/material/Box";
 /* import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined"; */
 import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
+import Infos, {formatPhoneNumber} from "../../utils/Infos";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./style.css";
 import "../Button/style.css";
@@ -121,7 +122,7 @@ export default function HeaderModalCTA() {
                      className="cta-phone"
                      startIcon={<PictoPhone />}
                   >
-                     <span className="cta-text">01 02 03 04 05</span>
+                     <span className="cta-text">{formatPhoneNumber(Infos.tel)}</span>
                   </Button>
 
                   <div className="divider">

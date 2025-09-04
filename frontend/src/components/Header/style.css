@@ -29,6 +29,15 @@ img.logo {
    height: 60px;
 }
 
+.header-mobile li {
+     transition: background-color 0.3s ease;
+
+}
+
+.header-mobile li:hover {
+   background-color: #9ac9d7;
+}
+
 .header-mobile a.active {
    background-color: var(--color-primary);
    color: #fff;
@@ -53,6 +62,10 @@ img.logo {
    display: flex;
    align-items: center;
 }
+
+/* .header-desktop li:hover {
+   background-color: #d3eaf2;
+} */
 
 .header-desktop a {
    color: #333;
@@ -88,6 +101,9 @@ img.logo {
 }
 
 /* nav */
+.nav-link:hover {
+   background-color: transparent !important;
+}
 
 .icon-menu {
    fill: #555 !important;

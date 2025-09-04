@@ -40,6 +40,7 @@ export default function Header() {
    const navItems = dataNavigation.map((item, index) => (
       <ListItem key={index} disablePadding onClick={handleNavClick}>
          <ListItemButton
+            className="nav-link"
             component={NavLink}
             to={item.UrlPage}
          >
@@ -71,7 +72,7 @@ export default function Header() {
                </Link>
             </Typography>
          </Toolbar>
-         <Box className="header-mobile" sx={{}}>
+         <Box className="header-mobile">
             <List>{navItems}</List>
          </Box>
       </>
@@ -95,8 +96,8 @@ export default function Header() {
                   </Box>
 
                   {!isMobile && (
-                     <Box className="header-desktop" sx={{}}>
-                        <List sx={{}}>{navItems}</List>
+                     <Box className="header-desktop">
+                        <List>{navItems}</List>
                      </Box>
                   )}
 

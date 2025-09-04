@@ -19,3 +19,8 @@ const Infos = {
 ]; */
 
 export default Infos;
+
+export function formatPhoneNumber(tel) {
+  const local = tel.replace('+33', '0');
+  return local.replace(/(\d{2})(?=\d)/g, '$1 ').trim();
+}

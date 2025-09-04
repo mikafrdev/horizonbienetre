@@ -1,4 +1,4 @@
-import Infos from "../../utils/Infos";
+import Infos, {formatPhoneNumber} from "../../utils/Infos";
 import PictoPhone from "../PictoPhone";
 import PictoPinpoint from "../PictoPinpoint";
 import PictoMail from "../PictoMail";
@@ -30,7 +30,7 @@ export default function Header() {
                      className="btn-phone"
                      startIcon={<PictoPhone />}
                   >
-                     <span className="phone-text">{`${Infos.tel}`}</span>
+                     <span className="phone-text">{formatPhoneNumber(Infos.tel)}</span>
                   </Button>
 
                   <div className="footer-adress">
