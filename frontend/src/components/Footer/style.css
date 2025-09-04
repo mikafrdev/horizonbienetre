@@ -14,6 +14,16 @@ footer h2 {
    border-bottom: 1px solid var(--color-secondary);
 }
 
+.footer-container a:hover {
+   text-decoration: underline;
+}
+
+.footer-container {
+   display: flex;
+   flex-direction: column;
+   padding: 0 2rem;
+}
+
 .footer-contacts,
 a.btn-phone,
 .adress-text span,
@@ -48,7 +58,7 @@ footer a.btn-phone {
    text-transform: none;
    transition: background-color 0.3s ease;
    font-size: 15px;
-   padding: .5rem 2rem;
+   padding: 0.5rem 2rem;
 }
 
 .btn-phone svg {
@@ -98,13 +108,44 @@ svg.icon-email {
 
 .footer_fb,
 .footer_insta {
-   width: 30px;
-   height: 30px;
    transition: fill 0.3s ease;
 }
 
-.link-facebook svg.icon-facebook,
-.link-instagram svg.icon-instagram {
-   font-size: 3rem;
+.icon-facebook,
+.icon-instagram {
+   font-size: 3rem !important;
    transition: fill 0.3s ease;
+}
+
+.horaires, .detail-prestations {
+   display: flex;
+   flex-direction: column;
+   margin: 1rem 0 0 0;
+}
+.horaires p, .detail-prestations p {
+   width: 100%;
+   text-align: left;
+}
+
+.plan-de-site {
+   display: flex;
+   flex-direction: column;
+   margin: 2rem 0 0 0;
+}
+
+.plan-de-site ul, .legal-links ul, .copyright {
+   text-align: left;
+}
+
+.plan-de-site li {
+   display: flex;
+    flex-direction: column;
+    margin: 0 0 .5rem 0;
+    align-items: flex-start;
+}
+
+.legal-links {
+   display: flex;
+   flex-direction: column;
+   margin: 2rem 0 1rem 0;
 }

@@ -1,4 +1,5 @@
-import Infos, {formatPhoneNumber} from "../../utils/Infos";
+import Infos, { formatPhoneNumber } from "../../utils/Infos";
+import { Link, NavLink } from "react-router-dom";
 import PictoPhone from "../PictoPhone";
 import PictoPinpoint from "../PictoPinpoint";
 import PictoMail from "../PictoMail";
@@ -30,7 +31,9 @@ export default function Header() {
                      className="btn-phone"
                      startIcon={<PictoPhone />}
                   >
-                     <span className="phone-text">{formatPhoneNumber(Infos.tel)}</span>
+                     <span className="phone-text">
+                        {formatPhoneNumber(Infos.tel)}
+                     </span>
                   </Button>
 
                   <div className="footer-adress">
@@ -77,15 +80,67 @@ export default function Header() {
                </div>
             </div>
 
-            
-
             <div className="horaires">
                <p>Horaires :</p>
                <p>Du lundi au samedi de 9h00 à 19h00</p>
             </div>
-            <div className="detail_prestations">
+            <div className="detail-prestations">
                <p>Prestation sur RDV</p>
                <p>En cabine/ A domicile / En entreprise </p>
+            </div>
+            <div className="plan-de-site">
+               <ul>
+                  <li>
+                     <NavLink to="/">Accueil</NavLink>
+                  </li>
+                  <li>
+                     <NavLink to="/massages">Massages</NavLink>
+                  </li>
+                  <li>
+                     <NavLink to="/soins-energetiques">
+                        Soins énergétiques
+                     </NavLink>
+                  </li>
+                  <li>
+                     <NavLink to="/formules-bien-etre">
+                        Formules bien-être
+                     </NavLink>
+                  </li>
+                  <li>
+                     <NavLink to="/cartes-cadeaux">Cartes Cadeaux</NavLink>
+                  </li>
+                  <li>
+                     <NavLink to="/contact">Nous contacter</NavLink>
+                  </li>
+                  <li>
+                     <NavLink to="/le-salon">Le salon</NavLink>
+                  </li>
+               </ul>
+            </div>
+            <div className="legal-links">
+               <ul>
+                  <li>
+                     <NavLink to="/mentions-legales" className="legal-link">
+                        Mentions légales
+                     </NavLink>
+                  </li>
+                  <li>
+                     <NavLink
+                        to="/politique-confidentialite"
+                        className="legal-link"
+                     >
+                        Politique de confidentialité
+                     </NavLink>
+                  </li>
+                  <li>
+                     <NavLink to="/cgv" className="legal-link">
+                        CGV
+                     </NavLink>
+                  </li>
+               </ul>
+            </div>
+            <div className="copyright">
+               © 2025 Horizon Bien-être. Tous droits réservés.
             </div>
          </div>
       </footer>
