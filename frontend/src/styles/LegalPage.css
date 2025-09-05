@@ -1,0 +1,45 @@
+.legal-page {
+  max-width: 800px;
+  margin-top: 5rem;
+  padding: 2rem 1rem;
+  font-family: "Arial", sans-serif;
+  color: var(--text-primary, #333);
+  line-height: 1.6;
+  text-align: left;
+}
+
+.legal-page h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.legal-page h2 {
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary, #4a4a4a);
+}
+
+.legal-page p {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  .legal-page {
+    padding: 1.5rem 1rem;
+  }
+
+  .legal-page h1 {
+    font-size: 1.5rem;
+  }
+
+  .legal-page h2 {
+    font-size: 1.125rem;
+  }
+
+  .legal-page p {
+    font-size: 0.95rem;
+  }
+}

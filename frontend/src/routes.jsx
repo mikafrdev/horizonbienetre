@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter } from "react-router-dom";
 
 import PageError from "./pages/PageError";
 import Home from "./pages/Home";
@@ -8,50 +8,65 @@ import Formule from "./pages/Formule";
 import Cadeau from "./pages/Cadeau";
 import Salon from "./pages/Salon";
 import Contacts from "./pages/Contacts";
+import MentionsLegales from "./pages/Mentions-legales";
+import PolitiqueConfidentialite from "./pages/Politique-confidentialite";
+import CGV from "./pages/CGV";
 import Test from "./pages/Test";
 import "./index.css";
-import Layout from './Layout';
+import Layout from "./Layout";
 
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Layout />,
-        errorElement: <PageError />,
-        children: [
-            {
-                path: "/",
-                element: <Home />,
-            },
-            {
-                path: "/massages",
-                element: <Massages />,
-            },
-            {
-                path: "/soins",
-                element: <Soins />,
-            },
-            {
-                path: "/formule",
-                element: <Formule />,
-            },
-            {
-                path: "/cadeau",
-                element: <Cadeau />,
-            },
-            {
-                path: "/contacts",
-                element: <Contacts />,
-            },
-            {
-                path: "/salon",
-                element: <Salon />,
-            },
-            {
-                path: "/test",
-                element: <Test />,
-            }
-        ],
-    },
+   {
+      path: "/",
+      element: <Layout />,
+      errorElement: <PageError />,
+      children: [
+         {
+            path: "/",
+            element: <Home />,
+         },
+         {
+            path: "/massages",
+            element: <Massages />,
+         },
+         {
+            path: "/soins",
+            element: <Soins />,
+         },
+         {
+            path: "/formule",
+            element: <Formule />,
+         },
+         {
+            path: "/cadeau",
+            element: <Cadeau />,
+         },
+         {
+            path: "/contacts",
+            element: <Contacts />,
+         },
+         {
+            path: "/salon",
+            element: <Salon />,
+         },
+         {
+            path: "/mentions-legales",
+            element: <MentionsLegales />,
+         },
+         {
+            path: "/politique-confidentialite",
+            element: <PolitiqueConfidentialite />,
+         },
+         {
+            path: "/cgv",
+            element: <CGV />,
+         },
+         {
+            path: "/test",
+            element: <Test />,
+         },
+      ],
+   },
 ]);
 
-export default router
+export default router;
