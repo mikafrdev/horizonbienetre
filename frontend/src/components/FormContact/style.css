@@ -79,11 +79,13 @@
    border-radius: var(--radius);
    font-size: var(--font-size-text);
    cursor: pointer;
-   transition: background-color var(--transition);
+   /*transition: background-color var(--transition);*/
+   transition: opacity 0.3s ease;
 }
 
 .contact-form button:hover:not([disabled]) {
    background-color: #1e40af;
+   opacity: 0.8;
 }
 
 .contact-form button:disabled {
@@ -91,7 +93,7 @@
    cursor: not-allowed;
 }
 
-@media (max-width: 480px) {
+@media scree and (max-width: 480px) {
    .contact-form button {
       width: 100%;
    }

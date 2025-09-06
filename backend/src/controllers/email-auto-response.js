@@ -45,8 +45,8 @@ export const sendEmailAutoResponse = async (req, res) => {
    // Options de l'email
    const mailOptions = {
       from: `"Horizon Bien-être" <contact@horizonbienetre.fr>`,
-      to: "mikadevfr@gmail.com",
-      subject: "Horizonbienêtre - Merci pour votre message",
+      to: `${email}`,
+      subject: "TEST - Horizonbienêtre - Merci pour votre message",
       html: emailTemplate.replace("{{code}}", code), // injecte dynamiquement si besoin
    };
 

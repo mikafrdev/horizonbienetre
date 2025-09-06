@@ -7,5 +7,10 @@ export default defineConfig({
   build: {
     outDir: path.resolve(__dirname, '../build/frontend'),
     emptyOutDir: true
+  },
+  server: {
+    proxy: {
+      '/api': 'http://localhost:3000' // Redirige les requêtes /api vers le backend Express
+    }
   }
 });

@@ -18,8 +18,8 @@
   "scripts": {
     "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
     "build:emails": "tsx backend/emails/preview-email.jsx",
-    "build:frontend": "cd frontend && npm install && npm run build",
-    "build:backend": "cd backend && npm install && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
     "build": "npm run build:emails && npm run build:frontend && npm run build:backend && shx cp backend/.env.production build/backend/.env",
     "clean": "shx rm -rf build",
     "prod": "node build/backend/server.js"

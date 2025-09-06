@@ -1,82 +1,139 @@
-import { useActionState } from "react";
+import { useState } from "react";
+import Alert from "@mui/material/Alert";
+import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import SendIcon from "@mui/icons-material/Send";
+import FormControlLabel from '@mui/material/FormControlLabel';
+
 import "./style.css";
 
 export default function FormContact() {
-   const [state, formAction, isPending] = useActionState(submitFormData, {});
    const API_URL = import.meta.env.VITE_API_URL;
 
-   async function submitFormData(prevState, formData) {
-      const firstName = formData.get("firstName");
-      const lastName = formData.get("lastName");
-      const email = formData.get("email");
-      const message = formData.get("message");
+   const [formData, setFormData] = useState({
+      firstName: "",
+      lastName: "",
+      email: "",
+      message: "",
+      rgpd: false,
+   });
 
-      if (!email || !email.includes("@")) {
-         return {
-            error: "Veuillez saisir une adresse e-mail valide.",
-            fieldErrors: {
-               email: "Format incorrect.",
-            },
-         };
+   const [loading, setLoading] = useState(false);
+   const [successMsg, setSuccessMsg] = useState("");
+   const [errorMsg, setErrorMsg] = useState("");
+   const [fieldErrors, setFieldErrors] = useState({});
+   const [rgpdError, setRgpdError] = useState(false);
+
+   const handleChange = (e) => {
+      const { name, type, value, checked } = e.target;
+      setFormData((prev) => ({
+         ...prev,
+         [name]: type === "checkbox" ? checked : value,
+      }));
+   };
+
+   const resetForm = () => {
+      setFormData({
+         firstName: "",
+         lastName: "",
+         email: "",
+         message: "",
+      });
+      setSuccessMsg("");
+      setErrorMsg("");
+      setFieldErrors({});
+   };
+
+   const handleSubmit = async (e) => {
+      e.preventDefault();
+      setLoading(true);
+      setErrorMsg("");
+      setSuccessMsg("");
+      setFieldErrors({});
+      setRgpdError(false); // ✅ ici pour réinitialiser l'erreur RGPD
+
+      if (!formData.rgpd) {
+         setLoading(false);
+         setRgpdError(true);
+         setErrorMsg("Vous devez accepter la politique de confidentialité.");
+         return;
       }
 
-      if (!firstName || !lastName || !email || !message) {
-         return { error: "Tous les champs sont requis." };
+      const { firstName, lastName, email, message } = formData;
+
+      // Validation simple côté client
+      if (!email || !email.includes("@")) {
+         setLoading(false);
+         setFieldErrors({ email: "Format incorrect." });
+         setErrorMsg("Veuillez saisir une adresse e-mail valide.");
+         return;
+      }
+
+      if (!firstName || !lastName || !message) {
+         setLoading(false);
+         setErrorMsg("Tous les champs sont requis.");
+         return;
       }
 
       try {
-         // Envoi du message de contact
          const contactRes = await fetch(`${API_URL}/api/email/contact`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ firstName, lastName, email, message }),
+            body: JSON.stringify(formData),
          });
 
          if (!contactRes.ok) {
-            return { error: "Erreur lors de l'envoi du message de contact." };
+            const err = await contactRes.text();
+            throw new Error(err);
          }
 
-         // Envoi de la réponse automatique si le premier appel réussit
          const autoRes = await fetch(`${API_URL}/api/email/auto-response`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ firstName, lastName, email, message }),
+            body: JSON.stringify(formData),
          });
 
          if (!autoRes.ok) {
-            return {
-               error: "Message envoyé, mais échec de la réponse automatique.",
-            };
+            setSuccessMsg(
+               "Message envoyé, mais échec de la réponse automatique."
+            );
+         } else {
+            setSuccessMsg(
+               "Votre demande a bien été envoyée. Vous recevrez un e-mail de confirmation."
+            );
          }
 
-         return {
-            success:
-               "Votre demande a bien été envoyée. Vous recevrez un e-mail de confirmation.",
-         };
-      } catch (error) {
-         console.error(error);
-         return {
-            error: "Erreur réseau ou serveur.",
-            details: error.message || error,
-         };
+         setFormData({ firstName: "", lastName: "", email: "", message: "" });
+      } catch (err) {
+         console.error(err);
+         setErrorMsg("Erreur lors de l'envoi du message. Veuillez réessayer.");
+      } finally {
+         setLoading(false);
       }
-   }
+   };
 
    return (
       <section className="section-form">
-         {state.success ? (
-            <div className="success-message" aria-live="polite">
-               <h2>Merci !</h2>
-               <p>{state.success}</p>
-               <button>Envoyer un autre messsage</button>
-            </div>
+         {successMsg ? (
+            <Alert
+               severity="success"
+               sx={{ mb: 2 }}
+               action={
+                  <Button color="inherit" size="small" onClick={resetForm}>
+                     Envoyer un autre message
+                  </Button>
+               }
+            >
+               <Typography variant="h6">Merci !</Typography>
+               <Typography>{successMsg}</Typography>
+            </Alert>
          ) : (
-            <form action={formAction} className="contact-form">
-               {state.error && (
-                  <p className="error-message" role="alert" aria-live="polite">
-                     {state.error}
-                  </p>
+            <form onSubmit={handleSubmit} className="contact-form" noValidate>
+               {errorMsg && (
+                  <Alert severity="error" sx={{ mb: 2 }}>
+                     {errorMsg}
+                  </Alert>
                )}
 
                <div className="input-group input-group--firstlastname">
@@ -86,6 +143,8 @@ export default function FormContact() {
                         type="text"
                         id="firstName"
                         name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
                         placeholder="Ex: Michel"
                         autoComplete="given-name"
                      />
@@ -97,6 +156,8 @@ export default function FormContact() {
                         type="text"
                         id="lastName"
                         name="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}
                         placeholder="Ex: Durant"
                         autoComplete="family-name"
                         required
@@ -110,19 +171,21 @@ export default function FormContact() {
                      type="email"
                      id="email"
                      name="email"
+                     value={formData.email}
+                     onChange={handleChange}
                      placeholder="monemail@email.fr"
                      autoComplete="email"
                      required
-                     aria-invalid={!!state.fieldErrors?.email}
+                     aria-invalid={!!fieldErrors?.email}
                      aria-describedby="email-error"
                   />
-                  {state.fieldErrors?.email && (
+                  {fieldErrors?.email && (
                      <span
                         id="email-error"
                         className="text-red-500"
                         role="alert"
                      >
-                        {state.fieldErrors.email}
+                        {fieldErrors.email}
                      </span>
                   )}
                </div>
@@ -132,18 +195,59 @@ export default function FormContact() {
                   <textarea
                      id="message"
                      name="message"
+                     value={formData.message}
+                     onChange={handleChange}
                      placeholder="Demandez un rendez-vous ou posez une question ?"
                      required
-                  ></textarea>
+                  />
                </div>
 
+               <FormControlLabel
+                  control={
+                     <input
+                        type="checkbox"
+                        name="rgpd"
+                        checked={formData.rgpd}
+                        onChange={handleChange}
+                        style={{
+                           accentColor: "#1976d2",
+                           width: "16px",
+                           height: "16px",
+                           marginRight: "8px",
+                        }}
+                     />
+                  }
+                  label={
+                     <Typography variant="body2">
+                        J'accepte la{" "}
+                        <a
+                           href="/politique-confidentialite"
+                           target="_blank"
+                           rel="noreferrer"
+                        >
+                           politique de confidentialité
+                        </a>{" "}
+                        *
+                     </Typography>
+                  }
+               />
+               {rgpdError && (
+                  <Typography variant="caption" color="error" sx={{ mt: 0.5 }}>
+                     Vous devez accepter la politique de confidentialité.
+                  </Typography>
+               )}
+
                <div className="input-group input-group--submit">
-                  <button type="submit" className="cta-form-contact">
-                     <span className="cta-text">
-                        {isPending ? "Envoi en cours..." : "Prendre RDV"}
-                     </span>
-                     <span>Envoyer</span>
-                  </button>
+                  <Button
+                     type="submit"
+                     className="cta-form-contact"
+                     size="medium"
+                     variant="contained"
+                     loading={loading}
+                     endIcon={<SendIcon />}
+                  >
+                     Envoyer
+                  </Button>
                </div>
             </form>
          )}

@@ -15,6 +15,7 @@
       "email": "email dev",
       "email:watch": "nodemon --watch src --ext jsx --exec \"npm run email\"",
       "dev": "set NODE_ENV=dev && nodemon src/server.js --watch src --exec tsx",
+      "prod": "set NODE_ENV=production && tsx src/server.js",
       "preview:email": "tsx emails/preview-email.js",
       "build:emails": "tsx --transpile-only emails/src/email-auto-response.jsx --out-dir build/emails",
       "copy-emails": "shx cp -r emails ../build/",
@@ -25,7 +26,7 @@
    },
    "dependencies": {
       "@react-email/components": "^0.0.41",
-      "@react-email/render": "^1.1.2",
+      "@react-email/render": "^1.2.2",
       "cors": "^2.8.5",
       "dotenv": "^16.5.0",
       "express": "^5.1.0",

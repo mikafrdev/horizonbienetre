@@ -1,5 +1,35 @@
 /* Accordion.css */
 .section-test {
-    margin-top: 4rem;
+   width: 100%;
+   padding: 1rem 2rem;
+   margin-top: 4rem;
 }
 
+.section-test h1 {
+}
+
+.section-test h2 {
+   color: #000;
+   margin: 3rem 0;
+   text-align: left;
+   border-bottom: 1px solid grey;
+}
+
+.section-test .variables {
+   display: flex;
+}
+
+.section-test pre {
+   width: 100%;
+   text-align: left;
+   background-color: #2d2d2d; /* fond sombre */
+   color: #f8f8f2; /* texte clair */
+   padding: 16px; /* espace intérieur */
+   border-radius: 6px; /* coins arrondis */
+   font-family: "Courier New", monospace; /* police monospace */
+   font-size: 14px; /* taille de police */
+   overflow-x: auto; /* défilement horizontal si nécessaire */
+   line-height: 1.5; /* interligne */
+   border: 1px solid #444;
+   cursor: pointer;
+}

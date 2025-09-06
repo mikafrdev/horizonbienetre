@@ -48,7 +48,7 @@ export const EmailAutoResponse = () => (
                      vers vous dans les plus brefs délais.
                      <br />
                      Si votre demande est urgente, n'hésitez pas à nous
-                     contacter au 01 02 03 04 05.
+                     contacter au <strong>06 21 03 77 44</strong>.
                      <br />
                      Nous vous souhaitons une journée sereine et apaisante.
                      <br />
@@ -57,6 +57,16 @@ export const EmailAutoResponse = () => (
                      <br />
                      <br /> L'équipe Horizon Bien-être
                   </Text>
+               </Section>
+
+               <Section style={{ textAlign: "center", marginTop: "20px" }}>
+                  <Button
+                     href="https://horizonbienetre.fr"
+                     target="_blank"
+                     style={buttonStyle}
+                  >
+                     Revenir sur le site
+                  </Button>
                </Section>
 
                <Hr />
@@ -171,3 +181,14 @@ const verificationSection = {
 const mainText = { ...text, marginBottom: "14px" };
 
 const cautionText = { ...text, margin: "0px" };
+
+const buttonStyle = {
+   backgroundColor: "#1373A3",
+   color: "#ffffff",
+   fontSize: "16px",
+   padding: "12px 24px",
+   borderRadius: "6px",
+   textDecoration: "none",
+   fontFamily:
+      "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+};

@@ -2,16 +2,48 @@ import Resalib from "../../components/Resalib";
 import Button from "@mui/material/Button";
 import PictoCalendar from "../../components/PictoCalendar";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-
-
-
+import { useEffect, useState, useRef } from "react";
 
 import "./style.css";
 
 export default function Test() {
+   const [data, setData] = useState(null);
+   const preRef = useRef(null);
+
+   useEffect(() => {
+      // Appel à ton backend Express via le proxy
+      fetch("/api/test")
+         .then((res) => res.json())
+         .then((json) => {
+            console.log("✅ Réponse API :", json);
+            setData(json);
+         })
+         .catch((err) => {
+            console.error("❌ Erreur API :", err);
+         });
+   }, []);
+
+   const handleCopy = () => {
+      if (preRef.current) {
+         navigator.clipboard.writeText(preRef.current.textContent);
+      }
+   };
+
    return (
       <main className="main-content">
          <section className="section-test">
+            <h1>TESTS</h1>
+            <h2>Résultat de /api/test</h2>
+            <div className="variables">
+               {data ? (
+                  <pre onClick={handleCopy} ref={preRef}>
+                     {JSON.stringify(data, null, 2)}
+                  </pre>
+               ) : (
+                  <p>Chargement...</p>
+               )}
+            </div>
+            <h2>Boutons</h2>
             <Button
                component="a"
                className="cta-resalib"

@@ -1,10 +1,10 @@
-import express from 'express';
-import EmailRoutes from './routes/email.routes.js';
-import dotenv from 'dotenv';
-import path from 'path';
-import fs from 'fs';
+import express from "express";
+import EmailRoutes from "./routes/email.routes.js";
+import dotenv from "dotenv";
+import path from "path";
+import fs from "fs";
 import { console as inspectorConsole } from "inspector";
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from "url";
 
 // Pour ESM (__dirname equivalent)
 const __filename = fileURLToPath(import.meta.url);
@@ -13,20 +13,34 @@ const __dirname = path.dirname(__filename);
 const rawEnv = process.env.NODE_ENV;
 const NODE_ENV = rawEnv ? rawEnv.trim() : "";
 
+console.log('NODE_ENV =', NODE_ENV);
+
 if (typeof PhusionPassenger !== "undefined") {
    PhusionPassenger.configure({ autoInstall: false });
 }
 
 const envFilePath =
    NODE_ENV === "dev"
-      ? path.resolve(__dirname, ".env.development")
-      : path.resolve(__dirname, ".env");
-dotenv.config({ path: envFilePath });
+      ? path.resolve(__dirname, "../.env.development")
+      : path.resolve(__dirname, "../.env");
+const result = dotenv.config({ path: envFilePath });
+
+if (result.error) {
+   console.error("❌ Erreur chargement .env :", result.error);
+} else {
+   console.log("✅ Variables chargées depuis :", envFilePath);
+}
+
+console.log('Variables d\'environnement :');
+console.log('🔍 Fichier .env utilisé :', envFilePath);
+console.log('SMTP_CONTACT_HOST =', process.env.SMTP_CONTACT_HOST);
+console.log('SMTP_CONTACT_PORT =', process.env.SMTP_CONTACT_PORT);
+console.log('EMAIL_CONTACT_USER =', process.env.EMAIL_CONTACT_USER);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-import cors from 'cors';
+import cors from "cors";
 
 const allowedOrigins = [
    "http://localhost:5173",
@@ -53,13 +67,18 @@ app.use(express.json());
 let frontendDistPath = path.resolve(__dirname, "../../frontend/");
 
 // 👉 Servir le frontend buildé si SERVE_REACT est activé
+console.log("NODE_ENV =", process.env.NODE_ENV);
 if (NODE_ENV === "dev") {
-   inspectorConsole.log("🛑 React n'est pas servi par Express en mode développement.");
+   inspectorConsole.log(
+      "🛑 React n'est pas servi par Express en mode développement."
+   );
 } else {
    frontendDistPath = path.resolve(__dirname, "../frontend");
    if (fs.existsSync(frontendDistPath)) {
       app.use(express.static(frontendDistPath));
-      inspectorConsole.log(`✅ Frontend React servi depuis : ${frontendDistPath}`);
+      inspectorConsole.log(
+         `✅ Frontend React servi depuis : ${frontendDistPath}`
+      );
    } else {
       inspectorConsole.warn(
          "⚠️ Le dossier dist est introuvable. Assurez-vous d'avoir exécuté `npm run build` pour le frontend."
@@ -75,26 +94,42 @@ app.get("/", (req, res) => {
             "Erreur lors de l'envoi du fichier index.html :",
             err
          );
-         res.status(500).send(
-            "Erreur serveur lors du chargement de la page."
-         );
+         res.status(500).send("Erreur serveur lors du chargement de la page.");
       }
    });
 });
 
 app.get("/api/test", (req, res) => {
    res.json({
-      test: `✅ backend /api/test - frontendDistPath, ${indexPath}`,
+      test: `frontendDistPath :, ${indexPath}`,
       frontendDistPath,
       indexPath,
       filename: `${__filename}`,
       dirname: `${__dirname}`,
       existe: fs.existsSync(frontendDistPath),
-      
+      env: {
+         NODE_ENV: NODE_ENV || "❌ non défini",
+         SMTP_CONTACT_HOST: process.env.SMTP_CONTACT_HOST || "❌ non défini",
+         SMTP_CONTACT_PORT: process.env.SMTP_CONTACT_PORT || "❌ non défini",
+         EMAIL_CONTACT_USER: process.env.EMAIL_CONTACT_USER || "❌ non défini",
+         EMAIL_CONTACT_PASS: process.env.EMAIL_CONTACT_PASS
+            ? "✅ défini"
+            : "❌ manquant",
+
+         SMTP_AUTO_RESPONSE_HOST:
+            process.env.SMTP_AUTO_RESPONSE_HOST || "❌ non défini",
+         SMTP_AUTO_RESPONSE_PORT:
+            process.env.SMTP_AUTO_RESPONSE_PORT || "❌ non défini",
+         EMAIL_AUTO_RESPONSE_USER:
+            process.env.EMAIL_AUTO_RESPONSE_USER || "❌ non défini",
+         EMAIL_AUTO_RESPONSE_PASS: process.env.EMAIL_AUTO_RESPONSE_PASS
+            ? "✅ défini"
+            : "❌ manquant",
+      },
    });
 });
 
-app.use('/api/email', EmailRoutes);
+app.use("/api/email", EmailRoutes);
 
 if (NODE_ENV === "dev") {
    app.get("/*splat", (req, res) => {
@@ -123,6 +158,8 @@ if (typeof PhusionPassenger !== "undefined") {
 } else {
    const PORT = process.env.PORT || 3000;
    app.listen(PORT, () => {
-      inspectorConsole.log(`✅ Serveur backend démarré sur http://localhost:${PORT}`);
+      inspectorConsole.log(
+         `✅ Serveur backend démarré sur http://localhost:${PORT}`
+      );
    });
 }
