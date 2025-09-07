@@ -57,7 +57,6 @@ a.btn-phone,
 
 footer a.btn-phone {
    display: flex;
-   width: 100%;
    background-color: var(--bg-button-primary);
    border-radius: 15px;
    text-transform: none;
@@ -66,9 +65,14 @@ footer a.btn-phone {
    padding: 0.5rem 2rem;
 }
 
-.btn-phone svg {
+.footer-contacts-infos .btn-phone svg {
    width: 40px;
    fill: #ffffff;
+}
+
+.footer-contacts-infos svg {
+   width: 40px;
+   fill: #000;
 }
 
 .phone-text {

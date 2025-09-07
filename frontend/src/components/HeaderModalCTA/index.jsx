@@ -9,7 +9,8 @@ import Box from "@mui/material/Box";
 /* import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined"; */
 import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
-import Infos, {formatPhoneNumber} from "../../utils/Infos";
+import Infos, { formatPhoneNumber } from "../../utils/Infos";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./style.css";
 import "../Button/style.css";
@@ -122,7 +123,9 @@ export default function HeaderModalCTA() {
                      className="cta-phone"
                      startIcon={<PictoPhone />}
                   >
-                     <span className="cta-text">{formatPhoneNumber(Infos.tel)}</span>
+                     <span className="cta-text">
+                        {formatPhoneNumber(Infos.tel)}
+                     </span>
                   </Button>
 
                   <div className="divider">
@@ -138,6 +141,12 @@ export default function HeaderModalCTA() {
                      component="a"
                      className="cta-resalib"
                      startIcon={<PictoCalendar />}
+                     endIcon={
+                        <OpenInNewIcon
+                           className="icon-openinnew"
+                           titleAccess="Redirige vers le site de Resalib"
+                        />
+                     }
                      href="https://www.resalib.fr/praticien/108707-horizon-bien-etre-centre-de-bien-etre-tourcoing#top"
                      target="_blank"
                      rel="noopener noreferrer"

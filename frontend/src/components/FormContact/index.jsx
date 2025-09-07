@@ -4,8 +4,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import SendIcon from "@mui/icons-material/Send";
-import FormControlLabel from '@mui/material/FormControlLabel';
-
+import FormControlLabel from "@mui/material/FormControlLabel";
 import "./style.css";
 
 export default function FormContact() {
@@ -33,7 +32,7 @@ export default function FormContact() {
       }));
    };
 
-   const resetForm = () => {
+   /* const resetForm = () => {
       setFormData({
          firstName: "",
          lastName: "",
@@ -43,7 +42,7 @@ export default function FormContact() {
       setSuccessMsg("");
       setErrorMsg("");
       setFieldErrors({});
-   };
+   }; */
 
    const handleSubmit = async (e) => {
       e.preventDefault();
@@ -53,15 +52,13 @@ export default function FormContact() {
       setFieldErrors({});
       setRgpdError(false); // ✅ ici pour réinitialiser l'erreur RGPD
 
-      if (!formData.rgpd) {
-         setLoading(false);
-         setRgpdError(true);
-         setErrorMsg("Vous devez accepter la politique de confidentialité.");
-         return;
-      }
-
       const { firstName, lastName, email, message } = formData;
 
+      if (!firstName || !lastName || !message) {
+         setLoading(false);
+         setErrorMsg("Tous les champs sont requis.");
+         return;
+      }
       // Validation simple côté client
       if (!email || !email.includes("@")) {
          setLoading(false);
@@ -70,9 +67,10 @@ export default function FormContact() {
          return;
       }
 
-      if (!firstName || !lastName || !message) {
+      if (!formData.rgpd) {
          setLoading(false);
-         setErrorMsg("Tous les champs sont requis.");
+         setRgpdError(true);
+         setErrorMsg("Vous devez accepter la politique de confidentialité.");
          return;
       }
 
@@ -100,7 +98,10 @@ export default function FormContact() {
             );
          } else {
             setSuccessMsg(
-               "Votre demande a bien été envoyée. Vous recevrez un e-mail de confirmation."
+               <>
+                  Votre demande a bien été envoyée.
+                  <br /> Vous recevrez un e-mail de confirmation.
+               </>
             );
          }
 
@@ -116,18 +117,12 @@ export default function FormContact() {
    return (
       <section className="section-form">
          {successMsg ? (
-            <Alert
-               severity="success"
-               sx={{ mb: 2 }}
-               action={
-                  <Button color="inherit" size="small" onClick={resetForm}>
-                     Envoyer un autre message
-                  </Button>
-               }
-            >
-               <Typography variant="h6">Merci !</Typography>
-               <Typography>{successMsg}</Typography>
-            </Alert>
+            <div className="form-success-message">
+               <Alert severity="success">
+                  <Typography variant="h6">Merci !</Typography>
+                  <Typography>{successMsg}</Typography>
+               </Alert>
+            </div>
          ) : (
             <form onSubmit={handleSubmit} className="contact-form" noValidate>
                {errorMsg && (
@@ -202,49 +197,69 @@ export default function FormContact() {
                   />
                </div>
 
-               <FormControlLabel
-                  control={
-                     <input
-                        type="checkbox"
-                        name="rgpd"
-                        checked={formData.rgpd}
-                        onChange={handleChange}
-                        style={{
-                           accentColor: "#1976d2",
-                           width: "16px",
-                           height: "16px",
-                           marginRight: "8px",
-                        }}
-                     />
-                  }
-                  label={
-                     <Typography variant="body2">
-                        J'accepte la{" "}
-                        <a
-                           href="/politique-confidentialite"
-                           target="_blank"
-                           rel="noreferrer"
-                        >
-                           politique de confidentialité
-                        </a>{" "}
-                        *
+               <div className="input-group input-group--rgpd">
+                  <FormControlLabel
+                     control={
+                        <input
+                           type="checkbox"
+                           name="rgpd"
+                           checked={formData.rgpd}
+                           onChange={handleChange}
+                           style={{
+                              accentColor: "#1976d2",
+                              width: "16px",
+                              height: "16px",
+                              marginRight: "8px",
+                           }}
+                        />
+                     }
+                     label={
+                        <Typography variant="body2">
+                           J'accepte la{" "}
+                           <a
+                              href="/politique-confidentialite"
+                              target="_blank"
+                              rel="noreferrer"
+                              style={{ textDecoration: "underline" }}
+                           >
+                              politique de confidentialité
+                           </a>{" "}
+                           *
+                        </Typography>
+                     }
+                  />
+                  {rgpdError && (
+                     <Typography
+                        variant="caption"
+                        color="error"
+                        sx={{ mt: 0.5 }}
+                     >
+                        Vous devez accepter la politique de confidentialité.
                      </Typography>
-                  }
-               />
-               {rgpdError && (
-                  <Typography variant="caption" color="error" sx={{ mt: 0.5 }}>
-                     Vous devez accepter la politique de confidentialité.
-                  </Typography>
-               )}
+                  )}
+               </div>
 
-               <div className="input-group input-group--submit">
-                  <Button
-                     type="submit"
-                     className="cta-form-contact"
-                     size="medium"
+               <div className="input-group-submit">
+                  {/* <Button
+                     className="btn-submit"
                      variant="contained"
+                     type="submit"
+                     size="large"
+                     loading={true}
+                     endIcon={<SendIcon />}
+                     loadingPosition="end"
+                  >
+                     Envoyer
+                  </Button> */}
+
+                  <Button
+                     className="btn-submit"
+                     variant="contained"
+                     type="submit"
+                     size="large"
                      loading={loading}
                      endIcon={<SendIcon />}
+                     loadingPosition="end"
                   >
                      Envoyer
                   </Button>
