@@ -57,7 +57,10 @@ main .presentation_formule {
 }
 
 main .presentation_cadeau {
-   background-image: url(/src/assets/Carte_Cadeau_face_1.jpg);
+   background-image: url(/src/assets/Carte-Cadeau-4.png);
+   background-size: contain;
+   width: 70%;
+   margin-top: 1.5rem;
 }
 
 main .presentation-contact {
@@ -126,8 +129,7 @@ main .presentation-contact {
    main .presentation_hp,
    main .presentation_massages,
    main .presentation_soins,
-   main .presentation_formule,
-   main .presentation_cadeau {
+   main .presentation_formule {
       width: 800px;
    }
 }

@@ -25,6 +25,22 @@ export default function Salon() {
          <section className="presentation presentation-contact">
             <h1>Le salon</h1>
          </section>
+         <section className="salon-presentation">
+            <h2>Offrez-vous une expérience unique de bien-être et d’harmonie.</h2>
+            <p>Mon
+            objectif est de vous proposer un véritable voyage sensoriel et
+            revitalisant, adapté à vos besoins. Que vous recherchiez une détente
+            profonde, un soulagement du stress, une libération des blocages
+            énergétiques ou une reconnexion avec votre essence intérieure, je
+            mets à votre service mon savoir-faire et des techniques variée pour
+            vous accompagner vers u. mieux-être durable.</p> 
+            <p>Tous mes soins sont
+            réalisés avec des produits bio et naturels, respectueux de votre
+            peau et de votre énergie, pour une expérience authentique et
+            bienfaisante.</p>
+            <p>Prenez le temps de vous recentrer et laissez-vous
+            porter par des instants de pure relaxation.</p>
+         </section>
          <section className="section-salon">
             <Box>
                <ImageList variant="masonry" gap={1}>

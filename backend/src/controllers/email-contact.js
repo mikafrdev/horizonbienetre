@@ -1,7 +1,19 @@
 import nodemailer from "nodemailer";
+import { validationResult } from "express-validator";
 
 export const emailContact = async (req, res) => {
-   const { firstName, lastName, email, message } = req.body;
+   
+   const errors = validationResult(req);
+   if (!errors.isEmpty()) {
+      return res.status(400).json({ success: false, errors: errors.array() });
+   }
+
+   const { firstName, lastName, email, message, website } = req.body;
+
+   // 🔒 Honeypot anti-bot (champ invisible côté front)
+   if (website) {
+      return res.status(400).json({ success: false, message: "Spam détecté." });
+   }
    
    try {
       const transporter = nodemailer.createTransport({

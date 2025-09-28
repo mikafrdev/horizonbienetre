@@ -116,7 +116,7 @@ export default function HeaderModalCTA() {
                   <CloseIcon />
                </IconButton>
                <div className="header-modal-content">
-                  <div>Contacter par téléphone</div>
+                  <div className="text-tel">Prendre RDV par téléphone</div>
                   <Button
                      component="a"
                      href="tel:0102030405"
@@ -133,14 +133,13 @@ export default function HeaderModalCTA() {
                   </div>
 
                   <div className="resalib-partenaire">
-                     <div>Avec notre partenaire</div>
+                     <div className="text-resalib">Avec notre partenaire</div>
                      <img src={LogoResalib} alt="Logo Résalib" />
                   </div>
 
                   <Button
                      component="a"
                      className="cta-resalib"
-                     startIcon={<PictoCalendar />}
                      endIcon={
                         <OpenInNewIcon
                            className="icon-openinnew"

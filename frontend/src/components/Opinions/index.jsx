@@ -40,7 +40,6 @@ export default function Opinions() {
                            <ul className="opinion_stars">
                               {renderStars(item.note)}
                            </ul>
-                           <div className="opinion_date">{item.date}</div>
                         </div>
                         <p className="opinion_name">{item.name}</p>
                         <p className="opinion_text">{item.opinion}</p>

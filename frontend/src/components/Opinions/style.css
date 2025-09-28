@@ -37,14 +37,10 @@
 
 .opinion_stars {
    display: flex;
+   gap: 1rem;
    list-style-type: none;
    padding: 0;
    margin: 0;
-}
-
-.opinion_stars li {
-   /* width: 100%; */
-   margin-right: 16px;
 }
 
 .opinion_stars li svg {
@@ -53,11 +49,6 @@
    max-width: 20px;
 }
 
-.opinion_date {
-   font-style: italic;
-}
-
-.opinion_date,
 .opinion_name,
 .opinion_text {
    color: var(--color-secondary);

@@ -2,7 +2,6 @@ import { useState } from "react";
 import Alert from "@mui/material/Alert";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
 import SendIcon from "@mui/icons-material/Send";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import "./style.css";
@@ -16,13 +15,13 @@ export default function FormContact() {
       email: "",
       message: "",
       rgpd: false,
+      website: "", // 🛡️ Honeypot
    });
 
    const [loading, setLoading] = useState(false);
    const [successMsg, setSuccessMsg] = useState("");
    const [errorMsg, setErrorMsg] = useState("");
    const [fieldErrors, setFieldErrors] = useState({});
-   const [rgpdError, setRgpdError] = useState(false);
 
    const handleChange = (e) => {
       const { name, type, value, checked } = e.target;
@@ -38,10 +37,12 @@ export default function FormContact() {
          lastName: "",
          email: "",
          message: "",
+         rgpd: false,
+         website: "",
       });
+      setFieldErrors({});
       setSuccessMsg("");
       setErrorMsg("");
-      setFieldErrors({});
    }; */
 
    const handleSubmit = async (e) => {
@@ -50,42 +51,30 @@ export default function FormContact() {
       setErrorMsg("");
       setSuccessMsg("");
       setFieldErrors({});
-      setRgpdError(false); // ✅ ici pour réinitialiser l'erreur RGPD
-
-      const { firstName, lastName, email, message } = formData;
-
-      if (!firstName || !lastName || !message) {
-         setLoading(false);
-         setErrorMsg("Tous les champs sont requis.");
-         return;
-      }
-      // Validation simple côté client
-      if (!email || !email.includes("@")) {
-         setLoading(false);
-         setFieldErrors({ email: "Format incorrect." });
-         setErrorMsg("Veuillez saisir une adresse e-mail valide.");
-         return;
-      }
-
-      if (!formData.rgpd) {
-         setLoading(false);
-         setRgpdError(true);
-         setErrorMsg("Vous devez accepter la politique de confidentialité.");
-         return;
-      }
 
       try {
-         const contactRes = await fetch(`${API_URL}/api/email/contact`, {
+         const res = await fetch(`${API_URL}/api/email/contact`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData),
          });
 
-         if (!contactRes.ok) {
-            const err = await contactRes.text();
-            throw new Error(err);
+         const data = await res.json();
+
+         if (!res.ok) {
+            if (data.errors) {
+               const formattedErrors = {};
+               data.errors.forEach((err) => {
+                  formattedErrors[err.path] = err.msg;
+               });
+               setFieldErrors(formattedErrors);
+            }
+
+            setErrorMsg(data.message || "Une erreur est survenue.");
+            return;
          }
 
+         // Email auto-response
          const autoRes = await fetch(`${API_URL}/api/email/auto-response`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -105,7 +94,7 @@ export default function FormContact() {
             );
          }
 
-         setFormData({ firstName: "", lastName: "", email: "", message: "" });
+         /* resetForm(); */
       } catch (err) {
          console.error(err);
          setErrorMsg("Erreur lors de l'envoi du message. Veuillez réessayer.");
@@ -131,18 +120,34 @@ export default function FormContact() {
                   </Alert>
                )}
 
+               {/* 🛡️ Honeypot invisible */}
+               <input
+                  type="text"
+                  name="website"
+                  value={formData.website}
+                  onChange={handleChange}
+                  style={{ display: "none" }}
+                  autoComplete="off"
+                  tabIndex="-1"
+               />
+
                <div className="input-group input-group--firstlastname">
                   <div className="input-group input-group--firstname">
-                     <label htmlFor="firstName">Prénom</label>
+                     <label htmlFor="firstName">Prénom *</label>
                      <input
                         type="text"
                         id="firstName"
                         name="firstName"
                         value={formData.firstName}
                         onChange={handleChange}
-                        placeholder="Ex: Michel"
                         autoComplete="given-name"
+                        aria-invalid={!!fieldErrors.firstName}
                      />
+                     {fieldErrors.firstName && (
+                        <span className="text-red-500" role="alert">
+                           {fieldErrors.firstName}
+                        </span>
+                     )}
                   </div>
 
                   <div className="input-group input-group--lastname">
@@ -153,10 +158,14 @@ export default function FormContact() {
                         name="lastName"
                         value={formData.lastName}
                         onChange={handleChange}
-                        placeholder="Ex: Durant"
                         autoComplete="family-name"
-                        required
+                        aria-invalid={!!fieldErrors.lastName}
                      />
+                     {fieldErrors.lastName && (
+                        <span className="text-red-500" role="alert">
+                           {fieldErrors.lastName}
+                        </span>
+                     )}
                   </div>
                </div>
 
@@ -168,18 +177,11 @@ export default function FormContact() {
                      name="email"
                      value={formData.email}
                      onChange={handleChange}
-                     placeholder="monemail@email.fr"
                      autoComplete="email"
-                     required
-                     aria-invalid={!!fieldErrors?.email}
-                     aria-describedby="email-error"
+                     aria-invalid={!!fieldErrors.email}
                   />
-                  {fieldErrors?.email && (
-                     <span
-                        id="email-error"
-                        className="text-red-500"
-                        role="alert"
-                     >
+                  {fieldErrors.email && (
+                     <span className="text-red-500" role="alert">
                         {fieldErrors.email}
                      </span>
                   )}
@@ -192,9 +194,13 @@ export default function FormContact() {
                      name="message"
                      value={formData.message}
                      onChange={handleChange}
-                     placeholder="Demandez un rendez-vous ou posez une question ?"
-                     required
+                     aria-invalid={!!fieldErrors.message}
                   />
+                  {fieldErrors.message && (
+                     <span className="text-red-500" role="alert">
+                        {fieldErrors.message}
+                     </span>
+                  )}
                </div>
 
                <div className="input-group input-group--rgpd">
@@ -228,30 +234,18 @@ export default function FormContact() {
                         </Typography>
                      }
                   />
-                  {rgpdError && (
+                  {fieldErrors.rgpd && (
                      <Typography
                         variant="caption"
                         color="error"
                         sx={{ mt: 0.5 }}
                      >
-                        Vous devez accepter la politique de confidentialité.
+                        {fieldErrors.rgpd}
                      </Typography>
                   )}
                </div>
 
                <div className="input-group-submit">
-                  {/* <Button
-                     className="btn-submit"
-                     variant="contained"
-                     type="submit"
-                     size="large"
-                     loading={true}
-                     endIcon={<SendIcon />}
-                     loadingPosition="end"
-                  >
-                     Envoyer
-                  </Button> */}
-
                   <Button
                      className="btn-submit"
                      variant="contained"

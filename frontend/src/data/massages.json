@@ -1,26 +1,20 @@
 [
     {
-        "title" : "Massage IVAO",
-        "img" : "Woman-enjoying-relaxing-back-massage-in-cosmetology-spa-centre-Body-care-skin-care.jpg",
-        "text" : "Massage relaxant du corps sublimé par la douceur des pierres chaudes et des gestes enveloppants, pour un moment de détente et de régénération.",
+        "title" : "Massage relaxant corps avec pose de pierres chaudes",
+        "img" : "18-2.png",
+        "text" : "Plongez dans une experience de détente absolue avec le massage relaxant avec pose de pierres chaudes. Ce soin allie la douceur des techniques californienne ey ayurvédique à la chaleur des pierres volcaniques, places aux points énergétiques du corps. Idéal pour libérer les tensions, apaiser l’esprit et favoriser le lâcher-prise profonde, il vous invite à une veritable parenthèse de bien^être et de revitalization.",
         "prix" : "60 min - 55 €  90 min - 70 €"
     },
     {
         "title" : "Massage IMAO",
-        "img" : "A-good-looking-man-getting-a-back-massage-lying-down.jpg",
-        "text" : "Massage apaisant et décontractant, ciblant le dos, la nuque, les épaules et les bras pour soulager les tensions musculaires, améliorer la circulation et offrir une profonde relaxation.",
+        "img" : "Photos Canva-4-2.png",
+        "text" : "Découvez un moment de relaxation avec le Massage du Monde, une fusion harmonieuse des techniques californienne et ayurvédique. Spécialment conçu pour soulager les tensions du dos, de la nuque et des bras, ce soin allie des mouvements fluids et enveloppants à des pressions ciblées pour libérer le stress et rééquilibrer les énergies.",
         "prix" : "45 min - 45 €"
-    },
-    {
-        "title" : "Massage ERIS",
-        "img" : "Face-woman-massage-relax-close-up-Beautiful-woman-has-a-facial-massage-in-a-beauty-clinic.jpg",
-        "text" : "Massage harmonisant et relaxant qui combine le soin du visage, la détente du dos et des épaules pour libérer les tensions, revitaliser la peau et offrir un bien-être complet.",
-        "prix" : "30 min - 30 €"
     },
     {
         "title" : "Massage ALIO",
         "img" : "Woman-having-spa-massage-at-salon.jpg",
-        "text" : "Massage revitalisant et relaxant des jambes et des pieds, visant à détendre les muscles, stimuler la circulation et réduire la fatigue, pour une bien-être global et un soulagement des tensions.",
+        "text" : "Découvrez ce massage conçu pour répondre à vos besoins de détente et de revitalization. J’applique des techniques pour soulager les tensions, stimuler  la circulation sanguine et apporter une sensation de légèreté à vos jambes et à vos pieds. Que vous ayez besoin de relaxation profonde ou de tonification, ce massage sur mesure apporte équilibre et bien-être, vous laissant revitalize et énergisé.",
         "prix" : "30 min - 30 €"
     }
 ]

@@ -2,3 +2,12 @@
     width: 100%;
     max-width: 1024px;
 }
+
+.salon-presentation {
+    display: flex;
+    flex-direction: column;
+    align-items:start;
+    gap: 1rem;
+    padding: 1rem 3rem;
+    text-align: left;
+}

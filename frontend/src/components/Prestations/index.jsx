@@ -1,4 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import Collapse from "@mui/material/Collapse";
+import truncateText from "../../utils/utils";
+
 import "./style.css";
 
 export default function Prestations({ data, title }) {
@@ -8,10 +12,17 @@ export default function Prestations({ data, title }) {
       import: "default",
    });
 
+   const [isOpenAccordion, setisOpenAccordion] = React.useState(false);
+   const [isRotated, setIsRotated] = useState(false);
+   const handleAccordion = () => {
+      setisOpenAccordion(!isOpenAccordion);
+      setIsRotated(!isRotated);
+   };
+
    return (
       <section className="section-prestations">
          {title && <h2 className="section-prestations__title">{title}</h2>}
-         <div className="section-prestations__list">
+         <div className="prestations-list">
             {data.map((item, index) => {
                const imageUrl =
                   images[`../../assets/${item.img}`] ||
@@ -22,18 +33,31 @@ export default function Prestations({ data, title }) {
                return (
                   <React.Fragment key={index}>
                      <div
-                        className={`section-prestations__card section-prestations__card--shadow ${
+                        className={`prestations-card prestations-card--shadow ${
                            index % 2 !== 0 ? "reverse" : ""
                         }`}
                         key={index}
                      >
-                        <div className="section-prestations__img">
+                        <div className="prestations-img">
                            <img src={imageUrl} alt={item.title} />
                         </div>
-                        <div className="section-prestations__content">
+                        <div className="prestations-content">
                            <h2>{item.title}</h2>
-                           <p>{item.text}</p>
-                           <span>{item.prix}</span>
+                           <Collapse
+                              className="accordion-content"
+                               in={isOpenAccordion}
+                              collapsedSize={200}
+                           >
+                              {!isOpenAccordion
+                                    ? truncateText(item, 100)
+                                    : item.text}
+                              <span className="prestation-price">{item.prix}</span>
+                           </Collapse>
+                        <KeyboardArrowDownIcon
+                           onClick={handleAccordion}
+                           className={`icon-KeyboardArrowDownIcon ${isRotated ? "rotated" : ""}`}
+                           fontSize="large"
+                        />
                         </div>
                      </div>
                      {!isLast && <hr className="separator" />}

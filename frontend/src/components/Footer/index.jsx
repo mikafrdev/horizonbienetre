@@ -1,4 +1,5 @@
 import Infos, { formatPhoneNumber } from "../../utils/Infos";
+import dataNavigation from "../../data/navigation.json";
 import { Link, NavLink } from "react-router-dom";
 import PictoPhone from "../PictoPhone";
 import PictoPinpoint from "../PictoPinpoint";
@@ -17,26 +18,23 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import "./style.css";
 
-export default function Header() {
+export default function Footer() {
    return (
       <footer className="footer-container">
          <div className="footer-contacts footer-block">
-            <h2>Contacts</h2>
+            {/* <h2>Contacts</h2> */}
             <div className="footer-contacts-infos">
                <Button
-                  component="a"
-                  href={`tel:${Infos.tel}`}
-                  className="btn-phone"
-                  startIcon={<PictoPhone />}
-               >
-                  <span className="phone-text">
-                     {formatPhoneNumber(Infos.tel)}
-                  </span>
-               </Button>
-
-               <Button
                   variant="contained"
-                  sx={{ gap: '1rem', mt: 3, backgroundColor: "white", color: "black", padding: "0.5rem 2rem", borderRadius: "15px", border: '1px solid var(--bg-button-primary)' }}
+                  sx={{
+                     gap: "1rem",
+                     mb: 1,
+                     backgroundColor: "white",
+                     color: "black",
+                     padding: "0.5rem 2rem",
+                     borderRadius: "15px",
+                     border: "1px solid var(--bg-button-primary)",
+                  }}
                   component="a"
                   href={`tel:${Infos.tel}`}
                   startIcon={<PictoPhone />}
@@ -104,27 +102,11 @@ export default function Header() {
 
          <div className="plan-de-site footer-block">
             <ul>
-               <li>
-                  <NavLink to="/">Accueil</NavLink>
-               </li>
-               <li>
-                  <NavLink to="/massages">Massages</NavLink>
-               </li>
-               <li>
-                  <NavLink to="/soins-energetiques">Soins énergétiques</NavLink>
-               </li>
-               <li>
-                  <NavLink to="/formules-bien-etre">Formules bien-être</NavLink>
-               </li>
-               <li>
-                  <NavLink to="/cartes-cadeaux">Cartes Cadeaux</NavLink>
-               </li>
-               <li>
-                  <NavLink to="/contact">Nous contacter</NavLink>
-               </li>
-               <li>
-                  <NavLink to="/le-salon">Le salon</NavLink>
-               </li>
+               {dataNavigation.map((item, index) => (
+                  <li key={index}>
+                     <NavLink to={item.UrlPage}>{item.PageName}</NavLink>
+                  </li>
+               ))}
             </ul>
          </div>
 
