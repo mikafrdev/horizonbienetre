@@ -3,7 +3,6 @@ import Button from "@mui/material/Button";
 import PictoCalendar from "../../components/PictoCalendar";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { useEffect, useState, useRef } from "react";
-
 import "./style.css";
 
 export default function Test() {
@@ -11,7 +10,6 @@ export default function Test() {
    const preRef = useRef(null);
 
    useEffect(() => {
-      // Appel à ton backend Express via le proxy
       fetch("/api/test")
          .then((res) => res.json())
          .then((json) => {
@@ -33,6 +31,7 @@ export default function Test() {
       <main className="main-content">
          <section className="section-test">
             <h1>TESTS</h1>
+
             <h2>Résultat de /api/test</h2>
             <div className="variables">
                {data ? (

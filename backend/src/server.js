@@ -13,7 +13,7 @@ const __dirname = path.dirname(__filename);
 const rawEnv = process.env.NODE_ENV;
 const NODE_ENV = rawEnv ? rawEnv.trim() : "";
 
-console.log('NODE_ENV =', NODE_ENV);
+console.log("NODE_ENV =", NODE_ENV);
 
 if (typeof PhusionPassenger !== "undefined") {
    PhusionPassenger.configure({ autoInstall: false });
@@ -31,11 +31,13 @@ if (result.error) {
    console.log("✅ Variables chargées depuis :", envFilePath);
 }
 
-console.log('Variables d\'environnement :');
-console.log('🔍 Fichier .env utilisé :', envFilePath);
-console.log('SMTP_CONTACT_HOST =', process.env.SMTP_CONTACT_HOST);
-console.log('SMTP_CONTACT_PORT =', process.env.SMTP_CONTACT_PORT);
-console.log('EMAIL_CONTACT_USER =', process.env.EMAIL_CONTACT_USER);
+console.log("Variables d'environnement => ");
+console.log("API_URL =", process.env.API_URL);
+console.log("🔍 Fichier .env utilisé ", envFilePath);
+console.log("ISPRODLOCAL =", process.env.ISPRODLOCAL);
+console.log("SMTP_CONTACT_HOST =", process.env.SMTP_CONTACT_HOST);
+console.log("SMTP_CONTACT_PORT =", process.env.SMTP_CONTACT_PORT);
+console.log("EMAIL_CONTACT_USER =", process.env.EMAIL_CONTACT_USER);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -68,12 +70,22 @@ let frontendDistPath = path.resolve(__dirname, "../../frontend/");
 
 // 👉 Servir le frontend buildé si SERVE_REACT est activé
 console.log("NODE_ENV =", process.env.NODE_ENV);
+
 if (NODE_ENV === "dev") {
    inspectorConsole.log(
       "🛑 React n'est pas servi par Express en mode développement."
    );
 } else {
-   frontendDistPath = path.resolve(__dirname, "../frontend");
+   const isProdLocal = process.env.ISPRODLOCAL;
+
+   if (isProdLocal) {
+      // En production locale (http://localhost:3000/)
+      frontendDistPath = path.resolve(__dirname, "../../build/frontend");
+   } else {
+      // En production sur l'hébergeur (https://horizonbienetre.fr/)
+      frontendDistPath = path.resolve(__dirname, "../frontend");
+   }
+
    if (fs.existsSync(frontendDistPath)) {
       app.use(express.static(frontendDistPath));
       inspectorConsole.log(
@@ -87,6 +99,12 @@ if (NODE_ENV === "dev") {
 }
 
 const indexPath = path.join(frontendDistPath, "index.html");
+
+app.use((req, res, next) => {
+   res.setHeader("Cache-Control", "no-store");
+   next();
+});
+
 app.get("/", (req, res) => {
    res.sendFile(indexPath, (err) => {
       if (err) {
@@ -109,6 +127,7 @@ app.get("/api/test", (req, res) => {
       existe: fs.existsSync(frontendDistPath),
       env: {
          NODE_ENV: NODE_ENV || "❌ non défini",
+         API_URL: process.env.API_URL || "❌ non défini",
          SMTP_CONTACT_HOST: process.env.SMTP_CONTACT_HOST || "❌ non défini",
          SMTP_CONTACT_PORT: process.env.SMTP_CONTACT_PORT || "❌ non défini",
          EMAIL_CONTACT_USER: process.env.EMAIL_CONTACT_USER || "❌ non défini",

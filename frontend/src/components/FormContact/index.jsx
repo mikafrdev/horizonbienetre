@@ -7,8 +7,6 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import "./style.css";
 
 export default function FormContact() {
-   const API_URL = import.meta.env.VITE_API_URL;
-
    const [formData, setFormData] = useState({
       firstName: "",
       lastName: "",
@@ -52,14 +50,18 @@ export default function FormContact() {
       setSuccessMsg("");
       setFieldErrors({});
 
+      console.log("ENVOI : ", formData);
+
       try {
-         const res = await fetch(`${API_URL}/api/email/contact`, {
+         const res = await fetch(`/api/email/contact`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData),
          });
 
          const data = await res.json();
+
+         console.log("data : ", data);
 
          if (!res.ok) {
             if (data.errors) {
@@ -70,12 +72,14 @@ export default function FormContact() {
                setFieldErrors(formattedErrors);
             }
 
+            console.log("TEST FORMContact : ", data, data.message);
+
             setErrorMsg(data.message || "Une erreur est survenue.");
             return;
          }
 
          // Email auto-response
-         const autoRes = await fetch(`${API_URL}/api/email/auto-response`, {
+         const autoRes = await fetch(`/api/email/auto-response`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData),
