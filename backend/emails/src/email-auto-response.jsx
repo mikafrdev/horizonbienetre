@@ -14,9 +14,6 @@ import {
    Button,
 } from "@react-email/components";
 
-/* const baseUrl = process.env.FRONTEND_URL; */
-const baseUrl = "https://horizonbienetre.fr";
-
 export const EmailAutoResponse = () => (
    <Html>
       <Head />
@@ -31,7 +28,7 @@ export const EmailAutoResponse = () => (
                      style={{ display: "inline-block" }}
                   >
                      <Img
-                        src={`${baseUrl}/assets/Logo-B1O8D7lL.jpg`}
+                        src="https://horizonbienetre.fr/assets/Logo-B1O8D7lL.jpg"
                         width="72"
                         height="87"
                         alt="Logo Horizonbienetre.fr"

@@ -32,7 +32,6 @@ if (result.error) {
 }
 
 console.log("Variables d'environnement => ");
-console.log("API_URL =", process.env.API_URL);
 console.log("🔍 Fichier .env utilisé ", envFilePath);
 console.log("ISPRODLOCAL =", process.env.ISPRODLOCAL);
 console.log("SMTP_CONTACT_HOST =", process.env.SMTP_CONTACT_HOST);
@@ -83,7 +82,7 @@ if (NODE_ENV === "dev") {
       frontendDistPath = path.resolve(__dirname, "../../build/frontend");
    } else {
       // En production sur l'hébergeur (https://horizonbienetre.fr/)
-      frontendDistPath = path.resolve(__dirname, "../frontend");
+      frontendDistPath = path.resolve(__dirname, "../../frontend");
    }
 
    if (fs.existsSync(frontendDistPath)) {
@@ -127,7 +126,7 @@ app.get("/api/test", (req, res) => {
       existe: fs.existsSync(frontendDistPath),
       env: {
          NODE_ENV: NODE_ENV || "❌ non défini",
-         API_URL: process.env.API_URL || "❌ non défini",
+         isProdLocal: isProdLocal || "❌ non défini",
          SMTP_CONTACT_HOST: process.env.SMTP_CONTACT_HOST || "❌ non défini",
          SMTP_CONTACT_PORT: process.env.SMTP_CONTACT_PORT || "❌ non défini",
          EMAIL_CONTACT_USER: process.env.EMAIL_CONTACT_USER || "❌ non défini",

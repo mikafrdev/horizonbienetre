@@ -70,7 +70,7 @@ export const emailContact = async (req, res) => {
       return res.status(500).json({
          success: false,
          message: errorMessage,
-         error: "Pouet", // Toujours loguer le message de l'erreur dans la réponse (optionnel)
+         message: "Une erreur est survenue lors de l'envoi de l'email.",
       });
    }
 };
