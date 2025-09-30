@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@react-email/render';
-import { EmailAutoResponse } from './src/email-auto-response.jsx';
+import { TemplateEmailAutoResponse } from './src/Template-email-auto-response';
 import { writeFile, mkdir } from 'fs/promises';
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
@@ -10,11 +10,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // 📄 Chemin de sortie du fichier HTML
-const outputPath = resolve(__dirname, 'dist', 'email-auto-response.html');
+const outputPath = resolve(__dirname, '../emails/dist/email-auto-response.html');
 
 // 💡 Génère le HTML depuis le composant React
 const verificationCode = Math.floor(100000 + Math.random() * 900000).toString();
-const html = await render(<EmailAutoResponse verificationCode={verificationCode} />, {
+const html = await render(<TemplateEmailAutoResponse verificationCode={verificationCode} />, {
   pretty: true, // optionnel : pour un HTML lisible
 });
 

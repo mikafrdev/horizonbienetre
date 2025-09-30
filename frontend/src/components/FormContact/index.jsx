@@ -72,8 +72,6 @@ export default function FormContact() {
                setFieldErrors(formattedErrors);
             }
 
-            console.log("TEST FORMContact : ", data, data.message);
-
             setErrorMsg(data.message || "Une erreur est survenue.");
             return;
          }

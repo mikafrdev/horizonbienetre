@@ -17,13 +17,14 @@
   },
   "scripts": {
     "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
-    "build:emails": "tsx backend/emails/preview-email.jsx",
+    "build:emails": "tsx ./emails/preview-email.jsx",
     "build:frontend": "cd frontend && npm run build",
     "build:backend": "cd backend && npm run build",
-    "build": "npm run build:emails && npm run build:frontend && npm run build:backend && shx cp backend/.env.production build/backend/.env",
+    "build": "npm run build:emails && npm run build:frontend && npm run build:backend && shx cp backend/.env.production build/.env",
     "clean": "shx rm -rf build",
     "prod": "set NODE_ENV=production && set ISPRODLOCAL=true && node ./backend/src/server.js",
-    "start": "node ./build/backend/server.js"
+    "prod:build": "set NODE_ENV=production && set ISPRODLOCAL=true && node ./build/backend/server.js",
+    "start": "set ISPRODLOCAL=true && node ./build/backend/server.js"
   },
   "dependencies": {
     "@react-email/components": "0.0.41",

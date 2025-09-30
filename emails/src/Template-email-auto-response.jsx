@@ -14,7 +14,7 @@ import {
    Button,
 } from "@react-email/components";
 
-export const EmailAutoResponse = () => (
+export const TemplateEmailAutoResponse = () => (
    <Html>
       <Head />
       <Body style={main}>
@@ -90,7 +90,7 @@ export const EmailAutoResponse = () => (
    </Html>
 );
 
-export default EmailAutoResponse;
+export default TemplateEmailAutoResponse;
 
 const main = {
    backgroundColor: "#fff",

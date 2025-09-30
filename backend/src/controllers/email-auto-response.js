@@ -15,11 +15,10 @@ export const sendEmailAutoResponse = async (req, res) => {
       return res.status(400).json({ error: "Tous les champs sont requis." });
    }
 
-   // 🔽 Lire le HTML pré-généré depuis le dossier de build
    let emailTemplate;
    try {
       emailTemplate = await fs.readFile(
-         path.resolve(__dirname, "../../emails/dist/email-auto-response.html"),
+         path.resolve(__dirname, "../../../emails/dist/email-auto-response.html"),
          "utf8"
       );
    } catch (err) {
@@ -27,9 +26,11 @@ export const sendEmailAutoResponse = async (req, res) => {
          "Erreur lors de la lecture du template email :",
          err
       );
-      return res
-         .status(500)
-         .json({ error: "Erreur de génération de l'email." });
+      return res.status(500).json({
+      error: "Erreur de génération de l'email.",
+      details: err.message,           // contenu de l'erreur
+      emailTemplate: emailTemplate || "❌ Aucun contenu lu", // debug template
+   });
    }
 
    const transporter = nodemailer.createTransport({
@@ -38,7 +39,7 @@ export const sendEmailAutoResponse = async (req, res) => {
       secure: true,
       auth: {
          user: process.env.EMAIL_AUTO_RESPONSE_USER,
-         pass: process.env.EMAIL_AUTO_RESPONSE_PASS
+         pass: process.env.EMAIL_AUTO_RESPONSE_PASS,
       },
    });
 

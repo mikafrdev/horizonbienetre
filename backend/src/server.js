@@ -10,7 +10,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const rawEnv = process.env.NODE_ENV;
+const rawEnv = process.env.NODE_ENV || "";
 const NODE_ENV = rawEnv ? rawEnv.trim() : "";
 
 console.log("NODE_ENV =", NODE_ENV);
@@ -31,9 +31,11 @@ if (result.error) {
    console.log("✅ Variables chargées depuis :", envFilePath);
 }
 
+const isProdLocal = process.env.ISPRODLOCAL || false;
+
 console.log("Variables d'environnement => ");
 console.log("🔍 Fichier .env utilisé ", envFilePath);
-console.log("ISPRODLOCAL =", process.env.ISPRODLOCAL);
+console.log("isProdLocal =", isProdLocal);
 console.log("SMTP_CONTACT_HOST =", process.env.SMTP_CONTACT_HOST);
 console.log("SMTP_CONTACT_PORT =", process.env.SMTP_CONTACT_PORT);
 console.log("EMAIL_CONTACT_USER =", process.env.EMAIL_CONTACT_USER);
@@ -75,8 +77,7 @@ if (NODE_ENV === "dev") {
       "🛑 React n'est pas servi par Express en mode développement."
    );
 } else {
-   const isProdLocal = process.env.ISPRODLOCAL;
-
+   
    if (isProdLocal) {
       // En production locale (http://localhost:3000/)
       frontendDistPath = path.resolve(__dirname, "../../build/frontend");
@@ -96,6 +97,8 @@ if (NODE_ENV === "dev") {
       );
    }
 }
+
+console.log("frontendDistPath : ", frontendDistPath)
 
 const indexPath = path.join(frontendDistPath, "index.html");
 
