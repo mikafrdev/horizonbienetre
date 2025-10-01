@@ -3,7 +3,7 @@
    flex-wrap: wrap;
    min-width: var(--min-width-resolution);
    width: 100%;
-   max-width: 1024px;
+   max-width: 800px;
    margin-top: 3rem;
    padding: 0 1rem;
 }
@@ -29,6 +29,7 @@
 
 .prestations-card img {
    width: 100%;
+   height: fit-content;
    aspect-ratio: 4 / 3;
    object-fit: cover;
    border-top-left-radius: 30px;
@@ -75,7 +76,7 @@
 
 .separator {
    display: none;
-   width: 80%;
+   width: 100%;
    border-top: 1px dashed #949494;
    margin: 2rem 0;
 }
@@ -84,6 +85,7 @@
    /* height: 14rem; */
    /* padding-bottom: 4rem; */
    /* transition: height 1s ease; */
+   overflow: hidden;
 }
 
 .open-accordion {
@@ -91,10 +93,10 @@
 }
 
 .icon-KeyboardArrowDownIcon {
-   position: absolute;
+   /* position: absolute;
    bottom: 0;
    left: 50%;
-   cursor: pointer;
+   cursor: pointer;*/
    transition: transform 0.5s ease !important;
 }
 
@@ -118,29 +120,41 @@
 }
 
 @media screen and (min-width: 800px) {
-   .prestations-content {
-      flex: 0 0 63%;
-      justify-content: space-between;
-      padding: 0 0 0 2rem;
+   .section-prestations {
+      padding: 0;
    }
-
+   .prestations-card {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+   }
+   
+   
    .prestations-list {
       gap: 1rem;
       margin-bottom: 2rem;
    }
-
+   
    .prestations-card {
-      width: 80%;
+      width: 100%;
       flex-direction: row;
       border: none;
       -webkit-box-shadow: none;
       box-shadow: none;
       margin: 0 0 1rem 0;
    }
-
+   
    .prestations-img {
       display: flex;
-      flex: 0 0 37%;
+      width: 40%;
+   }
+   
+   .prestations-content {
+      display: flex;
+      justify-content: flex-start;
+      width: 60%;
+      padding: 0;
+      text-align: left;
    }
 
    .prestations-card img {
