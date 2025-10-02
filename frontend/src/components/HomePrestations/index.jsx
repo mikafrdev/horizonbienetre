@@ -22,40 +22,28 @@ export default function HomePrestations() {
                   >
                      <picture>
                         <source
-                           type="image/avif"
-                           srcSet={`
-      /${img}-600.avif 600w,
-      /${img}-800.avif 800w,
-      /${img}-1024.avif 1024w,
-      /${img}-1440.avif 1440w
-    `}
-                           sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                           srcSet={`/${img}-600.webp`}
+                           media="(max-width: 600px)"
                         />
+
                         <source
-                           type="image/webp"
-                           srcSet={`
-      /${img}-600.webp 600w,
-      /${img}-800.webp 800w,
-      /${img}-1024.webp 1024w,
-      /${img}-1440.webp 1440w
-    `}
-                           sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                           srcSet={`/${img}-800.webp`}
+                           media="(min-width: 601px) and (max-width: 800px)"
                         />
+
                         <source
-                           type="image/jpeg"
-                           srcSet={`
-      /${img}-600.jpg 600w,
-      /${img}-800.jpg 800w,
-      /${img}-1024.jpg 1024w,
-      /${img}-1440.jpg 1440w
-    `}
-                           sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                           srcSet={`/${img}-1024.webp`}
+                           media="(min-width: 801px) and (max-width: 1024px)"
                         />
+
+                        <source
+                           srcSet={`/${img}-1440.webp`}
+                           media="(min-width: 1025px)"
+                        />
+
                         <img
-                           src={`/${img}-800.jpg`} // fallback si <picture> ne fonctionne pas
-                           alt={title}
-                           loading="lazy"
-                           className="home-prestations__image"
+                           srcSet={`/${img}-800.webp`}
+                           alt="Image responsive"
                         />
                      </picture>
 

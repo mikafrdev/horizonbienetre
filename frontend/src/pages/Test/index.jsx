@@ -3,6 +3,8 @@ import Button from "@mui/material/Button";
 import PictoCalendar from "../../components/PictoCalendar";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { useEffect, useState, useRef } from "react";
+import testImgLight from "../../assets/massage-relaxation-femme-bougies-fleurs-spa-600.jpg";
+import testImgLarge from "../../assets/massage-relaxation-femme-bougies-fleurs-spa-1024.jpg";
 import "./style.css";
 
 export default function Test() {
@@ -31,6 +33,22 @@ export default function Test() {
       <main className="main-content">
          <section className="section-test">
             <h1>TESTS</h1>
+
+            <h2>Images responsive</h2>
+            <section>
+               <picture>
+                  <source
+                     srcSet={testImgLight}
+                     type="image/jpg"
+                     media="(max-width: 1023px)"
+                  />
+                  <source
+                     srcSet={testImgLarge}
+                     type="image/jpg"
+                     media="(min-width: 1024px)"
+                  />
+               </picture>
+            </section>
 
             <h2>Résultat de /api/test</h2>
             <div className="variables">
