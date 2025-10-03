@@ -1,12 +1,12 @@
 import express from "express";
-import EmailRoutes from "./routes/email.routes.js";
 import dotenv from "dotenv";
 import path from "path";
 import fs from "fs";
-import { console as inspectorConsole } from "inspector";
-import { fileURLToPath } from "url";
 
-// Pour ESM (__dirname equivalent)
+import { fileURLToPath } from "url";
+import EmailRoutes from "./routes/email.routes.js";
+import ImagesRoutes from "./routes/images.routes.js";
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -33,15 +33,15 @@ if (result.error) {
 
 const isProdLocal = process.env.ISPRODLOCAL || false;
 
-console.log("Variables d'environnement => ");
+/* console.log("Variables d'environnement => ");
 console.log("🔍 Fichier .env utilisé ", envFilePath);
 console.log("isProdLocal =", isProdLocal);
 console.log("SMTP_CONTACT_HOST =", process.env.SMTP_CONTACT_HOST);
 console.log("SMTP_CONTACT_PORT =", process.env.SMTP_CONTACT_PORT);
-console.log("EMAIL_CONTACT_USER =", process.env.EMAIL_CONTACT_USER);
+console.log("EMAIL_CONTACT_USER =", process.env.EMAIL_CONTACT_USER); */
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 import cors from "cors";
 
@@ -69,11 +69,10 @@ app.use(cors(corsOptions));
 app.use(express.json());
 let frontendDistPath = path.resolve(__dirname, "../../frontend/");
 
-// 👉 Servir le frontend buildé si SERVE_REACT est activé
 console.log("NODE_ENV =", process.env.NODE_ENV);
 
 if (NODE_ENV === "dev") {
-   inspectorConsole.log(
+   console.log(
       "🛑 React n'est pas servi par Express en mode développement."
    );
 } else {
@@ -88,17 +87,15 @@ if (NODE_ENV === "dev") {
 
    if (fs.existsSync(frontendDistPath)) {
       app.use(express.static(frontendDistPath));
-      inspectorConsole.log(
+      console.log(
          `✅ Frontend React servi depuis : ${frontendDistPath}`
       );
    } else {
-      inspectorConsole.warn(
+      console.warn(
          "⚠️ Le dossier dist est introuvable. Assurez-vous d'avoir exécuté `npm run build` pour le frontend."
       );
    }
 }
-
-console.log("frontendDistPath : ", frontendDistPath)
 
 const indexPath = path.join(frontendDistPath, "index.html");
 
@@ -110,7 +107,7 @@ app.use((req, res, next) => {
 app.get("/", (req, res) => {
    res.sendFile(indexPath, (err) => {
       if (err) {
-         inspectorConsole.error(
+         console.error(
             "Erreur lors de l'envoi du fichier index.html :",
             err
          );
@@ -150,7 +147,22 @@ app.get("/api/test", (req, res) => {
    });
 });
 
+
 app.use("/api/email", EmailRoutes);
+
+app.use('/api/images', ImagesRoutes);
+
+/* app.use('/images', express.static(path.join(__dirname, 'public/images')));
+app.get('/api/images/:imageId', async (req, res) => {
+  const imageId = req.params.imageId;
+  const imagePath = path.join(__dirname, 'public/images/processed', `${imageId}.jpg`);
+
+  if (fs.existsSync(imagePath)) {
+    res.sendFile(imagePath);
+  } else {
+    res.status(404).json({ error: 'Image not found' });
+  }
+}); */
 
 if (NODE_ENV === "dev") {
    app.get("/*splat", (req, res) => {
@@ -175,12 +187,11 @@ if (NODE_ENV === "dev") {
 // Démarrage du serveur
 if (typeof PhusionPassenger !== "undefined") {
    app.listen("passenger");
-   inspectorConsole.log(`✅ Serveur backend démarré sur PhusionPassenger`);
+   /* console.log(`✅ Serveur backend démarré sur PhusionPassenger`); */
 } else {
-   const PORT = process.env.PORT || 3000;
    app.listen(PORT, () => {
-      inspectorConsole.log(
+      /* console.log(
          `✅ Serveur backend démarré sur http://localhost:${PORT}`
-      );
+      ); */
    });
 }

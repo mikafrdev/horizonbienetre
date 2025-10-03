@@ -3,19 +3,18 @@ import Button from "@mui/material/Button";
 import PictoCalendar from "../../components/PictoCalendar";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { useEffect, useState, useRef } from "react";
-import testImgLight from "../../assets/massage-relaxation-femme-bougies-fleurs-spa-600.jpg";
-import testImgLarge from "../../assets/massage-relaxation-femme-bougies-fleurs-spa-1024.jpg";
 import "./style.css";
 
 export default function Test() {
    const [data, setData] = useState(null);
+   const [imgUrl, setImgUrl] = useState(null);
    const preRef = useRef(null);
 
    useEffect(() => {
       fetch("/api/test")
          .then((res) => res.json())
          .then((json) => {
-            console.log("✅ Réponse API :", json);
+            console.log("✅ API Test :", json);
             setData(json);
          })
          .catch((err) => {
@@ -23,6 +22,18 @@ export default function Test() {
          });
    }, []);
 
+   /* useEffect(() => {
+      fetch("/api/images/${imageName}")
+         .then((res) => res.json())
+         .then((json) => {
+            console.log("✅ API Image :", json);
+            setImgUrl(json);
+         })
+         .catch((err) => {
+            console.error("❌ Erreur API :", err);
+         });
+   }, []);
+ */
    const handleCopy = () => {
       if (preRef.current) {
          navigator.clipboard.writeText(preRef.current.textContent);
@@ -36,18 +47,7 @@ export default function Test() {
 
             <h2>Images responsive</h2>
             <section>
-               <picture>
-                  <source
-                     srcSet={testImgLight}
-                     type="image/jpg"
-                     media="(max-width: 1023px)"
-                  />
-                  <source
-                     srcSet={testImgLarge}
-                     type="image/jpg"
-                     media="(min-width: 1024px)"
-                  />
-               </picture>
+               {imgUrl}
             </section>
 
             <h2>Résultat de /api/test</h2>
