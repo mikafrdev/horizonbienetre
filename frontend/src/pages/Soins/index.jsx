@@ -18,12 +18,7 @@ export default function Massages() {
 
    return (
       <main className="main-content">
-         <section className="section-presentation">
-            <Presentation
-               title={PresentationTxt}
-               className="presentation_soins"
-            />
-         </section>
+         <Presentation title={PresentationTxt} img="Les-soins-energetiques" />
 
          <section className="section-accordion">
             {dataSoinsInfos.map((item, index) => (

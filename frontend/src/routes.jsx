@@ -7,7 +7,7 @@ import Soins from "./pages/Soins";
 import Formule from "./pages/Formule";
 import Cadeau from "./pages/Cadeau";
 import Salon from "./pages/Salon";
-import Contacts from "./pages/Contacts";
+import Contact from "./pages/Contact";
 import MentionsLegales from "./pages/Mentions-legales";
 import PolitiqueConfidentialite from "./pages/Politique-confidentialite";
 import CGV from "./pages/CGV";
@@ -42,8 +42,8 @@ const router = createBrowserRouter([
             element: <Cadeau />,
          },
          {
-            path: "/contacts",
-            element: <Contacts />,
+            path: "/Contact",
+            element: <Contact />,
          },
          {
             path: "/salon",

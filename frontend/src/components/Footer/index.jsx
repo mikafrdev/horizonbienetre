@@ -21,9 +21,9 @@ import "./style.css";
 export default function Footer() {
    return (
       <footer className="footer-container">
-         <div className="footer-contacts footer-block">
-            {/* <h2>Contacts</h2> */}
-            <div className="footer-contacts-infos">
+         <div className="footer-contact footer-block">
+            {/* <h2>contact</h2> */}
+            <div className="footer-contact-infos">
                <Button
                   variant="contained"
                   sx={{

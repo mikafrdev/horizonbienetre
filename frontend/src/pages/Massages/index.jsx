@@ -15,12 +15,10 @@ export default function Massages() {
 
    return (
       <main className="main-content">
-         <section className="section-presentation">
-            <Presentation
-               title={PresentationTxt}
-               className="presentation_massages"
-            />
-         </section>
+         <Presentation
+            title={PresentationTxt}
+            img="massage-relaxation-femme-bougies-fleurs-spa"
+         />
 
          <section className="section-accordion">
             {dataMassagesInfos.map((item, index) => (

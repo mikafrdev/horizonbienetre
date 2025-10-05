@@ -17,7 +17,7 @@ const resizeAndConvertImage = async (inputPath, imageName) => {
       fs.mkdirSync(outputDir, { recursive: true });
    }
 
-   const sizes = [600, 800, 1024, 1440];
+   const sizes = [600, 800];
    const formats = ["jpg", "png", "webp"];
 
    const processedImages = [];

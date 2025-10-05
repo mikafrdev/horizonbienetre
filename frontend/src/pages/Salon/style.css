@@ -1,3 +1,17 @@
+.section-presentation.salon {
+   display: flex;
+   align-items: center;
+   width: 100%;
+   height: 6rem;
+   background-color: var(--color-tertiary);
+}
+
+.section-presentation.salon h1 {
+   font-size: clamp(1.563rem, 1.295rem + 1.34vw, 2.5rem);
+   color: #fff;
+}
+
+
 .section-salon {
     width: 100%;
     max-width: 1024px;
@@ -5,9 +19,22 @@
 
 .salon-presentation {
     display: flex;
-    flex-direction: column;
-    align-items:start;
     gap: 1rem;
-    padding: 1rem 3rem;
+    padding: 0 1rem 2rem 1rem;
+}
+
+.salon-img {
+    display: flex;
+    width: 30%;
+}
+
+.salon-img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.salon-description {
+    width: 70%;
     text-align: left;
 }

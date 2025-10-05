@@ -16,19 +16,17 @@ export default function Cadeau() {
 
    return (
       <main className="main-content">
-         <section className="section-cadeau">
-            <Presentation className="presentation_cadeau" />
-            <div className="description">
-               <p>
-                  Envie de faire plaisir ou marquer une occasion ? Offrez la
-                  carte cadeau <strong>Horizon Bien-Être</strong>.
-               </p>
-               <p>
-                  Elle est valable pour tous les soins et toutes les formules.
-                  Il vous suffit de choisir le(s) soin(s), ou le montant que
-                  vous souhaitez offrir.
-               </p>
-            </div>
+         <Presentation img="Carte-cadeau-blanche" classname="cadeau" />
+         <section className="cadeau-offre">
+            <p>
+               Envie de faire plaisir ou marquer une occasion ?<br /> Offrez la carte
+               cadeau <strong>Horizon Bien-Être</strong>.
+            </p>
+            <p>
+               Elle est valable pour tous les soins et toutes les formules.<br /> Il
+               vous suffit de choisir le(s) soin(s), ou le montant que vous
+               souhaitez offrir.
+            </p>
          </section>
 
          <section className="section-accordion">

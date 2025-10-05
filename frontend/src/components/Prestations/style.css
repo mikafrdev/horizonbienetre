@@ -29,8 +29,6 @@
 
 .prestations-card img {
    width: 100%;
-   height: fit-content;
-   aspect-ratio: 4 / 3;
    object-fit: cover;
    border-top-left-radius: 30px;
    border-top-right-radius: 30px;
@@ -104,21 +102,6 @@
    transform: rotate(-180deg);
 }
 
-@media screen and (min-width: 480px) {
-   .section-prestations {
-      padding: 0 2rem;
-   }
-   .prestations-content span {
-      margin: 2rem 0;
-   }
-}
-
-@media screen and (min-width: 600px) {
-   .prestations-content p {
-      line-height: 2;
-   }
-}
-
 @media screen and (min-width: 800px) {
    .section-prestations {
       padding: 0;
@@ -128,7 +111,6 @@
       flex-direction: row;
       gap: 2rem;
    }
-   
    
    .prestations-list {
       gap: 1rem;
