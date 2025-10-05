@@ -41,7 +41,7 @@ console.log("SMTP_CONTACT_PORT =", process.env.SMTP_CONTACT_PORT);
 console.log("EMAIL_CONTACT_USER =", process.env.EMAIL_CONTACT_USER); */
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 import cors from "cors";
 
