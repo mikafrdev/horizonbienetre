@@ -3,14 +3,19 @@
    max-width: 500px;
    background-color: #fff;
    border-radius: 20px;
-   margin-top: 2rem;
-   padding: 1.5rem;
+   padding: .8rem;
+   font-size: 10px;
+}
+
+.footer-block a {
+   text-decoration: underline;
 }
 
 .footer-container {
    display: flex;
    flex-direction: column;
    align-items: center;
+   gap: 1rem;
    width: 100%;
    max-width: 1440px;
    padding: 2rem 2rem 2rem 2rem;
@@ -45,32 +50,29 @@ a.btn-phone,
    display: flex;
    flex-direction: column;
    align-items: center;
-   margin-top: 1rem;
+   gap: 1rem;
+   padding: 1rem 0;
 }
 
 a.btn-phone,
 .footer-adress,
 .footer-email {
-   padding: 0.5rem 2rem;
-   gap: 1rem;
+   padding: 0 2rem;
 }
 
 footer a.btn-phone {
    display: flex;
-   background-color: var(--bg-button-primary);
    border-radius: 15px;
    text-transform: none;
-   transition: background-color 0.3s ease;
    font-size: 15px;
    padding: 0.5rem 2rem;
+   border: 1px solid var(--bg-button-primary);
+   text-decoration: none;
+   background-color: #fff;
+   transition: background-color 0.3s ease;
 }
 
 .footer-contact-infos .btn-phone svg {
-   width: 40px;
-   fill: #ffffff;
-}
-
-.footer-contact-infos svg {
    width: 40px;
    fill: #000;
 }
@@ -81,11 +83,16 @@ footer a.btn-phone {
    color: #fff;
 }
 
+.footer-container .phone-text {
+   text-decoration: none;
+}
+
 .footer-adress,
 .footer-email {
    display: flex;
    align-items: center;
-   font-size: 14px;
+   gap: .5rem;
+   font-size: 12px;
    color: #333;
 }
 
@@ -110,12 +117,17 @@ svg.icon-email {
 .footer-opening-hours,
 .footer-appointment-info {
    text-align: left;
+   font-size: 14px;
 }
 
 .footer-social-links {
    display: flex;
    align-items: center;
    justify-content: space-evenly;
+}
+
+.footer-block.footer-social-links {
+   padding: 0;
 }
 
 .footer_fb,
@@ -156,7 +168,7 @@ svg.icon-email {
 .plan-de-site ul {
    display: flex;
    flex-wrap: wrap;
-   gap: .5rem;
+   gap: .2rem;
 }
 
 .plan-de-site ul,
@@ -165,21 +177,23 @@ svg.icon-email {
    text-align: left;
 }
 
-.plan-de-site li {
-   display: flex;
-   flex-direction: column;
-   align-items: flex-start;
-}
-
 .legal-links {
    display: flex;
-   flex-direction: column;
+   justify-content: center;
+}
+
+.legal-links ul {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   gap: 5px;
 }
 
 .copyright {
    display: flex;
    align-items: center;
-   padding: 1.5rem;
+   justify-content: center;
+   padding: .5rem;
 }
 
 @media screen and (min-width: 768px) {

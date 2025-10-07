@@ -27,11 +27,11 @@ export default function Prestations({ data, title }) {
                return (
                   <React.Fragment key={index}>
                      <div
-                        className={`prestations-card prestations-card--shadow ${
+                        className={`prestation-card prestation-card--shadow ${
                            index % 2 !== 0 ? "reverse" : ""
                         }`}
                      >
-                        <div className="prestations-img">
+                        <div className="prestation-img">
                           
                               <picture>
                                  {imageSizes.map(({ size, media }) =>
@@ -54,14 +54,17 @@ export default function Prestations({ data, title }) {
                               </picture>
                            
                         </div>
-                        <div className="prestations-content">
+                        <div className="prestation-content">
                            <h2>{item.title}</h2>
 
                            <Collapse
                               in={openIndex === index}
-                              collapsedSize={100}
+                              className="collapsesize"
+                              collapsedSize={120}
                            >
-                              {item.text}
+                              <span className="prestation-text">{item.text}</span>
+                              <span className="prestation-price">{item.prix}</span>
+                              
                            </Collapse>
                            <Box
                               sx={{

@@ -30,7 +30,7 @@ export default function Opinions() {
                loop={true}
                breakpoints={{
                   0: { slidesPerView: 1 },
-                  1440: { slidesPerView: 3 },
+                  /* 1440: { slidesPerView: 1 }, */
                }}
             >
                {dataOpinions.map((item, index) => (
