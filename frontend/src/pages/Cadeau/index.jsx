@@ -16,7 +16,7 @@ export default function Cadeau() {
 
    return (
       <main className="main-content">
-         <Presentation img="Carte-cadeau-blanche" classname="cadeau" />
+         <Presentation img="Carte-cadeau-blanche-bleue" classname="cadeau" />
          <section className="cadeau-offre">
             <p>
                Envie de faire plaisir ou marquer une occasion ?<br /> Offrez la carte

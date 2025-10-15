@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+/* import CircularProgress from '@mui/joy/CircularProgress'; */
 import Box from "@mui/system/Box";
 import Collapse from "@mui/material/Collapse";
 
@@ -7,6 +8,8 @@ import "./style.css";
 
 export default function Prestations({ data, title }) {
    const [openIndex, setOpenIndex] = useState(false);
+   /* const [loading, setLoading] = useState({}); */
+
    const handleAccordion = (index) => {
       setOpenIndex(openIndex === index ? null : index);
    };
@@ -17,6 +20,25 @@ export default function Prestations({ data, title }) {
    ];
 
    const imageFormats = ["webp", "jpg", "png"];
+
+   // Initialiser le loading à true pour chaque image dès que le composant est monté
+   /* useEffect(() => {
+      const initialLoading = {};
+      data.forEach((item, index) => {
+         initialLoading[index] = true; 
+      });
+      setLoading(initialLoading);
+   }, [data]);
+
+   const handleImageLoad = (index) => {
+      setLoading((prevLoading) => ({ ...prevLoading, [index]: false }));
+   };
+
+   const handleImageError = (index) => {
+      setLoading((prevLoading) => ({ ...prevLoading, [index]: false }));
+      console.error(`Erreur de chargement de l'image à l'index ${index}`);
+   }; */
+
    return (
       <section className="section-prestations">
          {title && <h2 className="section-prestations__title">{title}</h2>}
@@ -31,28 +53,41 @@ export default function Prestations({ data, title }) {
                            index % 2 !== 0 ? "reverse" : ""
                         }`}
                      >
-                        <div className="prestation-img">
-                          
-                              <picture>
-                                 {imageSizes.map(({ size, media }) =>
-                                    imageFormats.map((format) => (
-                                       <source
-                                          key={`${size}-${format}`}
-                                          srcSet={`${item.img}-${size}.${format}`}
-                                          media={media}
-                                          type={`image/${format}`}
-                                       />
-                                    ))
-                                 )}
+                        <div className="prestation-img" style={{ position: "relative" }}>
+                           {/* Affichage du loader uniquement si l'image est en cours de chargement */}
+                           {/* {loading[index] && (
+                              <div className="image-loader">
+                                 
+                              </div>
+                           )} */}
 
-                                 <img
-                                    srcSet={`${item.img}-800.webp`}
-                                    alt={title}
-                                    loading="lazy"
-                                    sizes="(max-width: 600px) 100vw, (max-width: 800px) 80vw, (max-width: 1024px) 70vw, 50vw"
-                                 />
-                              </picture>
-                           
+                           <picture>
+                              {imageSizes.map(({ size, media }) =>
+                                 imageFormats.map((format) => (
+                                    <source
+                                       key={`${size}-${format}`}
+                                       srcSet={`${item.img}-${size}.${format}`}
+                                       media={media}
+                                       type={`image/${format}`}
+                                    />
+                                 ))
+                              )}
+
+                              <img
+                                 srcSet={`${item.img}-800.webp`}
+                                 alt={item.title} // Utilisation de `item.title` pour l'attribut alt
+                                 loading="lazy"
+                                 sizes="(max-width: 600px) 100vw, (max-width: 800px) 80vw, (max-width: 1024px) 70vw, 50vw"
+                                 /* onLoad={() => handleImageLoad(index)}
+                                 onError={() => handleImageError(index)} // Si l'image échoue
+                                 onLoadStart={() =>
+                                    setLoading((prevLoading) => ({
+                                       ...prevLoading,
+                                       [index]: true,
+                                    }))
+                                 } */
+                              />
+                           </picture>
                         </div>
                         <div className="prestation-content">
                            <h2>{item.title}</h2>
@@ -64,8 +99,8 @@ export default function Prestations({ data, title }) {
                            >
                               <span className="prestation-text">{item.text}</span>
                               <span className="prestation-price">{item.prix}</span>
-                              
                            </Collapse>
+
                            <Box
                               sx={{
                                  width: "100%",

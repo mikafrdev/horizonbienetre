@@ -44,7 +44,7 @@ export default function Salon() {
                   une libération des blocages énergétiques ou une reconnexion
                   avec votre essence intérieure, je mets à votre service mon
                   savoir-faire et des techniques variée pour vous accompagner
-                  vers u. mieux-être durable.
+                  vers un mieux-être durable.
                </p>
                <p>
                   Tous mes soins sont réalisés avec des produits bio et

@@ -122,13 +122,24 @@
 .icon-KeyboardArrowDownIcon {
    /* position: absolute;
    bottom: 0;
-   left: 50%;
-   cursor: pointer;*/
+   left: 50%;*/
+   cursor: pointer;
    transition: transform 0.5s ease !important;
 }
 
 .icon-KeyboardArrowDownIcon.rotated {
    transform: rotate(-180deg);
+}
+
+.image-loader {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 10;
+}
+.prestation-img {
+   position: relative;
 }
 
 @media screen and (min-width: 800px) {
