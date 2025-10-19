@@ -3,6 +3,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 /* import CircularProgress from '@mui/joy/CircularProgress'; */
 import Box from "@mui/system/Box";
 import Collapse from "@mui/material/Collapse";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import "./style.css";
 
@@ -20,6 +21,8 @@ export default function Prestations({ data, title }) {
    ];
 
    const imageFormats = ["webp", "jpg", "png"];
+
+   const isMobile = useMediaQuery("(max-width:799px)");
 
    // Initialiser le loading à true pour chaque image dès que le composant est monté
    /* useEffect(() => {
@@ -53,7 +56,10 @@ export default function Prestations({ data, title }) {
                            index % 2 !== 0 ? "reverse" : ""
                         }`}
                      >
-                        <div className="prestation-img" style={{ position: "relative" }}>
+                        <div
+                           className="prestation-img"
+                           style={{ position: "relative" }}
+                        >
                            {/* Affichage du loader uniquement si l'image est en cours de chargement */}
                            {/* {loading[index] && (
                               <div className="image-loader">
@@ -92,28 +98,45 @@ export default function Prestations({ data, title }) {
                         <div className="prestation-content">
                            <h2>{item.title}</h2>
 
-                           <Collapse
-                              in={openIndex === index}
-                              className="collapsesize"
-                              collapsedSize={120}
-                           >
-                              <span className="prestation-text">{item.text}</span>
-                              <span className="prestation-price">{item.prix}</span>
-                           </Collapse>
+                           {isMobile ? (
+                              <>
+                                 <Collapse
+                                    in={openIndex === index}
+                                    className="collapsesize"
+                                    collapsedSize={120}
+                                 >
+                                    <span className="prestation-text">
+                                       {item.text}
+                                    </span>
+                                    <span className="prestation-price">
+                                       {item.prix}
+                                    </span>
+                                 </Collapse>
 
-                           <Box
-                              sx={{
-                                 width: "100%",
-                                 bgcolor: "#FFF",
-                                 textAlign: "center",
-                              }}
-                           >
-                              <KeyboardArrowDownIcon
-                                 onClick={() => handleAccordion(index)}
-                                 className={`icon-KeyboardArrowDownIcon ${openIndex === index ? "rotated" : ""}`}
-                                 fontSize="large"
-                              />
-                           </Box>
+                                 <Box
+                                    sx={{
+                                       width: "100%",
+                                       bgcolor: "#FFF",
+                                       textAlign: "center",
+                                    }}
+                                 >
+                                    <KeyboardArrowDownIcon
+                                       onClick={() => handleAccordion(index)}
+                                       className={`icon-KeyboardArrowDownIcon ${openIndex === index ? "rotated" : ""}`}
+                                       fontSize="large"
+                                    />
+                                 </Box>
+                              </>
+                           ) : (
+                              <>
+                                 <span className="prestation-text">
+                                    {item.text}
+                                 </span>
+                                 <span className="prestation-price">
+                                    {item.prix}
+                                 </span>
+                              </>
+                           )}
                         </div>
                      </div>
                      {!isLast && <hr className="separator" />}

@@ -11,30 +11,46 @@
    color: #fff;
 }
 
-
 .section-salon {
-    width: 100%;
-    max-width: 1024px;
+   width: 100%;
+   max-width: 1024px;
+   margin-top: 2rem;
 }
 
 .salon-presentation {
-    display: flex;
-    gap: 1rem;
-    padding: 0 1rem 2rem 1rem;
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+   align-items: center;
 }
 
 .salon-img {
-    display: flex;
-    width: 30%;
+   display: flex;
+   width: 240px;
 }
 
 .salon-img img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
+   width: 100%;
+   height: auto;
+   object-fit: contain;
 }
 
 .salon-description {
-    width: 70%;
-    text-align: left;
+   width: 80%;
+   text-align: left;
+}
+
+@media screen and (min-width: 600px) {
+   .salon-presentation {
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+      width: 90%;
+      max-width: 800px;
+   }
+
+   .salon-description {
+      width: 70%;
+      text-align: left;
+   }
 }
