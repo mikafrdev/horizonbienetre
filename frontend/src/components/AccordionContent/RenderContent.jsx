@@ -17,7 +17,22 @@ export function formatText(text) {
     });
 }
 
+
+/*
+Paramètre : json <content> de la forme :
+.type
+.text
+.className
+.sublist
+
+exemple :
+{ "type": "p", "text": "Voici les différentes étapes du soin :" }
+
+
+
+*/
 export default function RenderContent({ content }) {
+  console.log("RenderContent content:", content);
   if (!content) return null;
 
   return content.map((block, index) => {

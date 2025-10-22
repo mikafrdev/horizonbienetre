@@ -4,6 +4,9 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Box from "@mui/system/Box";
 import Collapse from "@mui/material/Collapse";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import RenderContent, {
+   formatText,
+} from "../../components/AccordionContent/RenderContent";
 
 import "./style.css";
 
@@ -129,12 +132,15 @@ export default function Prestations({ data, title }) {
                               </>
                            ) : (
                               <>
-                                 <span className="prestation-text">
-                                    {item.text}
+                                 {/* <span className="prestation-text">
+                                    {item.text && (
+                                       <RenderContent content={item.text} />
+                                    )}
+                                    
                                  </span>
                                  <span className="prestation-price">
-                                    {item.prix}
-                                 </span>
+                                    {item.prix && formatText(item.prix)}
+                                 </span> */}
                               </>
                            )}
                         </div>
