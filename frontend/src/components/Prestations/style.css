@@ -62,7 +62,7 @@
    display: block;
    text-align: right;
    font-weight: bold;
-   margin: 1rem 0 3rem 0;
+   margin: 1rem 0 1rem 0;
 }
 
 .prestation-content p,
@@ -156,6 +156,7 @@
 
    .prestation-img {
       display: flex;
+      align-items: center;
       width: 40%;
    }
 
