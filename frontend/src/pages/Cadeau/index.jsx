@@ -52,7 +52,7 @@ export default function Cadeau() {
             ))}
          </section>
 
-         <FormContact />
+         <FormContact  formType="Carte cadeau" />
       </main>
    );
 }

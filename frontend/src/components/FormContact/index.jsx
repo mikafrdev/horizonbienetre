@@ -6,7 +6,10 @@ import SendIcon from "@mui/icons-material/Send";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import "./style.css";
 
-export default function FormContact() {
+export default function FormContact( {formType} ) {
+
+   console.log("formType dans FormContact : ", formType);
+
    const [formData, setFormData] = useState({
       firstName: "",
       lastName: "",
@@ -14,6 +17,7 @@ export default function FormContact() {
       message: "",
       rgpd: false,
       website: "", // 🛡️ Honeypot
+      formType: formType
    });
 
    const [loading, setLoading] = useState(false);

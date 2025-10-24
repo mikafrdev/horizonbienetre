@@ -18,7 +18,10 @@ export const sendEmailAutoResponse = async (req, res) => {
    let emailTemplate;
    try {
       emailTemplate = await fs.readFile(
-         path.resolve(__dirname, "../../../emails/dist/email-auto-response.html"),
+         path.resolve(
+            __dirname,
+            "../../../emails/dist/email-auto-response.html"
+         ),
          "utf8"
       );
    } catch (err) {
@@ -27,10 +30,10 @@ export const sendEmailAutoResponse = async (req, res) => {
          err
       );
       return res.status(500).json({
-      error: "Erreur de génération de l'email.",
-      details: err.message,           // contenu de l'erreur
-      emailTemplate: emailTemplate || "❌ Aucun contenu lu", // debug template
-   });
+         error: "Erreur de génération de l'email.",
+         details: err.message, // contenu de l'erreur
+         emailTemplate: emailTemplate || "❌ Aucun contenu lu", // debug template
+      });
    }
 
    const transporter = nodemailer.createTransport({
@@ -43,16 +46,14 @@ export const sendEmailAutoResponse = async (req, res) => {
       },
    });
 
-   // Options de l'email
    const mailOptions = {
       from: `"Horizon Bien-être" <contact@horizonbienetre.fr>`,
       to: `${email}`,
-      subject: "TEST - Horizonbienêtre - Merci pour votre message",
+      subject: "Horizonbienêtre - Merci pour votre message",
       html: emailTemplate.replace("{{code}}", code), // injecte dynamiquement si besoin
    };
 
    try {
-      // Envoi de l'email de confirmation
       await transporter.sendMail(mailOptions);
 
       return res

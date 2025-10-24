@@ -7,7 +7,7 @@ export const emailContact = async (req, res) => {
       return res.status(400).json({ success: false, errors: errors.array() });
    }
 
-   const { firstName, lastName, email, message, website } = req.body;
+   const { firstName, lastName, email, message, website, formType } = req.body;
 
    // 🔒 Honeypot anti-bot (champ invisible côté front)
    if (website) {
@@ -15,7 +15,6 @@ export const emailContact = async (req, res) => {
    }
 
    try {
-      // Création du transporteur
       const transporter = nodemailer.createTransport({
          host: process.env.SMTP_CONTACT_HOST,
          port: process.env.SMTP_CONTACT_PORT,
@@ -26,32 +25,42 @@ export const emailContact = async (req, res) => {
          },
       });
 
-      // Vérification de la connexion SMTP avant d'envoyer le mail
-      await transporter.verify(); // Vérifie la connexion au serveur SMTP
+      await transporter.verify();
 
       console.log("Connexion SMTP réussie !");
 
-      // Tentative d'envoi du mail
-      await transporter.sendMail({
-         from: `"horizonbienetre.fr - Internaute" <${process.env.EMAIL_CONTACT_USER}>`,
+      const mailOptions = {
+         from: '"Horizon Bien-être" <contact@horizonbienetr.fr',
          to: process.env.EMAIL_CONTACT_USER,
-         subject: "Nouveau message de contact",
+         subject: `${firstName} ${lastName} - Demande de ${formType} `,
          text: "Un utilisateur a envoyé un message.",
          html: `
             <p><strong>Nom :</strong> ${firstName} ${lastName}</p>
             <p><strong>Email :</strong> ${email}</p>
             <p><strong>Message :</strong><br>${message}</p>
          `,
-      });
+      };
 
-      // Si tout se passe bien, on envoie une réponse de succès
+      try {
+         await transporter.sendMail(mailOptions);
+      } catch (err) {
+         console.error("Erreur lors de l'envoi de l'email :", err); // Log détaillé de l'erreur
+
+         // Vérifie si l'erreur vient du serveur SMTP
+         if (err.response) {
+            console.error("Réponse du serveur SMTP :", err.response);
+         }
+         if (err.code) {
+            console.error("Code d'erreur SMTP :", err.code);
+         }
+      }
+
       return res.status(200).json({
          success: true,
          message: "Votre message a été envoyé avec grand succès.",
       });
    } catch (err) {
-      // Log détaillé de l'erreur dans la console
-      console.error("Erreur lors de l'envoi de l'email :", err); // Log complet de l'erreur pour comprendre ce qui se passe
+      console.error("Erreur lors de l'envoi de l'email :", err);
 
       // Vérification du type d'erreur
       if (err.response) {
