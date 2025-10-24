@@ -8,7 +8,7 @@ import parse from "html-react-parser";
 
 import "./style.css";
 
-export default function Prestations({ data, title }) {
+export default function Prestations({ data, collapsible }) {
    const [openIndex, setOpenIndex] = useState(false);
    /* const [loading, setLoading] = useState({}); */
 
@@ -23,7 +23,7 @@ export default function Prestations({ data, title }) {
 
    const imageFormats = ["webp", "jpg", "png"];
 
-   const isMobile = useMediaQuery("(max-width:799px)");
+   const isMobile = useMediaQuery("(min-width:800px)");
 
    // Initialiser le loading à true pour chaque image dès que le composant est monté
    /* useEffect(() => {
@@ -45,7 +45,6 @@ export default function Prestations({ data, title }) {
 
    return (
       <section className="section-prestations">
-         {title && <h2 className="section-prestations__title">{title}</h2>}
          <div className="prestations-list">
             {data.map((item, index) => {
                const isLast = index === data.length - 1;
@@ -97,12 +96,12 @@ export default function Prestations({ data, title }) {
                            </picture>
                         </div>
                         <div className="prestation-content">
-                           {isMobile ? (
+                           {isMobile && collapsible ? (
                               <>
                                  <Collapse
                                     in={openIndex === index}
                                     className="collapsesize"
-                                    collapsedSize={120}
+                                    collapsedSize={200}
                                  >
                                     <span className="prestation-text">
                                        {parse(item.text)}
@@ -112,13 +111,7 @@ export default function Prestations({ data, title }) {
                                     </span>
                                  </Collapse>
 
-                                 <Box
-                                    sx={{
-                                       width: "100%",
-                                       bgcolor: "#FFF",
-                                       textAlign: "center",
-                                    }}
-                                 >
+                                 <Box className="collapse-arrow-box">
                                     <KeyboardArrowDownIcon
                                        onClick={() => handleAccordion(index)}
                                        className={`icon-KeyboardArrowDownIcon ${openIndex === index ? "rotated" : ""}`}
