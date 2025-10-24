@@ -27,6 +27,7 @@
 }
 
 .prestation-card img {
+   order: 1;
    width: 100%;
    object-fit: cover;
    border-top-left-radius: 30px;
@@ -34,19 +35,27 @@
 }
 
 .prestation-content {
+   order: 3;
    position: relative;
    display: flex;
    flex-direction: column;
-   padding: 0 1.3rem;
+   padding: 0 1.5rem;
+   text-align: left;
 }
 
-.prestation-content h2,
+.prestation-title {
+   order: 2;
+   margin: 1rem 0;
+   padding: 0 1rem;
+}
+
+.prestation-title h2,
 .prestation-content p,
 .prestation-content span {
    color: var(--color-secondary);
 }
 
-.prestation-content h2 {
+.prestation-title h2 {
    margin: 1rem 0;
    line-height: 1;
    font-size: clamp(1.25rem, 1.036rem + 1.07vw, 2rem);
@@ -80,6 +89,15 @@
    display: block;
    overflow: hidden;
    text-overflow: ellipsis;
+   text-align: right;
+   text-align: justify;
+}
+
+.prestation-text ul {
+   list-style-type: disc;
+   list-style-position: outside;
+   padding: 1rem 0 0 1rem;
+   margin-left: 0;
 }
 
 .separator {
@@ -129,25 +147,23 @@
    transform: translate(-50%, -50%);
    z-index: 10;
 }
+
 .prestation-img {
-   position: relative;
+   order: 1;
 }
 
 @media screen and (min-width: 800px) {
-   .prestation-card {
-      display: flex;
-      flex-direction: row;
-      gap: 2rem;
-   }
-
    .prestations-list {
       gap: 0;
       margin-bottom: 2rem;
    }
 
    .prestation-card {
+      display: flex;
+      /* gap: 1rem; */
       width: 100%;
       flex-direction: row;
+      flex-wrap: wrap;
       border: none;
       -webkit-box-shadow: none;
       box-shadow: none;
@@ -155,16 +171,18 @@
    }
 
    .prestation-img {
+      order: 2;
       display: flex;
       align-items: center;
       width: 40%;
    }
 
    .prestation-content {
+      order: 3;
       display: flex;
       justify-content: flex-start;
       width: 60%;
-      padding: 0;
+      padding: 0 0 0 2rem;
       text-align: left;
    }
 
@@ -176,8 +194,22 @@
       /* box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.4); */
    }
 
-   .prestation-content h2 {
+   .prestation-title {
+      order: 2;
+      width: 100%;
+      padding: 0;
+   }
+
+   .prestation-title h2 {
       margin: 0 0 1rem 0;
+      text-align: right;
+   }
+
+   .reverse .prestation-title h2 {
+      text-align: left;
+   }
+
+   .reverse .prestation-text {
       text-align: left;
    }
 
@@ -192,7 +224,7 @@
    .prestation-price {
       margin: 1rem 0 0 0;
    }
-   
+
    .reverse .prestation-price {
       text-align: left;
    }

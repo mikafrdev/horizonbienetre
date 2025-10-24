@@ -4,9 +4,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Box from "@mui/system/Box";
 import Collapse from "@mui/material/Collapse";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import RenderContent, {
-   formatText,
-} from "../../components/AccordionContent/RenderContent";
+import parse from "html-react-parser";
 
 import "./style.css";
 
@@ -59,10 +57,10 @@ export default function Prestations({ data, title }) {
                            index % 2 !== 0 ? "reverse" : ""
                         }`}
                      >
-                        <div
-                           className="prestation-img"
-                           style={{ position: "relative" }}
-                        >
+                        <div className="prestation-title">
+                           <h2>{parse(item.title)}</h2>
+                        </div>
+                        <div className="prestation-img">
                            {/* Affichage du loader uniquement si l'image est en cours de chargement */}
                            {/* {loading[index] && (
                               <div className="image-loader">
@@ -99,8 +97,6 @@ export default function Prestations({ data, title }) {
                            </picture>
                         </div>
                         <div className="prestation-content">
-                           <h2>{item.title}</h2>
-
                            {isMobile ? (
                               <>
                                  <Collapse
@@ -109,10 +105,10 @@ export default function Prestations({ data, title }) {
                                     collapsedSize={120}
                                  >
                                     <span className="prestation-text">
-                                       {item.text}
+                                       {parse(item.text)}
                                     </span>
                                     <span className="prestation-price">
-                                       {item.prix}
+                                       {parse(item.prix)}
                                     </span>
                                  </Collapse>
 
@@ -132,15 +128,12 @@ export default function Prestations({ data, title }) {
                               </>
                            ) : (
                               <>
-                                 {/* <span className="prestation-text">
-                                    {item.text && (
-                                       <RenderContent content={item.text} />
-                                    )}
-                                    
+                                 <span className="prestation-text">
+                                    {parse(item.text)}
                                  </span>
                                  <span className="prestation-price">
-                                    {item.prix && formatText(item.prix)}
-                                 </span> */}
+                                    {parse(item.prix)}
+                                 </span>
                               </>
                            )}
                         </div>
