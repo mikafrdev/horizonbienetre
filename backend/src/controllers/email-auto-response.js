@@ -31,8 +31,8 @@ export const sendEmailAutoResponse = async (req, res) => {
       );
       return res.status(500).json({
          error: "Erreur de génération de l'email.",
-         details: err.message, // contenu de l'erreur
-         emailTemplate: emailTemplate || "❌ Aucun contenu lu", // debug template
+         details: err.message,
+         emailTemplate: emailTemplate || "❌ Aucun contenu lu",
       });
    }
 
@@ -46,12 +46,26 @@ export const sendEmailAutoResponse = async (req, res) => {
       },
    });
 
+   /* console.log(
+      "email-auto-response.js",
+      "HOST : ",
+      process.env.SMTP_CONTACT_HOST,
+      "PORT : ",
+      process.env.SMTP_CONTACT_PORT,
+      "USER : ",
+      process.env.EMAIL_CONTACT_USER,
+      "PASS : ",
+      process.env.EMAIL_CONTACT_PASS
+   ); */
+
    const mailOptions = {
       from: `"Horizon Bien-être" <contact@horizonbienetre.fr>`,
       to: `${email}`,
       subject: "Horizonbienêtre - Merci pour votre message",
-      html: emailTemplate.replace("{{code}}", code), // injecte dynamiquement si besoin
+      html: emailTemplate.replace("{{code}}", code),
    };
+
+   /* console.log("Mail Options :", mailOptions); */
 
    try {
       await transporter.sendMail(mailOptions);
@@ -61,11 +75,11 @@ export const sendEmailAutoResponse = async (req, res) => {
          .json({ success: "Message envoyé et réponse automatique envoyée." });
    } catch (error) {
       inspectorConsole.error("Erreur lors de l'envoi de l'email:", error);
-      // Ajoute ce log pour voir l'erreur dans la console normale aussi
+      
       inspectorConsole.error("Erreur lors de l'envoi de l'email:", error);
       return res.status(500).json({
          error: "Erreur lors de l'envoi de l'email",
-         details: error.message, // Ajoute temporairement pour debug
+         details: error.message,
       });
    }
 };

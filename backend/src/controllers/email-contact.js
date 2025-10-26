@@ -18,33 +18,58 @@ export const emailContact = async (req, res) => {
       const transporter = nodemailer.createTransport({
          host: process.env.SMTP_CONTACT_HOST,
          port: process.env.SMTP_CONTACT_PORT,
-         secure: false, // Assurez-vous que le port est correct pour non-secure
+         secure: true, // Assurez-vous que le port est correct pour non-secure
          auth: {
             user: process.env.EMAIL_CONTACT_USER,
             pass: process.env.EMAIL_CONTACT_PASS,
          },
       });
 
+      /* console.log(
+         "email-contact.js",
+         "firstName :",
+         firstName,
+         "lastName :",
+         lastName,
+         "email :",
+         email,
+         "message :",
+         message,
+         "website :",
+         website,
+         "formType :",
+         formType,
+         "HOST : ",
+         process.env.SMTP_CONTACT_HOST,
+         "PORT : ",
+         process.env.SMTP_CONTACT_PORT,
+         "USER : ",
+         process.env.EMAIL_CONTACT_USER,
+         "PASS : ",
+         process.env.EMAIL_CONTACT_PASS
+      ); */
+
       await transporter.verify();
 
-      console.log("Connexion SMTP réussie !");
-
       const mailOptions = {
-         from: '"Horizon Bien-être" <contact@horizonbienetr.fr',
-         to: process.env.EMAIL_CONTACT_USER,
+         from: '"Horizon Bien-être" <contact@horizonbientre.fr>',
+         to: "horizonbienetre5@gmail.com",
          subject: `${firstName} ${lastName} - Demande de ${formType} `,
          text: "Un utilisateur a envoyé un message.",
          html: `
+            <p><strong>Demande de :</strong> ${formType}</p>
             <p><strong>Nom :</strong> ${firstName} ${lastName}</p>
             <p><strong>Email :</strong> ${email}</p>
             <p><strong>Message :</strong><br>${message}</p>
          `,
       };
 
+      /* console.log("Mail Options :", mailOptions); */
+
       try {
          await transporter.sendMail(mailOptions);
       } catch (err) {
-         console.error("Erreur lors de l'envoi de l'email :", err); // Log détaillé de l'erreur
+         console.error("Erreur lors de l'envoi de l'email :", err);
 
          // Vérifie si l'erreur vient du serveur SMTP
          if (err.response) {
@@ -55,6 +80,8 @@ export const emailContact = async (req, res) => {
          }
       }
 
+      console.log("Email de contact envoyé avec succès.");
+
       return res.status(200).json({
          success: true,
          message: "Votre message a été envoyé avec grand succès.",
@@ -62,7 +89,6 @@ export const emailContact = async (req, res) => {
    } catch (err) {
       console.error("Erreur lors de l'envoi de l'email :", err);
 
-      // Vérification du type d'erreur
       if (err.response) {
          console.error("Réponse du serveur SMTP : ", err.response);
       }
@@ -70,7 +96,6 @@ export const emailContact = async (req, res) => {
          console.error("Code d'erreur SMTP : ", err.code);
       }
 
-      // Message d'erreur selon l'environnement
       const errorMessage =
          process.env.NODE_ENV === "development"
             ? err.message // En développement, on affiche le message complet
