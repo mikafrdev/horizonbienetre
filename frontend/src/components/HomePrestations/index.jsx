@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import prestationsData from "../../data/prestationsData.json";
+import ResponsiveImage from "../../utils/ResponsiveImage";
 import "./style.css";
 
 export default function HomePrestations() {
@@ -10,54 +11,37 @@ export default function HomePrestations() {
       { size: 1440, media: "(min-width: 1025px)" }, */
    ];
 
-   const imageFormats = ["webp", "jpg", "png"];
-
    return (
       <section className="home-prestations">
          <h2>Les prestations</h2>
 
          <div className="home-prestations__list">
-            {prestationsData.map(({ id, title, img, link }) => {
-               const imageBasePath = `/${img}`;
-
+            {prestationsData.map((item, index) => {
                return (
                   <figure
-                     key={id}
+                     key={index}
                      role="group"
-                     aria-labelledby={`card-title-${id}`}
+                     aria-labelledby={`card-title-${item.id}`}
                      className="home-prestations__card"
                   >
                      <Link
-                        to={link}
+                        to={item.link}
                         className="home-prestations__link"
                         data-discover="true"
                      >
-                        <picture>
-                           {imageSizes.map(({ size, media }) =>
-                              imageFormats.map((format) => (
-                                 <source
-                                    key={`${size}-${format}`}
-                                    srcSet={`${imageBasePath}-${size}.${format}`}
-                                    media={media}
-                                    type={`image/${format}`}
-                                 />
-                              ))
-                           )}
-
-                           <img
-                              srcSet={`${imageBasePath}-800.webp`}
-                              alt={title}
-                              loading="lazy"
-                              sizes="(max-width: 600px) 100vw, (max-width: 800px) 80vw, (max-width: 1024px) 70vw, 50vw"
-                           />
-                        </picture>
+                        <ResponsiveImage
+                           item={item}
+                           imageSizes={imageSizes}
+                           imageFormats={["webp", "jpeg"]}
+                           alt="Une image dynamique"
+                        />
 
                         <figcaption className="home-prestations__caption">
                            <h3
-                              id={`card-title-${id}`}
+                              id={`card-title-${item.id}`}
                               className="home-prestations__title"
                            >
-                              {title}
+                              {item.title}
                            </h3>
                         </figcaption>
                      </Link>

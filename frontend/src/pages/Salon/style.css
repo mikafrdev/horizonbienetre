@@ -12,12 +12,13 @@
 }
 
 .section-salon {
-   width: 100%;
-   max-width: 1024px;
-   margin-top: 2rem;
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+   align-items: center;
 }
 
-.salon-presentation {
+.salon-description {
    display: flex;
    flex-direction: column;
    gap: 2rem;
@@ -35,13 +36,23 @@
    object-fit: contain;
 }
 
-.salon-description {
+.salon-text {
    width: 80%;
    text-align: left;
 }
 
+.section-salon h2 {
+   font-size: clamp(1.25rem, 1.036rem + 1.07vw, 2rem);
+}
+
+.section-salon-gallery {
+   width: 100%;
+   max-width: 1024px;
+   margin-top: 2rem;
+}
+
 @media screen and (min-width: 600px) {
-   .salon-presentation {
+   .salon-description {
       flex-direction: row;
       align-items: center;
       gap: 1rem;
@@ -49,7 +60,7 @@
       max-width: 800px;
    }
 
-   .salon-description {
+   .salon-text {
       width: 70%;
       text-align: left;
    }
