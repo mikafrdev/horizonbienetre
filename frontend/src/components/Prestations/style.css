@@ -58,12 +58,16 @@
 .prestation-title h2 {
    margin: 1rem 0;
    line-height: 1;
-   font-size: clamp(1.25rem, 1.036rem + 1.07vw, 2rem);
+   font-size: 28px;
    font-weight: bold;
 }
 
+.prestation-text,
 .prestation-content p {
-   text-align: left;
+   text-align: justify;
+}
+
+.prestation-content p {
    line-height: 1.7;
 }
 
@@ -76,8 +80,7 @@
 
 .prestation-content p,
 .prestation-content span {
-   font-size: clamp(1rem, 1.2vw, 1.5rem);
-   font-size: var(--font-size-text);
+   font-size: 17px;
 }
 
 .prestation-content .MuiCollapse-wrapperInner {
@@ -89,15 +92,16 @@
    display: block;
    overflow: hidden;
    text-overflow: ellipsis;
-   text-align: right;
-   text-align: justify;
 }
 
 .prestation-text ul {
    list-style-type: disc;
-   list-style-position: outside;
-   padding: 1rem 0 0 1rem;
+   padding: 1rem 0 0 1.2rem;
    margin-left: 0;
+}
+
+.prestation-text li::marker {
+   padding-left: 1rem;
 }
 
 .separator {
@@ -110,6 +114,7 @@
 
 .collapsesize {
    min-height: 100px;
+   overflow: hidden;
 }
 
 .collapse-arrow-box {
@@ -159,14 +164,14 @@
       order: 2;
       display: flex;
       align-items: flex-start;
-      width: 40%;
+      width: 300px;
    }
 
    .prestation-content {
       order: 3;
       display: flex;
       justify-content: flex-start;
-      width: 60%;
+      width: 430px;
       padding: 0 0 0 2rem;
       text-align: left;
    }

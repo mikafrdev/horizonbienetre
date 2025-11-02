@@ -52,7 +52,7 @@ export default function Prestations({ data, collapsible }) {
                                  <Collapse
                                     in={openIndex === index}
                                     className="collapsesize"
-                                    collapsedSize={200}
+                                    collapsedSize={'205px'}
                                  >
                                     <span className="prestation-text">
                                        {parse(item.text)}

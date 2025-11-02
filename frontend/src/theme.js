@@ -11,7 +11,7 @@ const theme = createTheme({
       MuiCssBaseline: {
          styleOverrides: `
             h1, h2, h3 {
-               font-family: "Source Serif Pro", serif !important;
+               font-family: "Source Serif Pro", serif;
             }
          `,
       },
