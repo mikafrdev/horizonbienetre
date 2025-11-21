@@ -4,7 +4,7 @@ import dataFormules from "../../data/formules.json";
 import "./style.css";
 
 export default function Formule() {
-   const PresentationTxt = "Les formules bien-être";
+   const PresentationTxt = "Les Formules Bien-Être";
 
    return (
       <main className="main-content">

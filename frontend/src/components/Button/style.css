@@ -40,10 +40,6 @@ a.cta-btn svg {
 }
 
 @media screen and (min-width: 1024px) {
-   .header-cta {
-      justify-content: flex-end;
-   }
-
    a.cta-header a.cta-btn,
    .cta-header button.cta-btn {
       padding: 0;

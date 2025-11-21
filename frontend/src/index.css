@@ -13,6 +13,16 @@
    font-style: normal;
 }
 
+@font-face {
+   font-family: "Sifonn Pro";
+   font-style: normal;
+   font-weight: normal;
+   src:
+      local("Sifonn Pro"),
+      url("./assets/fonts/sifonn-pro/SIFONN_PRO.woff")
+      format("woff");
+}
+
 *,
 ::before,
 ::after {
@@ -52,9 +62,9 @@ select {
 }
 
 :root {
-   --color-primary: #8fc3d3;
+   --color-primary: #8fc3d3; /* nouvelle 157CA4, ancienne 8fc3d3 */
    --color-secondary: #555;
-   --color-tertiary: #1373a3;
+   --color-tertiary: #1373a3; 
    --bg-primary: #d9d9d9; /*#cac0af*/
    --bg-secondary: #5a7f9c;
    --bg-tertiary: #e4e6ec;

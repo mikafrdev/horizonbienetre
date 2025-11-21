@@ -34,6 +34,9 @@
    cursor: pointer;
 }
 
+/*TEST logo*/
+
+
 /*Test Float*/
 
 .test-container-img {
@@ -47,12 +50,8 @@
 }
 
 .test-container-content {
-  
 }
 
 .test-clear {
    clear: both;
 }
-
-
-

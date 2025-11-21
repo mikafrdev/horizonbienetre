@@ -17,8 +17,11 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { useMediaQuery } from "@mui/material";
 
-import Logo from "./../../assets/Logo.jpg";
+/* import Logo from "./../../assets/logo-horizontal.jpg"; */
+import LogoSVG from "./../LogoSVG";
 import HeaderModalCTA from "../HeaderModalCTA";
+
+/* import { useAnalyticsEvent } from "../GoogleAnalytics.jsx"; */
 
 import "./style.css";
 import "../Button/style.css";
@@ -26,6 +29,13 @@ import "../Button/style.css";
 const drawerWidth = 240;
 
 export default function Header() {
+   /* const { track } = useAnalyticsEvent();
+
+   const handleLogoClick = () => {
+      
+      track("click_logo", "navigation", "Logo Horizon Bien Etre");
+   }; */
+
    const isMobile = useMediaQuery("(max-width:1024px)");
    const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -51,7 +61,11 @@ export default function Header() {
 
    const drawer = (
       <>
-         <Toolbar>
+         <Toolbar
+            sx={{
+               backgroundColor: "white",
+            }}
+         >
             <Typography
                variant="h6"
                component="div"
@@ -60,20 +74,28 @@ export default function Header() {
                   justifyContent: "center",
                   alignItems: "center",
                   width: "100%",
-                  marginTop: "1rem",
                }}
             >
-               <Link to="/">
-                  <img
-                     className="logo"
-                     src={Logo}
-                     alt="Logo Horizon Bien Etre"
-                  />
+               <Link
+                  to="/"
+                  /* onClick={handleLogoClick} */
+                  aria-label="Retour à la page d'accueil"
+                  style={{
+                     textDecoration: "none",
+                  }}
+               >
+                  <LogoSVG color="#8fc3d3" text="true" />
                </Link>
             </Typography>
          </Toolbar>
          <Box className="header-mobile">
-            <List>{navItems}</List>
+            <List
+               sx={{
+                  padding: "0",
+               }}
+            >
+               {navItems}
+            </List>
          </Box>
       </>
    );
@@ -84,46 +106,38 @@ export default function Header() {
             <CssBaseline />
             <AppBar position="fixed" className="site-header">
                <Toolbar className="header-container">
-                  {/* ⬅️ Logo */}
-                  <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <div className="header-logo">
                      <Link to="/">
-                        <img
-                           className="logo"
-                           src={Logo}
-                           alt="Logo Horizon Bien Etre"
-                        />
+                        {isMobile ? (
+                           <LogoSVG
+                              color="#8fc3d3"
+                              text="true"
+                           />
+                        ) : (
+                           <LogoSVG color="#8fc3d3" />
+                        )}
                      </Link>
-                  </Box>
+                  </div>
 
                   {!isMobile && (
-                     <Box className="header-desktop">
+                     <div className="header-desktop">
                         <List>{navItems}</List>
-                     </Box>
+                     </div>
                   )}
 
-                  {/* CTA HeaderModalCTA */}
-                  <Box
-                     sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 1,
-                     }}
-                  >
-                     <HeaderModalCTA />
-                  </Box>
+                  <HeaderModalCTA />
 
                   {/* Icon Menu */}
                   {isMobile && (
-                     <Box>
+                     <div className="header-drawer">
                         <IconButton edge="end" onClick={handleDrawerToggle}>
                            <MenuIcon className="icon-menu" />
                         </IconButton>
-                     </Box>
+                     </div>
                   )}
                </Toolbar>
             </AppBar>
 
-            {/* Menu Mobile */}
             {isMobile ? (
                <Drawer
                   variant="temporary"

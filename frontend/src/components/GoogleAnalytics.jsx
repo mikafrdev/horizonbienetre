@@ -31,3 +31,22 @@ export default function GoogleAnalytics() {
 
   return null;
 }
+
+// Fonction pour envoyer un événement à GA
+export function trackEvent({ action, category, label, value }) {
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', action, {
+      event_category: category,
+      event_label: label,
+      value: value,
+    });
+  }
+}
+
+// Hook personnalisé pour simplifier l'appel d'événements
+export function useAnalyticsEvent() {
+  const track = (action, category, label, value) => {
+    trackEvent({ action, category, label, value });
+  };
+  return { track };
+}

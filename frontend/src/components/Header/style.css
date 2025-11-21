@@ -1,6 +1,5 @@
 img.logo {
    width: 50px;
-   height: auto;
 }
 
 .site-header {
@@ -25,13 +24,27 @@ img.logo {
    min-height: 5rem !important;
 }
 
-.site-header .logo {
-   height: 60px;
+.header-logo {
+   flex: 1;
+   display: flex;
+}
+
+.header-desktop {
+
+}
+
+.header-cta, .header-desktop {
+   flex-grow: 0;
+}
+
+.header-drawer {
+   flex: 1;
+   display: flex;
+   justify-content: flex-end;
 }
 
 .header-mobile li {
-     transition: background-color 0.3s ease;
-
+   transition: background-color 0.3s ease;
 }
 
 .header-mobile li:hover {
@@ -155,5 +168,8 @@ img.logo {
 }
 
 @media screen and (min-width: 1024px) {
-   
+   .header-cta {
+      flex: 1;
+      justify-content: flex-end;
+   }
 }

@@ -11,7 +11,7 @@ import "./style.css";
 import "../../components/AccordionContent/AccordionContent.css";
 
 export default function Massages() {
-   const PresentationTxt = "Massages relaxants";
+   const PresentationTxt = "Massages Relaxants";
 
    return (
       <main className="main-content">
