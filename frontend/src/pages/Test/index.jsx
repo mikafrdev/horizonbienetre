@@ -67,6 +67,14 @@ export default function Test() {
 
             <h2>Logo - stroke="white" id="path1"</h2>
             <LogoSVG color="#157CA4" text="true" />
+            <br />
+            <LogoSVG color="#8fc3d3" text="true" />
+            <br />
+            <LogoSVG color="red" text="true" />
+            <br />
+            <LogoSVG color="#157CA4"  />
+            <br />
+            <LogoSVG color="#157CA4" text="true" direction="vertical" />
 
             {/* <div style={{ margin: "20px 0", backgroundColor: "#f0f0f0", padding: "10px" }}>
                <img
