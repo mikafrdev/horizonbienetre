@@ -9,7 +9,7 @@ export default function Formule() {
    return (
       <main className="main-content">
          <Presentation title={PresentationTxt} img="Formule-detente-profonde" />
-         <Prestations data={dataFormules} collapsible={true} />
+         <Prestations imagesData={dataFormules} collapsible={true} />
       </main>
    );
 }

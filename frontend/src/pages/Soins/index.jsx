@@ -50,7 +50,7 @@ export default function Massages() {
             ))}
          </section>
 
-         <Prestations data={dataSoins} collapsible={false} />
+         <Prestations imagesData={dataSoins} collapsible={false} />
       </main>
    );
 }

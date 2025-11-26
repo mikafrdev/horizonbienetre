@@ -5,28 +5,22 @@ import Collapse from "@mui/material/Collapse";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import parse from "html-react-parser";
 import ResponsiveImage from "../../utils/ResponsiveImage";
-
 import "./style.css";
 
-export default function Prestations({ data, collapsible }) {
+export default function Prestations({ imagesData, collapsible }) {
    const [openIndex, setOpenIndex] = useState(false);
 
    const handleAccordion = (index) => {
       setOpenIndex(openIndex === index ? null : index);
    };
 
-   const imageSizes = [
-      { size: 600, media: "(max-width: 600px)" },
-      { size: 800, media: "(min-width: 601px) and (max-width: 800px)" },
-   ];
-
    const isMobile = useMediaQuery("(min-width:800px)");
 
    return (
       <section className="section-prestations">
          <div className="prestations-list">
-            {data.map((item, index) => {
-               const isLast = index === data.length - 1;
+            {imagesData.map((imageData, index) => {
+               const isLast = index === imagesData.length - 1;
 
                return (
                   <React.Fragment key={index}>
@@ -36,13 +30,11 @@ export default function Prestations({ data, collapsible }) {
                         }`}
                      >
                         <div className="prestation-title">
-                           <h2>{parse(item.title)}</h2>
+                           <h2>{parse(imageData.title)}</h2>
                         </div>
                         <div className="prestation-img">
                            <ResponsiveImage
-                              item={item}
-                              imageSizes={imageSizes}
-                              imageFormats={["webp", "jpeg"]}
+                              imageData={imageData}
                               alt="Une image dynamique"
                            />
                         </div>
@@ -52,13 +44,13 @@ export default function Prestations({ data, collapsible }) {
                                  <Collapse
                                     in={openIndex === index}
                                     className="collapsesize"
-                                    collapsedSize={'205px'}
+                                    collapsedSize={"205px"}
                                  >
                                     <span className="prestation-text">
-                                       {parse(item.text)}
+                                       {parse(imageData.text)}
                                     </span>
                                     <span className="prestation-price">
-                                       {parse(item.prix)}
+                                       {parse(imageData.prix)}
                                     </span>
                                  </Collapse>
 
@@ -73,10 +65,10 @@ export default function Prestations({ data, collapsible }) {
                            ) : (
                               <>
                                  <span className="prestation-text">
-                                    {parse(item.text)}
+                                    {parse(imageData.text)}
                                  </span>
                                  <span className="prestation-price">
-                                    {parse(item.prix)}
+                                    {parse(imageData.prix)}
                                  </span>
                               </>
                            )}

@@ -1,6 +1,10 @@
 const ResponsiveImage = ({
-  item,
-  imageSizes = [],
+
+  imageSizes = [
+      { size: 600, media: "(max-width: 600px)" },
+      { size: 800, media: "(min-width: 601px) and (max-width: 800px)" },
+   ],
+  imageData,
   imageFormats = ['webp', 'jpeg', 'png'],
   alt = '',
   onLoad = () => {},
@@ -13,7 +17,7 @@ const ResponsiveImage = ({
         imageFormats.map((format) => (
           <source
             key={`${size}-${format}`}
-            srcSet={`${item.img}-${size}.${format}`}
+            srcSet={`${imageData.img}-${size}.${format}`}
             media={media}
             type={`image/${format}`}
           />
@@ -21,8 +25,8 @@ const ResponsiveImage = ({
       )}
 
       <img
-        srcSet={`${item.img}-800.webp`}
-        alt={alt || item.title}
+        srcSet={`${imageData.img}-800.webp`}
+        alt={alt || imageData.title}
         loading="lazy"
         sizes="(max-width: 600px) 100vw, (max-width: 800px) 80vw, (max-width: 1024px) 70vw, 50vw"
         onLoad={onLoad}

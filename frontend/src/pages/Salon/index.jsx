@@ -2,16 +2,22 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
+import ResponsiveImage from "../../utils/ResponsiveImage";
 import ImgBea from "../../assets/Bea-photo-contours.png";
+import dataSalon from "../../data/salon.json";
 import "./style.css";
 
 export default function Salon() {
-   const imageModules = import.meta.glob(
+
+   /* const imageModules = import.meta.glob(
       "../../assets/salon/*.{jpg,jpeg,png}",
+      "/salon/*.{jpg,jpeg,png}",
       {
          eager: true,
       }
    );
+
+   console.log("imageModules : ", imageModules);
 
    const itemData = Object.entries(imageModules).map(([path, module]) => ({
       img: module.default,
@@ -20,6 +26,8 @@ export default function Salon() {
          .pop()
          .replace(/\.\w+$/, ""),
    }));
+
+   console.log("itemData : ", itemData); */
 
    return (
       <main className="main-content">
@@ -60,14 +68,36 @@ export default function Salon() {
          <section className="section-salon-gallery">
             <Box>
                <ImageList variant="masonry" gap={1}>
-                  {itemData.map((item) => (
+                  {dataSalon.map((item) => (
                      <ImageListItem key={item.img}>
-                        <img
+                        {/* <span>{item.img}</span> */}
+                        
+                        <picture>
+                           <source srcSet="Massage-relaxant-pose-de-pierres-chaudes-600.webp" media="(max-width: 600px)" type="image/webp" />
+                           <img alt="Une image dynamique" loading="lazy" sizes="(max-width: 600px) 100vw, (max-width: 800px) 80vw, (max-width: 1024px) 70vw, 50vw" srcSet="Massage-relaxant-pose-de-pierres-chaudes-800.webp" />
+                        </picture>
+
+
+                        {/* <img
                            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                            src={`${item.img}?w=248&fit=crop&auto=format`}
                            alt={item.title}
                            loading="lazy"
+                        /> */}
+
+                        {/* <picture>
+                           <source srcSet="/src/assets/salon/rosier-fleurissant-roses-pink-jardin-printemps-800.png-600.webp" media="(max-width: 600px)" type="image/webp" />
+                           <img alt="Une image dynamique" loading="lazy" sizes="(max-width: 600px) 100vw, (max-width: 800px) 80vw, (max-width: 1024px) 70vw, 50vw" srcSet="/src/assets/salon/rosier-fleurissant-roses-pink-jardin-printemps-800.png-800.webp" />
+                        </picture> */}
+
+
+                        <ResponsiveImage
+                           item={item}
+                           imageFormats={["webp", "jpeg"]}
+                           alt="Une image dynamique"
                         />
+
+
                      </ImageListItem>
                   ))}
                </ImageList>
