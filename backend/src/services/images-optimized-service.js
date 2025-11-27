@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 // Fonction de redimensionnement et conversion pour une image spécifique
 const resizeAndConvertImage = async (inputPath, imageName) => {
-   console.log('************** resizeAndConvertImage ✅')
+   console.log("************** resizeAndConvertImage ✅");
    const outputDir = path.join(__dirname, "../../public/images/converted");
 
    // Créer le dossier de sortie si nécessaire
@@ -29,17 +29,36 @@ const resizeAndConvertImage = async (inputPath, imageName) => {
          const outputPath = path.join(outputDir, outputFileName);
 
          try {
-            console.log(`Traitement de l'image : ${inputPath} en ${size} px et format ${format}`);
-            // Redimensionner l'image et convertir au format souhaité
-            await sharp(inputPath)
-               .resize(size)
-               .toFormat(format, { quality: 80 })
-               .toFile(outputPath);
+            console.log(
+               `Traitement de l'image : ${inputPath} en ${size} px et format ${format}`
+            );
+
+            // Lire les métadonnées de l'image
+            const metadata = await sharp(inputPath).metadata();
+
+            // Appliquer la rotation automatique si nécessaire (en fonction des métadonnées EXIF)
+            let image = sharp(inputPath).resize(size);
+
+            if (metadata.orientation) {
+               // Appliquer la rotation en fonction des métadonnées EXIF (automatique)
+               console.log("Correction de l'orientation EXIF...");
+               image = image.rotate(); // `rotate()` corrige l'orientation basée sur EXIF
+            }
+
+            // Supprimer les métadonnées EXIF si tu veux éviter qu'elles soient présentes
+            image = image.withMetadata();
+
+            // Convertir l'image et la sauvegarder
+            await image.toFormat(format, { quality: 80 }).toFile(outputPath);
 
             console.log(`Fichier généré : ${outputPath}`);
-            processedImages.push(outputPath); // Ajoute le chemin de l'image traitée
+            processedImages.push(outputPath); // Ajouter le chemin de l'image traitée
          } catch (error) {
-            console.error("Erreur lors du traitement de l'image :", error);
+            console.error(
+               "Erreur lors du traitement de l'image :",
+               error.message
+            );
+            console.error(error);
          }
       }
    }
@@ -49,7 +68,7 @@ const resizeAndConvertImage = async (inputPath, imageName) => {
 
 // Traiter toutes les images dans le dossier public/images
 const processAllImages = async () => {
-   console.log('************** processAllImages ✅')
+   console.log("************** processAllImages ✅");
    const inputDir = path.join(__dirname, "../../public/images");
    const processedImages = [];
 
@@ -69,7 +88,12 @@ const processAllImages = async () => {
             const processed = await resizeAndConvertImage(filePath, imageName);
             processedImages.push(...processed); // Ajouter les images traitées à la liste
          } catch (error) {
-            console.error("Erreur lors du traitement de l'image", file, ":", error);
+            console.error(
+               "Erreur lors du traitement de l'image",
+               file,
+               ":",
+               error
+            );
          }
       }
    }

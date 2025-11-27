@@ -1,6 +1,6 @@
-import imageService from "../services/images.service.js";
+import imageService from "../services/images-optimized-service.js";
 
-export const imagesController = async (req, res) => {
+export const imagesOptimizedController = async (req, res) => {
    console.log('************** processAllImages ✅')
    try {
       const processedImages = await imageService.processAllImages();
