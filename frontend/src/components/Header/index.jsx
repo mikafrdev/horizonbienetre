@@ -16,12 +16,8 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useMediaQuery } from "@mui/material";
-
-/* import Logo from "./../../assets/logo-horizontal.jpg"; */
 import LogoSVG from "./../LogoSVG";
 import HeaderModalCTA from "../HeaderModalCTA";
-
-/* import { useAnalyticsEvent } from "../GoogleAnalytics.jsx"; */
 
 import "./style.css";
 import "../Button/style.css";
@@ -29,13 +25,6 @@ import "../Button/style.css";
 const drawerWidth = 240;
 
 export default function Header() {
-   /* const { track } = useAnalyticsEvent();
-
-   const handleLogoClick = () => {
-      
-      track("click_logo", "navigation", "Logo Horizon Bien Etre");
-   }; */
-
    const isMobile = useMediaQuery("(max-width:1024px)");
    const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -109,10 +98,7 @@ export default function Header() {
                   <div className="header-logo">
                      <Link to="/">
                         {isMobile ? (
-                           <LogoSVG
-                              color="#8fc3d3"
-                              text="true"
-                           />
+                           <LogoSVG color="#8fc3d3" text="true" />
                         ) : (
                            <LogoSVG color="#8fc3d3" />
                         )}

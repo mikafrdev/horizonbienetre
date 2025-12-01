@@ -2,13 +2,13 @@ import { Outlet, Link } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
-import GoogleAnalytics from "./components/GoogleAnalytics";
+import GoogleTagManager from "./components/GoogleTagManager";
 
 export default function Layout() {
    return (
       <>
+         <GoogleTagManager />
          <ScrollToTop />
-         <GoogleAnalytics />
          <Header />
          <Outlet />
          <Footer />
