@@ -119,7 +119,7 @@ export default function HeaderModalCTA() {
                   <div className="text-tel">Prendre RDV par téléphone</div>
                   <Button
                      component="a"
-                     href="tel:0102030405"
+                     href={`tel:${Infos.tel}`}
                      className="cta-phone"
                      startIcon={<PictoPhone />}
                   >
