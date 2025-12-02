@@ -14,8 +14,8 @@
    "scripts": {
       "email": "email dev",
       "email:watch": "nodemon --watch src --ext jsx --exec \"npm run email\"",
-      "dev": "set NODE_ENV=dev && nodemon src/server.js --watch src --exec tsx",
-      "prod": "set NODE_ENV=production && set ISPRODLOCAL=true && node src/server.js",
+      "dev": "set NODE_ENV=development && nodemon src/server.js --watch src --exec tsx",
+      "prod": "set NODE_ENV=prodlocale && node src/server.js",
       "preview:email": "tsx ../emails/preview-email.js",
       "build:emails": "tsx --transpile-only emails/src/Template-email-auto-response.jsx --out-dir build/emails",
       "copy-emails": "shx cp -r emails ../build/",

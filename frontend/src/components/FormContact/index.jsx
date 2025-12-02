@@ -149,7 +149,7 @@ export default function FormContact({ formType }) {
                         aria-invalid={!!fieldErrors.firstName}
                      />
                      {fieldErrors.firstName && (
-                        <span className="text-red-500" role="alert">
+                        <span className="error-text text-red-500" role="alert">
                            {fieldErrors.firstName}
                         </span>
                      )}
@@ -167,7 +167,7 @@ export default function FormContact({ formType }) {
                         aria-invalid={!!fieldErrors.lastName}
                      />
                      {fieldErrors.lastName && (
-                        <span className="text-red-500" role="alert">
+                        <span className="error-text text-red-500" role="alert">
                            {fieldErrors.lastName}
                         </span>
                      )}
@@ -186,7 +186,7 @@ export default function FormContact({ formType }) {
                      aria-invalid={!!fieldErrors.email}
                   />
                   {fieldErrors.email && (
-                     <span className="text-red-500" role="alert">
+                     <span className="error-text text-red-500" role="alert">
                         {fieldErrors.email}
                      </span>
                   )}
@@ -202,7 +202,7 @@ export default function FormContact({ formType }) {
                      aria-invalid={!!fieldErrors.message}
                   />
                   {fieldErrors.message && (
-                     <span className="text-red-500" role="alert">
+                     <span className="error-text text-red-500" role="alert">
                         {fieldErrors.message}
                      </span>
                   )}

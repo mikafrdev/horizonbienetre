@@ -13,14 +13,15 @@ const __dirname = path.dirname(__filename);
 const rawEnv = process.env.NODE_ENV || "";
 const NODE_ENV = rawEnv ? rawEnv.trim() : "";
 
-console.log("NODE_ENV =", NODE_ENV);
+console.log("process.env.NODE_ENV : ", process.env.NODE_ENV, "-");
+console.log("process.env.NODE_ENV : ", NODE_ENV, "-");
 
 if (typeof PhusionPassenger !== "undefined") {
    PhusionPassenger.configure({ autoInstall: false });
 }
 
 const envFilePath =
-   NODE_ENV === "dev"
+   NODE_ENV === "development"
       ? path.resolve(__dirname, "../.env.development")
       : path.resolve(__dirname, "../.env");
 const result = dotenv.config({ path: envFilePath });
@@ -31,11 +32,9 @@ if (result.error) {
    console.log("✅ Variables chargées depuis :", envFilePath);
 }
 
-const isProdLocal = process.env.ISPRODLOCAL || false;
 
 /* console.log("Variables d'environnement => ");
 console.log("🔍 Fichier .env utilisé ", envFilePath);
-console.log("isProdLocal =", isProdLocal);
 console.log("SMTP_CONTACT_HOST =", process.env.SMTP_CONTACT_HOST);
 console.log("SMTP_CONTACT_PORT =", process.env.SMTP_CONTACT_PORT);
 console.log("EMAIL_CONTACT_USER =", process.env.EMAIL_CONTACT_USER); */
@@ -71,17 +70,19 @@ let frontendDistPath = path.resolve(__dirname, "../../frontend/");
 
 console.log("NODE_ENV =", process.env.NODE_ENV);
 
-if (NODE_ENV === "dev") {
+if (NODE_ENV === "development") {
    console.log(
       "🛑 React n'est pas servi par Express en mode développement."
    );
 } else {
    
-   if (isProdLocal) {
+   if (NODE_ENV === "prodlocale") {
       // En production locale (http://localhost:3000/)
+      console.log("Mode prodlocale");
       frontendDistPath = path.resolve(__dirname, "../../build/frontend");
    } else {
       // En production sur l'hébergeur (https://horizonbienetre.fr/)
+      console.log("Mode PROD");
       frontendDistPath = path.resolve(__dirname, "../../frontend");
    }
 
@@ -126,7 +127,6 @@ app.get("/api/test", (req, res) => {
       existe: fs.existsSync(frontendDistPath),
       env: {
          NODE_ENV: NODE_ENV || "❌ non défini",
-         isProdLocal: isProdLocal || "❌ non défini",
          SMTP_CONTACT_HOST: process.env.SMTP_CONTACT_HOST || "❌ non défini",
          SMTP_CONTACT_PORT: process.env.SMTP_CONTACT_PORT || "❌ non défini",
          EMAIL_CONTACT_USER: process.env.EMAIL_CONTACT_USER || "❌ non défini",
@@ -164,7 +164,7 @@ app.get('/api/images/:imageId', async (req, res) => {
   }
 }); */
 
-if (NODE_ENV === "dev") {
+if (NODE_ENV === "development") {
    app.get("/*splat", (req, res) => {
       res.send("Route non trouvée : *");
    });

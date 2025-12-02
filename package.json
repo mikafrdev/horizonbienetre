@@ -16,13 +16,13 @@
     "tsx": "^4.19.4"
   },
   "scripts": {
-    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
+    "dev": "set NODE_ENV=development && concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
     "build:emails": "tsx ./emails/preview-email.jsx",
     "build:frontend": "cd frontend && npm run build",
     "build:backend": "cd backend && npm run build",
     "build": "npm run build:emails && npm run build:frontend && npm run build:backend && shx cp backend/.env.production build/.env",
     "clean": "shx rm -rf build",
-    "prod": "set NODE_ENV=production && set ISPRODLOCAL=true && node ./backend/src/server.js",
+    "prod": "set NODE_ENV=prodlocale && node ./backend/src/server.js",
     "prod:build": "set NODE_ENV=production && set ISPRODLOCAL=true && node ./build/backend/server.js",
     "start": "set ISPRODLOCAL=true && node ./build/backend/server.js"
   },

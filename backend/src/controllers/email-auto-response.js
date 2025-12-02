@@ -8,6 +8,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export const sendEmailAutoResponse = async (req, res) => {
+   const rawEnv = process.env.NODE_ENV || "";
+   const NODE_ENV = rawEnv ? rawEnv.trim() : "";
+
    const { firstName, lastName, email, message } = req.body;
    const code = "596853";
 
@@ -44,6 +47,10 @@ export const sendEmailAutoResponse = async (req, res) => {
          user: process.env.EMAIL_AUTO_RESPONSE_USER,
          pass: process.env.EMAIL_AUTO_RESPONSE_PASS,
       },
+      tls: {
+         // Désactiver la validation du certificat SSL uniquement en mode développement
+         rejectUnauthorized: NODE_ENV === "production" ? true : false,
+      },
    });
 
    /* console.log(
@@ -75,7 +82,7 @@ export const sendEmailAutoResponse = async (req, res) => {
          .json({ success: "Message envoyé et réponse automatique envoyée." });
    } catch (error) {
       inspectorConsole.error("Erreur lors de l'envoi de l'email:", error);
-      
+
       inspectorConsole.error("Erreur lors de l'envoi de l'email:", error);
       return res.status(500).json({
          error: "Erreur lors de l'envoi de l'email",
