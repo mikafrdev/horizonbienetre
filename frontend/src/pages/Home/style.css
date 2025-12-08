@@ -9,21 +9,6 @@
    max-width: 1024px;
 }
 
-.img_salon {
-   width: 70%;
-   height: 220px;
-   background-image: url("./../../assets/salon17.jpg");
-   background-size: cover;
-   background-position: center;
-   border-radius: 5px;
-   margin-bottom: 2em;
-}
-
-@media screen and (min-width: 800px) {
-   .prestation-cards {
-   }
-}
-
 @media screen and (min-width: 1440px) {
    .section-video video {
       max-width: 1024px;

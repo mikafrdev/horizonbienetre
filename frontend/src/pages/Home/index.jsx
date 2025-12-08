@@ -9,8 +9,6 @@ export default function Home() {
    useEffect(() => {
       const width = window.innerWidth;
 
-      /* console.log("Current window width:", width); */
-
       if (width <= 800) {
          setVideoSrc("/videos/presentation-800.mp4");
       } else if (width <= 1024) {

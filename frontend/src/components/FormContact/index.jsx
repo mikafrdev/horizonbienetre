@@ -32,20 +32,6 @@ export default function FormContact({ formType }) {
       }));
    };
 
-   /* const resetForm = () => {
-      setFormData({
-         firstName: "",
-         lastName: "",
-         email: "",
-         message: "",
-         rgpd: false,
-         website: "",
-      });
-      setFieldErrors({});
-      setSuccessMsg("");
-      setErrorMsg("");
-   }; */
-
    const handleSubmit = async (e) => {
       e.preventDefault();
       setLoading(true);
@@ -79,7 +65,6 @@ export default function FormContact({ formType }) {
             return;
          }
 
-         // Email auto-response
          const autoRes = await fetch(`/api/email/auto-response`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },

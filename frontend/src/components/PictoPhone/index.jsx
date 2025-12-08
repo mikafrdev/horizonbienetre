@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-/* import Modal from "../Modal"; */
 import "./style.css";
 
 export default function PictoPhone({ fillPhoneColor, fillCallColor }) {

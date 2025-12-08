@@ -1,7 +1,5 @@
 import Button from "@mui/material/Button";
-/* import CalendarMonthIcon from "@mui/icons-material/CalendarMonth"; */
 import PictoCalendar from "../PictoCalendar";
-
 import "./style.css";
 
 export default function ButtonCTA({ variant, linkActive }) {

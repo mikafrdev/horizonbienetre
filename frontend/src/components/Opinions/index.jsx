@@ -29,8 +29,7 @@ export default function Opinions() {
                pagination={{ clickable: true }}
                loop={true}
                breakpoints={{
-                  0: { slidesPerView: 1 },
-                  /* 1440: { slidesPerView: 1 }, */
+                  0: { slidesPerView: 1 }
                }}
             >
                {dataOpinions.map((item, index) => (

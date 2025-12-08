@@ -50,7 +50,6 @@ a.cta-btn svg {
    }
 }
 
-/*HEADER*/
 .header-cta button {
    margin: 0;
    padding: 0;
@@ -78,7 +77,6 @@ a.cta-header .cta-text {
    display: none;
 }
 
-/*Variant A*/
 a.cta-varianta {
    display: flex;
    gap: 1rem;
@@ -110,7 +108,6 @@ a.cta-varianta .pictocalendar path {
    fill: #ffffff;
 }
 
-/*Résalib*/
 a.cta-resalib {
    display: flex;
    gap: 1rem;
@@ -148,7 +145,6 @@ a.cta-resalib .pictocalendar path {
    fill: #ffffff;
 }
 
-/*Résalib-b */
 a.cta-resalib-b {
    display: flex;
    gap: 1rem;
@@ -182,8 +178,6 @@ a.cta-resalib-b .cta-text {
 a.cta-resalib-b .pictocalendar path {
    fill: #ffffff;
 }
-
-/* PHONE */
 a.cta-phone {
    display: flex;
    gap: 1rem;
@@ -247,8 +241,5 @@ a.cta-phone .cta-text {
 
    a.cta-header .cta-text {
       display: none;
-   }
-
-   a.cta-btn .MuiButton-startIcon {
    }
 }

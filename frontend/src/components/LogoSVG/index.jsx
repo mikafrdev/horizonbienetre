@@ -1,6 +1,5 @@
 import "./style.css";
 export default function Logo({ color, text, direction }) {
-
    const classes = `logo-container ${direction === "vertical" ? "logo-vertical" : ""}`;
 
    return (

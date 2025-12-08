@@ -1,5 +1,4 @@
 export default function PictoInsta({ fillColor, strokeColor }) {
-
     return (
         <svg 
             viewBox="0 0 24 24" 

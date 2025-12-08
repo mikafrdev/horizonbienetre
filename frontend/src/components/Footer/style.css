@@ -111,7 +111,7 @@ svg.icon-email {
 .footer-infos-pratiques {
    display: flex;
    flex-direction: column;
-   gap: 1rem; /* espace entre les blocs */
+   gap: 1rem;
 }
 
 .footer-opening-hours,

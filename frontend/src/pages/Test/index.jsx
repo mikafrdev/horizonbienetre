@@ -1,14 +1,9 @@
-import Resalib from "../../components/Resalib";
 import Button from "@mui/material/Button";
 import PictoCalendar from "../../components/PictoCalendar";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { useEffect, useState, useRef } from "react";
-
-import { Box, Collapse, Typography } from "@mui/material";
-
+import { Collapse, Typography } from "@mui/material";
 import LogoSVG from "../../components/LogoSVG";
-import TestLogoPNG from "../../assets/Test-logo-transparent.png";
-
 import "./style.css";
 
 function ShowMore({ text, maxLength = 100 }) {
@@ -72,17 +67,9 @@ export default function Test() {
             <br />
             <LogoSVG color="red" text="true" />
             <br />
-            <LogoSVG color="#157CA4"  />
+            <LogoSVG color="#157CA4" />
             <br />
             <LogoSVG color="#157CA4" text="true" direction="vertical" />
-
-            {/* <div style={{ margin: "20px 0", backgroundColor: "#f0f0f0", padding: "10px" }}>
-               <img
-                  src={TestLogoPNG}
-                  alt="Test Logo PNG"
-                  style={{ width: "200px", height: "auto" }}
-               />
-            </div> */}
 
             <h2>Show more</h2>
             <ShowMore
@@ -195,7 +182,6 @@ export default function Test() {
             >
                <span className="cta-text">Prendre RDV avec Résalib</span>
             </Button>
-            <Resalib />
 
             <a
                href="https://autresite.com"

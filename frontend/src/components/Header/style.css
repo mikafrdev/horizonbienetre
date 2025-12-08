@@ -29,10 +29,6 @@ img.logo {
    display: flex;
 }
 
-.header-desktop {
-
-}
-
 .header-cta, .header-desktop {
    flex-grow: 0;
 }
@@ -76,10 +72,6 @@ img.logo {
    align-items: center;
 }
 
-/* .header-desktop li:hover {
-   background-color: #d3eaf2;
-} */
-
 .header-desktop a {
    color: #333;
    text-align: center;
@@ -113,7 +105,6 @@ img.logo {
    --fill-cta-primary: #555;
 }
 
-/* nav */
 .nav-link:hover {
    background-color: transparent !important;
 }
@@ -131,8 +122,6 @@ img.logo {
    gap: 1rem;
    padding: 1rem 0;
 }
-
-/*divider*/
 
 .divider {
    display: flex;
@@ -161,8 +150,6 @@ img.logo {
    color: #666;
    font-size: 14px;
 }
-
-/*fin divider*/
 
 @media screen and (min-width: 600px) {
 }

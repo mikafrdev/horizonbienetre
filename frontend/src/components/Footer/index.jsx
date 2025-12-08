@@ -1,17 +1,8 @@
 import Infos, { formatPhoneNumber } from "../../utils/Infos";
 import dataNavigation from "../../data/navigation.json";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import PictoPhone from "../PictoPhone";
-import PictoPinpoint from "../PictoPinpoint";
-import PictoMail from "../PictoMail";
-import PictoFB from "../PictoFB";
-import PictoInsta from "../PictoInsta";
 import Button from "@mui/material/Button";
-import Modal from "@mui/material/Modal";
-import Box from "@mui/material/Box";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import CloseIcon from "@mui/icons-material/Close";
-import IconButton from "@mui/material/IconButton";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import FacebookIcon from "@mui/icons-material/Facebook";

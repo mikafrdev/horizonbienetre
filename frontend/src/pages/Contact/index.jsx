@@ -8,7 +8,7 @@ export default function contact() {
             <h1>Nous contacter</h1>
          </section>
 
-         <FormContact  formType="Contact" />
+         <FormContact formType="Contact" />
       </main>
    );
 }

@@ -1,17 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import LogoResalib from "./../../assets/logo-resalib.png";
 import PictoPhone from "../PictoPhone";
-import PictoCalendar from "../PictoCalendar";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
-/* import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined"; */
 import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
 import Infos, { formatPhoneNumber } from "../../utils/Infos";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import MenuIcon from "@mui/icons-material/Menu";
 import "./style.css";
 import "../Button/style.css";
 
@@ -73,13 +70,6 @@ function ChildModal() {
 }
 
 export default function HeaderModalCTA() {
-   /* const [isChildModalOpen, setIsChildModalOpen] = useState(false);
-   const handleOpen = () => {
-      setIsChildModalOpen(true);
-   };
-   const handleClose = () => {
-      setIsChildModalOpen(false);
-   }; */
    const [isHeaderRDVModalOpen, setIsHeaderRDVModalOpen] = useState(false);
    const openHeaderRDVModal = () => setIsHeaderRDVModalOpen(true);
    const closeHeaderRDVModal = () => setIsHeaderRDVModalOpen(false);
@@ -152,8 +142,6 @@ export default function HeaderModalCTA() {
                   >
                      <span className="cta-text">Prendre RDV</span>
                   </Button>
-
-                  {/* <ChildModal /> */}
                </div>
             </Box>
          </Modal>

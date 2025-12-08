@@ -21,12 +21,10 @@
    position: relative;
    text-decoration: none;
    color: inherit;
-   /* white-space: nowrap; */
 }
 
 .home-prestations__image {
    display: block;
-   /* width: 100%; */
    width: auto;
    height: auto;
 }
@@ -56,10 +54,6 @@
 .home-prestations__card:hover .home-prestations__caption,
 .home-prestations__card:focus-within .home-prestations__caption {
    background: rgba(0, 0, 0, 0.7);
-}
-
-@media screen and (min-width: 600px) {
-   
 }
 
 @media screen and (min-width: 800px) {

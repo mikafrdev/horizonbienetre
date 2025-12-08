@@ -1,5 +1,4 @@
 export default function PictoFB({ strokeColor }) {
-
     return (
         <svg 
             fill={strokeColor}

@@ -1,6 +1,4 @@
 import { Button as MuiButton } from "@mui/material";
-import { SvgIcon } from "@mui/material";
-
 import "./style.css";
 
 export default function Button({
