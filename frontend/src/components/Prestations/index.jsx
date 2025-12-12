@@ -35,7 +35,7 @@ export default function Prestations({ imagesData, collapsible }) {
                         <div className="prestation-img">
                            <ResponsiveImage
                               imageData={imageData}
-                              alt="Une image dynamique"
+                              alt={imageData.alt}
                            />
                         </div>
                         <div className="prestation-content">

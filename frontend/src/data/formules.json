@@ -1,20 +1,23 @@
 [
     {
-        "title" : "Formule Douceur – 1h d’harmonie",
-        "img" : "Formule-douceur-présentation-bougies-roses",
-        "text" : "<p>Offrez-vous un véritable cocon de bien-être avec la Formule Douceur :<p><ul><li>45 minutes de massage personnalisé, mêlant la fluidité du californien, la profondeur de l’ayurvédique, la chaleur bienfaisante des pierres chaudes et quelques gestes inspirés du shiatsu pour dénouer les tensions.</li><li>15 minutes de soin énergétique, pour rééquilibrer vos énergies, apaiser l’esprit et prolonger les bienfaits du massage. Cette formule est idéale si vous recherchez une détente, une libération des tensions physiques mais aussi un recentrage intérieur. Un moment unique où le corps et l’esprit se rencontrent dans une bulle de douceur. Laissez-vous envelopper… et ressortez léger, apaisé, ressourcé.</li></ul>",
-        "prix" : "1h - 55€"
+        "title": "Formule Douceur – 1h d’harmonie",
+        "img": "Formule-douceur-présentation-bougies-roses",
+        "alt": "Ambiance apaisante avec bougies roses pour la Formule Douceur - massage et soin énergétique pour l’harmonie du corps et de l’esprit",
+        "text": "<p>Offrez-vous un véritable cocon de bien-être avec la Formule Douceur :<p><ul><li>45 minutes de massage personnalisé, mêlant la fluidité du californien, la profondeur de l’ayurvédique, la chaleur bienfaisante des pierres chaudes et quelques gestes inspirés du shiatsu pour dénouer les tensions.</li><li>15 minutes de soin énergétique, pour rééquilibrer vos énergies, apaiser l’esprit et prolonger les bienfaits du massage. Cette formule est idéale si vous recherchez une détente, une libération des tensions physiques mais aussi un recentrage intérieur. Un moment unique où le corps et l’esprit se rencontrent dans une bulle de douceur. Laissez-vous envelopper… et ressortez léger, apaisé, ressourcé.</li></ul>",
+        "prix": "1h - 55€"
     },
     {
-        "title" : "Formule Détente Profonde – 1h30 de bien être",
-        "img" : "Formule-detente-profonde-plus",
-        "text" : "<p>Offrez-vous une expérience unique où détente et harmonie se rencontrent.</p><ul><li>1h de massage signature : un voyage sensoriel mêlant la chaleur enveloppante des pierres volcaniques et des gestes doux et fluides. Ce massage relâche les tensions profondes, apaise le stress et invite à un lâcher-prise total.</li><li>30 min de soin énergétique : un rééquilibrage subtil qui libère les blocages, réharmonise vos énergies et procure une sensation de légèreté et de paix intérieure. Une formule pensée pour une détente profonde, un ressourcement total et une légèreté retrouvée.</li></ul>",
-        "prix" : "1h30 - 70€"
+        "title": "Formule Détente Profonde – 1h30 de bien être",
+        "img": "Formule-detente-profonde-plus",
+        "alt": "Massage relaxant et soin énergétique pour une détente profonde et un ressourcement total - Formule Détente Profonde",
+        "text": "<p>Offrez-vous une expérience unique où détente et harmonie se rencontrent.</p><ul><li>1h de massage signature : un voyage sensoriel mêlant la chaleur enveloppante des pierres volcaniques et des gestes doux et fluides. Ce massage relâche les tensions profondes, apaise le stress et invite à un lâcher-prise total.</li><li>30 min de soin énergétique : un rééquilibrage subtil qui libère les blocages, réharmonise vos énergies et procure une sensation de légèreté et de paix intérieure. Une formule pensée pour une détente profonde, un ressourcement total et une légèreté retrouvée.</li></ul>",
+        "prix": "1h30 - 70€"
     },
     {
-        "title" : "Formule Détente Profonde Plus – 2 h de pure évasion",
-        "img" : "Formule-bougie-serviette-lumiere-tamisee",
-        "text" : "<p>Offrez-vous une parenthèse hors du temps avec ce rituel unique qui associe massage relaxant et soin énergétique.</p><ul><li>1h30 de massage signature : laissez-vous envelopper par la chaleur réconfortante des pierres volcaniques et par des gestes doux et fluides. Ce massage apaise les tensions musculaires, dissout le stress et vous plonge dans une profonde sérénité.</li><li>30 min de soin énergétique : un moment d’harmonisation subtile qui libère les blocages, équilibre vos énergies et procure une sensation de légèreté et de paix intérieure. Un véritable voyage sensoriel, pensé pour revitaliser le corps et apaiser l’esprit.</li></ul>",
-        "prix" : "2h - 90€"
+        "title": "Formule Détente Profonde Plus – 2 h de pure évasion",
+        "img": "Formule-bougie-serviette-lumiere-tamisee",
+        "alt": "Rituel de massage et soin énergétique avec bougie et lumière tamisée pour une évasion totale - Formule Détente Profonde Plus",
+        "text": "<p>Offrez-vous une parenthèse hors du temps avec ce rituel unique qui associe massage relaxant et soin énergétique.</p><ul><li>1h30 de massage signature : laissez-vous envelopper par la chaleur réconfortante des pierres volcaniques et par des gestes doux et fluides. Ce massage apaise les tensions musculaires, dissout le stress et vous plonge dans une profonde sérénité.</li><li>30 min de soin énergétique : un moment d’harmonisation subtile qui libère les blocages, équilibre vos énergies et procure une sensation de légèreté et de paix intérieure. Un véritable voyage sensoriel, pensé pour revitaliser le corps et apaiser l’esprit.</li></ul>",
+        "prix": "2h - 90€"
     }
 ]

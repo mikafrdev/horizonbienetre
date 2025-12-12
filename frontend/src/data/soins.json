@@ -1,20 +1,23 @@
 [
     {
-        "title" : "Reiki Usui",
-        "img" : "Massage-therapist-performing-Reiki-over-forehead-of-senior-man-at-health-spa",
-        "text" : "Le reiki est une méthode de soins énergétiques japonaise dont le but est de rétablir l’équilibre énergétique dans le corps. Le soin libère les énergies bloquées et  permet activation du processus d’auto guérison de la personne.",
-        "prix" : "60 min - 50 €"
+        "title": "Reiki Usui",
+        "img": "Massage-therapist-performing-Reiki-over-forehead-of-senior-man-at-health-spa",
+        "alt": "Praticien de Reiki Usui effectuant un soin énergétique sur le front d'un homme âgé dans un spa de santé",
+        "text": "Le reiki est une méthode de soins énergétiques japonaise dont le but est de rétablir l’équilibre énergétique dans le corps. Le soin libère les énergies bloquées et permet activation du processus d’auto guérison de la personne.",
+        "prix": "60 min - 50 €"
     },
     {
-        "title" : "Reiki Karuna",
-        "img" : "close-up-of-hands-placed-on-girls-head",
-        "text" : "Le Reiki Karuna travaille sur la mémoire somatique (l’inconscient), la mémoire cellulaire. Ce soin permet au corps de remettre de l’ordre dans les mémoires anciennes et de les libérer en favorisant les  prises de conscience.",
-        "prix" : "60 min - 50 €"
+        "title": "Reiki Karuna",
+        "img": "close-up-of-hands-placed-on-girls-head",
+        "alt": "Mains posées sur la tête d'une femme pendant une séance de Reiki Karuna pour libérer la mémoire somatique et cellulaire",
+        "text": "Le Reiki Karuna travaille sur la mémoire somatique (l’inconscient), la mémoire cellulaire. Ce soin permet au corps de remettre de l’ordre dans les mémoires anciennes et de les libérer en favorisant les prises de conscience.",
+        "prix": "60 min - 50 €"
     },
     {
-        "title" : "Thérapie d’Energie Intégrée – IET",
-        "img" : "soin-libere-blocages-emotionnels-et-memoire-cellulaire",
-        "text" : "Le soin permet de libérer les blocages émotionnels et la libération des mémoires cellulaires. Ce sont les émotions non exprimées que le corps garde en mémoire",
-        "prix" : "60 min - 50 €"
+        "title": "Thérapie d’Energie Intégrée – IET",
+        "img": "soin-libere-blocages-emotionnels-et-memoire-cellulaire",
+        "alt": "Thérapeute pratiquant la Thérapie d'Energie Intégrée (IET) pour libérer les blocages émotionnels et les mémoires cellulaires",
+        "text": "Le soin permet de libérer les blocages émotionnels et la libération des mémoires cellulaires. Ce sont les émotions non exprimées que le corps garde en mémoire",
+        "prix": "60 min - 50 €"
     }
 ]

@@ -1,26 +1,30 @@
 [
     {
-        "title" : "Massage Signature du Monde",
-        "img" : "Massage-relaxant-pose-de-pierres-chaudes",
-        "text" : "Découvrez une évasion totale avec le massage signature. Ce soin complet combine les bienfaits du massage californien, les principes ayurvédiques, les pressions du shiatsu et la chaleur enveloppante des pierres chaudes pour une détente profonde du corps et de l’esprit.",
-        "prix" : "1h – 55 €"
+        "title": "Massage Signature du Monde",
+        "img": "Massage-relaxant-pose-de-pierres-chaudes",
+        "alt": "Massage relaxant avec pose de pierres chaudes pour une détente profonde, combinant californien, ayurvédique et shiatsu",
+        "text": "Découvrez une évasion totale avec le massage signature. Ce soin complet combine les bienfaits du massage californien, les principes ayurvédiques, les pressions du shiatsu et la chaleur enveloppante des pierres chaudes pour une détente profonde du corps et de l’esprit.",
+        "prix": "1h – 55 €"
     },
     {
-        "title" : "Massage Signature du Monde",
-        "img" : "massage-relaxant-du-dos",
-        "text" : "Plongez dans une expérience de détente absolue avec ce massage relaxant accompagné de la pose de pierres chaudes. Ce soin allie la douceur des techniques californienne et ayurvédique à la chaleur bienfaisante des pierres volcaniques, placées sur les points énergétiques du corps. Idéal pour libérer les tensions, apaiser l’esprit et favoriser le lâcher-prise profond, il vous invite à une véritable parenthèse de bien-être et de revitalisation.",
-        "prix" : "1h30 – 70 €"
+        "title": "Massage Signature du Monde",
+        "img": "massage-relaxant-du-dos",
+        "alt": "Massage relaxant du dos avec pierres chaudes pour apaiser le stress et favoriser le lâcher-prise",
+        "text": "Plongez dans une expérience de détente absolue avec ce massage relaxant accompagné de la pose de pierres chaudes. Ce soin allie la douceur des techniques californienne et ayurvédique à la chaleur bienfaisante des pierres volcaniques, placées sur les points énergétiques du corps. Idéal pour libérer les tensions, apaiser l’esprit et favoriser le lâcher-prise profond, il vous invite à une véritable parenthèse de bien-être et de revitalisation.",
+        "prix": "1h30 – 70 €"
     },
     {
-        "title" : "Massage Signature Dos",
-        "img" : "Massage_signature_dos-relachement-des-tensions-du-dos-de-la-nuque-et-des-bras",
-        "text" : "Offrez-vous une parenthèse de bien-être avec le Massage du Monde, une alliance subtile entre les traditions californienne et ayurvédique. Ce soin, dédié au relâchement des tensions du dos, de la nuque et des bras, mêle gestes doux et pressions précises pour apaiser le corps, libérer le stress et réharmoniser vos énergies.",
-        "prix" : "45 mn – 45 €"
+        "title": "Massage Signature Dos",
+        "img": "Massage_signature_dos-relachement-des-tensions-du-dos-de-la-nuque-et-des-bras",
+        "alt": "Massage signature pour relâcher les tensions du dos, nuque et bras, combinant californien et ayurvédique",
+        "text": "Offrez-vous une parenthèse de bien-être avec le Massage du Monde, une alliance subtile entre les traditions californienne et ayurvédique. Ce soin, dédié au relâchement des tensions du dos, de la nuque et des bras, mêle gestes doux et pressions précises pour apaiser le corps, libérer le stress et réharmoniser vos énergies.",
+        "prix": "45 mn – 45 €"
     },
     {
-        "title" : "Massage Tonifiant des Jambes",
-        "img" : "Massage-relaxant-tonifiant-jambes-pieds",
-        "text" : "Découvrez ce massage conçu pour répondre à vos besoins de détente et de revitalisation. J’applique des techniques visant à soulager les tensions, stimuler la circulation sanguine et apporter une agréable sensation de légèreté à vos jambes et à vos pieds. Que vous recherchiez une relaxation profonde ou une tonification, ce massage sur mesure rétablit l’équilibre et le bien-être, vous laissant revitalisé(e) et plein(e) d’énergie.",
-        "prix" : "30 mn – 30 €"
+        "title": "Massage Tonifiant des Jambes",
+        "img": "Massage-relaxant-tonifiant-jambes-pieds",
+        "alt": "Massage tonifiant pour les jambes et les pieds, stimulant la circulation sanguine et apportant légèreté et revitalisation",
+        "text": "Découvrez ce massage conçu pour répondre à vos besoins de détente et de revitalisation. J’applique des techniques visant à soulager les tensions, stimuler la circulation sanguine et apporter une agréable sensation de légèreté à vos jambes et à vos pieds. Que vous recherchiez une relaxation profonde ou une tonification, ce massage sur mesure rétablit l’équilibre et le bien-être, vous laissant revitalisé(e) et plein(e) d’énergie.",
+        "prix": "30 mn – 30 €"
     }
 ]
