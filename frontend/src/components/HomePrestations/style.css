@@ -12,24 +12,24 @@
    color: var(--color-secondary);
 }
 
-.home-prestations__list {
+.home-prestations-list {
    display: grid;
    gap: 2rem;
 }
 
-.home-prestations__card {
+.home-prestations-card {
    position: relative;
    text-decoration: none;
    color: inherit;
 }
 
-.home-prestations__image {
+.home-prestations-image {
    display: block;
    width: auto;
    height: auto;
 }
 
-.home-prestations__caption {
+.home-prestations-caption {
    position: absolute;
    bottom: 0;
    left: 0;
@@ -39,20 +39,20 @@
    box-sizing: border-box;
 }
 
-.home-prestations__card h3 {
+.home-prestations-card h3 {
    margin: 0;
    color: #fff;
    align-items: center;
    font-size: clamp(1rem, 0.801rem + 0.99vw, 1.438rem);
 }
 
-.home-prestations__caption {
+.home-prestations-caption {
    background: rgba(0, 0, 0, 0.5);
    transition: background-color 0.3s ease;
 }
 
-.home-prestations__card:hover .home-prestations__caption,
-.home-prestations__card:focus-within .home-prestations__caption {
+.home-prestations-card:hover .home-prestations-caption,
+.home-prestations-card:focus-within .home-prestations-caption {
    background: rgba(0, 0, 0, 0.7);
 }
 
@@ -67,17 +67,17 @@
    .home-prestations h2 {
       font-size: clamp(1.875rem, 1.26rem + 0.96vw, 2.125rem);
    }
-   .home-prestations__list {
+   .home-prestations-list {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1rem;
    }
-   .home-prestations__card {
+   .home-prestations-card {
       max-width: 49%;
       flex: 1 1 300px;
    }
-   .home-prestations__card h3 {
+   .home-prestations-card h3 {
       font-size: 18px;
    }
 }
@@ -87,30 +87,30 @@
       margin-top: 5rem;
    }
 
-   .home-prestations__list {
+   .home-prestations-list {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
       justify-content: center;
    }
 
-   .home-prestations__card h3 {
+   .home-prestations-card h3 {
       display: flex;
       justify-content: center;
       height: 4.5rem;
       margin: 0;
    }
 
-   .home-prestations__image {
+   .home-prestations-image {
       margin: 0;
    }
    .section-video video {
       max-width: 1024px;
    }
-   .home-prestations__caption {
+   .home-prestations-caption {
       padding: 0;
    }
-   .home-prestations__caption h3 {
+   .home-prestations-caption h3 {
       font-size: 21px;
    }
 }

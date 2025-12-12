@@ -29,19 +29,19 @@ export default function Opinions() {
                pagination={{ clickable: true }}
                loop={true}
                breakpoints={{
-                  0: { slidesPerView: 1 }
+                  0: { slidesPerView: 1 },
                }}
             >
                {dataOpinions.map((item, index) => (
                   <SwiperSlide key={index}>
                      <div className="opinion-card">
-                        <div className="opinion_stars_date">
-                           <ul className="opinion_stars">
+                        <div className="opinion-stars-date">
+                           <ul className="opinion-stars">
                               {renderStars(item.note)}
                            </ul>
                         </div>
-                        <p className="opinion_name">{item.name}</p>
-                        <p className="opinion_text">{item.opinion}</p>
+                        <p className="opinion-name">{item.name}</p>
+                        <p className="opinion-text">{item.opinion}</p>
                      </div>
                   </SwiperSlide>
                ))}

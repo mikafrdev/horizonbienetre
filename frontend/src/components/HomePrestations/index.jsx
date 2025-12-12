@@ -8,18 +8,18 @@ export default function HomePrestations() {
       <section className="home-prestations">
          <h2>Les prestations</h2>
 
-         <div className="home-prestations__list">
+         <div className="prestations-list">
             {prestationsData.map((imageData, index) => {
                return (
                   <figure
                      key={index}
                      role="group"
                      aria-labelledby={`card-title-${imageData.id}`}
-                     className="home-prestations__card"
+                     className="home-prestations-card"
                   >
                      <Link
                         to={imageData.link}
-                        className="home-prestations__link"
+                        className="home-prestations-link"
                         data-discover="true"
                      >
                         <ResponsiveImage
@@ -27,10 +27,10 @@ export default function HomePrestations() {
                            alt="Une image dynamique"
                         />
 
-                        <figcaption className="home-prestations__caption">
+                        <figcaption className="home-prestations-caption">
                            <h3
                               id={`card-title-${imageData.id}`}
-                              className="home-prestations__title"
+                              className="home-prestations-title"
                            >
                               {imageData.title}
                            </h3>
