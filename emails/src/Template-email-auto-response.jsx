@@ -28,7 +28,7 @@ export const TemplateEmailAutoResponse = () => (
                      style={{ display: "inline-block" }}
                   >
                      <Img
-                        src="/assets/logo.jpg"
+                        src="/logo-horizontal.jpg"
                         width="72"
                         height="87"
                         alt="Logo Horizonbienetre.fr"
