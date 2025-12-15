@@ -41,7 +41,7 @@ export const emailContact = async (req, res) => {
          tls: {
             // Désactiver la validation du certificat SSL uniquement en mode développement
             rejectUnauthorized:
-               NODE_ENV === "production" ? true : false,
+               NODE_ENV === "development" ? false : true,
          },
       });
 

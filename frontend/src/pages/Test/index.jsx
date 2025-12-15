@@ -17,12 +17,12 @@ function ShowMore({ text, maxLength = 100 }) {
 
    return (
       <div>
-         <Typography variant="body1">
+         <div>
             <Collapse in={isExpanded} timeout="auto">
                <div>{text}</div>
             </Collapse>
             {!isExpanded && <div>{truncatedText}...</div>}
-         </Typography>
+         </div>
 
          {text.length > maxLength && (
             <Button onClick={handleToggle} sx={{ marginTop: 1 }}>
