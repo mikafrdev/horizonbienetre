@@ -8,7 +8,7 @@ export default function HomePrestations() {
       <section className="home-prestations">
          <h2>Les prestations</h2>
 
-         <div className="prestations-list">
+         <div className="home-prestations-list">
             {prestationsData.map((imageData, index) => {
                return (
                   <figure

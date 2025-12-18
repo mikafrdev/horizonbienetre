@@ -1,15 +1,15 @@
 {
    "type": "module",
    "devDependencies": {
-      "@babel/cli": "^7.27.2",
-      "@babel/core": "^7.27.4",
-      "@babel/node": "^7.27.1",
-      "@babel/preset-env": "^7.27.2",
-      "@babel/preset-react": "^7.27.1",
-      "@babel/register": "^7.27.1",
-      "nodemon": "^3.1.10",
-      "terser": "^5.41.0",
-      "tsx": "^4.19.4"
+      "@babel/cli": "^7.28.3",
+      "@babel/core": "^7.28.5",
+      "@babel/node": "^7.28.0",
+      "@babel/preset-env": "^7.28.5",
+      "@babel/preset-react": "^7.28.5",
+      "@babel/register": "^7.28.3",
+      "nodemon": "^3.1.11",
+      "terser": "^5.44.1",
+      "tsx": "^4.21.0"
    },
    "scripts": {
       "email": "email dev",
@@ -24,13 +24,13 @@
       "start": "node ../build/backend/server.js"
    },
    "dependencies": {
-      "@react-email/components": "^0.0.41",
-      "@react-email/render": "^1.2.2",
+      "@react-email/components": "^1.0.2",
+      "@react-email/render": "^2.0.0",
       "cors": "^2.8.5",
-      "dotenv": "^16.5.0",
-      "express": "^5.1.0",
-      "express-validator": "^7.2.1",
-      "nodemailer": "^7.0.3",
-      "sharp": "^0.34.4"
+      "dotenv": "^17.2.3",
+      "express": "^5.2.1",
+      "express-validator": "^7.3.1",
+      "nodemailer": "^7.0.11",
+      "sharp": "^0.34.5"
    }
 }
