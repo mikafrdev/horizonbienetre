@@ -8,8 +8,6 @@ export default function GoogleTagManager() {
    useEffect(() => {
       if (!isProd || !GTM_ID) return;
 
-      console.log("GTM PROD !");
-
       // Injecte le script gtag.js
       const script = document.createElement("script");
       script.src = `https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`;

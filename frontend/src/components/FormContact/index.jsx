@@ -7,8 +7,6 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import "./style.css";
 
 export default function FormContact({ formType }) {
-   console.log("formType dans FormContact : ", formType);
-
    const [formData, setFormData] = useState({
       firstName: "",
       lastName: "",

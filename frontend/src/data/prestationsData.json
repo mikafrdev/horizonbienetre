@@ -3,18 +3,21 @@
     "id": 1,
     "title": "Les massages du monde intuitifs",
     "img": "massage-relaxation-femme-bougies-fleurs-spa",
+    "alt": "Massage de relaxation avec bougies et fleurs dans un spa",
     "link": "/massages"
   },
   {
     "id": 2,
     "title": "Les soins énergétiques",
     "img": "Les-soins-energetiques",
+    "alt": "Séance de soins énergétiques pour rééquilibrer les énergies",
     "link": "/soins"
   },
   {
     "id": 3,
     "title": "Les formules bien-être",
     "img": "Formule-detente-profonde",
+    "alt": "Formule bien-être pour une détente profonde et revitalisante",
     "link": "/formule"
   }
 ]

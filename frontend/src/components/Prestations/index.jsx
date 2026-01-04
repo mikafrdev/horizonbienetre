@@ -33,10 +33,7 @@ export default function Prestations({ imagesData, collapsible }) {
                            <h2>{parse(imageData.title)}</h2>
                         </div>
                         <div className="prestation-img">
-                           <ResponsiveImage
-                              imageData={imageData}
-                              alt={imageData.alt}
-                           />
+                           <ResponsiveImage imageData={imageData} />
                         </div>
                         <div className="prestation-content">
                            {isMobile && collapsible ? (

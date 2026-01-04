@@ -6,7 +6,7 @@ const ResponsiveImage = ({
    ],
   imageData,
   imageFormats = ['webp', 'jpeg', 'png'],
-  alt = '',
+ 
   onLoad = () => {},
   onError = () => {},
   onLoadStart = () => {},
@@ -26,7 +26,7 @@ const ResponsiveImage = ({
 
       <img
         srcSet={`${imageData.img}-800.webp`}
-        alt={alt || imageData.alt}
+        alt={imageData.alt}
         loading="lazy"
         sizes="(max-width: 600px) 100vw, (max-width: 800px) 80vw, (max-width: 1024px) 70vw, 50vw"
         onLoad={onLoad}

@@ -52,7 +52,6 @@ export default function Salon() {
                         <ResponsiveImage
                            imageData={imageData}
                            imageFormats={["webp", "jpeg"]}
-                           alt="Une image dynamique"
                         />
                      </ImageListItem>
                   ))}

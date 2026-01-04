@@ -22,10 +22,7 @@ export default function HomePrestations() {
                         className="home-prestations-link"
                         data-discover="true"
                      >
-                        <ResponsiveImage
-                           imageData={imageData}
-                           alt="Une image dynamique"
-                        />
+                        <ResponsiveImage imageData={imageData} />
 
                         <figcaption className="home-prestations-caption">
                            <h3
