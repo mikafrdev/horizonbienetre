@@ -20,7 +20,7 @@ export default function Opinions() {
 
    return (
       <section className="opinions">
-         <h2>Témoignages</h2>
+         <h2>Les témoignages</h2>
 
          <div className="opinions-slider">
             <Swiper
