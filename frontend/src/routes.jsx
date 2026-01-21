@@ -12,7 +12,6 @@ import MentionsLegales from "./pages/Mentions-legales";
 import PolitiqueConfidentialite from "./pages/Politique-confidentialite";
 import CGV from "./pages/CGV";
 import Test from "./pages/Test";
-import "./index.css";
 import Layout from "./Layout";
 
 const router = createBrowserRouter([

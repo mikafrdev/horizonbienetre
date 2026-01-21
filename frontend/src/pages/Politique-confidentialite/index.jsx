@@ -1,9 +1,12 @@
+import SEOMetaData from "../../components/SeoMetaData";
+import metaData from "../../data/metadata.json";
 import "../../styles/LegalPage.css";
 
 export default function PolitiqueConfidentialite() {
    return (
-      <main className="legal-page">
-         
+      <>
+         <SEOMetaData metadata={metaData.politique} />
+         <main className="legal-page">
             <h1>Politique de confidentialité</h1>
 
             <h2>Collecte des données</h2>
@@ -34,7 +37,7 @@ export default function PolitiqueConfidentialite() {
                de vos données personnelles à tout moment en écrivant à :
                xxxxxxxxxxxx@gmail.com
             </p>
-         
-      </main>
+         </main>
+      </>
    );
 }

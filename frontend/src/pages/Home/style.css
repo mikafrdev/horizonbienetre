@@ -1,3 +1,11 @@
+.section-video h1 {
+    position: absolute;
+    z-index: -99999;
+    top: -99999px;
+    left: -99999px;
+    width: 0px;
+}
+
 .section-video {
    width: 100%;
    max-width: 800px;

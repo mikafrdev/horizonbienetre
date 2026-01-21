@@ -5,6 +5,7 @@ import router from "./routes";
 import 'normalize.css';
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme.js";
+import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
    <React.StrictMode>

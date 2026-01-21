@@ -1,0 +1,91 @@
+{
+   "home": {
+      "metaTitle": "Horizon bien-être : Soins énergétiques - massages bien-être - Tourcoing",
+      "metaDescription": "Horizon Bien-Être à Tourcoing : soins énergétiques, massages bien-être, accompagnement holistique pour rééquilibrer corps et esprit. Prenez rendez-vous pour un moment de détente profonde.",
+      "metaKeywords": "soins énergétiques, massages bien-être, accompagnement holistique, détente, bien-être, Tourcoing",
+      "metaImage": "/images/og/home.jpg",
+      "metaUrl": "/",
+      "metaType": "website"
+   },
+
+   "massages": {
+      "metaTitle": "Massages bien-être - Tourcoing | Horizon bien-être",
+      "metaDescription": "Découvrez les massages bien-être proposés par Horizon Bien-Être à Tourcoing pour une relaxation profonde du corps et de l’esprit.",
+      "metaKeywords": "massages bien-être, massage relaxant, détente, Tourcoing",
+      "metaImage": "/images/og/massages.jpg",
+      "metaUrl": "/massages",
+      "metaType": "website"
+   },
+
+   "soins": {
+      "metaTitle": "Soins énergétiques - Tourcoing | Horizon bien-être",
+      "metaDescription": "Soins énergétiques à Tourcoing : rééquilibrez votre énergie et retrouvez l’harmonie intérieure avec Horizon Bien-Être.",
+      "metaKeywords": "soins énergétiques, rééquilibrage, bien-être, Tourcoing",
+      "metaImage": "/images/og/soins.jpg",
+      "metaUrl": "/soins",
+      "metaType": "website"
+   },
+
+   "formules": {
+      "metaTitle": "Formules bien-être | Horizon bien-être",
+      "metaDescription": "Découvrez les formules bien-être Horizon Bien-Être à Tourcoing : soins et massages adaptés à vos besoins.",
+      "metaKeywords": "formules bien-être, massages, soins, Tourcoing",
+      "metaImage": "/images/og/formules.jpg",
+      "metaUrl": "/formules",
+      "metaType": "website"
+   },
+
+   "cadeau": {
+      "metaTitle": "Cartes cadeaux bien-être | Horizon bien-être",
+      "metaDescription": "Offrez un moment de détente avec les cartes cadeaux Horizon Bien-Être à Tourcoing.",
+      "metaKeywords": "carte cadeau massage, cadeau bien-être, Tourcoing",
+      "metaImage": "/images/og/cadeau.jpg",
+      "metaUrl": "/cadeau",
+      "metaType": "website"
+   },
+
+   "contact": {
+      "metaTitle": "Contact | Horizon bien-être - Tourcoing",
+      "metaDescription": "Contactez Horizon Bien-Être à Tourcoing pour prendre rendez-vous ou obtenir plus d’informations.",
+      "metaKeywords": "contact bien-être, rendez-vous massage, Tourcoing",
+      "metaImage": "/images/og/contact.jpg",
+      "metaUrl": "/contact",
+      "metaType": "website"
+   },
+
+   "salon": {
+      "metaTitle": "Le salon | Horizon bien-être - Tourcoing",
+      "metaDescription": "Découvrez le salon Horizon Bien-Être à Tourcoing, un espace dédié à la détente et au rééquilibrage énergétique.",
+      "metaKeywords": "salon bien-être, massage Tourcoing, soins énergétiques",
+      "metaImage": "/images/og/salon.jpg",
+      "metaUrl": "/salon",
+      "metaType": "website"
+   },
+
+   "mentions-legales": {
+      "metaTitle": "Mentions légales | Horizon bien-être",
+      "metaDescription": "Mentions légales du site Horizon Bien-Être à Tourcoing.",
+      "metaKeywords": "mentions légales",
+      "metaImage": "/images/og/default.jpg",
+      "metaUrl": "/mentions-legales",
+      "metaType": "website"
+   },
+
+   "politique": {
+      "metaTitle": "Politique de confidentialité | Horizon bien-être",
+      "metaDescription": "Politique de confidentialité du site Horizon Bien-Être à Tourcoing.",
+      "metaKeywords": "politique de confidentialité",
+      "metaImage": "/images/og/default.jpg",
+      "metaUrl": "/politique-confidentialite",
+      "metaType": "website"
+   },
+
+   "cgv": {
+      "metaTitle": "Conditions générales de vente | Horizon bien-être",
+      "metaDescription": "Conditions générales de vente d’Horizon Bien-Être à Tourcoing.",
+      "metaKeywords": "CGV, conditions générales de vente",
+      "metaImage": "/images/og/default.jpg",
+      "metaUrl": "/cgv",
+      "metaType": "website"
+   }
+}

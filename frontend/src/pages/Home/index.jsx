@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import SEOMetaData from "../../components/SeoMetaData";
+import metaData from "../../data/metadata.json";
 import HomePrestations from "../../components/HomePrestations";
 import Opinions from "../../components/Opinions";
 import "./style.css";
@@ -18,18 +20,23 @@ export default function Home() {
       }
    }, []);
    return (
-      <main className="main-content">
-         <section className="section-video">
-            {videoSrc && (
-               <video playsInline autoPlay loop muted preload="metadata">
-                  <source src={videoSrc} type="video/mp4" />
-                  Your browser does not support the video tag.
-               </video>
-            )}
-         </section>
+      <>
+         <SEOMetaData metadata={metaData.home} />
 
-         <HomePrestations />
-         <Opinions />
-      </main>
+         <main className="main-content">
+            <section className="section-video">
+               <h1>Horizon-Bien-Être</h1>
+               {videoSrc && (
+                  <video playsInline autoPlay loop muted preload="metadata">
+                     <source src={videoSrc} type="video/mp4" />
+                     Your browser does not support the video tag.
+                  </video>
+               )}
+            </section>
+
+            <HomePrestations />
+            <Opinions />
+         </main>
+      </>
    );
 }

@@ -72,6 +72,7 @@ select {
    --fill-cta-primary: #0f0f0f;
    --navbar-picto: #1e1e1e;
    --font-size-text: clamp(1rem, 0.946rem + 0.27vw, 1.188rem);
+   --font-size-h1: clamp(1.5rem, 1.33rem + 0.85vw, 1.875rem);
    --font-size-h2-hp: clamp(1.5rem, 1.33rem + 0.85vw, 1.875rem);
    --font-size-h3-hp: clamp(1.25rem, calc(2vw + 0.5rem), 2rem);
    --font-size-footer: clamp(1.25rem, calc(2vw + 0.5rem), 2rem);
