@@ -8,15 +8,15 @@ import theme from "./theme.js";
 import { MatomoProvider, createInstance } from "@streamr/matomo-tracker-react";
 import "./index.css";
 
+const isSecure = window.location.protocol === 'https:';
+
 const instance = createInstance({
    urlBase: "https://matomo.horizonbienetre.fr/",
    siteId: 3,
    linkTracking: false, //app react false
    configurations: {
       disableCookies: true, //RGPD friendly
-      anonymizeIp: true,
-      enableDoNotTrack: true,
-      setSecureCookie: true, //HTTPS only
+      setSecureCookie: isSecure, //HTTPS only
       setRequestMethod: "POST", //URLs propres + plus sûr
    },
 });
