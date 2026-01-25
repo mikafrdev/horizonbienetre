@@ -5,12 +5,12 @@ import router from "./routes";
 import "normalize.css";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme.js";
-import { MatomoProvider, createInstance } from "@streamr/matomo-tracker-react";
+//import { MatomoProvider, createInstance } from "@streamr/matomo-tracker-react";
 import "./index.css";
 
-const isSecure = window.location.protocol === 'https:';
+//const isSecure = window.location.protocol === 'https:';
 
-const instance = createInstance({
+/* const instance = createInstance({
    urlBase: "https://matomo.horizonbienetre.fr/",
    siteId: 3,
    linkTracking: false, //app react false
@@ -19,14 +19,14 @@ const instance = createInstance({
       setSecureCookie: isSecure, //HTTPS only
       setRequestMethod: "POST", //URLs propres + plus sûr
    },
-});
+}); */
 
 ReactDOM.createRoot(document.getElementById("root")).render(
    <React.StrictMode>
-      <MatomoProvider value={instance}>
+      {/* <MatomoProvider value={instance}> */}
          <ThemeProvider theme={theme}>
             <RouterProvider router={router} />
          </ThemeProvider>
-      </MatomoProvider>
+      {/* </MatomoProvider> */}
    </React.StrictMode>,
 );
