@@ -4,6 +4,7 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { useEffect, useState, useRef } from "react";
 import { Collapse, Typography } from "@mui/material";
 import LogoSVG from "../../components/LogoSVG";
+import CookieConsentPopup from "../../components/CookieConsentPopup";
 import "./style.css";
 
 function ShowMore({ text, maxLength = 100 }) {
@@ -57,6 +58,12 @@ export default function Test() {
 
    return (
       <main className="main-content">
+         <section className="section-test">
+            <h1>Cookies</h1>
+
+            <CookieConsentPopup />
+         </section>
+
          <section className="section-test">
             <h1>TESTS</h1>
 

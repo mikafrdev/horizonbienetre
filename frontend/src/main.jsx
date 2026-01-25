@@ -2,15 +2,31 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 import router from "./routes";
-import 'normalize.css';
+import "normalize.css";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme.js";
+import { MatomoProvider, createInstance } from "@streamr/matomo-tracker-react";
 import "./index.css";
+
+const instance = createInstance({
+   urlBase: "https://matomo.horizonbienetre.fr/",
+   siteId: 3,
+   linkTracking: false, //app react false
+   configurations: {
+      disableCookies: true, //RGPD friendly
+      anonymizeIp: true,
+      enableDoNotTrack: true,
+      setSecureCookie: true, //HTTPS only
+      setRequestMethod: "POST", //URLs propres + plus sûr
+   },
+});
 
 ReactDOM.createRoot(document.getElementById("root")).render(
    <React.StrictMode>
-      <ThemeProvider theme={theme}>
-         <RouterProvider router={router} />
-      </ThemeProvider>
-   </React.StrictMode>
+      <MatomoProvider value={instance}>
+         <ThemeProvider theme={theme}>
+            <RouterProvider router={router} />
+         </ThemeProvider>
+      </MatomoProvider>
+   </React.StrictMode>,
 );
