@@ -9,7 +9,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
 import Infos, { formatPhoneNumber } from "../../utils/Infos";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import { useMatomo } from "@streamr/matomo-tracker-react";
+import { MatomoTrackEvent } from "../MatomoTracking";
 import "./style.css";
 import "../Button/style.css";
 
@@ -29,15 +29,10 @@ const style = {
 
 function ChildModal() {
    const [isChildModalOpen, setIsChildModalOpen] = useState(false);
-   const { trackEvent } = useMatomo();
 
    const handleOpen = () => {
       setIsChildModalOpen(true);
-      trackEvent({
-         category: "Bouton",
-         action: "Click",
-         name: "Header Modal",
-      });
+      MatomoTrackEvent("CTA", "Click", "Header - Prendre RDV");
    };
    const handleClose = () => {
       setIsChildModalOpen(false);

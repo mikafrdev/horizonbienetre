@@ -1,30 +1,64 @@
-import React, { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
+
+const MATOMO_URL = "https://matomo.horizonbienetre.fr/";
 
 const MatomoTracking = ({ siteId }) => {
-   useEffect(() => {
-      // Si Matomo est déjà initialisé, ne pas le réinitialiser
-      if (window._paq) return;
+  const location = useLocation();
+  const isInitialized = useRef(false);
 
-      // Initialisation de Matomo
-      var _paq = (window._paq = window._paq || []);
-      _paq.push(["trackPageView"]); // Suivi de la vue de la page
-      _paq.push(["enableLinkTracking"]); // Suivi des clics sur les liens
+  // 1️⃣ Initialisation Matomo (1 seule fois)
+  useEffect(() => {
+    if (isInitialized.current) return;
 
-      (function () {
-         var u = "https://matomo.horizonbienetre.fr/";
-         _paq.push(["setTrackerUrl", u + "matomo.php"]);
-         _paq.push(["setSiteId", siteId]);
+    window._paq = window._paq || [];
 
-         var d = document,
-            g = d.createElement("script"),
-            s = d.getElementsByTagName("script")[0];
-         g.async = true;
-         g.src = u + "matomo.js";
-         s.parentNode.insertBefore(g, s);
-      })();
-   }, [siteId]);
+    window._paq.push(["enableLinkTracking"]);
+    window._paq.push(["setSiteId", siteId]);
+    window._paq.push(["setTrackerUrl", MATOMO_URL + "matomo.php"]);
 
-   return null;
+    const d = document;
+    const g = d.createElement("script");
+    const s = d.getElementsByTagName("script")[0];
+    g.async = true;
+    g.src = MATOMO_URL + "matomo.js";
+    s.parentNode.insertBefore(g, s);
+
+    isInitialized.current = true;
+  }, [siteId]);
+
+  // 2️⃣ Tracking des pages (SPA)
+  useEffect(() => {
+    if (!window._paq || !isInitialized.current) return;
+
+    const url =
+      location.pathname +
+      location.search +
+      location.hash;
+
+    window._paq.push(["setCustomUrl", url]);
+    window._paq.push(["setDocumentTitle", document.title]);
+    window._paq.push(["trackPageView"]);
+  }, [location]);
+
+  return null;
 };
 
 export default MatomoTracking;
+
+export const MatomoTrackEvent = (
+  category,
+  action,
+  label,
+  value
+) => {
+  if (!window._paq) return;
+
+  window._paq.push([
+    "trackEvent",
+    category,
+    action,
+    label,
+    value,
+  ]);
+};

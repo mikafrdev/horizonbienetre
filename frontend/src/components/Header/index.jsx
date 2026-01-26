@@ -18,6 +18,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useMediaQuery } from "@mui/material";
 import LogoSVG from "./../LogoSVG";
 import HeaderModalCTA from "../HeaderModalCTA";
+import { MatomoTrackEvent } from "../MatomoTracking";
 
 import "./style.css";
 import "../Button/style.css";
@@ -116,7 +117,7 @@ export default function Header() {
                   {/* Icon Menu */}
                   {isMobile && (
                      <div className="header-drawer">
-                        <IconButton edge="end" onClick={handleDrawerToggle}>
+                        <IconButton edge="end" onClick={() => {handleDrawerToggle(); MatomoTrackEvent("CTA", "Click", "Header - Prendre RDV")}}>
                            <MenuIcon className="icon-menu" />
                         </IconButton>
                      </div>
