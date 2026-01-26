@@ -9,7 +9,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
 import Infos, { formatPhoneNumber } from "../../utils/Infos";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import { MatomoTrackEvent } from "../MatomoTracking";
+import { matomoTrackEvent } from "../MatomoTracking";
 import "./style.css";
 import "../Button/style.css";
 
@@ -32,7 +32,6 @@ function ChildModal() {
 
    const handleOpen = () => {
       setIsChildModalOpen(true);
-      MatomoTrackEvent("CTA", "Click", "Header - Prendre RDV");
    };
    const handleClose = () => {
       setIsChildModalOpen(false);
@@ -74,7 +73,10 @@ function ChildModal() {
 
 export default function HeaderModalCTA() {
    const [isHeaderRDVModalOpen, setIsHeaderRDVModalOpen] = useState(false);
-   const openHeaderRDVModal = () => setIsHeaderRDVModalOpen(true);
+   const openHeaderRDVModal = () => {
+      matomoTrackEvent("Modal", "Click", "Header - Prendre RDV");
+      setIsHeaderRDVModalOpen(true);
+   };
    const closeHeaderRDVModal = () => setIsHeaderRDVModalOpen(false);
 
    return (
@@ -115,6 +117,14 @@ export default function HeaderModalCTA() {
                      href={`tel:${Infos.tel}`}
                      className="cta-phone"
                      startIcon={<PictoPhone />}
+                     onClick={() =>
+                        matomoTrackEvent(
+                           "Téléphone",
+                           "Click",
+                           "Header Modal",
+                           1,
+                        )
+                     }
                   >
                      <span className="cta-text">
                         {formatPhoneNumber(Infos.tel)}
@@ -142,6 +152,14 @@ export default function HeaderModalCTA() {
                      href="https://www.resalib.fr/praticien/108707-horizon-bien-etre-centre-de-bien-etre-tourcoing#top"
                      target="_blank"
                      rel="noopener noreferrer"
+                     onClick={() =>
+                        matomoTrackEvent(
+                           "Lien sortant",
+                           "Click",
+                           "Vers Résalib",
+                           1,
+                        )
+                     }
                   >
                      <span className="cta-text">Prendre RDV</span>
                   </Button>

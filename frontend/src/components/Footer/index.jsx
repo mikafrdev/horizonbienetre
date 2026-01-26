@@ -7,6 +7,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import { matomoTrackEvent } from "../MatomoTracking";
 import "./style.css";
 
 export default function Footer() {
@@ -20,6 +21,9 @@ export default function Footer() {
                   component="a"
                   href={`tel:${Infos.tel}`}
                   startIcon={<PictoPhone />}
+                  onClick={() =>
+                     matomoTrackEvent("Téléphone", "Click", "Footer", 1)
+                  }
                >
                   <span className="phone-text" style={{ color: "black" }}>
                      {formatPhoneNumber(Infos.tel)}
@@ -29,7 +33,11 @@ export default function Footer() {
                <div className="footer-email">
                   <MailOutlineIcon className="icon-email" />
                   <div className="email-text">
-                     <span><a href="mailto:horizonbienetre5@gmail.com">{Infos.email}</a></span>
+                     <span>
+                        <a href="mailto:horizonbienetre5@gmail.com">
+                           {Infos.email}
+                        </a>
+                     </span>
                   </div>
                </div>
 

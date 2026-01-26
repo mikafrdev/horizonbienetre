@@ -18,7 +18,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useMediaQuery } from "@mui/material";
 import LogoSVG from "./../LogoSVG";
 import HeaderModalCTA from "../HeaderModalCTA";
-import { MatomoTrackEvent } from "../MatomoTracking";
+import { matomoTrackEvent } from "../MatomoTracking";
 
 import "./style.css";
 import "../Button/style.css";
@@ -68,7 +68,7 @@ export default function Header() {
             >
                <Link
                   to="/"
-                  /* onClick={handleLogoClick} */
+                  onClick={() => matomoTrackEvent("Logo", "Click", "Navbar - Logo")}
                   aria-label="Retour à la page d'accueil"
                   style={{
                      textDecoration: "none",
@@ -97,7 +97,9 @@ export default function Header() {
             <AppBar position="fixed" className="site-header">
                <Toolbar className="header-container">
                   <div className="header-logo">
-                     <Link to="/">
+                     <Link to="/" onClick={() => matomoTrackEvent("Logo", "Click", "Header - Logo")}>
+                        
+                     
                         {isMobile ? (
                            <LogoSVG color="#8fc3d3" text="true" />
                         ) : (
@@ -117,7 +119,7 @@ export default function Header() {
                   {/* Icon Menu */}
                   {isMobile && (
                      <div className="header-drawer">
-                        <IconButton edge="end" onClick={() => {handleDrawerToggle(); MatomoTrackEvent("CTA", "Click", "Header - Prendre RDV")}}>
+                        <IconButton edge="end" onClick={() => {handleDrawerToggle(); matomoTrackEvent("Logo", "Click", "Header - Logo")}}>
                            <MenuIcon className="icon-menu" />
                         </IconButton>
                      </div>
