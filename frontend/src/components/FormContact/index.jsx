@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import { matomoTrackEvent } from "../MatomoTracking";
 import "./style.css";
 
 export default function FormContact({ formType }) {
@@ -37,8 +38,6 @@ export default function FormContact({ formType }) {
       setSuccessMsg("");
       setFieldErrors({});
 
-      console.log("ENVOI : ", formData);
-
       try {
          const res = await fetch(`/api/email/contact`, {
             method: "POST",
@@ -48,19 +47,41 @@ export default function FormContact({ formType }) {
 
          const data = await res.json();
 
-         console.log("data : ", data);
-
          if (!res.ok) {
-            if (data.errors) {
+            setErrorMsg("Erreur serveur. Merci de réessayer plus tard.");
+            return;
+         }
+
+         if (!data.success) {
+            if (data.errors?.length) {
                const formattedErrors = {};
                data.errors.forEach((err) => {
                   formattedErrors[err.path] = err.msg;
                });
                setFieldErrors(formattedErrors);
+
+               try {
+                  matomoTrackEvent(
+                     "Formulaire",
+                     "Submit Error",
+                     "Page Contact",
+                  );
+               } catch (e) {
+                  if (import.meta.env.NODE_ENV === "development") {
+                     console.error("Matomo tracking error:", e);
+                  }
+               }
             }
 
-            setErrorMsg(data.message || "Une erreur est survenue.");
+            setErrorMsg(data.message || "Formulaire invalide.");
             return;
+         }
+
+         // ✅ SUCCÈS MÉTIER
+         try {
+            matomoTrackEvent("Formulaire", "Submit Success", "Page Contact");
+         } catch (e) {
+            console.error("Erreur de tracking Matomo:", e);
          }
 
          const autoRes = await fetch(`/api/email/auto-response`, {
@@ -71,14 +92,14 @@ export default function FormContact({ formType }) {
 
          if (!autoRes.ok) {
             setSuccessMsg(
-               "Message envoyé, mais échec de la réponse automatique."
+               "Message envoyé, mais échec de la réponse automatique.",
             );
          } else {
             setSuccessMsg(
                <>
                   Votre demande a bien été envoyée.
                   <br /> Vous recevrez un e-mail de confirmation.
-               </>
+               </>,
             );
          }
 
