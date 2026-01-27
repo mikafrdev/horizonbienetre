@@ -64,7 +64,7 @@ export default function FormContact({ formType }) {
                   matomoTrackEvent(
                      "Formulaire",
                      "Submit Error",
-                     "Page Contact",
+                     `Page ${formType}`,
                   );
                } catch (e) {
                   if (import.meta.env.NODE_ENV === "development") {
@@ -79,7 +79,7 @@ export default function FormContact({ formType }) {
 
          // ✅ SUCCÈS MÉTIER
          try {
-            matomoTrackEvent("Formulaire", "Submit Success", "Page Contact");
+            matomoTrackEvent("Formulaire", "Submit Success", `Page ${formType}`);
          } catch (e) {
             console.error("Erreur de tracking Matomo:", e);
          }
