@@ -39,16 +39,16 @@ export default function FormContact({ formType }) {
       setFieldErrors({});
 
       try {
-         const res = await fetch(`/api/email/contact`, {
+         const response = await fetch(`/api/email/contact`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData),
          });
 
-         const data = await res.json();
+         const data = await response.json();
 
-         if (!res.ok) {
-            setErrorMsg("Erreur serveur. Merci de réessayer plus tard.");
+         if (!response.ok) {
+            setErrorMsg(data.message || "Erreur lors de l'envoi du formulaire.");
             return;
          }
 
@@ -79,7 +79,11 @@ export default function FormContact({ formType }) {
 
          // ✅ SUCCÈS MÉTIER
          try {
-            matomoTrackEvent("Formulaire", "Submit Success", `Page ${formType}`);
+            /* matomoTrackEvent(
+               "Formulaire",
+               "Submit Success",
+               `Page ${formType}`,
+            ); */
          } catch (e) {
             console.error("Erreur de tracking Matomo:", e);
          }

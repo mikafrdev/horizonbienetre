@@ -67,6 +67,8 @@ export default function Test() {
          <section className="section-test">
             <h1>TESTS</h1>
 
+            <LogoSVG color="#8fc3d3" text="true" />
+
             <h2>Logo - stroke="white" id="path1"</h2>
             <LogoSVG color="#157CA4" text="true" />
             <br />
