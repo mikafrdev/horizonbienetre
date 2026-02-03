@@ -12,42 +12,55 @@ export default function MentionsLegales() {
             <section>
                <h2>Éditeur du site</h2>
                <p>
-                  Nom de l'entreprise : Nom ou prénom si micro-entreprise
+                  Nom : Béatrice Devos
                   <br />
-                  Statut : Micro-entreprise
+                  Statut : Auto-entrepreneur
                   <br />
-                  SIRET : 123 456 789 00000
+                  Adresse : 43 bis rue Claude Bernard Tourcoing
                   <br />
-                  Responsable de la publication : Ton nom
+                  Téléphone : 06 21 03 77 44
                   <br />
-                  Adresse : 45 Rue Rue, 012345 Ville
+                  Adresse email : horizonbienetre5@gmail.com
                   <br />
-                  Email : xxxxxxxxxxxx@gmail.com
+                  Numéro SIRET : 889 407 821 00012
                   <br />
-                  Téléphone : [à renseigner]
+                  RCS / RM : Nord Pas de Calais
+                  <br />
+                  Responsable de la publication : Devos
+               </p>
+            </section>
+            <section>
+               <h2>Activité</h2>
+               <p>
+                  Activité Prestations de massages de bien-être à visée non
+                  thérapeutique et soins énergétiques. Les massages proposés ne
+                  sont ni médicaux, ni sexuels, et ne remplacent en aucun cas un
+                  traitement médical. Ils s’inscrivent exclusivement dans une
+                  démarche de relaxation et de bien-être.
                </p>
             </section>
 
             <section>
                <h2>Hébergement du site</h2>
                <p>
-                  Nom de l’hébergeur : Exemple : OVH, Hostinger, etc.
+                  Nom de l’hébergeur : O2switch
                   <br />
-                  Adresse : Adresse de l'hébergeur
+                  Adresse : Chemin des Padiaux – 63000 Clermont-Ferrand
                   <br />
-                  Téléphone : Téléphone de l'hébergeur
+                  Téléphone : 04 44 44 60 40
+                  <br />
+                  Site Web : https://horizonbienetre.fr
                </p>
             </section>
 
             <section>
                <h2>Propriété intellectuelle</h2>
                <p>
-                  Tous les contenus présents sur ce site (textes, images, logos,
-                  etc.) sont la propriété exclusive de Nom de l’entreprise sauf
-                  mention contraire.
+                  Le contenu de ce site (textes, images, graphismes, logo…) est
+                  protégé par le droit de la propriété intellectuelle.
                   <br />
-                  Toute reproduction, distribution, modification ou utilisation
-                  sans autorisation est interdite.
+                  Toute reproduction ou représentation totale ou partielle sans
+                  autorisation préalable est interdite.
                </p>
             </section>
          </main>

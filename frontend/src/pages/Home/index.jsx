@@ -14,7 +14,7 @@ export default function Home() {
                <h1>Horizon-Bien-Être</h1>
                <video autoPlay loop muted width="100%">
                   <source
-                     src="/videos/Presentation-HP-V03-h264-01.mp4"
+                     src="/videos/Presentation-HP-V03.2.mp4"
                      type="video/mp4"
                   />
                   {/* <source src="chemin/vers/ta-video.webm" type="video/webm" /> */}

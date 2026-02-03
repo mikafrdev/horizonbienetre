@@ -79,11 +79,11 @@ export default function FormContact({ formType }) {
 
          // ✅ SUCCÈS MÉTIER
          try {
-            /* matomoTrackEvent(
+            matomoTrackEvent(
                "Formulaire",
                "Submit Success",
                `Page ${formType}`,
-            ); */
+            );
          } catch (e) {
             console.error("Erreur de tracking Matomo:", e);
          }

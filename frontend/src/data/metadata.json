@@ -1,16 +1,16 @@
 {
    "home": {
       "metaTitle": "Horizon bien-être : Soins énergétiques - massages bien-être - Tourcoing",
-      "metaDescription": "Horizon Bien-Être à Tourcoing : soins énergétiques, massages bien-être, accompagnement holistique pour rééquilibrer corps et esprit. Prenez rendez-vous pour un moment de détente profonde.",
-      "metaKeywords": "soins énergétiques, massages bien-être, accompagnement holistique, détente, bien-être, Tourcoing",
+      "metaDescription": "Horizon Bien-Être à Tourcoing propose des massages relaxants bien-être et des soins énergétiques pour favoriser détente, équilibre et mieux-être.",
+      "metaKeywords": "soins énergétiques, massages bien-être, soins énergétiques, accompagnement holistique, détente, bien-être, Tourcoing",
       "metaImage": "/images/og/home.jpg",
       "metaUrl": "/",
       "metaType": "website"
    },
 
    "massages": {
-      "metaTitle": "Massages bien-être - Tourcoing | Horizon bien-être",
-      "metaDescription": "Découvrez les massages bien-être proposés par Horizon Bien-Être à Tourcoing pour une relaxation profonde du corps et de l’esprit.",
+      "metaTitle": "Massages relaxants bien-être - Tourcoing | Horizon bien-être",
+      "metaDescription": "Découvrez les massages relaxants bien-être proposés par Horizon Bien-Être à Tourcoing pour une relaxation profonde du corps et de l’esprit.",
       "metaKeywords": "massages bien-être, massage relaxant, détente, Tourcoing",
       "metaImage": "/images/og/massages.jpg",
       "metaUrl": "/massages",
@@ -19,7 +19,7 @@
 
    "soins": {
       "metaTitle": "Soins énergétiques - Tourcoing | Horizon bien-être",
-      "metaDescription": "Soins énergétiques à Tourcoing : rééquilibrez votre énergie et retrouvez l’harmonie intérieure avec Horizon Bien-Être.",
+      "metaDescription": "Soins énergétiques à Tourcoing avec Horizon Bien-Être : rééquilibrez votre énergie et retrouvez harmonie et apaisement.",
       "metaKeywords": "soins énergétiques, rééquilibrage, bien-être, Tourcoing",
       "metaImage": "/images/og/soins.jpg",
       "metaUrl": "/soins",
@@ -37,7 +37,7 @@
 
    "cadeau": {
       "metaTitle": "Cartes cadeaux bien-être | Horizon bien-être",
-      "metaDescription": "Offrez un moment de détente avec les cartes cadeaux Horizon Bien-Être à Tourcoing.",
+      "metaDescription": "Offrez un moment de détente avec les cartes cadeaux Horizon Bien-Être à Tourcoing, idéales pour toutes les occasions.",
       "metaKeywords": "carte cadeau massage, cadeau bien-être, Tourcoing",
       "metaImage": "/images/og/cadeau.jpg",
       "metaUrl": "/cadeau",
@@ -55,7 +55,7 @@
 
    "salon": {
       "metaTitle": "Le salon | Horizon bien-être - Tourcoing",
-      "metaDescription": "Découvrez le salon Horizon Bien-Être à Tourcoing, un espace dédié à la détente et au rééquilibrage énergétique.",
+      "metaDescription": "Découvrez le salon Horizon Bien-Être à Tourcoing, un espace dédié à la détente et  aux soins énergétiques.",
       "metaKeywords": "salon bien-être, massage Tourcoing, soins énergétiques",
       "metaImage": "/images/og/salon.jpg",
       "metaUrl": "/salon",

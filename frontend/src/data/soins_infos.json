@@ -11,8 +11,7 @@
             "type": "ul",
             "className": "decimal",
             "items": [
-               "Accueil et échange Le soin débute par un moment d'échange avec la personne, visant à cerner ses besoins, ses attentes ainsi que son état émotionnel, physique ou énergétique.",
-               "Préparation à la séance La personne s'allonge confortablement sur la table de massage, habillée, avec éventuellement une couverture.",
+               "Accueil et échange \n\nChaque séance débute par un temps d’échange afin d’écouter vos besoins et vos attentes. Ensemble, nous identifions les points sur lesquels orienter le soin. En fonction de cet échange, j’utilise un mélange de techniques énergétiques adaptées à votre situation, dans le respect de votre rythme et de vos objectifs de bien-être.",
                {
                   "type": "li",
                   "text": "Déroulement du soin",
@@ -25,8 +24,8 @@
                      ]
                   }
                },
-               "Clôture de la séance À la fin du soin, j'accompagne la personne dans un retour en douceur à un état d'éveil. Un moment d'échange permet ensuite de partager les ressentis et de répondre aux questions éventuelles.",
-               "Après la séance Les effets peuvent varier : relaxation immédiate, légèreté émotionnelle, ou encore un regain d'énergie dans les jours qui suivent. Un soin énergétique est une expérience personnelle et unique, conçue pour soutenir le bien-être global et encourager l'équilibre intérieur."
+               "Clôture de la séance \n\nÀ la fin du soin, j'accompagne la personne dans un retour en douceur à un état d'éveil. Un moment d'échange permet ensuite de partager les ressentis et de répondre aux questions éventuelles.",
+               "Après la séance \n\nLes effets peuvent varier : relaxation immédiate, légèreté émotionnelle, ou encore un regain d'énergie dans les jours qui suivent. Un soin énergétique est une expérience personnelle et unique, conçue pour soutenir le bien-être global et encourager l'équilibre intérieur."
             ]
          }
       ]

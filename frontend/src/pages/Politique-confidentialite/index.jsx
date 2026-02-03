@@ -8,19 +8,25 @@ export default function PolitiqueConfidentialite() {
          <SEOMetaData metadata={metaData.politique} />
          <main className="legal-page">
             <h1>Politique de confidentialité</h1>
+            <h2>Utilisation des données</h2>
+            <p>
+               Ces données ne sont ni vendues, ni partagées à des tiers.
+               <br />
+               Elles sont conservées uniquement pendant le temps nécessaire au
+               traitement de votre demande.
+            </p>
 
             <h2>Collecte des données</h2>
             <p>
-               Les données personnelles collectées via les formulaires de
-               contact (nom, email, téléphone) sont utilisées uniquement pour
-               répondre à vos demandes ou pour fixer un rendez-vous.
-            </p>
-
-            <h2>Utilisation des données</h2>
-            <p>Ces données ne sont ni vendues, ni partagées à des tiers.</p>
-            <p>
-               Elles sont conservées uniquement pendant le temps nécessaire au
-               traitement de votre demande.
+               Des données personnelles peuvent être collectées via : - les
+               formulaires de contact et de prise de rendez-vous, - les cookies
+               à des fins statistiques ou d’amélioration de l’expérience
+               utilisateur. Les données ne sont utilisées que dans le cadre de
+               la relation client, ne sont pas revendues, et sont traitées
+               conformément au Règlement Général sur la Protection des Données
+               (RGPD). Vous pouvez exercer vos droits (accès, rectification,
+               suppression, opposition) en envoyant un email à :
+               horizonbienetre5@gmail.com
             </p>
 
             <h2>Cookies</h2>
@@ -28,14 +34,6 @@ export default function PolitiqueConfidentialite() {
                Le site peut utiliser des cookies pour améliorer l'expérience
                utilisateur (ex. : mesure d’audience). Vous pouvez les accepter
                ou les refuser via la bannière de consentement.
-            </p>
-
-            <h2>Droits des utilisateurs</h2>
-            <p>
-               Conformément à la loi « Informatique et Libertés » et au RGPD,
-               vous pouvez demander l’accès, la rectification ou la suppression
-               de vos données personnelles à tout moment en écrivant à :
-               xxxxxxxxxxxx@gmail.com
             </p>
          </main>
       </>
