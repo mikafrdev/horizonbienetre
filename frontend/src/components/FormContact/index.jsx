@@ -47,12 +47,11 @@ export default function FormContact({ formType }) {
 
          const data = await response.json();
 
-         if (!response.ok) {
-            setErrorMsg(data.message || "Erreur lors de l'envoi du formulaire.");
-            return;
-         }
+         if (!response.ok || !data.success) {
+            setErrorMsg(
+               data.message || "Erreur lors de l'envoi du formulaire.",
+            );
 
-         if (!data.success) {
             if (data.errors?.length) {
                const formattedErrors = {};
                data.errors.forEach((err) => {
@@ -71,6 +70,7 @@ export default function FormContact({ formType }) {
                      console.error("Matomo tracking error:", e);
                   }
                }
+               return;
             }
 
             setErrorMsg(data.message || "Formulaire invalide.");

@@ -102,10 +102,6 @@ button.btn-submit span.MuiButton-loadingIndicator {
    position: absolute;
 }
 
-.css-zioonp-MuiAlert-message {
-   padding: 6rem !important;
-}
-
 @media scree and (max-width: 480px) {
    .contact-form button {
       width: 100%;
