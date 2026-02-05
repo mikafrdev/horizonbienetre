@@ -1,13 +1,61 @@
-import { useState } from "react";
-import Alert from "@mui/material/Alert";
-import Typography from "@mui/material/Typography";
+import { useState, useEffect } from "react";
+import { useForm, Controller } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import FormHelperText from "@mui/material/FormHelperText";
 import Button from "@mui/material/Button";
-import SendIcon from "@mui/icons-material/Send";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import { matomoTrackEvent } from "../MatomoTracking";
+import Checkbox from "@mui/material/Checkbox";
+import SendIcon from "@mui/icons-material/Send";
+/* import { matomoTrackEvent } from "../MatomoTracking"; */
 import "./style.css";
 
+const schema = z.object({
+   firstName: z.string().min(1, "Le nom est requis"),
+   lastName: z.string().min(1, "Le prénom est requis"),
+   email: z.string().email("Email invalide"),
+   message: z
+      .string()
+      .min(18, "Le message doit comporter au moins 18 caractères"),
+   website: z
+      .string()
+      .optional() // Le champ peut être vide
+      .refine((val) => val === "", {
+         message: "Ce champ ne doit pas être rempli.",
+      }), // Validation honeypot
+   formType: z.string().min(1, "Le type de formulaire est requis"), // formType obligatoire
+   rgpd: z.boolean().refine((val) => val === true, {
+      message: "Vous devez accepter les conditions RGPD",
+   }),
+});
+
 export default function FormContact({ formType }) {
+   const {
+      register,
+      handleSubmit,
+      control,
+      setValue,
+      formState: { errors, isSubmitting },
+   } = useForm({
+      resolver: zodResolver(schema),
+      defaultValues: {
+         firstName: "",
+         lastName: "",
+         email: "",
+         message: "",
+         website: "",
+         rgpd: false, // 👈 AJOUTÉ pour corriger l'erreur
+      },
+   });
+
+   useEffect(() => {
+      setValue("formType", formType);
+   }, [formType, setValue]);
+
+   //Backend
+
    const [formData, setFormData] = useState({
       firstName: "",
       lastName: "",
@@ -18,261 +66,141 @@ export default function FormContact({ formType }) {
       formType: formType,
    });
 
-   const [loading, setLoading] = useState(false);
-   const [successMsg, setSuccessMsg] = useState("");
-   const [errorMsg, setErrorMsg] = useState("");
-   const [fieldErrors, setFieldErrors] = useState({});
+   const onSubmit = async (formdata) => {
+      /* console.log("useForm methods and properties:", {
+         register,
+         handleSubmit,
+         setError,
+         errors,
+         isSubmitting,
+      }); */
 
-   const handleChange = (e) => {
-      const { name, type, value, checked } = e.target;
-      setFormData((prev) => ({
-         ...prev,
-         [name]: type === "checkbox" ? checked : value,
-      }));
-   };
+      console.log("Données du formulaire soumises :", formdata);
+      return;
 
-   const handleSubmit = async (e) => {
-      e.preventDefault();
-      setLoading(true);
-      setErrorMsg("");
-      setSuccessMsg("");
-      setFieldErrors({});
-
+      const url = "/api/email/contact";
       try {
-         const response = await fetch(`/api/email/contact`, {
+         const response = await fetch(url, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData),
          });
 
+         if (!response.ok) {
+            throw new Error("Erreur lors de l'envoi du formulaire");
+         }
          const data = await response.json();
 
-         if (!response.ok || !data.success) {
-            setErrorMsg(
-               data.message || "Erreur lors de l'envoi du formulaire.",
-            );
-
-            if (data.errors?.length) {
-               const formattedErrors = {};
-               data.errors.forEach((err) => {
-                  formattedErrors[err.path] = err.msg;
-               });
-               setFieldErrors(formattedErrors);
-
-               try {
-                  matomoTrackEvent(
-                     "Formulaire",
-                     "Submit Error",
-                     `Page ${formType}`,
-                  );
-               } catch (e) {
-                  if (import.meta.env.NODE_ENV === "development") {
-                     console.error("Matomo tracking error:", e);
-                  }
-               }
-               return;
-            }
-
-            setErrorMsg(data.message || "Formulaire invalide.");
-            return;
-         }
-
-         // ✅ SUCCÈS MÉTIER
-         try {
-            matomoTrackEvent(
-               "Formulaire",
-               "Submit Success",
-               `Page ${formType}`,
-            );
-         } catch (e) {
-            console.error("Erreur de tracking Matomo:", e);
-         }
-
-         const autoRes = await fetch(`/api/email/auto-response`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData),
-         });
-
-         if (!autoRes.ok) {
-            setSuccessMsg(
-               "Message envoyé, mais échec de la réponse automatique.",
-            );
-         } else {
-            setSuccessMsg(
-               <>
-                  Votre demande a bien été envoyée.
-                  <br /> Vous recevrez un e-mail de confirmation.
-               </>,
-            );
-         }
-
-         /* resetForm(); */
-      } catch (err) {
-         console.error(err);
-         setErrorMsg("Erreur lors de l'envoi du message. Veuillez réessayer.");
-      } finally {
-         setLoading(false);
+         console.log("Réponse du backend response :", response);
+         console.log("Réponse du backend data :", data);
+      } catch (error) {
+         console.error("Erreur lors de l'envoi du formulaire:", error);
       }
    };
 
    return (
       <section className="section-form">
-         {successMsg ? (
-            <div className="form-success-message">
-               <Alert severity="success">
-                  <Typography variant="h6">Merci !</Typography>
-                  <Typography>{successMsg}</Typography>
-               </Alert>
-            </div>
-         ) : (
-            <form onSubmit={handleSubmit} className="contact-form" noValidate>
-               {errorMsg && (
-                  <Alert severity="error" sx={{ mb: 2 }}>
-                     {errorMsg}
-                  </Alert>
-               )}
+         <>
+            <Box
+               component="form"
+               onSubmit={handleSubmit(onSubmit)}
+               sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 2,
+                  width: "100%",
+                  margin: "auto",
+                  padding: 2,
+               }}
+            >
+               <TextField
+                  id="outlined-basic"
+                  label="Nom"
+                  variant="outlined"
+                  {...register("firstName")}
+                  error={!!errors.firstName}
+                  helperText={errors.firstName?.message}
+                  size="small"
+               />
 
-               {/* 🛡️ Honeypot invisible */}
-               <input
-                  type="text"
-                  name="website"
-                  value={formData.website}
-                  onChange={handleChange}
+               <TextField
+                  id="outlined-basic"
+                  label="Prénom"
+                  variant="outlined"
+                  {...register("lastName")}
+                  error={!!errors.lastName}
+                  helperText={errors.lastName?.message}
+                  size="small"
+               />
+
+               <TextField
+                  id="outlined-basic"
+                  label="Email"
+                  variant="outlined"
+                  {...register("email")}
+                  error={!!errors.email}
+                  helperText={errors.email?.message}
+                  size="small"
+               />
+
+               <TextField
+                  id="outlined-basic"
+                  label="Message"
+                  variant="outlined"
+                  {...register("message")}
+                  error={!!errors.message}
+                  helperText={errors.message?.message}
+                  size="small"
+                  multiline
+                  minRows={4}
+               />
+
+               <TextField
+                  id="outlined-basic"
+                  label="website"
                   style={{ display: "none" }}
                   autoComplete="off"
                   tabIndex="-1"
+                  {...register("website")}
                />
 
-               <div className="input-group input-group--firstlastname">
-                  <div className="input-group input-group--firstname">
-                     <label htmlFor="firstName">Prénom *</label>
-                     <input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleChange}
-                        autoComplete="given-name"
-                        aria-invalid={!!fieldErrors.firstName}
-                     />
-                     {fieldErrors.firstName && (
-                        <span className="error-text text-red-500" role="alert">
-                           {fieldErrors.firstName}
-                        </span>
-                     )}
-                  </div>
-
-                  <div className="input-group input-group--lastname">
-                     <label htmlFor="lastName">Nom *</label>
-                     <input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleChange}
-                        autoComplete="family-name"
-                        aria-invalid={!!fieldErrors.lastName}
-                     />
-                     {fieldErrors.lastName && (
-                        <span className="error-text text-red-500" role="alert">
-                           {fieldErrors.lastName}
-                        </span>
-                     )}
-                  </div>
-               </div>
-
-               <div className="input-group input-group--email">
-                  <label htmlFor="email">Email *</label>
-                  <input
-                     type="email"
-                     id="email"
-                     name="email"
-                     value={formData.email}
-                     onChange={handleChange}
-                     autoComplete="email"
-                     aria-invalid={!!fieldErrors.email}
-                  />
-                  {fieldErrors.email && (
-                     <span className="error-text text-red-500" role="alert">
-                        {fieldErrors.email}
-                     </span>
-                  )}
-               </div>
-
-               <div className="input-group input-group--message">
-                  <label htmlFor="message">Message *</label>
-                  <textarea
-                     id="message"
-                     name="message"
-                     value={formData.message}
-                     onChange={handleChange}
-                     aria-invalid={!!fieldErrors.message}
-                  />
-                  {fieldErrors.message && (
-                     <span className="error-text text-red-500" role="alert">
-                        {fieldErrors.message}
-                     </span>
-                  )}
-               </div>
-
-               <div className="input-group input-group--rgpd">
-                  <FormControlLabel
-                     control={
-                        <input
-                           type="checkbox"
-                           name="rgpd"
-                           checked={formData.rgpd}
-                           onChange={handleChange}
-                           style={{
-                              accentColor: "#1976d2",
-                              width: "16px",
-                              height: "16px",
-                              marginRight: "8px",
-                           }}
+               <Controller
+                  name="rgpd"
+                  control={control}
+                  render={({ field }) => (
+                     <>
+                        <FormControlLabel
+                           control={
+                              <Checkbox
+                                 checked={field.value}
+                                 onChange={field.onChange}
+                                 color={errors.rgpd ? "error" : "primary"}
+                              />
+                           }
+                           label="J'accepte la politique de confidentialité"
                         />
-                     }
-                     label={
-                        <Typography variant="body2">
-                           J'accepte la{" "}
-                           <a
-                              href="/politique-confidentialite"
-                              target="_blank"
-                              rel="noreferrer"
-                              style={{ textDecoration: "underline" }}
-                           >
-                              politique de confidentialité
-                           </a>{" "}
-                           *
-                        </Typography>
-                     }
-                  />
-                  {fieldErrors.rgpd && (
-                     <Typography
-                        variant="caption"
-                        color="error"
-                        sx={{ mt: 0.5 }}
-                     >
-                        {fieldErrors.rgpd}
-                     </Typography>
+                        {errors.rgpd && (
+                           <FormHelperText error sx={{ mt: -3, ml: 2 }}>
+                              {errors.rgpd.message}
+                           </FormHelperText>
+                        )}
+                     </>
                   )}
-               </div>
+               />
 
-               <div className="input-group-submit">
-                  <Button
-                     className="btn-submit"
-                     variant="contained"
-                     type="submit"
-                     size="large"
-                     loading={loading}
-                     endIcon={<SendIcon />}
-                     loadingPosition="end"
-                  >
-                     Envoyer
-                  </Button>
-               </div>
-            </form>
-         )}
+               <Button
+                  className="btn-submit"
+                  variant="contained"
+                  type="submit"
+                  endIcon={<SendIcon />}
+                  loadingPosition="end"
+                  size="small"
+                  disabled={isSubmitting} // Désactive le bouton pendant la soumission
+               >
+                  Envoyer
+               </Button>
+            </Box>
+         </>
       </section>
    );
 }
