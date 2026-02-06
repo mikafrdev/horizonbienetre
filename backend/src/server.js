@@ -10,11 +10,8 @@ import ImagesRoutes from "./routes/images.routes.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const rawEnv = process.env.NODE_ENV || "";
-const NODE_ENV = rawEnv ? rawEnv.trim() : "";
-
-console.log("process.env.NODE_ENV : ", process.env.NODE_ENV, "-");
-console.log("process.env.NODE_ENV : ", NODE_ENV, "-");
+process.env.NODE_ENV = (process.env.NODE_ENV || '').trim();
+const NODE_ENV = process.env.NODE_ENV;
 
 if (typeof PhusionPassenger !== "undefined") {
    PhusionPassenger.configure({ autoInstall: false });

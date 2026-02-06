@@ -16,7 +16,7 @@
     "tsx": "^4.21.0"
   },
   "scripts": {
-    "dev": "set NODE_ENV=development && concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
+    "dev": "set NODE_ENV=development&& concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
     "build:emails": "tsx ./emails/preview-email.jsx",
     "build:frontend": "cd frontend && npm run build",
     "build:backend": "cd backend && npm run build",

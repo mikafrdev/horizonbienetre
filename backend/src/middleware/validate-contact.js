@@ -1,48 +1,34 @@
-import { body, validationResult } from "express-validator";
-const validateContact = [
-   body("firstName")
-      .trim()
-      .notEmpty()
-      .withMessage("Le prénom est requis.")
-      .escape(),
+import { z } from "zod";
+import { contactSchema } from "../utils/validation-schemas.js";
 
-   body("lastName")
-      .trim()
-      .notEmpty()
-      .withMessage("Le nom est requis.")
-      .escape(),
+export const validateContact = (req, res, next) => {
+   try {
+      // Validation avec Zod
+      const validatedData = contactSchema.parse(req.body);
 
-   body("email")
-      .isEmail()
-      .withMessage("Adresse e-mail invalide.")
-      .normalizeEmail(),
+      // Attacher les données validées à req
+      req.validatedData = validatedData;
 
-   body("message")
-      .trim()
-      .notEmpty()
-      .withMessage("Le message est requis.")
-      .escape(),
-
-   body("rgpd").equals("true").withMessage("Consentement RGPD requis."),
-
-   body("website") // Champ honeypot anti-bot
-      .optional()
-      .isEmpty()
-      .withMessage("Spam détecté."),
-
-   (req, res, next) => {
-      const errors = validationResult(req);
-
-      if (!errors.isEmpty()) {
+      next();
+   } catch (error) {
+      if (error instanceof z.ZodError) {
          return res.status(400).json({
             success: false,
-            message: "Le formulaire contient des erreurs.",
-            errors: errors.array(),
+            message: "Données invalides",
+            errors:
+               error.errors?.map((err) => ({
+                  // 👈 Ajout de ?. (optional chaining)
+                  field: err.path.join("."),
+                  message: err.message,
+               })) || [], // 👈 Fallback à un tableau vide
          });
       }
 
-      next();
-   },
-];
-
-export default validateContact;
+      console.error("Erreur de validation:", error);
+      return res.status(400).json({
+         success: false,
+         message: "Erreur de validation",
+         error: error.message || "Erreur inconnue", // 👈 Plus de détails
+      });
+   }
+};
