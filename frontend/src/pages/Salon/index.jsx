@@ -51,7 +51,8 @@ export default function Salon() {
                <Box>
                   <ImageList variant="masonry" gap={1}>
                      {imagesData.map((imageData) => (
-                        <ImageListItem key={imageData.img}>
+                        <ImageListItem key={imageData.img}
+                        sx={{ backgroundColor: "#f0f0f0" }}>
                            <ResponsiveImage
                               imageData={imageData}
                               imageFormats={["webp", "jpeg"]}

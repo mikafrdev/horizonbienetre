@@ -1,110 +1,85 @@
 [
-  {
-    "title": "ambiance-repos-bouddha-horizon-bienetre",
-    "img": "/salon/ambiance-repos-bouddha-horizon-bienetre",
-    "text": "Description dynamique pour ambiance-repos-bouddha-horizon-bienetre",
-    "prix": "60 min - 50 €"
-  },
-  {
-    "title": "ambiance-spa-horizon-bienetre",
-    "img": "/salon/ambiance-spa-horizon-bienetre",
-    "text": "Description dynamique pour ambiance-spa-horizon-bienetre",
-    "prix": "60 min - 50 €"
-  },
-  {
-    "title": "bougie-fleurs-bien-etre-horizon-bienetre",
-    "img": "/salon/bougie-fleurs-bien-etre-horizon-bienetre",
-    "text": "Description dynamique pour bougie-fleurs-bien-etre-horizon-bienetre",
-    "prix": "60 min - 50 €"
-  },
-  {
-    "title": "bougies-zen-horizon-bienetre",
-    "img": "/salon/bougies-zen-horizon-bienetre",
-    "text": "Description dynamique pour bougies-zen-horizon-bienetre",
-    "prix": "60 min - 50 €"
-  },
-  {
-    "title": "cabinet-massage-apaisant-horizon-bien-etre",
-    "img": "/salon/cabinet-massage-apaisant-horizon-bien-etre",
-    "text": "Description dynamique pour cabinet-massage-apaisant-horizon-bien-etre",
-    "prix": "60 min - 50 €"
-  },
-  {
-    "title": "deco-suspendue-cloche-zen-decoration-bois",
-    "img": "/salon/deco-suspendue-cloche-zen-decoration-bois",
-    "text": "Description dynamique pour deco-suspendue-cloche-zen-decoration-bois",
-    "prix": "60 min - 50 €"
-  },
-  {
-    "title": "deco-zen-perles-horizon-bienetre",
-    "img": "/salon/deco-zen-perles-horizon-bienetre",
-    "text": "Description dynamique pour deco-zen-perles-horizon-bienetre",
-    "prix": "60 min - 50 €"
-  },
-  {
-    "title": "decoration-cabinet-massage-horizon-bien-etre",
-    "img": "/salon/decoration-cabinet-massage-horizon-bien-etre",
-    "text": "Description dynamique pour decoration-cabinet-massage-horizon-bien-etre",
-    "prix": "60 min - 50 €"
-  },
-  {
-    "title": "decoration-salon-lampe-pierres-cristaux-bienetre",
-    "img": "/salon/decoration-salon-lampe-pierres-cristaux-bienetre",
-    "text": "Description dynamique pour decoration-salon-lampe-pierres-cristaux-bienetre",
-    "prix": "60 min - 50 €"
-  },
-  {
-    "title": "decoration-zen-bouddha-horizon-bienetre",
-    "img": "/salon/decoration-zen-bouddha-horizon-bienetre",
-    "text": "Description dynamique pour decoration-zen-bouddha-horizon-bienetre",
-    "prix": "60 min - 50 €"
-  },
-  {
-    "title": "espace-zen-cristaux-horizon-bienetre",
-    "img": "/salon/espace-zen-cristaux-horizon-bienetre",
-    "text": "Description dynamique pour espace-zen-cristaux-horizon-bienetre",
-    "prix": "60 min - 50 €"
-  },
-  {
-    "title": "espace-zen-horizon-bienetre",
-    "img": "/salon/espace-zen-horizon-bienetre",
-    "text": "Description dynamique pour espace-zen-horizon-bienetre",
-    "prix": "60 min - 50 €"
-  },
-  {
-    "title": "horloge-deco-citation-journee-ideale-musique-bonne-humeur",
-    "img": "/salon/horloge-deco-citation-journee-ideale-musique-bonne-humeur",
-    "text": "Description dynamique pour horloge-deco-citation-journee-ideale-musique-bonne-humeur",
-    "prix": "60 min - 50 €"
-  },
-  {
-    "title": "massage-detente-horizon-bienetre",
-    "img": "/salon/massage-detente-horizon-bienetre",
-    "text": "Description dynamique pour massage-detente-horizon-bienetre",
-    "prix": "60 min - 50 €"
-  },
-  {
-    "title": "panneau-decoratif-bois-palmier-citation-vie-horizon-bienetre",
-    "img": "/salon/panneau-decoratif-bois-palmier-citation-vie-horizon-bienetre",
-    "text": "Description dynamique pour panneau-decoratif-bois-palmier-citation-vie-horizon-bienetre",
-    "prix": "60 min - 50 €"
-  },
-  {
-    "title": "roses-fleurs-jardin-rosier-jardinage-printemps",
-    "img": "/salon/roses-fleurs-jardin-rosier-jardinage-printemps",
-    "text": "Description dynamique pour roses-fleurs-jardin-rosier-jardinage-printemps",
-    "prix": "60 min - 50 €"
-  },
-  {
-    "title": "rosier-fleurissant-roses-pink-jardin-printemps",
-    "img": "/salon/rosier-fleurissant-roses-pink-jardin-printemps",
-    "text": "Description dynamique pour rosier-fleurissant-roses-pink-jardin-printemps",
-    "prix": "60 min - 50 €"
-  },
-  {
-    "title": "salle-de-massage-horizon-bien-etre",
-    "img": "/salon/salle-de-massage-horizon-bien-etre",
-    "text": "Description dynamique pour salle-de-massage-horizon-bien-etre",
-    "prix": "60 min - 50 €"
-  }
+   {
+      "title": "salon-decoration-bureau-zen-plantes",
+      "img": "/salon/salon-decoration-bureau-zen-plantes",
+      "text": "Nouveau décor pour une ambiance zen moderne",
+      "prix": "Décoration tendance"
+   },
+   {
+      "title": "ambiance-salon-bien-etre-bougie-zen",
+      "img": "/salon/ambiance-salon-bien-etre-bougie-zen",
+      "text": "Ambiance salon avec bougie zen pour une détente complète",
+      "prix": "60 min - 50 €"
+   },
+   {
+      "title": "salon-deco-plantes-et-accessoires-zen",
+      "img": "/salon/salon-deco-plantes-et-accessoires-zen",
+      "text": "Décoration zen pour une baie vitrée apaisante",
+      "prix": "Décoration zen"
+   },
+   {
+      "title": "fleur-rose-nature-bien-etre",
+      "img": "/salon/fleur-rose-nature-bien-etre",
+      "text": "Fleur rose naturelle pour une touche de douceur",
+      "prix": "Nature et bien-être"
+   },
+   {
+      "title": "statue-bouddha-salon-bien-etre",
+      "img": "/salon/statue-bouddha-salon-bien-etre",
+      "text": "Statue de Bouddha pour une ambiance zen",
+      "prix": "Accessoire zen"
+   },
+   {
+      "title": "salon-detente-petite-lumiere",
+      "img": "/salon/salon-detente-petite-lumiere",
+      "text": "Salon de détente avec petite lumière douce",
+      "prix": "60 min - 50 €"
+   },
+
+   {
+      "title": "decoration-bien-etre",
+      "img": "/salon/decoration-bien-etre",
+      "text": "Décoration bien-être pour une atmosphère relaxante",
+      "prix": "Décoration bien-être"
+   },
+
+   {
+      "title": "jolie-horloge",
+      "img": "/salon/jolie-horloge",
+      "text": "Horloge décorative pour un salon zen",
+      "prix": "Accessoires décoratifs"
+   },
+
+   {
+      "title": "decoration-murale-reve",
+      "img": "/salon/decoration-murale-reve",
+      "text": "Décoration murale onirique pour un salon zen",
+      "prix": "Décoration zen"
+   },
+
+   {
+      "title": "carte-cadeau-1",
+      "img": "/salon/carte-cadeau-1",
+      "text": "Carte cadeau 60 min - Idée cadeau parfaite pour un soin bien-être",
+      "prix": "60 min - 50 €"
+   },
+   {
+      "title": "carte-cadeau-2",
+      "img": "/salon/carte-cadeau-2",
+      "text": "Carte cadeau 80 min - Un moment de bien-être à offrir",
+      "prix": "80 min - 70 €"
+   },
+
+   {
+      "title": "fleur-blanche-nature-bien-etre",
+      "img": "/salon/fleur-blanche-nature-bien-etre",
+      "text": "Fleur blanche naturelle pour un décor apaisant",
+      "prix": "Nature et bien-être"
+   },
+   {
+      "title": "salon-massage-seance",
+      "img": "/salon/salon-massage-seance",
+      "text": "Séance de massage relaxante en salon",
+      "prix": "60 min - 50 €"
+   }
 ]
