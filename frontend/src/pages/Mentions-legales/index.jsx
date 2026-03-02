@@ -20,7 +20,7 @@ export default function MentionsLegales() {
                   <br />
                   Téléphone : 06 21 03 77 44
                   <br />
-                  Adresse email : horizonbienetre5@gmail.com
+                  Adresse email : contact@horizonbienetre.fr
                   <br />
                   Numéro SIRET : 889 407 821 00012
                   <br />

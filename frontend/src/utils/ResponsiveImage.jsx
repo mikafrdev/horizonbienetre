@@ -11,6 +11,8 @@ const ResponsiveImage = ({
   onError = () => {},
   onLoadStart = () => {},
 }) => {
+
+  console.log("Rendering ResponsiveImage with imageData:", imageData);
   return (
     <picture>
       {imageSizes.map(({ size, media }) =>
