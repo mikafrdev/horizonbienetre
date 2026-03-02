@@ -34,7 +34,7 @@ export default function Footer() {
                   <MailOutlineIcon className="icon-email" />
                   <div className="email-text">
                      <span>
-                        <a href="mailto:horizonbienetre5@gmail.com">
+                        <a href="mailto:contact@horizonbienetre.fr">
                            {Infos.email}
                         </a>
                      </span>

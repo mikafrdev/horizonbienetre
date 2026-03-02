@@ -26,7 +26,7 @@ export default function PolitiqueConfidentialite() {
                conformément au Règlement Général sur la Protection des Données
                (RGPD). Vous pouvez exercer vos droits (accès, rectification,
                suppression, opposition) en envoyant un email à :
-               horizonbienetre5@gmail.com
+               contact@horizonbienetre.fr
             </p>
 
             <h2>Cookies</h2>

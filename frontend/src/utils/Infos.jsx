@@ -5,7 +5,7 @@ const Infos = {
       cp: "59200",
       town: "Tourcoing",
    },
-   email: "horizonbienetre5@gmail.com",
+   email: "contact@horizonbienetre.fr",
    facebook: "https://www.facebook.com/Horizonbienetre59",
    instagram: "https://www.instagram.com/horizon.bien.etre/",
 };
