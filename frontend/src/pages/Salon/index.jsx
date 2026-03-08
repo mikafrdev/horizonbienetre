@@ -11,7 +11,7 @@ import "./style.css";
 export default function Salon() {
    return (
       <>
-         <SEOMetaData metadata={metaData.home} />
+         <SEOMetaData metadata={metaData.salon} />
          <main className="main-content">
             <section className="section-presentation salon">
                <h1>Le salon</h1>
