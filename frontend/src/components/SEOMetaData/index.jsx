@@ -12,6 +12,7 @@ export default function SEOMetaData({ metadata }) {
          metaUrl,
          metaType = "website",
          twitterCardType = "summary_large_image",
+         canonical,
       } = metadata;
 
       document.title = metaTitle;
@@ -32,6 +33,8 @@ export default function SEOMetaData({ metadata }) {
       setMetaTag("name", "twitter:title", metaTitle);
       setMetaTag("name", "twitter:description", metaDescription);
       setMetaTag("name", "twitter:image", metaImage);
+
+      setCanonical(canonical);
    }, [metadata]);
 
    return null;
@@ -52,4 +55,16 @@ function setMetaTag(attr, name, content) {
    }
 
    element.setAttribute("content", content);
+}
+
+function setCanonical(canonical) {
+   let element = document.querySelector('link[rel="canonical"]');
+
+   if (!element) {
+      element = document.createElement("link");
+      element.setAttribute("rel", "canonical");
+      document.head.appendChild(element);
+   }
+
+   element.setAttribute("href", canonical);
 }

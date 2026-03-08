@@ -5,6 +5,7 @@
       "metaKeywords": "soins énergétiques, massages bien-être, soins énergétiques, accompagnement holistique, détente, bien-être, Tourcoing",
       "metaImage": "/images/og/home.jpg",
       "metaUrl": "/",
+      "canonical": "https://horizonbienetre.fr/",
       "metaType": "website"
    },
 
@@ -14,6 +15,7 @@
       "metaKeywords": "massages bien-être, massage relaxant, détente, Tourcoing",
       "metaImage": "/images/og/massages.jpg",
       "metaUrl": "/massages",
+      "canonical": "https://horizonbienetre.fr/massages",
       "metaType": "website"
    },
 
@@ -23,6 +25,7 @@
       "metaKeywords": "soins énergétiques, rééquilibrage, bien-être, Tourcoing",
       "metaImage": "/images/og/soins.jpg",
       "metaUrl": "/soins",
+      "canonical": "https://horizonbienetre.fr/soins",
       "metaType": "website"
    },
 
@@ -32,6 +35,7 @@
       "metaKeywords": "formules bien-être, massages, soins, Tourcoing",
       "metaImage": "/images/og/formules.jpg",
       "metaUrl": "/formules",
+      "canonical": "https://horizonbienetre.fr/formules",
       "metaType": "website"
    },
 
@@ -41,6 +45,7 @@
       "metaKeywords": "carte cadeau massage, cadeau bien-être, Tourcoing",
       "metaImage": "/images/og/cadeau.jpg",
       "metaUrl": "/cadeau",
+      "canonical": "https://horizonbienetre.fr/cadeau",
       "metaType": "website"
    },
 
@@ -50,15 +55,17 @@
       "metaKeywords": "contact bien-être, rendez-vous massage, Tourcoing",
       "metaImage": "/images/og/contact.jpg",
       "metaUrl": "/contact",
+      "canonical": "https://horizonbienetre.fr/contact",
       "metaType": "website"
    },
 
    "salon": {
       "metaTitle": "Le salon | Horizon bien-être - Tourcoing",
-      "metaDescription": "Découvrez le salon Horizon Bien-Être à Tourcoing, un espace dédié à la détente et  aux soins énergétiques.",
+      "metaDescription": "Découvrez le salon Horizon Bien-Être à Tourcoing, un espace dédié à la détente et aux soins énergétiques.",
       "metaKeywords": "salon bien-être, massage Tourcoing, soins énergétiques",
       "metaImage": "/images/og/salon.jpg",
       "metaUrl": "/salon",
+      "canonical": "https://horizonbienetre.fr/salon",
       "metaType": "website"
    },
 
@@ -68,6 +75,7 @@
       "metaKeywords": "mentions légales",
       "metaImage": "/images/og/default.jpg",
       "metaUrl": "/mentions-legales",
+      "canonical": "https://horizonbienetre.fr/mentions-legales",
       "metaType": "website"
    },
 
@@ -77,6 +85,7 @@
       "metaKeywords": "politique de confidentialité",
       "metaImage": "/images/og/default.jpg",
       "metaUrl": "/politique-confidentialite",
+      "canonical": "https://horizonbienetre.fr/politique-confidentialite",
       "metaType": "website"
    },
 
@@ -86,6 +95,7 @@
       "metaKeywords": "CGV, conditions générales de vente",
       "metaImage": "/images/og/default.jpg",
       "metaUrl": "/cgv",
+      "canonical": "https://horizonbienetre.fr/cgv",
       "metaType": "website"
    }
 }

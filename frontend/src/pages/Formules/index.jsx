@@ -5,7 +5,7 @@ import Prestations from "../../components/Prestations";
 import dataFormules from "../../data/formules.json";
 import "./style.css";
 
-export default function Formule() {
+export default function Formules() {
    const PresentationTxt = "Les Formules Bien-Être";
 
    return (

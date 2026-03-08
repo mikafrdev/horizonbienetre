@@ -4,7 +4,7 @@ import PageError from "./pages/PageError";
 import Home from "./pages/Home";
 import Massages from "./pages/Massages";
 import Soins from "./pages/Soins";
-import Formule from "./pages/Formule";
+import Formules from "./pages/Formules";
 import Cadeau from "./pages/Cadeau";
 import Salon from "./pages/Salon";
 import Contact from "./pages/Contact";
@@ -33,8 +33,8 @@ const router = createBrowserRouter([
             element: <Soins />,
          },
          {
-            path: "/formule",
-            element: <Formule />,
+            path: "/formules",
+            element: <Formules />,
          },
          {
             path: "/cadeau",
