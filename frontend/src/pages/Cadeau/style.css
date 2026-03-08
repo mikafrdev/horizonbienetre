@@ -4,6 +4,14 @@
    align-items: center;
 }
 
+.carte-cadeau h1, h2 {
+    position: absolute;
+    z-index: -99999;
+    top: -99999px;
+    left: -99999px;
+    width: 0px;
+}
+
 .section-cadeau .description {
    display: grid;
    gap: 1rem;

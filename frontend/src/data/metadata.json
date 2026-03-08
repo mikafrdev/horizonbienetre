@@ -4,8 +4,7 @@
       "metaDescription": "Horizon Bien-Être à Tourcoing propose des massages relaxants bien-être et des soins énergétiques pour favoriser détente, équilibre et mieux-être.",
       "metaKeywords": "soins énergétiques, massages bien-être, soins énergétiques, accompagnement holistique, détente, bien-être, Tourcoing",
       "metaImage": "/images/og/home.jpg",
-      "metaUrl": "/",
-      "canonical": "https://horizonbienetre.fr/",
+      "path": "/",
       "metaType": "website"
    },
 
@@ -14,8 +13,7 @@
       "metaDescription": "Découvrez les massages relaxants bien-être proposés par Horizon Bien-Être à Tourcoing pour une relaxation profonde du corps et de l’esprit.",
       "metaKeywords": "massages bien-être, massage relaxant, détente, Tourcoing",
       "metaImage": "/images/og/massages.jpg",
-      "metaUrl": "/massages",
-      "canonical": "https://horizonbienetre.fr/massages",
+      "path": "/massages",
       "metaType": "website"
    },
 
@@ -24,8 +22,7 @@
       "metaDescription": "Soins énergétiques à Tourcoing avec Horizon Bien-Être : rééquilibrez votre énergie et retrouvez harmonie et apaisement.",
       "metaKeywords": "soins énergétiques, rééquilibrage, bien-être, Tourcoing",
       "metaImage": "/images/og/soins.jpg",
-      "metaUrl": "/soins",
-      "canonical": "https://horizonbienetre.fr/soins",
+      "path": "/soins",
       "metaType": "website"
    },
 
@@ -34,8 +31,7 @@
       "metaDescription": "Découvrez les formules bien-être Horizon Bien-Être à Tourcoing : soins et massages adaptés à vos besoins.",
       "metaKeywords": "formules bien-être, massages, soins, Tourcoing",
       "metaImage": "/images/og/formules.jpg",
-      "metaUrl": "/formules",
-      "canonical": "https://horizonbienetre.fr/formules",
+      "path": "/formules",
       "metaType": "website"
    },
 
@@ -44,8 +40,7 @@
       "metaDescription": "Offrez un moment de détente avec les cartes cadeaux Horizon Bien-Être à Tourcoing, idéales pour toutes les occasions.",
       "metaKeywords": "carte cadeau massage, cadeau bien-être, Tourcoing",
       "metaImage": "/images/og/cadeau.jpg",
-      "metaUrl": "/cadeau",
-      "canonical": "https://horizonbienetre.fr/cadeau",
+      "path": "/cadeau",
       "metaType": "website"
    },
 
@@ -54,8 +49,7 @@
       "metaDescription": "Contactez Horizon Bien-Être à Tourcoing pour prendre rendez-vous ou obtenir plus d’informations.",
       "metaKeywords": "contact bien-être, rendez-vous massage, Tourcoing",
       "metaImage": "/images/og/contact.jpg",
-      "metaUrl": "/contact",
-      "canonical": "https://horizonbienetre.fr/contact",
+      "path": "/contact",
       "metaType": "website"
    },
 
@@ -64,8 +58,7 @@
       "metaDescription": "Découvrez le salon Horizon Bien-Être à Tourcoing, un espace dédié à la détente et aux soins énergétiques.",
       "metaKeywords": "salon bien-être, massage Tourcoing, soins énergétiques",
       "metaImage": "/images/og/salon.jpg",
-      "metaUrl": "/salon",
-      "canonical": "https://horizonbienetre.fr/salon",
+      "path": "/salon",
       "metaType": "website"
    },
 
@@ -74,8 +67,7 @@
       "metaDescription": "Mentions légales du site Horizon Bien-Être à Tourcoing.",
       "metaKeywords": "mentions légales",
       "metaImage": "/images/og/default.jpg",
-      "metaUrl": "/mentions-legales",
-      "canonical": "https://horizonbienetre.fr/mentions-legales",
+      "path": "/mentions-legales",
       "metaType": "website"
    },
 
@@ -84,8 +76,7 @@
       "metaDescription": "Politique de confidentialité du site Horizon Bien-Être à Tourcoing.",
       "metaKeywords": "politique de confidentialité",
       "metaImage": "/images/og/default.jpg",
-      "metaUrl": "/politique-confidentialite",
-      "canonical": "https://horizonbienetre.fr/politique-confidentialite",
+      "path": "/politique-confidentialite",
       "metaType": "website"
    },
 
@@ -94,8 +85,7 @@
       "metaDescription": "Conditions générales de vente d’Horizon Bien-Être à Tourcoing.",
       "metaKeywords": "CGV, conditions générales de vente",
       "metaImage": "/images/og/default.jpg",
-      "metaUrl": "/cgv",
-      "canonical": "https://horizonbienetre.fr/cgv",
+      "path": "/cgv",
       "metaType": "website"
    }
 }

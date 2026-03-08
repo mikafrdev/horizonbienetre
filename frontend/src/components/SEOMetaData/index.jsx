@@ -12,7 +12,7 @@ export default function SEOMetaData({ metadata }) {
          metaUrl,
          metaType = "website",
          twitterCardType = "summary_large_image",
-         canonical,
+         path,
       } = metadata;
 
       document.title = metaTitle;
@@ -34,7 +34,7 @@ export default function SEOMetaData({ metadata }) {
       setMetaTag("name", "twitter:description", metaDescription);
       setMetaTag("name", "twitter:image", metaImage);
 
-      setCanonical(canonical);
+      setCanonical(path);
    }, [metadata]);
 
    return null;
@@ -57,7 +57,9 @@ function setMetaTag(attr, name, content) {
    element.setAttribute("content", content);
 }
 
-function setCanonical(canonical) {
+function setCanonical(path) {
+   const canonicalUrl = `${import.meta.env.VITE_FRONTEND_URL}${path}`;
+   console.log("canonical :", canonicalUrl)
    let element = document.querySelector('link[rel="canonical"]');
 
    if (!element) {
@@ -66,5 +68,5 @@ function setCanonical(canonical) {
       document.head.appendChild(element);
    }
 
-   element.setAttribute("href", canonical);
+   element.setAttribute("href", canonicalUrl);
 }

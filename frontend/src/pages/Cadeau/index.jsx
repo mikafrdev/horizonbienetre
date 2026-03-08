@@ -19,7 +19,8 @@ export default function Cadeau() {
    return (
       <>
          <SEOMetaData metadata={metaData.cadeau} />
-         <main className="main-content">
+         <main className="main-content carte-cadeau">
+            <h1>La carte cadeau</h1>
             <Presentation img="Carte-cadeau-blanche-bleue" classname="cadeau" />
             <section className="cadeau-offre">
                <p>
@@ -34,6 +35,7 @@ export default function Cadeau() {
             </section>
 
             <section className="section-accordion">
+               <h2>Comment demander une carte cadeau ?</h2>
                {dataCarteCadeau.map((item, index) => (
                   <Accordion
                      key={index}
