@@ -87,7 +87,6 @@ select {
    align-items: center;
    width: 100%;
    min-width: var(--min-width-resolution);
-   max-width: 1280px;
    margin: 0 auto;
    text-align: center;
 }
