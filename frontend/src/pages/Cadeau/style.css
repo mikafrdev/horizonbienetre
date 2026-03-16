@@ -4,7 +4,7 @@
    align-items: center;
 }
 
-.carte-cadeau h1, h2 {
+.carte-cadeau h1, .carte-cadeau h2 {
     position: absolute;
     z-index: -99999;
     top: -99999px;
