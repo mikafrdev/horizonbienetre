@@ -6,9 +6,14 @@ import ImageListItem from "@mui/material/ImageListItem";
 import ResponsiveImage from "../../utils/ResponsiveImage";
 import ImgBea from "../../assets/Bea-photo-contours.png";
 import imagesData from "../../data/images-salon.json";
+import { useMediaQuery } from "@mui/material";
+
 import "./style.css";
 
 export default function Salon() {
+   const isTabletUp = useMediaQuery("(min-width:800px)");
+   console.log(isTabletUp);
+
    return (
       <>
          <SEOMetaData metadata={metaData.salon} />
@@ -49,10 +54,16 @@ export default function Salon() {
             </section>
             <section className="section-salon-gallery">
                <Box>
-                  <ImageList variant="masonry" gap={1}>
+                  <ImageList
+                     variant="masonry"
+                     gap={1}
+                     cols={isTabletUp ? 3 : 2}
+                  >
                      {imagesData.map((imageData) => (
-                        <ImageListItem key={imageData.img}
-                        sx={{ backgroundColor: "#f0f0f0" }}>
+                        <ImageListItem
+                           key={imageData.img}
+                           sx={{ backgroundColor: "#f0f0f0" }}
+                        >
                            <ResponsiveImage
                               imageData={imageData}
                               imageFormats={["webp", "jpeg"]}
