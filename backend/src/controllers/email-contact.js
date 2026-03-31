@@ -52,7 +52,7 @@ export const emailContact = async (req, res) => {
 
       // Configuration de l'email à envoyer
       const mailOptions = {
-         from: '"Horizon Bien-être" <contact@horizonbientre.fr>',
+         from: '"Horizon Bien-être" <contact@horizonbienetre.fr>',
          to: "contact@horizonbienetre.fr",
          subject: `${firstName} ${lastName} - Demande de ${formType} `,
          text: "Un utilisateur a envoyé un message.",

@@ -12,7 +12,6 @@ import "./style.css";
 
 export default function Salon() {
    const isTabletUp = useMediaQuery("(min-width:800px)");
-   console.log(isTabletUp);
 
    return (
       <>
