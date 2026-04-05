@@ -1,21 +1,26 @@
 import { useEffect } from "react";
 
 export default function SEOMetaData({ metadata }) {
+   
    useEffect(() => {
       if (!metadata) return;
-
+      
       const {
          metaTitle,
          metaDescription,
          metaKeywords,
          metaImage,
-         metaUrl,
          metaType = "website",
          twitterCardType = "summary_large_image",
          path,
       } = metadata;
-
+      
+      const BASE_URL = import.meta.env.VITE_FRONTEND_URL;
       document.title = metaTitle;
+
+      const metaImagePath = `${BASE_URL}${metaImage}`;
+
+      console.log("metaImagePath :", metaImagePath);
 
       setMetaTag("name", "description", metaDescription);
 
@@ -25,14 +30,14 @@ export default function SEOMetaData({ metadata }) {
 
       setMetaTag("property", "og:title", metaTitle);
       setMetaTag("property", "og:description", metaDescription);
-      setMetaTag("property", "og:image", metaImage);
-      setMetaTag("property", "og:url", metaUrl);
+      setMetaTag("property", "og:image", metaImagePath);
+      setMetaTag("property", "og:url", BASE_URL);
       setMetaTag("property", "og:type", metaType);
 
       setMetaTag("name", "twitter:card", twitterCardType);
       setMetaTag("name", "twitter:title", metaTitle);
       setMetaTag("name", "twitter:description", metaDescription);
-      setMetaTag("name", "twitter:image", metaImage);
+      setMetaTag("name", "twitter:image", metaImagePath);
 
       setCanonical(path);
    }, [metadata]);
@@ -59,7 +64,6 @@ function setMetaTag(attr, name, content) {
 
 function setCanonical(path) {
    const canonicalUrl = `${import.meta.env.VITE_FRONTEND_URL}${path}`;
-   console.log("canonical :", canonicalUrl)
    let element = document.querySelector('link[rel="canonical"]');
 
    if (!element) {
