@@ -3,7 +3,7 @@
       "metaTitle": "Horizon bien-être : Soins énergétiques - massages bien-être - Tourcoing",
       "metaDescription": "Horizon Bien-Être à Tourcoing propose des massages relaxants bien-être et des soins énergétiques pour favoriser détente, équilibre et mieux-être.",
       "metaKeywords": "soins énergétiques, massages bien-être, soins énergétiques, accompagnement holistique, détente, bien-être, Tourcoing",
-      "metaImage": "/images/og/home.jpg",
+      "metaImage": "/partage.jpg",
       "path": "/",
       "metaType": "website"
    },
@@ -12,7 +12,7 @@
       "metaTitle": "Massages relaxants bien-être - Tourcoing | Horizon bien-être",
       "metaDescription": "Découvrez les massages relaxants bien-être proposés par Horizon Bien-Être à Tourcoing pour une relaxation profonde du corps et de l’esprit.",
       "metaKeywords": "massages bien-être, massage relaxant, détente, Tourcoing",
-      "metaImage": "/images/og/massages.jpg",
+      "metaImage": "/partage.jpg",
       "path": "/massages",
       "metaType": "website"
    },
@@ -21,7 +21,7 @@
       "metaTitle": "Soins énergétiques - Tourcoing | Horizon bien-être",
       "metaDescription": "Soins énergétiques à Tourcoing avec Horizon Bien-Être : rééquilibrez votre énergie et retrouvez harmonie et apaisement.",
       "metaKeywords": "soins énergétiques, rééquilibrage, bien-être, Tourcoing",
-      "metaImage": "/images/og/soins.jpg",
+      "metaImage": "/partage.jpg",
       "path": "/soins",
       "metaType": "website"
    },
@@ -30,7 +30,7 @@
       "metaTitle": "Formules bien-être | Horizon bien-être",
       "metaDescription": "Découvrez les formules bien-être Horizon Bien-Être à Tourcoing : soins et massages adaptés à vos besoins.",
       "metaKeywords": "formules bien-être, massages, soins, Tourcoing",
-      "metaImage": "/images/og/formules.jpg",
+      "metaImage": "/partage.jpg",
       "path": "/formules",
       "metaType": "website"
    },
@@ -39,7 +39,7 @@
       "metaTitle": "Cartes cadeaux bien-être | Horizon bien-être",
       "metaDescription": "Offrez un moment de détente avec les cartes cadeaux Horizon Bien-Être à Tourcoing, idéales pour toutes les occasions.",
       "metaKeywords": "carte cadeau massage, cadeau bien-être, Tourcoing",
-      "metaImage": "/images/og/cadeau.jpg",
+      "metaImage": "/partage.jpg",
       "path": "/cadeau",
       "metaType": "website"
    },
@@ -48,7 +48,7 @@
       "metaTitle": "Contact | Horizon bien-être - Tourcoing",
       "metaDescription": "Contactez Horizon Bien-Être à Tourcoing pour prendre rendez-vous ou obtenir plus d’informations.",
       "metaKeywords": "contact bien-être, rendez-vous massage, Tourcoing",
-      "metaImage": "/images/og/contact.jpg",
+      "metaImage": "/partage.jpg",
       "path": "/contact",
       "metaType": "website"
    },
@@ -57,7 +57,7 @@
       "metaTitle": "Le salon | Horizon bien-être - Tourcoing",
       "metaDescription": "Découvrez le salon Horizon Bien-Être à Tourcoing, un espace dédié à la détente et aux soins énergétiques.",
       "metaKeywords": "salon bien-être, massage Tourcoing, soins énergétiques",
-      "metaImage": "/images/og/salon.jpg",
+      "metaImage": "/partage.jpg",
       "path": "/salon",
       "metaType": "website"
    },
@@ -66,7 +66,7 @@
       "metaTitle": "Mentions légales | Horizon bien-être",
       "metaDescription": "Mentions légales du site Horizon Bien-Être à Tourcoing.",
       "metaKeywords": "mentions légales",
-      "metaImage": "/images/og/default.jpg",
+      "metaImage": "/partage.jpg",
       "path": "/mentions-legales",
       "metaType": "website"
    },
@@ -75,7 +75,7 @@
       "metaTitle": "Politique de confidentialité | Horizon bien-être",
       "metaDescription": "Politique de confidentialité du site Horizon Bien-Être à Tourcoing.",
       "metaKeywords": "politique de confidentialité",
-      "metaImage": "/images/og/default.jpg",
+      "metaImage": "/partage.jpg",
       "path": "/politique-confidentialite",
       "metaType": "website"
    },
@@ -84,7 +84,7 @@
       "metaTitle": "Conditions générales de vente | Horizon bien-être",
       "metaDescription": "Conditions générales de vente d’Horizon Bien-Être à Tourcoing.",
       "metaKeywords": "CGV, conditions générales de vente",
-      "metaImage": "/images/og/default.jpg",
+      "metaImage": "/partage.jpg",
       "path": "/cgv",
       "metaType": "website"
    }
