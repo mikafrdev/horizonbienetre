@@ -1,76 +1,75 @@
 import { useEffect } from "react";
 
 export default function SEOMetaData({ metadata }) {
-   
    useEffect(() => {
       if (!metadata) return;
-      
+
       const {
          metaTitle,
          metaDescription,
          metaKeywords,
          metaImage,
          metaType = "website",
+         metaSiteName,
          twitterCardType = "summary_large_image",
          path,
       } = metadata;
-      
-      const BASE_URL = import.meta.env.VITE_FRONTEND_URL;
-      document.title = metaTitle;
 
+      const BASE_URL = import.meta.env.VITE_FRONTEND_URL;
+      const pageUrl = `${BASE_URL}${path}`;
       const metaImagePath = `${BASE_URL}${metaImage}`;
 
-      console.log("metaImagePath :", metaImagePath);
+      document.title = metaTitle;
 
-      setMetaTag("name", "description", metaDescription);
+      const tags = [
+         // Standard
+         ["name", "description", metaDescription],
+         ["name", "keywords", metaKeywords],
 
-      if (metaKeywords) {
-         setMetaTag("name", "keywords", metaKeywords);
-      }
+         // Open Graph
+         ["property", "og:title", metaTitle],
+         ["property", "og:description", metaDescription],
+         ["property", "og:image", metaImagePath],
+         ["property", "og:url", pageUrl],
+         ["property", "og:type", metaType],
+         ["property", "og:site_name", metaSiteName],
 
-      setMetaTag("property", "og:title", metaTitle);
-      setMetaTag("property", "og:description", metaDescription);
-      setMetaTag("property", "og:image", metaImagePath);
-      setMetaTag("property", "og:url", BASE_URL);
-      setMetaTag("property", "og:type", metaType);
+         // Twitter
+         ["name", "twitter:card", twitterCardType],
+         ["name", "twitter:title", metaTitle],
+         ["name", "twitter:description", metaDescription],
+         ["name", "twitter:image", metaImagePath],
+      ];
 
-      setMetaTag("name", "twitter:card", twitterCardType);
-      setMetaTag("name", "twitter:title", metaTitle);
-      setMetaTag("name", "twitter:description", metaDescription);
-      setMetaTag("name", "twitter:image", metaImagePath);
-
-      setCanonical(path);
+      tags.forEach(([attr, name, content]) => setMetaTag(attr, name, content));
+      setCanonical(pageUrl);
    }, [metadata]);
 
    return null;
 }
 
-/**
- * Crée ou met à jour une balise meta
- */
 function setMetaTag(attr, name, content) {
    if (!content) return;
 
-   let element = document.querySelector(`meta[${attr}="${name}"]`);
+   let el = document.querySelector(`meta[${attr}="${name}"]`);
 
-   if (!element) {
-      element = document.createElement("meta");
-      element.setAttribute(attr, name);
-      document.head.appendChild(element);
+   if (!el) {
+      el = document.createElement("meta");
+      el.setAttribute(attr, name);
+      document.head.appendChild(el);
    }
 
-   element.setAttribute("content", content);
+   el.setAttribute("content", content);
 }
 
-function setCanonical(path) {
-   const canonicalUrl = `${import.meta.env.VITE_FRONTEND_URL}${path}`;
-   let element = document.querySelector('link[rel="canonical"]');
+function setCanonical(url) {
+   let el = document.querySelector('link[rel="canonical"]');
 
-   if (!element) {
-      element = document.createElement("link");
-      element.setAttribute("rel", "canonical");
-      document.head.appendChild(element);
+   if (!el) {
+      el = document.createElement("link");
+      el.setAttribute("rel", "canonical");
+      document.head.appendChild(el);
    }
 
-   element.setAttribute("href", canonicalUrl);
+   el.setAttribute("href", url);
 }

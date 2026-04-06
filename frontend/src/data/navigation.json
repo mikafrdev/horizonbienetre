@@ -5,26 +5,26 @@
     },
     {
         "PageName": "Massages",
-        "UrlPage": "/massages"
+        "UrlPage": "/massages/"
     },
     {
         "PageName": "Soins énergétiques",
-        "UrlPage": "/soins"
+        "UrlPage": "/soins/"
     },
     {
         "PageName": "Formules bien-être",
-        "UrlPage": "/formules"
+        "UrlPage": "/formules/"
     },
     {
         "PageName": "Carte Cadeau",
-        "UrlPage": "/cadeau"
+        "UrlPage": "/cadeau/"
     },
     {
         "PageName": "Nous contacter",
-        "UrlPage": "/contact"
+        "UrlPage": "/contact/"
     },
     {
         "PageName": "Salon",
-        "UrlPage": "/salon"
+        "UrlPage": "/salon/"
     }
 ]
